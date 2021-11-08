@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal"
+    tools:context="org.nic.fruits.CropDetails.CropRegister">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:padding="1dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/app_name_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/login_button_padding"
+                    android:gravity="center"
+                    android:text="Provide details for Crop Registration"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+            <LinearLayout
+                android:id="@+id/layoutgps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:background="@drawable/border_table"
+                android:padding="5dp"
+                android:weightSum="2" >
+
+
+                <TextView
+                    android:id="@+id/tv_latitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="loading latitude..."
+                    android:textColor="@color/dark_purple"
+                    android:textSize="@dimen/gps" />
+
+                <TextView
+                    android:id="@+id/tv_longitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="loading longitude..."
+                    android:textColor="@color/dark_purple"
+                    android:textSize="@dimen/gps" />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayoutTreeInputs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/border_light_grey"
+                    android:padding="2dp"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Farmer Details"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutFarmerId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:weightSum="2" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Farmer ID"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font" />
+
+                        <TextView
+                            android:id="@+id/tv_farmer_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text=""
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textCursorDrawable="@color/hbms_button_color"
+                            android:textSize="@dimen/register_font" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutSpinnerYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="Year"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                        <TextView
+                            android:id="@+id/tv_Year"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textColorHighlight="#f93"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayoutSpinnerSeason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/textViewSeason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="Season"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                        <Spinner
+                            android:id="@+id/spinnerSeason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textColorHighlight="#f93"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutSpinnerSurvey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/textViewSurveyNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/register_survey_number"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                        <Spinner
+                            android:id="@+id/spinnerChangeSurveyNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            android:textColorHighlight="#f93"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutOwnerarea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/textViewOwnerarea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="Area"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                        <TextView
+                            android:id="@+id/textViewOwnerareavalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutOwnerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/textViewOwnername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="Owner"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                        <Spinner
+                            android:id="@+id/spinnerOwnerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1" >
+                    <TextView
+                        android:id="@+id/tv_crop_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Choose type of Crops"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutcroptypes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupCropQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:padding="5dp"
+                        android:orientation="horizontal" >
+                        <RadioButton
+                            android:id="@+id/radioSingleCrop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Single Crop" />
+
+                        <RadioButton
+                            android:id="@+id/radioMixedCrop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Mixed Crop" />
+
+                        <RadioButton
+                            android:id="@+id/radiointercrop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="Inter Crop" />
+                    </RadioGroup>
+                </LinearLayout>
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutsinglecrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_light_grey"
+                android:padding="8dp"
+                android:weightSum="3" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Crop Details - Single Crop"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:id="@+id/linearLayoutSpinnerCropList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:text="Crop Name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayoutSpinnerCropVarietyList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:text="@string/register_crop_variety"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font"/>
+
+                    <Spinner
+                        android:id="@+id/spinnercropvariety"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/linearLayoutCropextent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Crop Extent"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+
+                    <EditText
+                        android:id="@+id/et_acre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Acre"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/green_cursor"
+                        android:textSize="@dimen/register_font" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="."
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textSize="@dimen/register_font"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/et_gunta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Gunta"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/green_cursor"
+                        android:textSize="@dimen/register_font" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_fgunta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="FGunta"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@drawable/green_cursor"
+                        android:textSize="@dimen/register_font" />
+
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutmixedcrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_light_grey"
+                android:padding="8dp"
+                android:weightSum="3" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Crop Details - Mixed Crop"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="How many crops to be sowed?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/register_font" />
+                <LinearLayout
+                    android:id="@+id/layoutnumberofpicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Number of Crops"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+                    <Spinner
+                        android:id="@+id/spinnermixedcropoptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textSize="@dimen/register_font"/>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/RelativeLayoutMixedCrops"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
+                    android:orientation="vertical" >
+
+                    <TableLayout
+                        android:id="@+id/table_mixed_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:stretchColumns="*">
+                    </TableLayout>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/layouttotalmcropextent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/border_light_grey"
+                    android:padding="8dp"
+                    android:weightSum="2" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Total Crop Extent :"
+                    android:textSize="@dimen/register_font"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_total_mcrop_extent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/register_font" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutintercrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_light_grey"
+                android:padding="8dp"
+                android:weightSum="3" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Crop Details - Inter Crop"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="How many crops to be sowed?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/register_font" />
+                <LinearLayout
+                    android:id="@+id/layoutnumberintercrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Number of Crops"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+                    <Spinner
+                        android:id="@+id/spinnerintercropoptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textSize="@dimen/register_font"/>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/RelativeLayoutInterCrops"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
+                    android:orientation="vertical" >
+
+                    <TableLayout
+                        android:id="@+id/table_inter_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:stretchColumns="*">
+                    </TableLayout>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/layouttotalicropextent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/border_light_grey"
+                    android:padding="8dp"
+                    android:weightSum="2" >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Total Crop Extent :"
+                        android:textSize="@dimen/register_font"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/tv_total_icrop_extent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutirrigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_light_grey"
+                android:padding="8dp"
+                android:weightSum="3" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Irrigation Details"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:id="@+id/irrigation_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Irrigation Type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+                    <Spinner
+                        android:id="@+id/spinnerirrigationtype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textSize="@dimen/register_font"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_irrigationsource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Irrigation Source"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+                    <Spinner
+                        android:id="@+id/spinnerirrigationsource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textSize="@dimen/register_font"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutfarmingtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_light_grey"
+                android:padding="8dp"
+                android:weightSum="3" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Farming Details"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_Crop_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Choose type of Farming"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/register_font" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestionFarming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:padding="5dp"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radioOrganic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Organic" />
+
+                    <RadioButton
+                        android:id="@+id/radioInOrganic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Inorganic" />
+
+                    <RadioButton
+                        android:id="@+id/radioNatural"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Natural" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/presowing_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:weightSum="3" >
+                    <TextView
+                        android:id="@+id/tv_Required_crop_grown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:text="Wheather Pre-Sowing/Transplanting Manure used?"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font"/>
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4.5" >
+
+                    <Spinner
+                        android:id="@+id/spinnerpresowing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5" />
+                    <Spinner
+                        android:id="@+id/spinnerfertilizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5" />
+                    <Spinner
+                        android:id="@+id/spinnermanure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutsowingdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:id="@+id/tv_SowingDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:text="Date of Sowing/Transplanting"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/register_font" />
+
+                    <TextView
+                        android:id="@+id/txtv_sowingdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/register_enter_sowing_date"
+                        android:textColor="@color/deep_pink"
+                        android:textColorHighlight="#f93"
+                        android:textColorHint="@color/deep_pink"
+                        android:textCursorDrawable="@color/hbms_button_color"
+                        android:textSize="@dimen/register_font"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayoutquestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/border_light_grey"
+                android:padding="2dp"
+                android:weightSum="3" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_survey_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_register"
+                        android:padding="12dp"
+                        android:text="Verify Survey in Map"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/pre_inspection_scheme_header_text_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btn_crop_Photo_Capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_register"
+                        android:padding="12dp"
+                        android:text="Capture Crop Photo"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/pre_inspection_scheme_header_text_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_register"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_capture_image"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_image_black_48dp"
+                        android:layout_width="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_crop_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.2"
+                        android:gravity="center"
+                        android:text="ಛಾಯಾಚಿತ್ರ ಸೆರೆಹಿಡಿದಿಲ್ಲ"
+                        android:textStyle="italic"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="#f93"
+                        android:textSize="@dimen/login_edit_text_size" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--  <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="0dp"
+                  android:orientation="vertical"
+                  android:weightSum="4" >
+
+                  <TextView
+                      android:id="@+id/tv_cropsaved"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:text="Crops to be saved"
+                      android:textStyle="bold" />
+
+                  <TableLayout
+                      android:id="@+id/tableLayoutCropsDetails"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:layout_weight="0.18"
+                      >  &lt;!&ndash;android:visibility="invisible"&ndash;&gt;
+
+                      <HorizontalScrollView
+                          android:id="@+id/horizontalScrollView"
+                          android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:fillViewport="true"
+                          android:scrollbars="horizontal" >
+
+                          <LinearLayout
+                              android:layout_width="wrap_content"
+                              android:layout_height="match_parent"
+                              android:orientation="vertical" >
+
+                              <TableLayout
+                                  android:id="@+id/tableCropDetails"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content" >
+
+                                  <TableRow>
+
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Farmer ID"
+                                          android:textColor="@android:color/black" />
+
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Year"
+                                          android:textColor="@android:color/black" />
+
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Season"
+                                          android:textColor="@android:color/black" />
+
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Survey Number"
+                                          android:textColor="@android:color/black" />
+
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="left"
+                                          android:text="Owner Name"
+                                          android:textColor="@android:color/black" />
+
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Crop Name"
+                                          android:textColor="@android:color/black" />
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Sowing Date"
+                                          android:textColor="@android:color/black" />
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Save"
+                                          android:textColor="@android:color/black" />
+                                      <TextView
+                                          android:layout_margin="1dp"
+                                          android:layout_weight="1"
+                                          android:gravity="center_horizontal"
+                                          android:text="Cancel"
+                                          android:textColor="@android:color/black" />
+                                  </TableRow>
+                              </TableLayout>
+                          </LinearLayout>
+                      </HorizontalScrollView>
+                  </TableLayout>
+              </LinearLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btn_Register_Crop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="@string/btn_register_crop"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/register_font" />
+
+            </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+</RelativeLayout>

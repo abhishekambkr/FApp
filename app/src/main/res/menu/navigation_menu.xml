@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/personal_details"
+        android:icon="@drawable/personal"
+        android:title="@string/personal_data" />
+
+    <item
+        android:id="@+id/payment_details"
+        android:icon="@drawable/pay"
+        android:title="@string/payment_data" />
+
+    <item
+        android:id="@+id/land_details"
+        android:icon="@drawable/farm"
+        android:title="@string/land_data" />
+
+    <item
+        android:id="@+id/crop_survey_details"
+        android:icon="@drawable/cropsurvey"
+        android:title="@string/cropsurvey_data" />
+
+    <item
+        android:id="@+id/weather_forecast_details"
+        android:icon="@drawable/weather"
+        android:title="@string/weather_forecast" />
+
+    <item
+        android:id="@+id/npci"
+        android:icon="@drawable/npci"
+        android:title="@string/npci" />
+
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/feedback"
+        android:title="@string/feedback" />
+
+    <item
+        android:id="@+id/cropdetails"
+        android:icon="@drawable/cropdetail"
+        android:title="@string/cropdetails" />
+
+    <item
+        android:id="@+id/fertilizer_calculation"
+        android:icon="@drawable/fertilizer"
+        android:title="@string/fertilizercalculation" />
+</menu>

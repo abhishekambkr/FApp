@@ -1,0 +1,14 @@
+<xml>
+    <rootdata>
+        <Sheet1>
+            <irrigationtypeid>1</irrigationtypeid>
+            <irrigationtypename_eng>Rainfed</irrigationtypename_eng>
+            <irrigationtypename_kn>ಮಳೆಯಾಶ್ರಿತ</irrigationtypename_kn>
+        </Sheet1>
+        <Sheet1>
+            <irrigationtypeid>2</irrigationtypeid>
+            <irrigationtypename_eng>Irrigated</irrigationtypename_eng>
+            <irrigationtypename_kn>ನೀರಾವರಿ</irrigationtypename_kn>
+        </Sheet1>
+    </rootdata>
+</xml>

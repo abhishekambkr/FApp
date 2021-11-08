@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="seagreen">#2E8B57</color>
+    <color name="white">#FFFFFF</color>
+    <color name="hbms_button_color">#494E6B</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="text_light">#ffffff</color>
+    <color name="main_screen_bg">#12b4ba</color>
+</resources>

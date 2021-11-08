@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="16dp"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="16:00"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemRain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="No data"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/itemCloud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Wind: 0 m/s"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/itemTemprature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Pressure: 0 hpa"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/itemHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Humidity: 0 %"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/itemWindSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Humidity: 0 %"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/itemForeCastDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text=""
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_below="@id/btn_get_otp"
+    android:layout_alignParentBottom="true"
+    android:layout_margin="4dp"
+    android:layout_weight="1"
+    android:gravity="bottom|center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/nic_dept_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/nic_dept_text"
+        android:textSize="@dimen/nic_text"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/nic_image_view"
+        android:layout_width="@dimen/nic_img_size"
+        android:layout_height="@dimen/nic_img_size"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:src="@drawable/nic" />
+
+    <TextView
+        android:id="@+id/nic_dept_brif_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/nic_dept_txt_brief"
+        android:textSize="@dimen/nic_text"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/nic_dept_karnataka_state_unit"
+        android:textSize="@dimen/nic_text"
+        android:textStyle="bold" />
+</LinearLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FRUITS</string>
+
+    <string name="personal_data">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ</string>
+    <string name="payment_data">ಹಣ ಪಾವತಿ ವಿವರ</string>
+    <string name="land_data">ಭೂ ವಿವರ</string>
+    <string name="cropsurvey_data">ಬೆಳೆ ದರ್ಶಕ ಮಾಹಿತಿ</string>
+    <string name="weather_forecast">ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ ಮಾಹಿತಿ</string>
+
+    <string name="npci">ಏನ್.ಪಿ.ಸಿ.ಐ </string>
+    <string name="feedback">ಪ್ರತಿಕ್ರಿಯೆ</string>
+    <string name="cropdetails">ಬೆಳೆ ವಿವರಗಳು</string>
+    <string name="name">ಹೆಸರು</string>
+    <string name="father_name">ತಂದೆಯ ಹೆಸರು</string>
+    <string name="age">ವಯಸ್ಸು</string>
+    <string name="gender">ಲಿಂಗ</string>
+    <string name="caste">ಜಾತಿ</string>
+    <string name="pa">ಅಂಗವಿಕ</string>
+    <string name="minorities">ಅಲ್ಪಸಂಖ್ಯಾತರು</string>
+    <string name="farmer_type">ರೈತ ವರ್ಗ</string>
+    <string name="address">ವಿಳಾಸ</string>
+    <string name="dist">ಜಿಲ್ಲೆ</string>
+    <string name="taluk">ತಾಲೂಕು</string>
+    <string name="hobli">ಹೋಬಳಿ</string>
+    <string name="village">ಗ್ರಾಮ</string>
+    <string name="logout">ಲಾಗ್ ಔಟ್</string>
+
+    <string name="bid">ಫಲಾನುಭವಿ ಐಡಿ</string>
+    <string name="department">ಇಲಾಖೆ</string>
+    <string name="scheme">ಯೋಜನೆ</string>
+    <string name="finanacial_year">ಆರ್ಥಿಕ ವರ್ಷ</string>
+    <string name="k2utr_no"> ಕೆ೨.ಯು.ಟಿ.ರ್ ಸಂಖ್ಯೆ </string>
+    <string name="payment_date">ಪಾವತಿ ದಿನಾಂಕ</string>
+    <string name="payment_mode">ಪಾವತಿ ಮೋಡ್</string>
+    <string name="amount">ಮೊತ್ತ</string>
+
+    <string name="survey_number">ಸರ್ವೆ ಸಂಖ್ಯೆ </string>
+    <string name="owner_name">ಮಾಲೀಕರ ಹೆಸರು</string>
+    <string name="area">ವಿಸ್ತೀರ್ಣ</string>
+
+
+    <string name="crop_area">ಬೆಳೆ ವಿಸ್ತೀರ್ಣ</string>
+    <string name="year">ವರ್ಷ</string>
+    <string name="season">ಋತು</string>
+    <string name="crop_name">ಬೆಳೆ ಹೆಸರು</string>
+
+    <string name="temperature">ತಾಪಮಾನ</string>
+    <string name="wind_speed">ಗಾಳಿಯ ವೇಗ</string>
+    <string name="humidity">ಆರ್ದ್ರತೆ</string>
+    <string name="last_update">ಕೊನೆಯ ನವೀಕರಣ</string>
+    <string name="rain">ಮಳೆ</string>
+    <string name="cloud">ಮೋಡ</string>
+    <string name="forecast_hour">ಮುನ್ಸೂಚನೆ ಗಂಟೆ</string>
+    <string name="forecast_date">ಮುನ್ಸೂಚನೆ ದಿನಾಂಕ</string>
+
+    <string name="audio_feedback">ಆಡಿಯೋ ಪ್ರತಿಕ್ರಿಯೆ</string>
+    <string name="audio_feedback_send">ಆಡಿಯೋ ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸು</string>
+    <string name="send">ಕಳುಹಿಸು</string>
+
+    <string name="record">ರೆಕಾರ್ಡ್ ಮಾಡು</string>
+    <string name="stop">ನಿಲ್ಲಿಸು</string>
+    <string name="play">ಆಲಿಸು</string>
+
+    <string name="horti_dept_txt">Department Of E-Governance</string>
+    <string name="nic_dept_txt_brief"> National Informatics Centre</string>
+    <string name="nic_dept_karnataka_state_unit"> Karnataka State Unit.</string>
+
+    <string name="nic_dept_text">Designed and Developed by</string>
+    <string name="Open">open</string>
+    <string name="Close">close</string>
+    <string name="nav_header_subtitle">Farmer ID</string>
+
+    <string name="npci_result"> ಏನ್ .ಪಿ.ಸಿ .ಐ  ಫಲಿತಾಂಶ</string>
+    <string name="bank">ಬ್ಯಾಂಕ್</string>
+    <string name="request_number">ವಿನಂತಿ ಸಂಖ್ಯೆ</string>
+    <string name="beneficiary_not_present">ಫಲಾನುಭವಿ  ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="design_devlopment">ರಾಷ್ಟ್ರೀಯ ಸೂಚನಾ ವಿಜ್ಞಾನ ಕೇಂದ್ರ, ಕರ್ನಾಟಕ ರಾಜ್ಯ ಘಟಕ.</string>
+    <string name="alert">ಸೂಚನೆ</string>
+    <string name="weatherforecast">ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ ವಿವರಗಳು ಈ ಕ್ಷಣದಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ. ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="cropregistration">Registration</string>
+    <string name="crop_register">Registration</string>
+    <string name="crop_weekly_data">Weekly Data</string>
+    <string name="escalate_crop_issue">Escalate Crop Issue</string>
+    <string name="enter_farmer_id">Enter Farmer ID</string>
+    <string name="btn_register_crop">Register Crop</string>
+
+    <string name="fill_the_crop_weekly_data">Provide Crop Weekly Data</string>
+    <string name="upload_crop_details">Upload Captured Crop Data</string>
+    <string name="register_year">Year</string>
+    <string name="register_season">Season</string>
+    <string name="register_survey_number">Survey Number</string>
+    <string name="register_owner_name">Owner Name</string>
+    <string name="register_crop_name">Crop Name</string>
+    <string name="register_crop_variety">Crop Variety</string>
+    <string name="register_enter_crop_extent">Enter Crop Extent</string>
+    <string name="register_enter_sowing_date">Click here</string>
+    <string name="crop_details_upload">Upload Crop Details</string>
+    <string name="surveyalreadysaved">Crop already registered for the survey number, Please select new Survey Number</string>
+    <string name="weekalreadysaved">Crop Weekly Data has been saved already, please select different crop</string>
+    <string name="crops_not_available">Crops not available</string>
+
+    <string name="plan_type">ಯೋಜನೆ ಪ್ರಕಾರ</string>
+    <string name="cropName">ಬೆಳೆಯ ಹೆಸರು</string>
+    <string name="age_of_plant">ಸಸ್ಯ ವಯಸ್ಸು</string>
+    <string name="irrigation_type">ನೀರಾವರಿ ವಿಧ</string>
+    <string name="nutrient_recommendation_for_1_acre">1 ಎಕರೆಗೆ ಪೌಷ್ಟಿಕಾಂಶದ ಶಿಫಾರಸು</string>
+    <string name="acre">ಎಕರೆ</string>
+    <string name="enter_acre">ಎಕರೆ ನಮೂದಿಸಿ</string>
+    <string name="gunta">ಗುಂಟಾ</string>
+    <string name="enter_gunta">ಗುಂಟಾ ನಮೂದಿಸಿ</string>
+    <string name="recommendation_of_npk_for_extent_selected">ಆಯ್ಕೆಮಾಡಿದ ಮಟ್ಟಿಗೆ NPK ಯ ಶಿಫಾರಸು</string>
+    <string name="fertilizer_details">ರಸಗೊಬ್ಬರ ವಿವರಗಳು</string>
+    <string name="fertilizer_type">ರಸಗೊಬ್ಬರ ವಿಧ</string>
+    <string name="straight_fertilizer">ನೇರ ರಸಗೊಬ್ಬರ</string>
+    <string name="complex_fertilizer">ಸಂಕೀರ್ಣ ರಸಗೊಬ್ಬರ</string>
+    <string name="fertilizer_name">ರಸಗೊಬ್ಬರ ಹೆಸರು</string>
+    <string name="fertilizercalculation">ರಸಗೊಬ್ಬರ ಲೆಕ್ಕಾಚಾರ</string>
+    <string name="KG">ಕೇಜಿ.</string>
+    <string name="Bags">ಚೀಲಗಳು</string>
+    <string name="Nitrogen">"Nitrogen: "</string>
+    <string name="Phosphorous">" Phosphorous: "</string>
+    <string name="Potash">", Potash: "</string>
+    <string name="slno">Sl.No</string>
+    <string name="check_fertilizer_recommendation">ಲೆಕ್ಕಾಚಾರದ ರಸಗೊಬ್ಬರವನ್ನು ಪ್ರದರ್ಶಿಸಿ</string>
+    <string name="clear">ತೆರವುಗೊಳಿಸಿ</string>
+    <string name="add_fertilizer">ರಸಗೊಬ್ಬರ ಸೇರಿಸಿ</string>
+    <string name="delete_fertilizer">ರಸಗೊಬ್ಬರವನ್ನು ಅಳಿಸಿ</string>
+    <string name="perennial">ದೀರ್ಘಕಾಲಿಕ</string>
+    <string name="seasonal">ಕಾಲೋಚಿತ</string>
+    <string name="rainfed">ಮಳೆಯಾಶ್ರಿತ</string>
+    <string name="irrigation">ನೀರಾವರಿ</string>
+    <string name="selectFertilizer">ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+    <string name="selectPlanType">ಯೋಜನೆ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+    <string name="selectCrop">ಬೆಳೆ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="selectAgePlant">ಸಸ್ಯದ ವಯಸ್ಸನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="planDetails">ಯೋಜನೆ ವಿವರಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="irrigationDetails">ನೀರಾವರಿ ವಿವರಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="fertilizerDetails">ರಸಗೊಬ್ಬರ ವಿವರ ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="cropDetails">ಬೆಳೆ ವಿವರಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="cropferDetails">ಬೆಳೆ ಗೊಬ್ಬರ ವಿವರ ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="plantAgeDetails">ಈ ಬೆಳೆಗಾಗಿ ಯಾವುದೇ ಡೇಟಾ ಕಂಡುಬಂದಿಲ್ಲ, ಪೋಷಕಾಂಶವನ್ನು ಲೆಕ್ಕಹಾಕಲಾಗುವುದಿಲ್ಲ</string>
+    <string name="recommendedFertilizers">ಶಿಫಾರಸು ಮಾಡಿದ ರಸಗೊಬ್ಬರಗಳು</string>
+    <string name="OK">ಸರಿ</string>
+    <string name="Note">ಸೂಚನೆ</string>
+    <string name="alertmessage">ಆಯ್ದ ರಸಗೊಬ್ಬರಗಳಿಗೆ ಅಗತ್ಯವಾದ ಪೋಷಕಾಂಶಗಳನ್ನು ಒದಗಿಸಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ</string>
+    <string name="internet">ದಯವಿಟ್ಟು ಇಂಟರ್ನೆಟ್‌ಗೆ ಸಂಪರ್ಕಿಸಿ</string>
+    <string name="guntaalertmessage">ಸರಿಯಾದ ಗುಂಟ ಅಳತೆ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="farmfertilizer">ಕೃಷಿ ಗೊಬ್ಬರ</string>
+    <string name="farmfertilizerYear">ವರ್ಷ</string>
+    <string name="farmfertilizerSeason">ಋತು</string>
+    <string name="farmfertilizerSurvey">ಸಮೀಕ್ಷೆ ಸಂಖ್ಯೆ</string>
+    <string name="farmfertilizerCrop">ಬೆಳೆಯ ಹೆಸರು</string>
+    <string name="farmfertilizerCropArea">ಬೆಳೆ ಪ್ರದೇಶ</string>
+    <string name="farmfertilizerFId">ರೈತರ ಐಡಿ</string>
+</resources>

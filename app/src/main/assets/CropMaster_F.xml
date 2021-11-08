@@ -1,0 +1,1876 @@
+﻿<CropMaster>
+<!--  <CropData>-->
+<!--    <Crop_Code>0</Crop_Code>-->
+<!--    <Crop_Name_Kan>ಕೊಯ್ಲು ಮುಗಿದಿದೆ/ಪಾಳುಭೂಮಿ</Crop_Name_Kan>-->
+<!--    <Crop_Name_Eng>Harvest Over/Fallow/Used for Na Purpose</Crop_Name_Eng>-->
+<!--  </CropData>-->
+  <CropData>
+    <Crop_Code>1</Crop_Code>
+    <Crop_Name_Kan>ರಾಗಿ ಸ್ಥಳೀಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ragi-L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>2</Crop_Code>
+    <Crop_Name_Kan>ರಾಗಿ ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ragi -H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>3</Crop_Code>
+    <Crop_Name_Kan>ತೊಗರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Tur (Arhar)(Red Gram)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>4</Crop_Code>
+    <Crop_Name_Kan>ಮೆಕ್ಕೆಜೋಳ, ಮುಸುಕಿನಜೋಳ, ಗೋವಿನ  ಜೋಳ - ಸ್ಥಳೀಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Maize-L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>5</Crop_Code>
+    <Crop_Name_Kan>ಮೆಕ್ಕೆಜೋಳ, ಮುಸುಕಿನಜೋಳ, ಗೋವಿನ  ಜೋಳ - ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Maize-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>6</Crop_Code>
+    <Crop_Name_Kan>ಭತ್ತ -ಸ್ಥಳೀಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Paddy-L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>7</Crop_Code>
+    <Crop_Name_Kan>ಭತ್ತ-ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Paddy-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>8</Crop_Code>
+    <Crop_Name_Kan>ಹತ್ತಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cotton</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>9</Crop_Code>
+    <Crop_Name_Kan>ಜೋಳ - ಸ್ಥಲೀಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jowar-L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>10</Crop_Code>
+    <Crop_Name_Kan>ಜೋಳ ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jowar-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>11</Crop_Code>
+    <Crop_Name_Kan>ಶೇಂಗಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Groundnut</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>12</Crop_Code>
+    <Crop_Name_Kan>ಹೆಸರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Moong (Green gram)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>13</Crop_Code>
+    <Crop_Name_Kan>ಸಜ್ಜೆ - ಸ್ಥಳೀಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Bajra-L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>14</Crop_Code>
+    <Crop_Name_Kan>ಸಜ್ಜೆ- ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Bajra-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>15</Crop_Code>
+    <Crop_Name_Kan>ಗೋಧಿ ಸ್ಥಳೀಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Wheat-L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>16</Crop_Code>
+    <Crop_Name_Kan>ಗೋಧಿ ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Wheat-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>17</Crop_Code>
+    <Crop_Name_Kan>ಈರುಳ್ಳಿ, ಉಳ್ಳಾಗಡ್ಡಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Onion</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>18</Crop_Code>
+    <Crop_Name_Kan>ಕಬ್ಬು -ಪಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Sugarcane-P</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>19</Crop_Code>
+    <Crop_Name_Kan>ಕಬ್ಬು -ಹೆಚ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Sugarcane-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>20</Crop_Code>
+    <Crop_Name_Kan>ಕೂಳೆ ಕಬ್ಬು -ಪಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Sugar cane ratun-P</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>21</Crop_Code>
+    <Crop_Name_Kan>ಕೂಳೆ ಕಬ್ಬು -ಹೆಚ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Sugar cane ratun-H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>22</Crop_Code>
+    <Crop_Name_Kan>ಸೊಯಾಬಿನ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Soyabean</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>23</Crop_Code>
+    <Crop_Name_Kan>ಹುರಳಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Horsegram</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>24</Crop_Code>
+    <Crop_Name_Kan>ಅಡಿಕೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Betel Nuts (Areca nuts)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>25</Crop_Code>
+    <Crop_Name_Kan>ಉದ್ದು</Crop_Name_Kan>
+    <Crop_Name_Eng>Urad</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>26</Crop_Code>
+    <Crop_Name_Kan>ಒಣ ಮೆಣಸಿನಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Red Chillies (Mirchie)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>27</Crop_Code>
+    <Crop_Name_Kan>ಹಸಿ ಮೆಣಸಿನಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Green Chillies </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>28</Crop_Code>
+    <Crop_Name_Kan>ಎಳ್ಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Sesamum </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>29</Crop_Code>
+    <Crop_Name_Kan>ಸೂರ್ಯಕಾಂತಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Sunflower</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>30</Crop_Code>
+    <Crop_Name_Kan>ಕುಸುಬೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Safflower</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>31</Crop_Code>
+    <Crop_Name_Kan>ಕಡಲೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Gram</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>32</Crop_Code>
+    <Crop_Name_Kan>ಆಲೂಗಡ್ಡೆ, ಬಟಾಟೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Potato</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>33</Crop_Code>
+    <Crop_Name_Kan>ನವಣೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Navane</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>34</Crop_Code>
+    <Crop_Name_Kan>ಅಲಸಂದೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cowpea</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>35</Crop_Code>
+    <Crop_Name_Kan>ತೆಂಗು</Crop_Name_Kan>
+    <Crop_Name_Eng>Coconut</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>36</Crop_Code>
+    <Crop_Name_Kan>ಬಾಳೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Banana </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>37</Crop_Code>
+    <Crop_Name_Kan>ಬೆಳ್ಳುಳ್ಳಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Garlic </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>38</Crop_Code>
+    <Crop_Name_Kan>ಟೊಮೆಟೊ</Crop_Name_Kan>
+    <Crop_Name_Eng>Tomato</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>39</Crop_Code>
+    <Crop_Name_Kan>ಶುಂಠಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ginger</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>40</Crop_Code>
+    <Crop_Name_Kan>ಅವರೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Avare</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>41</Crop_Code>
+    <Crop_Name_Kan>ಮಡಿಕಿ, ಮಟಕಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Madaki (Mothbean)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>42</Crop_Code>
+    <Crop_Name_Kan>ಗುರೆಳ್ಳು/ಹುಚ್ಚೆಳ್ಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Nigerseed</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>43</Crop_Code>
+    <Crop_Name_Kan>ಎಲ್ಲಾ ತರಕಾರಿಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>All Vegetables</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>44</Crop_Code>
+    <Crop_Name_Kan>ತಂಬಾಕು</Crop_Name_Kan>
+    <Crop_Name_Eng>Tobacco</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>45</Crop_Code>
+    <Crop_Name_Kan>ತಂಬಾಕು - ಬೀಡಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Tobacco - Beedi</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>46</Crop_Code>
+    <Crop_Name_Kan>ಎಣ್ಣೆ ತಾಳೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Oil Palm</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>47</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಎಣ್ಣೆ ಕಾಳುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other oil seeds</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>48</Crop_Code>
+    <Crop_Name_Kan>ಜತ್ರೋಫ/ಜಟ್ರೋಪ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jatropha</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>49</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಎಣ್ಣೆ ಕಾಳುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Oil seeds</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>50</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ದ್ವಿದಳ ಧಾನ್ಯಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Pulses</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>51</Crop_Code>
+    <Crop_Name_Kan>ಬಾರ್ಲಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Barley</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>52</Crop_Code>
+    <Crop_Name_Kan>ತೃಣ ಧಾನ್ಯಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Small Millets</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>53</Crop_Code>
+    <Crop_Name_Kan>ವಿಳೇದೆಲೆ, ವೀಳ್ಯದೆಲೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Beetlvine (Pan)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>54</Crop_Code>
+    <Crop_Name_Kan>ಹಾರಕ</Crop_Name_Kan>
+    <Crop_Name_Eng>Haraka</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>55</Crop_Code>
+    <Crop_Name_Kan>ಬರಗು</Crop_Name_Kan>
+    <Crop_Name_Eng>Baragu</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>56</Crop_Code>
+    <Crop_Name_Kan>ಕೊರಲೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Korale</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>57</Crop_Code>
+    <Crop_Name_Kan>ಬದ್ಲಿವಾರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Badalivari</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>58</Crop_Code>
+    <Crop_Name_Kan>ಸಾವೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Saave</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>59</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಧಾನ್ಯಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Cereals</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>60</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಧಾನ್ಯಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Cereals</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>61</Crop_Code>
+    <Crop_Name_Kan>ಚನ್ನಂಗಿ, ಮಸೂರ ಬೀಜ</Crop_Name_Kan>
+    <Crop_Name_Eng>Masur (Lentil)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>62</Crop_Code>
+    <Crop_Name_Kan>ಬಟಾಣಿ, ವಠಾಣಿ, ಬಟಕಡ್ಲೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Peas (Pulses)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>63</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಕಾಳುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Pulses</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>64</Crop_Code>
+    <Crop_Name_Kan>ತಾಳೆ (ಬೆಲ್ಲ/ಸಕ್ಕರೆ)</Crop_Name_Kan>
+    <Crop_Name_Eng>Palmyra Palm</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>65</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಸಕ್ಕರೆ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Sugar crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>66</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಸಕ್ಕರೆ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Sugar crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>67</Crop_Code>
+    <Crop_Name_Kan>ಮೆಣಸು, ಕರಿಮೆಣಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Pepper (Black)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>68</Crop_Code>
+    <Crop_Name_Kan>ಅರಿಶಿನ</Crop_Name_Kan>
+    <Crop_Name_Eng>Turmeric</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>69</Crop_Code>
+    <Crop_Name_Kan>ಏಲಕ್ಕಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cardamom</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>70</Crop_Code>
+    <Crop_Name_Kan>ಕೊತ್ತಂಬರಿ, ಹವೀಜ</Crop_Name_Kan>
+    <Crop_Name_Eng>Coriander (Dhaniya)(Cilantro)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>71</Crop_Code>
+    <Crop_Name_Kan>ಕೊತಂಬರಿ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Coriander Pathi</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>72</Crop_Code>
+    <Crop_Name_Kan>ಹುಣಸೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Tamarind </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>73</Crop_Code>
+    <Crop_Name_Kan>ಜೀರಿಗೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>CuminSeed (Jeera)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>74</Crop_Code>
+    <Crop_Name_Kan>ಸೋಂಪು, ಬಡೆಸೊಪ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Fennel/ Ani seed</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>75</Crop_Code>
+    <Crop_Name_Kan>ಜಾಯಿಕಾಯಿ, ಜಾಜಿಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Nutmeg</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>76</Crop_Code>
+    <Crop_Name_Kan>ಮೆಂತ್ಯಕಾಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Fenugreek</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>77</Crop_Code>
+    <Crop_Name_Kan>ಲವಂಗ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cloves </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>78</Crop_Code>
+    <Crop_Name_Kan>ಚೆಕ್ಕೆ, ದಾಲ್ಚಿನ್ನಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cinnamon(Dalchini)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>79</Crop_Code>
+    <Crop_Name_Kan>ಕೋಕೋ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cocoa</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>80</Crop_Code>
+    <Crop_Name_Kan>ಓಮಿನಕಾಯಿ, ಅಜವಾನ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ajwain </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>81</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಮಸಾಲೆ ಮತ್ತು ಸಾಂಬಾರ ಪದಾರ್ಥಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Condiments and Spices</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>82</Crop_Code>
+    <Crop_Name_Kan>ವೆನಿಲ್ಲಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Venilla</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>83</Crop_Code>
+    <Crop_Name_Kan>ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Dill</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>84</Crop_Code>
+    <Crop_Name_Kan>ಪೆಪ್ರಿಕಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Paprika</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>85</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಮಸಲೆ ಮತ್ತು ಸಾಂಬಾರ ಪದಾರ್ಥಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Condiments &amp; Spices</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>86</Crop_Code>
+    <Crop_Name_Kan>ಮಾವು</Crop_Name_Kan>
+    <Crop_Name_Eng>Mangoes</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>87</Crop_Code>
+    <Crop_Name_Kan>ಕಿತ್ತಲೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Oranges </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>88</Crop_Code>
+    <Crop_Name_Kan>ಮೊಸಂಬಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Mosambi</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>89</Crop_Code>
+    <Crop_Name_Kan>ನಿಂಬೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Lemon  </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>90</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಹುಳಿ ಹಣ್ಣುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Citrous Fruits</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>91</Crop_Code>
+    <Crop_Name_Kan>ದ್ರಾಕ್ಷಿ</Crop_Name_Kan>
+    <Crop_Name_Eng> Grapes </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>92</Crop_Code>
+    <Crop_Name_Kan>ದ್ರಾಕ್ಷಿ (ಬೀಜವಿಲ್ಲದ)</Crop_Name_Kan>
+    <Crop_Name_Eng> Grapes seedless </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>93</Crop_Code>
+    <Crop_Name_Kan>ನೀಲಿದ್ರಾಕ್ಷಿ</Crop_Name_Kan>
+    <Crop_Name_Eng> BlueGrapes </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>94</Crop_Code>
+    <Crop_Name_Kan>ವೈನ್‌ದ್ರಾಕ್ಷಿ</Crop_Name_Kan>
+    <Crop_Name_Eng> Wine Grapes </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>95</Crop_Code>
+    <Crop_Name_Kan>ಸೇಬು</Crop_Name_Kan>
+    <Crop_Name_Eng>Apple</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>96</Crop_Code>
+    <Crop_Name_Kan>ಮರಸೇಬು</Crop_Name_Kan>
+    <Crop_Name_Eng>Pear</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>97</Crop_Code>
+    <Crop_Name_Kan>ಸಪೋಟ, ಚಿಕ್ಕು</Crop_Name_Kan>
+    <Crop_Name_Eng>Chiku (Sapota)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>98</Crop_Code>
+    <Crop_Name_Kan>ಪಪಾಯ, ಪರಂಗಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Papaya</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>99</Crop_Code>
+    <Crop_Name_Kan>ಸೀಬೆ, ಪೇರಲ, ಚೇಪೆಹಣ್ನು</Crop_Name_Kan>
+    <Crop_Name_Eng>Guava</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>100</Crop_Code>
+    <Crop_Name_Kan>ಬಾದಾಮಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Almond</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>101</Crop_Code>
+    <Crop_Name_Kan>ಗೋಡಂಬಿ, ಗೇರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Cashewnuts</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>102</Crop_Code>
+    <Crop_Name_Kan>ಹಲಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Jackfruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>103</Crop_Code>
+    <Crop_Name_Kan>ಲಿಚಿ </Crop_Name_Kan>
+    <Crop_Name_Eng>Litchi</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>104</Crop_Code>
+    <Crop_Name_Kan>ಅನಾನಸ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Pineapple</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>105</Crop_Code>
+    <Crop_Name_Kan>ಕಲ್ಲಂಗಡಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Watermelon</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>106</Crop_Code>
+    <Crop_Name_Kan>ಕರಬೂಜ</Crop_Name_Kan>
+    <Crop_Name_Eng>Muskmelon (Kharbuja)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>107</Crop_Code>
+    <Crop_Name_Kan>ದ್ವಿಗುಜ, ದಿವಿಹಲಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Breadfruits</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>108</Crop_Code>
+    <Crop_Name_Kan>ಬೋರೆ, ಬಾರೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ber</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>109</Crop_Code>
+    <Crop_Name_Kan>ಬೇಲದ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Wood Apple</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>110</Crop_Code>
+    <Crop_Name_Kan>ರೇಷ್ಮೆ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Mulberry Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>111</Crop_Code>
+    <Crop_Name_Kan>ನೆಲ್ಲಿಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Aonla (Amla)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>112</Crop_Code>
+    <Crop_Name_Kan>ದಾಳಿಂಬೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Pomegranate </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>113</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಹಣ್ಣುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other fruits</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>114</Crop_Code>
+    <Crop_Name_Kan>ಅಂಜೂರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Fig</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>115</Crop_Code>
+    <Crop_Name_Kan>ನೇರಳೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jamun</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>116</Crop_Code>
+    <Crop_Name_Kan>ಸೀತಾಫಲ/ರಾಮಫಲ</Crop_Name_Kan>
+    <Crop_Name_Eng>Custard apple/Ramphal</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>117</Crop_Code>
+    <Crop_Name_Kan>ಚಕೋತ, ಕಂಚಿಹಣ್ಣು, ಹುಳಿಕಂಚಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Pomelo/Chakota</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>118</Crop_Code>
+    <Crop_Name_Kan>ಬೆಣ್ಣೆ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Butter Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>119</Crop_Code>
+    <Crop_Name_Kan>ಮ್ಯಾಂಡರೀನ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Mandarin</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>120</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಹಣ್ಣುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Fruits</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>121</Crop_Code>
+    <Crop_Name_Kan>ಮರಗೆಣಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Tapioca </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>122</Crop_Code>
+    <Crop_Name_Kan>ಸಹಿಗೆಣಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Sweet Potato </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>123</Crop_Code>
+    <Crop_Name_Kan>ಗೆಣಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Yam</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>124</Crop_Code>
+    <Crop_Name_Kan>ಸುವರ್ಣಗಡ್ಡೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Elephantfoot Yam</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>125</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಗಡ್ಡೆ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other tuber crop</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>126</Crop_Code>
+    <Crop_Name_Kan>ಆರಾರೂಟ</Crop_Name_Kan>
+    <Crop_Name_Eng>Arrowroot</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>127</Crop_Code>
+    <Crop_Name_Kan>ಕ್ಯಾರೆಟ್, ಗಜ್ಜರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Carrot</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>128</Crop_Code>
+    <Crop_Name_Kan>ಮೂಲಂಗಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Radish</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>129</Crop_Code>
+    <Crop_Name_Kan>ಬೀಟ್‌ರೂಟ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Beetroot</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>130</Crop_Code>
+    <Crop_Name_Kan>ಸಾಮೆಗಡ್ಡ/ಸಿಹಿ ಮೂಲಂಗಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Turnip </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>131</Crop_Code>
+    <Crop_Name_Kan>ಪಾಲಕ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Spinach</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>132</Crop_Code>
+    <Crop_Name_Kan>ದಂಟಿನಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Amaranthus</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>133</Crop_Code>
+    <Crop_Name_Kan>ಎಲೆಕೋಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Cabbage </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>134</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಸೊಪ್ಪು ತರಕಾರಿಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Leafy Vegetables</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>135</Crop_Code>
+    <Crop_Name_Kan>ಮೆಂತ್ಯ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Methi Leaves</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>136</Crop_Code>
+    <Crop_Name_Kan>ಕರಿಬೇವು</Crop_Name_Kan>
+    <Crop_Name_Eng>Curry leaves</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>137</Crop_Code>
+    <Crop_Name_Kan>ಬದನೇಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Brinjal</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>138</Crop_Code>
+    <Crop_Name_Kan>ಹಸಿರು ಬಟಾಣಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Peas (Vegetables)(Green)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>139</Crop_Code>
+    <Crop_Name_Kan>ಬೆಂಡೆಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Bhendi/ Ladies Finger</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>140</Crop_Code>
+    <Crop_Name_Kan>ಹೂ ಕೋಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Cauliflower </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>141</Crop_Code>
+    <Crop_Name_Kan>ಸೌತೆಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cucumber</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>142</Crop_Code>
+    <Crop_Name_Kan>ಸೋರೆಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Bottle gourd (Lauki)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>143</Crop_Code>
+    <Crop_Name_Kan>ಕುಂಬಳಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Pumpkin</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>144</Crop_Code>
+    <Crop_Name_Kan>ಹಾಗಲಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Bittergourd </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>145</Crop_Code>
+    <Crop_Name_Kan>ಬೂದಗುಂಬಳಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ashgourd </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>146</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಕುಂಬಳ ಜಾತಿಯ ಕಾಯಿಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other gourds</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>147</Crop_Code>
+    <Crop_Name_Kan>ಪಡವಲಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Snakegourd</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>148</Crop_Code>
+    <Crop_Name_Kan>ಹಿರೇಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ridgegourd</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>149</Crop_Code>
+    <Crop_Name_Kan>ಮಿಡಿಸೌತೆ </Crop_Name_Kan>
+    <Crop_Name_Eng>Gherkins</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>150</Crop_Code>
+    <Crop_Name_Kan>ತೊಂಡೆಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ivygourd</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>151</Crop_Code>
+    <Crop_Name_Kan>ಹುರುಳಿಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Beans</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>152</Crop_Code>
+    <Crop_Name_Kan>ನುಗ್ಗೆಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Drumstick </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>153</Crop_Code>
+    <Crop_Name_Kan>ಅಣಬೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Mushroom</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>154</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ತರಕಾರಿಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Vegetables</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>155</Crop_Code>
+    <Crop_Name_Kan>ನವಿಲುಕೋಸು</Crop_Name_Kan>
+    <Crop_Name_Eng>Knolkhol</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>156</Crop_Code>
+    <Crop_Name_Kan>ಚೌವಳಿ ಕಾಯಿ, ಗೋರಿಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Clusterbean</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>157</Crop_Code>
+    <Crop_Name_Kan>ದೊಣ್ಣೇಮೆಣಸಿನಕಾಯಿ, ದಪ್ಪ ಮೆಣಸಿನಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Capsicum</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>158</Crop_Code>
+    <Crop_Name_Kan>ಸೀಮೆ ಬದನೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Chow Chow</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>159</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other food crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>160</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು 1</Crop_Name_Kan>
+    <Crop_Name_Eng>Other food crop 1</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>161</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು 2</Crop_Name_Kan>
+    <Crop_Name_Eng>Other food crop 2</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>162</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು 3</Crop_Name_Kan>
+    <Crop_Name_Eng>Other food crop 3</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>163</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Other food crop </Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>164</Crop_Code>
+    <Crop_Name_Kan>ಆಹಾರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Food Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>165</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಆಹಾರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Food Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>166</Crop_Code>
+    <Crop_Name_Kan>ಹರಳು/ಔಡಲ</Crop_Name_Kan>
+    <Crop_Name_Eng>Castor</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>167</Crop_Code>
+    <Crop_Name_Kan>ರೇಪುಬೀಜ ಮತ್ತು ಸಾಸಿವೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Rapeseed and Mustard </Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>168</Crop_Code>
+    <Crop_Name_Kan>ಅಗಸೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Linseed</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>169</Crop_Code>
+    <Crop_Name_Kan>ನಾರಿನ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Fibres</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>170</Crop_Code>
+    <Crop_Name_Kan>ಲಕ್ಷ್ಮಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Lakshmi</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>171</Crop_Code>
+    <Crop_Name_Kan>ಎಕೆ-235</Crop_Name_Kan>
+    <Crop_Name_Eng>AK-235</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>172</Crop_Code>
+    <Crop_Name_Kan>ಜಯಧರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jayadhara</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>173</Crop_Code>
+    <Crop_Name_Kan>ಸುಯೋಧರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Suyodhara</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>174</Crop_Code>
+    <Crop_Name_Kan>ಎಂಸಿಯು-5</Crop_Name_Kan>
+    <Crop_Name_Eng>MCU-5</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>175</Crop_Code>
+    <Crop_Name_Kan>ಎಂವೈ-41 ಮತ್ತು ಬಿ-22</Crop_Name_Kan>
+    <Crop_Name_Eng>MY-41&amp;B-22</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>176</Crop_Code>
+    <Crop_Name_Kan>ಎನ್‌ಹೆಚ್‌ಎಸ್-44</Crop_Name_Kan>
+    <Crop_Name_Eng>NHS-44</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>177</Crop_Code>
+    <Crop_Name_Kan>170 ಸಿಓ-2</Crop_Name_Kan>
+    <Crop_Name_Eng>170 CO-2</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>178</Crop_Code>
+    <Crop_Name_Kan>ಹೆಚ್-6</Crop_Name_Kan>
+    <Crop_Name_Eng>H-6</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>179</Crop_Code>
+    <Crop_Name_Kan>ಸವಿತ</Crop_Name_Kan>
+    <Crop_Name_Eng>savitha</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>180</Crop_Code>
+    <Crop_Name_Kan>ವೆರ್ನರ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Verner</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>181</Crop_Code>
+    <Crop_Name_Kan>ಅಭಾದಿತ</Crop_Name_Kan>
+    <Crop_Name_Eng>Abhaditha</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>182</Crop_Code>
+    <Crop_Name_Kan>ಡಿಸಿಹೆಚ್-32</Crop_Name_Kan>
+    <Crop_Name_Eng>DCH-32</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>183</Crop_Code>
+    <Crop_Name_Kan>ವರಲಕ್ಷ್ಮಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Varalakshmi</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>184</Crop_Code>
+    <Crop_Name_Kan>ಎಲ್‌ಆರ್‌ಎ-5166</Crop_Name_Kan>
+    <Crop_Name_Eng>LRA-5166</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>185</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಹತ್ತಿ ಬೆಳೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cotton others</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>186</Crop_Code>
+    <Crop_Name_Kan>ಗೋಣಿನಾರು, ಚುಂಚಲಗಿಡದ ನಾರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Jute</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>187</Crop_Code>
+    <Crop_Name_Kan>ಪುಂಡಿನಾರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Mesta</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>188</Crop_Code>
+    <Crop_Name_Kan>ಸೆಣಬು</Crop_Name_Kan>
+    <Crop_Name_Eng>Sunhemp</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>189</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ನಾರಿನ ಬೆಳಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Fibres</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>190</Crop_Code>
+    <Crop_Name_Kan>ಕತ್ತಾಳೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Agaves</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>191</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ನಾರಿನ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Fibres</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>192</Crop_Code>
+    <Crop_Name_Kan>ನೀಲಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Indigo </Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>193</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಬಣ್ಣ ಮತ್ತು ಚರ್ಮ ಹದ ಮಾಡುವ  ವಸ್ತುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other dyes and tan materials</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>194</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಬಣ್ಣ ಮತ್ತು ಚರ್ನ ಹದ ಮಾಡುವ  ವಸ್ತುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total dyes and tan materials</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>195</Crop_Code>
+    <Crop_Name_Kan>ಔಷಧ ಮತ್ತು ಮಾದಕಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Drugs and Narcotics</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>196</Crop_Code>
+    <Crop_Name_Kan>ಅಫೀಮು</Crop_Name_Kan>
+    <Crop_Name_Eng>Opium/Halfim</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>197</Crop_Code>
+    <Crop_Name_Kan>ವರ್ಜೀನಿಯಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Vergenia</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>198</Crop_Code>
+    <Crop_Name_Kan>ಬೀಡಿ-ತಂಬಾಕು </Crop_Name_Kan>
+    <Crop_Name_Eng>Beedi Tobacco</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>199</Crop_Code>
+    <Crop_Name_Kan>ಚಿವಿಂಗ್-ತಂಬಾಕು </Crop_Name_Kan>
+    <Crop_Name_Eng>Chewing Tobacco</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>200</Crop_Code>
+    <Crop_Name_Kan>ನಾಕೋಟಿನ್ ರಸಟಿಕ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Nacotin Rusetic</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>201</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಔಷಧ ಮತ್ತು ಮಾದಕಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other drugs and narcotics</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>202</Crop_Code>
+    <Crop_Name_Kan>ಸಿಂಕೋನ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cinchona</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>203</Crop_Code>
+    <Crop_Name_Kan>ನಾಟಿಗಾಂಜಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Indianhemp</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>204</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಔಷಧ ಮತ್ತು ಮಾದಕಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total drugs and narcotics</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>205</Crop_Code>
+    <Crop_Name_Kan>ಹಸಿರು ಮೇವು</Crop_Name_Kan>
+    <Crop_Name_Eng>Green Fodder</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>206</Crop_Code>
+    <Crop_Name_Kan>ಹುಲ್ಲು</Crop_Name_Kan>
+    <Crop_Name_Eng>Grass</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>207</Crop_Code>
+    <Crop_Name_Kan>ಮೆಕ್ಕೆಜೋಳದ ದಂಟು, ಮೇವಿನಜೋಳ</Crop_Name_Kan>
+    <Crop_Name_Eng>Makkachari</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>208</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಮೇವಿನ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other fodder crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>209</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಮೇವಿನ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total fodder crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>210</Crop_Code>
+    <Crop_Name_Kan>ಟೀ</Crop_Name_Kan>
+    <Crop_Name_Eng>Tea</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>211</Crop_Code>
+    <Crop_Name_Kan>ಕಾಫಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Coffee</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>212</Crop_Code>
+    <Crop_Name_Kan>ರಬ್ಬರ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Rubber</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>213</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ತೋಟಗಾರಿಕೆ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Plantation Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>214</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ತೋಟಗಾರಿಕೆ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Plantation Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>215</Crop_Code>
+    <Crop_Name_Kan>ಆರ್ಕಿಡ್ಸ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Orchids</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>216</Crop_Code>
+    <Crop_Name_Kan>ಗುಲಾಬಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Rose (Gulab)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>217</Crop_Code>
+    <Crop_Name_Kan>ಗ್ಲ್ಯಾಡಿಯೋಲಸ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Gladiolus</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>218</Crop_Code>
+    <Crop_Name_Kan>ಕಾರ್ನೇಶನ್ </Crop_Name_Kan>
+    <Crop_Name_Eng>Carnation</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>219</Crop_Code>
+    <Crop_Name_Kan>ಚೆಂಡುಹೂ</Crop_Name_Kan>
+    <Crop_Name_Eng>Marigold (Genda)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>220</Crop_Code>
+    <Crop_Name_Kan>ಕಮಲ/ತಾವರೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Lotus (Kamal)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>221</Crop_Code>
+    <Crop_Name_Kan>ಮಲ್ಲಿಗೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jasmine (Mogra/Bela)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>222</Crop_Code>
+    <Crop_Name_Kan>ಸೇವಂತಿಗೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Chrysanthemum</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>223</Crop_Code>
+    <Crop_Name_Kan>ಸಂಪಿಗೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Champaca</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>224</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಹೂವಿಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other flowers</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>225</Crop_Code>
+    <Crop_Name_Kan>ಸುಗಂಧರಾಜ</Crop_Name_Kan>
+    <Crop_Name_Eng>Tuberose</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>226</Crop_Code>
+    <Crop_Name_Kan>ಕಾಕಡ</Crop_Name_Kan>
+    <Crop_Name_Eng>Jasmine pubescens</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>227</Crop_Code>
+    <Crop_Name_Kan>ಕನಕಾಂಬರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Crossandra</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>228</Crop_Code>
+    <Crop_Name_Kan>ದಾಸವಾಳ</Crop_Name_Kan>
+    <Crop_Name_Eng>Hibiscus</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>229</Crop_Code>
+    <Crop_Name_Kan>ಚೈನಾ ಆಸ್ಟರ್</Crop_Name_Kan>
+    <Crop_Name_Eng>China aster</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>230</Crop_Code>
+    <Crop_Name_Kan>ಆಂಥೋರಿಯಂ  </Crop_Name_Kan>
+    <Crop_Name_Eng>Anthurium</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>231</Crop_Code>
+    <Crop_Name_Kan>ಬರ್ಡ್ ಆಫ್ ಪ್ಯಾರಡೈಸ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Bird of Paradise</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>232</Crop_Code>
+    <Crop_Name_Kan>ಜೆರ್ಬೆರಾ </Crop_Name_Kan>
+    <Crop_Name_Eng>Gerbera</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>233</Crop_Code>
+    <Crop_Name_Kan>ವೀನಿಕಾ ರೆಡ್ ಸೀಡ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Vinica red seed</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>234</Crop_Code>
+    <Crop_Name_Kan>ಸಾಲ್ಢಾಗೋ, ಗೋಲ್ಡನ್‌ರಾಡ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Salidago/Golden Rod</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>235</Crop_Code>
+    <Crop_Name_Kan>ಕ್ಯಾಲಾಲಿಲ್ಲಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Calla Lily</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>236</Crop_Code>
+    <Crop_Name_Kan>ಸ್ಟಾಟಿಸ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Statice</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>237</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಹೂವುಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Flouriculture Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>238</Crop_Code>
+    <Crop_Name_Kan>ಇಸಬ್‌ಗೋಲ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Isabgol</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>239</Crop_Code>
+    <Crop_Name_Kan>ಸಫೇದ ಮಸ್ಲಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Safedmoosli</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>240</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಔಷಧ ಸಸ್ಯಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other medicinal plants</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>241</Crop_Code>
+    <Crop_Name_Kan>ಬಜೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Sweet Flag</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>242</Crop_Code>
+    <Crop_Name_Kan>ಮಂಗನಬೇರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Coleus Forskohlii</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>243</Crop_Code>
+    <Crop_Name_Kan>ಹಿಪ್ಪಲಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Long Pepper</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>244</Crop_Code>
+    <Crop_Name_Kan>ಮುರುಗಲ, ಪುನರ್ಪುಳಿ, ವಾಟೇಹುಳಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Kokum</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>245</Crop_Code>
+    <Crop_Name_Kan>ಕಾಶಿ ಕಣಗಿಲೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Periwinkle</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>246</Crop_Code>
+    <Crop_Name_Kan>ಅಶ್ವಗಂಧ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ashwagandha</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>247</Crop_Code>
+    <Crop_Name_Kan>ಕೇಸರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Saffron (Kesar)</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>248</Crop_Code>
+    <Crop_Name_Kan>ನಿಂಬೆ ಹುಲ್ಲು </Crop_Name_Kan>
+    <Crop_Name_Eng>Lemon Grass</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>249</Crop_Code>
+    <Crop_Name_Kan>ಪುದಿನ</Crop_Name_Kan>
+    <Crop_Name_Eng>Mint</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>250</Crop_Code>
+    <Crop_Name_Kan>ನೀಲಗಿರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Eucalyptus</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>251</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಸುಗಂಧ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Aromatic plant</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>252</Crop_Code>
+    <Crop_Name_Kan>ಧವನ</Crop_Name_Kan>
+    <Crop_Name_Eng>Dhavana</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>253</Crop_Code>
+    <Crop_Name_Kan>ಲಾವಂಛ</Crop_Name_Kan>
+    <Crop_Name_Eng>Vetiver</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>254</Crop_Code>
+    <Crop_Name_Kan>ಸಿಟ್ರೊನೆಲ್ಲಾಹುಲ್ಲು</Crop_Name_Kan>
+    <Crop_Name_Eng>Citronella Grass</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>255</Crop_Code>
+    <Crop_Name_Kan>ಪನ್ನೀರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Geranium</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>256</Crop_Code>
+    <Crop_Name_Kan>ಲ್ಯಾವೆಂಡರ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Lavender</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>257</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಸುಗಂಧ ಮತ್ತು ಔಷದಿ ಸಸ್ಯಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Aromatic and medicinal plant</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>258</Crop_Code>
+    <Crop_Name_Kan>ಗಟ್ಟೆ ಬಿದಿರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Canes</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>259</Crop_Code>
+    <Crop_Name_Kan>ಬಿದಿರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Bamboos</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>260</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು -1</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Non Food Crops-1</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>261</Crop_Code>
+    <Crop_Name_Kan>ಹಿಪ್ಪುನೇರಳೆ, ರೇಷ್ಮೆಗಿಡ</Crop_Name_Kan>
+    <Crop_Name_Eng>Mulberry</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>262</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು -2</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Non Food Crops-2</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>263</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು -3</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Non Food Crops-3</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>264</Crop_Code>
+    <Crop_Name_Kan>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Other Non Food Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>265</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಆಹಾರೇತರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Other Non food crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>266</Crop_Code>
+    <Crop_Name_Kan>ಒಟ್ಟು ಆಹಾರೇತರ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Total Non Food Crops</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>267</Crop_Code>
+    <Crop_Name_Kan>ಅಕೇಶಿಯ/ ಜಾಲಿ ಮರ </Crop_Name_Kan>
+    <Crop_Name_Eng>Acacia</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>268</Crop_Code>
+    <Crop_Name_Kan>ಚಿಕಡಿ ಕಾಯಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Shimp Nut</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>269</Crop_Code>
+    <Crop_Name_Kan>ತೇಗದ ಮರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Teak/Saguvani</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>270</Crop_Code>
+    <Crop_Name_Kan>ಸಿಲ್ವರ್ ಓಕ್ </Crop_Name_Kan>
+    <Crop_Name_Eng>Silver Oak</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>271</Crop_Code>
+    <Crop_Name_Kan>ಬೇವಿನ ಮರರ </Crop_Name_Kan>
+    <Crop_Name_Eng>Neem</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>272</Crop_Code>
+    <Crop_Name_Kan>ಶ್ರೀಗಂಧದ ಮರ </Crop_Name_Kan>
+    <Crop_Name_Eng>Sandalwood</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>273</Crop_Code>
+    <Crop_Name_Kan>ಹೆಬ್ಬೇವು </Crop_Name_Kan>
+    <Crop_Name_Eng>Malabar Neem (Melia Dubia)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>274</Crop_Code>
+    <Crop_Name_Kan>ಸರ್ವೆ ಮರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Casuarina Tree</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>275</Crop_Code>
+    <Crop_Name_Kan>ತುಲಾಸಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Holy Basil</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>276</Crop_Code>
+    <Crop_Name_Kan>ಕಾವಳೆ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Karonda Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>277</Crop_Code>
+    <Crop_Name_Kan>ಪ್ಯಾಶನ್ ಹಣ್ಣು </Crop_Name_Kan>
+    <Crop_Name_Eng>Passion Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>278</Crop_Code>
+    <Crop_Name_Kan>ಮ್ಯಾಂಗೊಸ್ಟೀನ್ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Mangosteen Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>279</Crop_Code>
+    <Crop_Name_Kan>ಬಿಂಬುಳಿ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Carambola Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>280</Crop_Code>
+    <Crop_Name_Kan>ರಾಂಬೂತನ್ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Rambutan Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>281</Crop_Code>
+    <Crop_Name_Kan>ಡ್ರ್ಯಾಗನ್ ಹಣ್ಣು</Crop_Name_Kan>
+    <Crop_Name_Eng>Dragon Fruit</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>282</Crop_Code>
+    <Crop_Name_Kan>ಎಳೆ ಮುಸುಕಿನ ಜೋಳ</Crop_Name_Kan>
+    <Crop_Name_Eng>Baby Corn</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>283</Crop_Code>
+    <Crop_Name_Kan>ಲೆಟ್ಯೂಸ್, ಹಕ್ಕರಿಕೆ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Lettuce</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>284</Crop_Code>
+    <Crop_Name_Kan>ಪುಂಡಿ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Gongura</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>285</Crop_Code>
+    <Crop_Name_Kan>ಬಸಳೆ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Basella</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>286</Crop_Code>
+    <Crop_Name_Kan>ಗ್ಲೋಬ್ ಅರ್ಟಿಚೋಕ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Globe Artichoke</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>287</Crop_Code>
+    <Crop_Name_Kan>ಶತಾವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Asparagus</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>288</Crop_Code>
+    <Crop_Name_Kan>ಲೀಕ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Leek</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>289</Crop_Code>
+    <Crop_Name_Kan>ಚೈವ</Crop_Name_Kan>
+    <Crop_Name_Eng>Chive</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>290</Crop_Code>
+    <Crop_Name_Kan>ಸಾಲ್ವಿಯ </Crop_Name_Kan>
+    <Crop_Name_Eng>Salvia</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>291</Crop_Code>
+    <Crop_Name_Kan>ಸ್ಟೀವಿಯಾ </Crop_Name_Kan>
+    <Crop_Name_Eng>Stevia</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>292</Crop_Code>
+    <Crop_Name_Kan>ಪಚೌಲಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Patchouli</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>293</Crop_Code>
+    <Crop_Name_Kan>ಸರ್ವಾ ಸಾಂಬಾರು</Crop_Name_Kan>
+    <Crop_Name_Eng>Allspice</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>294</Crop_Code>
+    <Crop_Name_Kan>ಡೇಲಿಯಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Dahlia</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>295</Crop_Code>
+    <Crop_Name_Kan>ಮರ ಮತ್ತು ಪೊದೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Trees and Grooves</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>296</Crop_Code>
+    <Crop_Name_Kan>ಸಸ್ಯಗಾರ - ತರಕಾರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Nursery-Vegetables</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>297</Crop_Code>
+    <Crop_Name_Kan>ಸಸ್ಯಗಾರ - ಅಲಂಕಾರಿಕ / ಹೂಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Nursery-Ornamentals / Flowers</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>298</Crop_Code>
+    <Crop_Name_Kan>ಚಪ್ಪರದ ಅವರೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Dolichous Bean</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>299</Crop_Code>
+    <Crop_Name_Kan>ತರಕಾರಿ-ಅಲಸಂದೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>Vegetable Cowpea</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>300</Crop_Code>
+    <Crop_Name_Kan>ಬೀಟೆ ಮರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Rose Wood</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>301</Crop_Code>
+    <Crop_Name_Kan>ಹೊಂಗೆ ಮರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Pongemia Tree</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>302</Crop_Code>
+    <Crop_Name_Kan>ಹತ್ತಿ - ಸ್ಥಳೀಯ	</Crop_Name_Kan>
+    <Crop_Name_Eng>Cotton - L</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>303</Crop_Code>
+    <Crop_Name_Kan>ಹತ್ತಿ - ಅಧಿಕ ಇಳುವರಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Cotton - H</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>304</Crop_Code>
+    <Crop_Name_Kan>ಊದಲು</Crop_Name_Kan>
+    <Crop_Name_Eng>Barnyard Millet</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>305</Crop_Code>
+    <Crop_Name_Kan>ಕಾಫಿ ರೊಬಸ್ಟಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Coffee robusta</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>306</Crop_Code>
+    <Crop_Name_Kan>ಕಾಫಿ ಅರೇಬಿಕಾ</Crop_Name_Kan>
+    <Crop_Name_Eng>Coffee arabica</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>307</Crop_Code>
+    <Crop_Name_Kan>ಅಗಾರ್ ವುಡ್</Crop_Name_Kan>
+    <Crop_Name_Eng>Agarwood</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>308</Crop_Code>
+    <Crop_Name_Kan>ಸಿಹಿ ಮೆಕ್ಕೆಜೋಳ</Crop_Name_Kan>
+    <Crop_Name_Eng>Sweet Corn</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>309</Crop_Code>
+    <Crop_Name_Kan>ಖರ್ಜೂರ </Crop_Name_Kan>
+    <Crop_Name_Eng>Date Palm (Kharjura)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>310</Crop_Code>
+    <Crop_Name_Kan>ರಕ್ತ ಚಂದನ</Crop_Name_Kan>
+    <Crop_Name_Eng>Red Sanders (Red Sandalwood)</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>311</Crop_Code>
+    <Crop_Name_Kan>ಮಹಾಗನಿ ಮರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Mahagani Tree</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>312</Crop_Code>
+    <Crop_Name_Kan>ಸುಬಾಬುಲ್‍</Crop_Name_Kan>
+    <Crop_Name_Eng>Subabul</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>313</Crop_Code>
+    <Crop_Name_Kan>ಅಶೋಕ</Crop_Name_Kan>
+    <Crop_Name_Eng>Ashoka</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>314</Crop_Code>
+    <Crop_Name_Kan>ಏಕನಾಯಕ</Crop_Name_Kan>
+    <Crop_Name_Eng>Eknayaka</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>315</Crop_Code>
+    <Crop_Name_Kan>ಶಿವನಿ</Crop_Name_Kan>
+    <Crop_Name_Eng>Shivani</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>316</Crop_Code>
+    <Crop_Name_Kan>ಕೃಷ್ಣ ಪಾತಾಳ</Crop_Name_Kan>
+    <Crop_Name_Eng>Krishna pathala</Crop_Name_Eng>
+    <Crop_Type>P</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>317</Crop_Code>
+    <Crop_Name_Kan>ಗೈಲಾರ್ಡಿಯ</Crop_Name_Kan>
+    <Crop_Name_Eng>Gaillardia</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>318</Crop_Code>
+    <Crop_Name_Kan>ಲೋಳೆಸರ</Crop_Name_Kan>
+    <Crop_Name_Eng>Aloevera</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>319</Crop_Code>
+    <Crop_Name_Kan>ಕೆಸುವಿನ ಗಡ್ಡೆ/ ಕೆಸುವಿನ ಸೊಪ್ಪು</Crop_Name_Kan>
+    <Crop_Name_Eng>Alocasia</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>320</Crop_Code>
+    <Crop_Name_Kan>ಸಸ್ಯಗಾರ-ಹಣ್ಣುಗಳುಹಾಗು ಇತರೆ ತೋಟಗಾರಿಕೆ ಬೆಳೆಗಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Nursery Fruits/ other Horticulture crops</Crop_Name_Eng>
+    <Crop_Type>S</Crop_Type>
+  </CropData>
+  <CropData>
+    <Crop_Code>997</Crop_Code>
+    <Crop_Name_Kan>Z-ಬೆಳೆ ಕಟಾವು</Crop_Name_Kan>
+    <Crop_Name_Eng>Harvest Over</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>998</Crop_Code>
+    <Crop_Name_Kan>Z-ಕೃಷಿಯೇತನ ಬಳಕೆ</Crop_Name_Kan>
+    <Crop_Name_Eng>NA</Crop_Name_Eng>
+  </CropData>
+  <CropData>
+    <Crop_Code>999</Crop_Code>
+    <Crop_Name_Kan>Z-ಪಾಳು</Crop_Name_Kan>
+    <Crop_Name_Eng>Fallow</Crop_Name_Eng>
+  </CropData>
+</CropMaster>

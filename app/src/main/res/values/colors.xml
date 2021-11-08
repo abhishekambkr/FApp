@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="seagreen">#2E8B57</color>
+    <color name="white">#FFFEF7</color>
+    <color name="hbms_button_color">#494E6B</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="text_light">#ffffff</color>
+    <color name="main_screen_bg">#12b4ba</color>
+    <color name="orange">#FF5722</color>
+    <color name="lime">#CDDC39</color>
+    <color name="teal">#a8dba8</color>
+    <color name="purple">#7C4DFF</color>
+    <color name="green">#388E3C</color>
+    <color name="dark_blue">#0D47A1</color>
+    <color name="light_blue">#E3F2FD</color>
+    <color name="dark_orange">#FF3D00</color>
+    <color name="dark_grey">#263238</color>
+    <color name="dark_purple">#4A148C</color>
+    <color name="light_purple">#E1BEE7</color>
+    <color name="light_grey">#CFD8DC</color>
+    <color name="dark_semi_grey">#212121</color>
+    <color name="light_semi_grey">#F5F5F5</color>
+    <color name="deep_pink">#880E4F</color>
+    <color name="beige_blue">#4ebbea</color>
+    <color name="beige_green">#42be7b</color>
+    <color name="milkywhite">#FFFEF7</color>
+    <color name="cyan">#12b4ba</color>
+</resources>

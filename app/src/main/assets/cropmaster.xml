@@ -1,0 +1,3234 @@
+<xml>
+    <rootdata>
+        <Sheet1>
+            <cropcode>1</cropcode>
+            <cropname_eng>Ragi-L</cropname_eng>
+            <cropname_kn>ರಾಗಿ ಸ್ಥಳೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1001</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>2</cropcode>
+            <cropname_eng>Ragi -H</cropname_eng>
+            <cropname_kn>ರಾಗಿ ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1001</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>3</cropcode>
+            <cropname_eng>Tur (Arhar)(Red Gram)</cropname_eng>
+            <cropname_kn>ತೊಗರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>3</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>4</cropcode>
+            <cropname_eng>Maize-L</cropname_eng>
+            <cropname_kn>ಮೆಕ್ಕೆಜೋಳ, ಮುಸುಕಿನಜೋಳ, ಗೋವಿನ ಜೋಳ - ಸ್ಥಳೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1002</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>5</cropcode>
+            <cropname_eng>Maize-H</cropname_eng>
+            <cropname_kn>ಮೆಕ್ಕೆಜೋಳ, ಮುಸುಕಿನಜೋಳ, ಗೋವಿನ ಜೋಳ - ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1002</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>6</cropcode>
+            <cropname_eng>Paddy-L</cropname_eng>
+            <cropname_kn>ಭತ್ತ -ಸ್ಥಳೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1003</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>7</cropcode>
+            <cropname_eng>Paddy-H</cropname_eng>
+            <cropname_kn>ಭತ್ತ-ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1003</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>8</cropcode>
+            <cropname_eng>Cotton</cropname_eng>
+            <cropname_kn>ಹತ್ತಿ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>1007</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>9</cropcode>
+            <cropname_eng>Jowar-L</cropname_eng>
+            <cropname_kn>ಜೋಳ - ಸ್ಥಲೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1004</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>10</cropcode>
+            <cropname_eng>Jowar-H</cropname_eng>
+            <cropname_kn>ಜೋಳ ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1004</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>11</cropcode>
+            <cropname_eng>Groundnut</cropname_eng>
+            <cropname_kn>ಶೇಂಗಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>11</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>12</cropcode>
+            <cropname_eng>Moong (Green gram)</cropname_eng>
+            <cropname_kn>ಹೆಸರು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Pulses</cropgroup>
+            <crop_link_code>12</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>13</cropcode>
+            <cropname_eng>Bajra-L</cropname_eng>
+            <cropname_kn>ಸಜ್ಜೆ - ಸ್ಥಳೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1005</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>14</cropcode>
+            <cropname_eng>Bajra-H</cropname_eng>
+            <cropname_kn>ಸಜ್ಜೆ- ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1005</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>15</cropcode>
+            <cropname_eng>Wheat-L</cropname_eng>
+            <cropname_kn>ಗೋಧಿ ಸ್ಥಳೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1006</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>16</cropcode>
+            <cropname_eng>Wheat-H</cropname_eng>
+            <cropname_kn>ಗೋಧಿ ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>1006</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>17</cropcode>
+            <cropname_eng>Onion</cropname_eng>
+            <cropname_kn>ಈರುಳ್ಳಿ, ಉಳ್ಳಾಗಡ್ಡಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>17</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>18</cropcode>
+            <cropname_eng>Sugarcane-P</cropname_eng>
+            <cropname_kn>ಕಬ್ಬು -ಪಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>sugar Crops</cropgroup>
+            <crop_link_code>1008</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>19</cropcode>
+            <cropname_eng>Sugarcane-H</cropname_eng>
+            <cropname_kn>ಕಬ್ಬು -ಹೆಚ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>sugar Crops</cropgroup>
+            <crop_link_code>1008</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>20</cropcode>
+            <cropname_eng>Sugar cane ratun-P</cropname_eng>
+            <cropname_kn>ಕೂಳೆ ಕಬ್ಬು -ಪಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>sugar Crops</cropgroup>
+            <crop_link_code>1008</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>21</cropcode>
+            <cropname_eng>Sugar cane ratun-H</cropname_eng>
+            <cropname_kn>ಕೂಳೆ ಕಬ್ಬು -ಹೆಚ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>sugar Crops</cropgroup>
+            <crop_link_code>1008</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>22</cropcode>
+            <cropname_eng>Soyabean</cropname_eng>
+            <cropname_kn>ಸೊಯಾಬಿನ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>22</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>23</cropcode>
+            <cropname_eng>Horsegram</cropname_eng>
+            <cropname_kn>ಹುರಳಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>23</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>24</cropcode>
+            <cropname_eng>Betel Nuts (Areca nuts)</cropname_eng>
+            <cropname_kn>ಅಡಿಕೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>24</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>25</cropcode>
+            <cropname_eng>Urad</cropname_eng>
+            <cropname_kn>ಉದ್ದು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>25</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>26</cropcode>
+            <cropname_eng>Red Chillies (Mirchie)</cropname_eng>
+            <cropname_kn>ಒಣ ಮೆಣಸಿನಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>1010</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>27</cropcode>
+            <cropname_eng>Green Chillies</cropname_eng>
+            <cropname_kn>ಹಸಿ ಮೆಣಸಿನಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>1010</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>28</cropcode>
+            <cropname_eng>Sesamum</cropname_eng>
+            <cropname_kn>ಎಳ್ಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>28</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>29</cropcode>
+            <cropname_eng>Sunflower</cropname_eng>
+            <cropname_kn>ಸೂರ್ಯಕಾಂತಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>29</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>30</cropcode>
+            <cropname_eng>Safflower</cropname_eng>
+            <cropname_kn>ಕುಸುಬೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>30</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>31</cropcode>
+            <cropname_eng>Gram</cropname_eng>
+            <cropname_kn>ಕಡಲೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>31</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>32</cropcode>
+            <cropname_eng>Potato</cropname_eng>
+            <cropname_kn>ಆಲೂಗಡ್ಡೆ, ಬಟಾಟೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>32</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>33</cropcode>
+            <cropname_eng>Navane</cropname_eng>
+            <cropname_kn>ನವಣೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Minor millets</cropgroup>
+            <crop_link_code>33</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>34</cropcode>
+            <cropname_eng>Cowpea</cropname_eng>
+            <cropname_kn>ಅಲಸಂದೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>34</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>35</cropcode>
+            <cropname_eng>Coconut</cropname_eng>
+            <cropname_kn>ತೆಂಗು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>35</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>36</cropcode>
+            <cropname_eng>Banana</cropname_eng>
+            <cropname_kn>ಬಾಳೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>36</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>37</cropcode>
+            <cropname_eng>Garlic</cropname_eng>
+            <cropname_kn>ಬೆಳ್ಳುಳ್ಳಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>37</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>38</cropcode>
+            <cropname_eng>Tomato</cropname_eng>
+            <cropname_kn>ಟೊಮೆಟೊ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>38</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>39</cropcode>
+            <cropname_eng>Ginger</cropname_eng>
+            <cropname_kn>ಶುಂಠಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>39</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>40</cropcode>
+            <cropname_eng>Avare</cropname_eng>
+            <cropname_kn>ಅವರೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>40</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>41</cropcode>
+            <cropname_eng>Madaki (Mothbean)</cropname_eng>
+            <cropname_kn>ಮಡಿಕಿ, ಮಟಕಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>others</cropgroup>
+            <crop_link_code>41</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>42</cropcode>
+            <cropname_eng>Nigerseed</cropname_eng>
+            <cropname_kn>ಗುರೆಳ್ಳು/ಹುಚ್ಚೆಳ್ಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>42</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>43</cropcode>
+            <cropname_eng>All Vegetables</cropname_eng>
+            <cropname_kn>ಎಲ್ಲಾ ತರಕಾರಿಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>43</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>44</cropcode>
+            <cropname_eng>Tobacco</cropname_eng>
+            <cropname_kn>ತಂಬಾಕು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1009</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>45</cropcode>
+            <cropname_eng>Tobacco - Beedi</cropname_eng>
+            <cropname_kn>ತಂಬಾಕು - ಬೀಡಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1009</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>46</cropcode>
+            <cropname_eng>Oil Palm</cropname_eng>
+            <cropname_kn>ಎಣ್ಣೆ ತಾಳೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>46</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>47</cropcode>
+            <cropname_eng>Other oil seeds</cropname_eng>
+            <cropname_kn>ಇತರೆ ಎಣ್ಣೆ ಕಾಳುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>47</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>48</cropcode>
+            <cropname_eng>Jatropha</cropname_eng>
+            <cropname_kn>ಜತ್ರೋಫ/ಜಟ್ರೋಪ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>48</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>49</cropcode>
+            <cropname_eng>Total Oil seeds</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಎಣ್ಣೆ ಕಾಳುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>49</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>50</cropcode>
+            <cropname_eng>Total Pulses</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ದ್ವಿದಳ ಧಾನ್ಯಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>50</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>51</cropcode>
+            <cropname_eng>Barley</cropname_eng>
+            <cropname_kn>ಬಾರ್ಲಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>51</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>52</cropcode>
+            <cropname_eng>Small Millets</cropname_eng>
+            <cropname_kn>ತೃಣ ಧಾನ್ಯಗಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>52</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>53</cropcode>
+            <cropname_eng>Beetlvine (Pan)</cropname_eng>
+            <cropname_kn>ವಿಳೇದೆಲೆ, ವೀಳ್ಯದೆಲೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>53</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>54</cropcode>
+            <cropname_eng>Haraka</cropname_eng>
+            <cropname_kn>ಹಾರಕ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Minor millets</cropgroup>
+            <crop_link_code>54</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>55</cropcode>
+            <cropname_eng>Baragu</cropname_eng>
+            <cropname_kn>ಬರಗು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>55</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>56</cropcode>
+            <cropname_eng>Korale</cropname_eng>
+            <cropname_kn>ಕೊರಲೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Minor millets</cropgroup>
+            <crop_link_code>56</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>57</cropcode>
+            <cropname_eng>Badalivari</cropname_eng>
+            <cropname_kn>ಬದ್ಲಿವಾರಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Minor millets</cropgroup>
+            <crop_link_code>57</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>58</cropcode>
+            <cropname_eng>Saave</cropname_eng>
+            <cropname_kn>ಸಾವೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Minor millets</cropgroup>
+            <crop_link_code>58</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>59</cropcode>
+            <cropname_eng>Other Cereals</cropname_eng>
+            <cropname_kn>ಇತರೆ ಧಾನ್ಯಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>59</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>60</cropcode>
+            <cropname_eng>Total Cereals</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಧಾನ್ಯಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>60</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>61</cropcode>
+            <cropname_eng>Masur (Lentil)</cropname_eng>
+            <cropname_kn>ಚನ್ನಂಗಿ, ಮಸೂರ ಬೀಜ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>pulses</cropgroup>
+            <crop_link_code>61</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>62</cropcode>
+            <cropname_eng>Peas (Pulses)</cropname_eng>
+            <cropname_kn>ಬಟಾಣಿ, ವಠಾಣಿ, ಬಟಕಡ್ಲೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>others</cropgroup>
+            <crop_link_code>1013</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>63</cropcode>
+            <cropname_eng>Other Pulses</cropname_eng>
+            <cropname_kn>ಇತರೆ ಕಾಳುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>63</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>64</cropcode>
+            <cropname_eng>Palmyra Palm</cropname_eng>
+            <cropname_kn>ತಾಳೆ (ಬೆಲ್ಲ/ಸಕ್ಕರೆ)</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>sugar Crops</cropgroup>
+            <crop_link_code>64</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>65</cropcode>
+            <cropname_eng>Other Sugar crops</cropname_eng>
+            <cropname_kn>ಇತರೆ ಸಕ್ಕರೆ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>65</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>66</cropcode>
+            <cropname_eng>Total Sugar crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಸಕ್ಕರೆ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>66</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>67</cropcode>
+            <cropname_eng>Pepper (Black)</cropname_eng>
+            <cropname_kn>ಮೆಣಸು, ಕರಿಮೆಣಸು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>67</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>68</cropcode>
+            <cropname_eng>Turmeric</cropname_eng>
+            <cropname_kn>ಅರಿಶಿನ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>68</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>69</cropcode>
+            <cropname_eng>Cardamom</cropname_eng>
+            <cropname_kn>ಏಲಕ್ಕಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>69</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>70</cropcode>
+            <cropname_eng>Coriander (Dhaniya)(Cilantro)</cropname_eng>
+            <cropname_kn>ಕೊತ್ತಂಬರಿ, ಹವೀಜ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>1011</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>71</cropcode>
+            <cropname_eng>Coriander Pathi</cropname_eng>
+            <cropname_kn>ಕೊತಂಬರಿ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>1011</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>72</cropcode>
+            <cropname_eng>Tamarind</cropname_eng>
+            <cropname_kn>ಹುಣಸೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>72</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>73</cropcode>
+            <cropname_eng>CuminSeed (Jeera)</cropname_eng>
+            <cropname_kn>ಜೀರಿಗೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>73</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>74</cropcode>
+            <cropname_eng>Fennel/ Ani seed</cropname_eng>
+            <cropname_kn>ಸೋಂಪು, ಬಡೆಸೊಪ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>74</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>75</cropcode>
+            <cropname_eng>Nutmeg</cropname_eng>
+            <cropname_kn>ಜಾಯಿಕಾಯಿ, ಜಾಜಿಕಾಯಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>75</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>76</cropcode>
+            <cropname_eng>Fenugreek</cropname_eng>
+            <cropname_kn>ಮೆಂತ್ಯಕಾಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>1012</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>77</cropcode>
+            <cropname_eng>Cloves</cropname_eng>
+            <cropname_kn>ಲವಂಗ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>77</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>78</cropcode>
+            <cropname_eng>Cinnamon(Dalchini)</cropname_eng>
+            <cropname_kn>ಚೆಕ್ಕೆ, ದಾಲ್ಚಿನ್ನಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>78</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>79</cropcode>
+            <cropname_eng>Cocoa</cropname_eng>
+            <cropname_kn>ಕೋಕೋ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>79</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>80</cropcode>
+            <cropname_eng>Ajwain</cropname_eng>
+            <cropname_kn>ಓಮಿನಕಾಯಿ, ಅಜವಾನ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>80</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>81</cropcode>
+            <cropname_eng>Other Condiments and Spices</cropname_eng>
+            <cropname_kn>ಇತರೆ ಮಸಾಲೆ ಮತ್ತು ಸಾಂಬಾರ ಪದಾರ್ಥಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>81</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>82</cropcode>
+            <cropname_eng>Venilla</cropname_eng>
+            <cropname_kn>ವೆನಿಲ್ಲಾ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Spice Crops</cropgroup>
+            <crop_link_code>82</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>83</cropcode>
+            <cropname_eng>Dill</cropname_eng>
+            <cropname_kn>ಸಬ್ಬಸಿಗೆ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>83</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>84</cropcode>
+            <cropname_eng>Paprika</cropname_eng>
+            <cropname_kn>ಪೆಪ್ರಿಕಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>84</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>85</cropcode>
+            <cropname_eng>Total Condiments &amp; Spices</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಮಸಲೆ ಮತ್ತು ಸಾಂಬಾರ ಪದಾರ್ಥಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>85</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>86</cropcode>
+            <cropname_eng>Mangoes</cropname_eng>
+            <cropname_kn>ಮಾವು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>86</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>87</cropcode>
+            <cropname_eng>Oranges</cropname_eng>
+            <cropname_kn>ಕಿತ್ತಲೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>87</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>88</cropcode>
+            <cropname_eng>Mosambi</cropname_eng>
+            <cropname_kn>ಮೊಸಂಬಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>88</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>89</cropcode>
+            <cropname_eng>Lemon</cropname_eng>
+            <cropname_kn>ನಿಂಬೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>89</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>90</cropcode>
+            <cropname_eng>Other Citrous Fruits</cropname_eng>
+            <cropname_kn>ಇತರೆ ಹುಳಿ ಹಣ್ಣುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>90</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>91</cropcode>
+            <cropname_eng>Grapes</cropname_eng>
+            <cropname_kn>ದ್ರಾಕ್ಷಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>1014</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>92</cropcode>
+            <cropname_eng>Grapes seedless</cropname_eng>
+            <cropname_kn>ದ್ರಾಕ್ಷಿ (ಬೀಜವಿಲ್ಲದ)</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>1014</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>93</cropcode>
+            <cropname_eng>BlueGrapes</cropname_eng>
+            <cropname_kn>ನೀಲಿದ್ರಾಕ್ಷಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>1014</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>94</cropcode>
+            <cropname_eng>Wine Grapes</cropname_eng>
+            <cropname_kn>ವೈನ್‌ದ್ರಾಕ್ಷಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>1014</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>95</cropcode>
+            <cropname_eng>Apple</cropname_eng>
+            <cropname_kn>ಸೇಬು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>95</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>96</cropcode>
+            <cropname_eng>Pear</cropname_eng>
+            <cropname_kn>ಮರಸೇಬು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>96</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>97</cropcode>
+            <cropname_eng>Chiku (Sapota)</cropname_eng>
+            <cropname_kn>ಸಪೋಟ, ಚಿಕ್ಕು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>97</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>98</cropcode>
+            <cropname_eng>Papaya</cropname_eng>
+            <cropname_kn>ಪಪಾಯ, ಪರಂಗಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>98</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>99</cropcode>
+            <cropname_eng>Guava</cropname_eng>
+            <cropname_kn>ಸೀಬೆ, ಪೇರಲ, ಚೇಪೆಹಣ್ನು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>99</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>100</cropcode>
+            <cropname_eng>Almond</cropname_eng>
+            <cropname_kn>ಬಾದಾಮಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>100</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>101</cropcode>
+            <cropname_eng>Cashewnuts</cropname_eng>
+            <cropname_kn>ಗೋಡಂಬಿ, ಗೇರು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>101</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>102</cropcode>
+            <cropname_eng>Jackfruit</cropname_eng>
+            <cropname_kn>ಹಲಸು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>102</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>103</cropcode>
+            <cropname_eng>Litchi</cropname_eng>
+            <cropname_kn>ಲಿಚಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>103</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>104</cropcode>
+            <cropname_eng>Pineapple</cropname_eng>
+            <cropname_kn>ಅನಾನಸ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>104</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>105</cropcode>
+            <cropname_eng>Watermelon</cropname_eng>
+            <cropname_kn>ಕಲ್ಲಂಗಡಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>105</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>106</cropcode>
+            <cropname_eng>Muskmelon (Kharbuja)</cropname_eng>
+            <cropname_kn>ಕರಬೂಜ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>106</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>107</cropcode>
+            <cropname_eng>Breadfruits</cropname_eng>
+            <cropname_kn>ದ್ವಿಗುಜ, ದಿವಿಹಲಸು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>107</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>108</cropcode>
+            <cropname_eng>Ber</cropname_eng>
+            <cropname_kn>ಬೋರೆ, ಬಾರೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>108</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>109</cropcode>
+            <cropname_eng>Wood Apple</cropname_eng>
+            <cropname_kn>ಬೇಲದ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>109</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>110</cropcode>
+            <cropname_eng>Mulberry Fruit</cropname_eng>
+            <cropname_kn>ರೇಷ್ಮೆ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Sriculture Crop</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1016</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>111</cropcode>
+            <cropname_eng>Aonla (Amla)</cropname_eng>
+            <cropname_kn>ನೆಲ್ಲಿಕಾಯಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>111</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>112</cropcode>
+            <cropname_eng>Pomegranate</cropname_eng>
+            <cropname_kn>ದಾಳಿಂಬೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>112</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>113</cropcode>
+            <cropname_eng>Other fruits</cropname_eng>
+            <cropname_kn>ಇತರೆ ಹಣ್ಣುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>113</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>114</cropcode>
+            <cropname_eng>Fig</cropname_eng>
+            <cropname_kn>ಅಂಜೂರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>114</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>115</cropcode>
+            <cropname_eng>Jamun</cropname_eng>
+            <cropname_kn>ನೇರಳೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>115</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>116</cropcode>
+            <cropname_eng>Custard apple/Ramphal</cropname_eng>
+            <cropname_kn>ಸೀತಾಫಲ/ರಾಮಫಲ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>116</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>117</cropcode>
+            <cropname_eng>Pomelo/Chakota</cropname_eng>
+            <cropname_kn>ಚಕೋತ, ಕಂಚಿಹಣ್ಣು, ಹುಳಿಕಂಚಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>117</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>118</cropcode>
+            <cropname_eng>Butter Fruit</cropname_eng>
+            <cropname_kn>ಬೆಣ್ಣೆ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>118</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>119</cropcode>
+            <cropname_eng>Mandarin</cropname_eng>
+            <cropname_kn>ಮ್ಯಾಂಡರೀನ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>119</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>120</cropcode>
+            <cropname_eng>Total Fruits</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಹಣ್ಣುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>120</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>121</cropcode>
+            <cropname_eng>Tapioca</cropname_eng>
+            <cropname_kn>ಮರಗೆಣಸು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>121</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>122</cropcode>
+            <cropname_eng>Sweet Potato</cropname_eng>
+            <cropname_kn>ಸಹಿಗೆಣಸು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>122</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>123</cropcode>
+            <cropname_eng>Yam</cropname_eng>
+            <cropname_kn>ಗೆಣಸು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>123</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>124</cropcode>
+            <cropname_eng>Elephantfoot Yam</cropname_eng>
+            <cropname_kn>ಸುವರ್ಣಗಡ್ಡೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>124</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>125</cropcode>
+            <cropname_eng>Other tuber crop</cropname_eng>
+            <cropname_kn>ಇತರೆ ಗಡ್ಡೆ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>125</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>126</cropcode>
+            <cropname_eng>Arrowroot</cropname_eng>
+            <cropname_kn>ಆರಾರೂಟ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>126</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>127</cropcode>
+            <cropname_eng>Carrot</cropname_eng>
+            <cropname_kn>ಕ್ಯಾರೆಟ್, ಗಜ್ಜರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>127</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>128</cropcode>
+            <cropname_eng>Radish</cropname_eng>
+            <cropname_kn>ಮೂಲಂಗಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>128</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>129</cropcode>
+            <cropname_eng>Beetroot</cropname_eng>
+            <cropname_kn>ಬೀಟ್‌ರೂಟ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>129</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>130</cropcode>
+            <cropname_eng>Turnip</cropname_eng>
+            <cropname_kn>ಸಾಮೆಗಡ್ಡ/ಸಿಹಿ ಮೂಲಂಗಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>130</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>131</cropcode>
+            <cropname_eng>Spinach</cropname_eng>
+            <cropname_kn>ಪಾಲಕ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>131</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>132</cropcode>
+            <cropname_eng>Amaranthus</cropname_eng>
+            <cropname_kn>ದಂಟಿನಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>132</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>133</cropcode>
+            <cropname_eng>Cabbage</cropname_eng>
+            <cropname_kn>ಎಲೆಕೋಸು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>133</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>134</cropcode>
+            <cropname_eng>Other Leafy Vegetables</cropname_eng>
+            <cropname_kn>ಇತರೆ ಸೊಪ್ಪು ತರಕಾರಿಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>134</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>135</cropcode>
+            <cropname_eng>Methi Leaves</cropname_eng>
+            <cropname_kn>ಮೆಂತ್ಯ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>1012</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>136</cropcode>
+            <cropname_eng>Curry leaves</cropname_eng>
+            <cropname_kn>ಕರಿಬೇವು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>136</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>137</cropcode>
+            <cropname_eng>Brinjal</cropname_eng>
+            <cropname_kn>ಬದನೇಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>137</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>138</cropcode>
+            <cropname_eng>Peas (Vegetables)(Green)</cropname_eng>
+            <cropname_kn>ಹಸಿರು ಬಟಾಣಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>others</cropgroup>
+            <crop_link_code>1013</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>139</cropcode>
+            <cropname_eng>Bhendi/ Ladies Finger</cropname_eng>
+            <cropname_kn>ಬೆಂಡೆಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>139</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>140</cropcode>
+            <cropname_eng>Cauliflower</cropname_eng>
+            <cropname_kn>ಹೂ ಕೋಸು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>140</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>141</cropcode>
+            <cropname_eng>Cucumber</cropname_eng>
+            <cropname_kn>ಸೌತೆಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>141</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>142</cropcode>
+            <cropname_eng>Bottle gourd (Lauki)</cropname_eng>
+            <cropname_kn>ಸೋರೆಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>142</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>143</cropcode>
+            <cropname_eng>Pumpkin</cropname_eng>
+            <cropname_kn>ಕುಂಬಳಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>143</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>144</cropcode>
+            <cropname_eng>Bittergourd</cropname_eng>
+            <cropname_kn>ಹಾಗಲಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>144</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>145</cropcode>
+            <cropname_eng>Ashgourd</cropname_eng>
+            <cropname_kn>ಬೂದಗುಂಬಳಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>145</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>146</cropcode>
+            <cropname_eng>Other gourds</cropname_eng>
+            <cropname_kn>ಇತರೆ ಕುಂಬಳ ಜಾತಿಯ ಕಾಯಿಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>146</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>147</cropcode>
+            <cropname_eng>Snakegourd</cropname_eng>
+            <cropname_kn>ಪಡವಲಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>147</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>148</cropcode>
+            <cropname_eng>Ridgegourd</cropname_eng>
+            <cropname_kn>ಹಿರೇಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>148</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>149</cropcode>
+            <cropname_eng>Gherkins</cropname_eng>
+            <cropname_kn>ಮಿಡಿಸೌತೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>149</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>150</cropcode>
+            <cropname_eng>Ivygourd</cropname_eng>
+            <cropname_kn>ತೊಂಡೆಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>150</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>151</cropcode>
+            <cropname_eng>Beans</cropname_eng>
+            <cropname_kn>ಹುರುಳಿಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>151</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>152</cropcode>
+            <cropname_eng>Drumstick</cropname_eng>
+            <cropname_kn>ನುಗ್ಗೆಕಾಯಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>152</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>153</cropcode>
+            <cropname_eng>Mushroom</cropname_eng>
+            <cropname_kn>ಅಣಬೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>153</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>154</cropcode>
+            <cropname_eng>Other Vegetables</cropname_eng>
+            <cropname_kn>ಇತರೆ ತರಕಾರಿಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>154</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>155</cropcode>
+            <cropname_eng>Knolkhol</cropname_eng>
+            <cropname_kn>ನವಿಲುಕೋಸು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>155</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>156</cropcode>
+            <cropname_eng>Clusterbean</cropname_eng>
+            <cropname_kn>ಚೌವಳಿ ಕಾಯಿ, ಗೋರಿಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>156</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>157</cropcode>
+            <cropname_eng>Capsicum</cropname_eng>
+            <cropname_kn>ದೊಣ್ಣೇಮೆಣಸಿನಕಾಯಿ, ದಪ್ಪ ಮೆಣಸಿನಕಾಯಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>157</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>158</cropcode>
+            <cropname_eng>Chow Chow</cropname_eng>
+            <cropname_kn>ಸೀಮೆ ಬದನೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>158</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>159</cropcode>
+            <cropname_eng>Other food crops</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>159</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>160</cropcode>
+            <cropname_eng>Other food crop 1</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು 1</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>160</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>161</cropcode>
+            <cropname_eng>Other food crop 2</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು 2</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>161</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>162</cropcode>
+            <cropname_eng>Other food crop 3</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು 3</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>162</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>163</cropcode>
+            <cropname_eng>Total Other food crop</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಇತರೆ ಆಹಾರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>163</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>164</cropcode>
+            <cropname_eng>Food Crops</cropname_eng>
+            <cropname_kn>ಆಹಾರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>164</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>165</cropcode>
+            <cropname_eng>Total Food Crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಆಹಾರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>165</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>166</cropcode>
+            <cropname_eng>Castor</cropname_eng>
+            <cropname_kn>ಹರಳು/ಔಡಲ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>166</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>167</cropcode>
+            <cropname_eng>Rapeseed and Mustard</cropname_eng>
+            <cropname_kn>ರೇಪುಬೀಜ ಮತ್ತು ಸಾಸಿವೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>167</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>168</cropcode>
+            <cropname_eng>Linseed</cropname_eng>
+            <cropname_kn>ಅಗಸೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>168</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>169</cropcode>
+            <cropname_eng>Fibres</cropname_eng>
+            <cropname_kn>ನಾರಿನ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>169</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>170</cropcode>
+            <cropname_eng>Lakshmi</cropname_eng>
+            <cropname_kn>ಲಕ್ಷ್ಮಿ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>170</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>171</cropcode>
+            <cropname_eng>AK-235</cropname_eng>
+            <cropname_kn>ಎಕೆ-235</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>171</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>172</cropcode>
+            <cropname_eng>Jayadhara</cropname_eng>
+            <cropname_kn>ಜಯಧರ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>172</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>173</cropcode>
+            <cropname_eng>Suyodhara</cropname_eng>
+            <cropname_kn>ಸುಯೋಧರ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>173</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>174</cropcode>
+            <cropname_eng>MCU-5</cropname_eng>
+            <cropname_kn>ಎಂಸಿಯು-5</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>174</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>175</cropcode>
+            <cropname_eng>MY-41&amp;B-22</cropname_eng>
+            <cropname_kn>ಎಂವೈ-41 ಮತ್ತು ಬಿ-22</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>175</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>176</cropcode>
+            <cropname_eng>NHS-44</cropname_eng>
+            <cropname_kn>ಎನ್‌ಹೆಚ್‌ಎಸ್-44</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>176</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>177</cropcode>
+            <cropname_eng>170 CO-2</cropname_eng>
+            <cropname_kn>170 ಸಿಓ-2</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>177</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>178</cropcode>
+            <cropname_eng>H-6</cropname_eng>
+            <cropname_kn>ಹೆಚ್-6</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>178</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>179</cropcode>
+            <cropname_eng>savitha</cropname_eng>
+            <cropname_kn>ಸವಿತ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>179</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>180</cropcode>
+            <cropname_eng>Verner</cropname_eng>
+            <cropname_kn>ವೆರ್ನರ್</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>180</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>181</cropcode>
+            <cropname_eng>Abhaditha</cropname_eng>
+            <cropname_kn>ಅಭಾದಿತ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>181</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>182</cropcode>
+            <cropname_eng>DCH-32</cropname_eng>
+            <cropname_kn>ಡಿಸಿಹೆಚ್-32</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>182</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>183</cropcode>
+            <cropname_eng>Varalakshmi</cropname_eng>
+            <cropname_kn>ವರಲಕ್ಷ್ಮಿ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>183</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>184</cropcode>
+            <cropname_eng>LRA-5166</cropname_eng>
+            <cropname_kn>ಎಲ್‌ಆರ್‌ಎ-5166</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>184</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>185</cropcode>
+            <cropname_eng>Cotton others</cropname_eng>
+            <cropname_kn>ಇತರೆ ಹತ್ತಿ ಬೆಳೆ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>185</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>186</cropcode>
+            <cropname_eng>Jute</cropname_eng>
+            <cropname_kn>ಗೋಣಿನಾರು, ಚುಂಚಲಗಿಡದ ನಾರು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>186</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>187</cropcode>
+            <cropname_eng>Mesta</cropname_eng>
+            <cropname_kn>ಪುಂಡಿನಾರು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>187</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>188</cropcode>
+            <cropname_eng>Sunhemp</cropname_eng>
+            <cropname_kn>ಸೆಣಬು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>188</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>189</cropcode>
+            <cropname_eng>Other Fibres</cropname_eng>
+            <cropname_kn>ಇತರೆ ನಾರಿನ ಬೆಳಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>189</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>190</cropcode>
+            <cropname_eng>Agaves</cropname_eng>
+            <cropname_kn>ಕತ್ತಾಳೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>190</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>191</cropcode>
+            <cropname_eng>Total Fibres</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ನಾರಿನ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>191</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>192</cropcode>
+            <cropname_eng>Indigo</cropname_eng>
+            <cropname_kn>ನೀಲಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>192</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>193</cropcode>
+            <cropname_eng>Other dyes and tan materials</cropname_eng>
+            <cropname_kn>ಇತರೆ ಬಣ್ಣ ಮತ್ತು ಚರ್ಮ ಹದ ಮಾಡುವ ವಸ್ತುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>193</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>194</cropcode>
+            <cropname_eng>Total dyes and tan materials</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಬಣ್ಣ ಮತ್ತು ಚರ್ನ ಹದ ಮಾಡುವ ವಸ್ತುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>194</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>195</cropcode>
+            <cropname_eng>Drugs and Narcotics</cropname_eng>
+            <cropname_kn>ಔಷಧ ಮತ್ತು ಮಾದಕಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>195</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>196</cropcode>
+            <cropname_eng>Opium/Halfim</cropname_eng>
+            <cropname_kn>ಅಫೀಮು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>196</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>197</cropcode>
+            <cropname_eng>Vergenia</cropname_eng>
+            <cropname_kn>ವರ್ಜೀನಿಯಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>1009</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>198</cropcode>
+            <cropname_eng>Beedi Tobacco</cropname_eng>
+            <cropname_kn>ಬೀಡಿ-ತಂಬಾಕು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>1009</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>199</cropcode>
+            <cropname_eng>Chewing Tobacco</cropname_eng>
+            <cropname_kn>ಚಿವಿಂಗ್-ತಂಬಾಕು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>1009</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>200</cropcode>
+            <cropname_eng>Nacotin Rusetic</cropname_eng>
+            <cropname_kn>ನಾಕೋಟಿನ್ ರಸಟಿಕ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>1009</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>201</cropcode>
+            <cropname_eng>Other drugs and narcotics</cropname_eng>
+            <cropname_kn>ಇತರೆ ಔಷಧ ಮತ್ತು ಮಾದಕಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>201</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>202</cropcode>
+            <cropname_eng>Cinchona</cropname_eng>
+            <cropname_kn>ಸಿಂಕೋನ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>202</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>203</cropcode>
+            <cropname_eng>Indianhemp</cropname_eng>
+            <cropname_kn>ನಾಟಿಗಾಂಜಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>203</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>204</cropcode>
+            <cropname_eng>Total drugs and narcotics</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಔಷಧ ಮತ್ತು ಮಾದಕಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>204</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>205</cropcode>
+            <cropname_eng>Green Fodder</cropname_eng>
+            <cropname_kn>ಹಸಿರು ಮೇವು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>205</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>206</cropcode>
+            <cropname_eng>Grass</cropname_eng>
+            <cropname_kn>ಹುಲ್ಲು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>206</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>207</cropcode>
+            <cropname_eng>Makkachari</cropname_eng>
+            <cropname_kn>ಮೆಕ್ಕೆಜೋಳದ ದಂಟು, ಮೇವಿನಜೋಳ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>207</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>208</cropcode>
+            <cropname_eng>Other fodder crops</cropname_eng>
+            <cropname_kn>ಇತರೆ ಮೇವಿನ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>208</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>209</cropcode>
+            <cropname_eng>Total fodder crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಮೇವಿನ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>209</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>210</cropcode>
+            <cropname_eng>Tea</cropname_eng>
+            <cropname_kn>ಟೀ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>210</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>211</cropcode>
+            <cropname_eng>Coffee</cropname_eng>
+            <cropname_kn>ಕಾಫಿ</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1015</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>212</cropcode>
+            <cropname_eng>Rubber</cropname_eng>
+            <cropname_kn>ರಬ್ಬರ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>212</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>213</cropcode>
+            <cropname_eng>Other Plantation Crops</cropname_eng>
+            <cropname_kn>ಇತರೆ ತೋಟಗಾರಿಕೆ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>213</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>214</cropcode>
+            <cropname_eng>Total Plantation Crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ತೋಟಗಾರಿಕೆ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>214</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>215</cropcode>
+            <cropname_eng>Orchids</cropname_eng>
+            <cropname_kn>ಆರ್ಕಿಡ್ಸ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>215</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>216</cropcode>
+            <cropname_eng>Rose (Gulab)</cropname_eng>
+            <cropname_kn>ಗುಲಾಬಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>216</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>217</cropcode>
+            <cropname_eng>Gladiolus</cropname_eng>
+            <cropname_kn>ಗ್ಲ್ಯಾಡಿಯೋಲಸ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>217</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>218</cropcode>
+            <cropname_eng>Carnation</cropname_eng>
+            <cropname_kn>ಕಾರ್ನೇಶನ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>218</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>219</cropcode>
+            <cropname_eng>Marigold (Genda)</cropname_eng>
+            <cropname_kn>ಚೆಂಡುಹೂ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>219</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>220</cropcode>
+            <cropname_eng>Lotus (Kamal)</cropname_eng>
+            <cropname_kn>ಕಮಲ/ತಾವರೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>220</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>221</cropcode>
+            <cropname_eng>Jasmine (Mogra/Bela)</cropname_eng>
+            <cropname_kn>ಮಲ್ಲಿಗೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>221</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>222</cropcode>
+            <cropname_eng>Chrysanthemum</cropname_eng>
+            <cropname_kn>ಸೇವಂತಿಗೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>222</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>223</cropcode>
+            <cropname_eng>Champaca</cropname_eng>
+            <cropname_kn>ಸಂಪಿಗೆ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>223</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>224</cropcode>
+            <cropname_eng>Other flowers</cropname_eng>
+            <cropname_kn>ಇತರೆ ಹೂವಿಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>224</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>225</cropcode>
+            <cropname_eng>Tuberose</cropname_eng>
+            <cropname_kn>ಸುಗಂಧರಾಜ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>225</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>226</cropcode>
+            <cropname_eng>Jasmine pubescens</cropname_eng>
+            <cropname_kn>ಕಾಕಡ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>226</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>227</cropcode>
+            <cropname_eng>Crossandra</cropname_eng>
+            <cropname_kn>ಕನಕಾಂಬರಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>227</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>228</cropcode>
+            <cropname_eng>Hibiscus</cropname_eng>
+            <cropname_kn>ದಾಸವಾಳ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>228</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>229</cropcode>
+            <cropname_eng>China aster</cropname_eng>
+            <cropname_kn>ಚೈನಾ ಆಸ್ಟರ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>229</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>230</cropcode>
+            <cropname_eng>Anthurium</cropname_eng>
+            <cropname_kn>ಆಂಥೋರಿಯಂ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>230</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>231</cropcode>
+            <cropname_eng>Bird of Paradise</cropname_eng>
+            <cropname_kn>ಬರ್ಡ್ ಆಫ್ ಪ್ಯಾರಡೈಸ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>231</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>232</cropcode>
+            <cropname_eng>Gerbera</cropname_eng>
+            <cropname_kn>ಜೆರ್ಬೆರಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>232</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>233</cropcode>
+            <cropname_eng>Vinica red seed</cropname_eng>
+            <cropname_kn>ವೀನಿಕಾ ರೆಡ್ ಸೀಡ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>233</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>234</cropcode>
+            <cropname_eng>Salidago/Golden Rod</cropname_eng>
+            <cropname_kn>ಸಾಲ್ಢಾಗೋ, ಗೋಲ್ಡನ್‌ರಾಡ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>234</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>235</cropcode>
+            <cropname_eng>Calla Lily</cropname_eng>
+            <cropname_kn>ಕ್ಯಾಲಾಲಿಲ್ಲಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>235</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>236</cropcode>
+            <cropname_eng>Statice</cropname_eng>
+            <cropname_kn>ಸ್ಟಾಟಿಸ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>236</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>237</cropcode>
+            <cropname_eng>Total Flouriculture Crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಹೂವುಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>237</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>238</cropcode>
+            <cropname_eng>Isabgol</cropname_eng>
+            <cropname_kn>ಇಸಬ್‌ಗೋಲ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Cereals</cropgroup>
+            <crop_link_code>238</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>239</cropcode>
+            <cropname_eng>Safedmoosli</cropname_eng>
+            <cropname_kn>ಸಫೇದ ಮಸ್ಲಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>239</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>240</cropcode>
+            <cropname_eng>Other medicinal plants</cropname_eng>
+            <cropname_kn>ಇತರೆ ಔಷಧ ಸಸ್ಯಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>240</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>241</cropcode>
+            <cropname_eng>Sweet Flag</cropname_eng>
+            <cropname_kn>ಬಜೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>241</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>242</cropcode>
+            <cropname_eng>Coleus Forskohlii</cropname_eng>
+            <cropname_kn>ಮಂಗನಬೇರು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>242</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>243</cropcode>
+            <cropname_eng>Long Pepper</cropname_eng>
+            <cropname_kn>ಹಿಪ್ಪಲಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>243</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>244</cropcode>
+            <cropname_eng>Kokum</cropname_eng>
+            <cropname_kn>ಮುರುಗಲ, ಪುನರ್ಪುಳಿ, ವಾಟೇಹುಳಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>244</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>245</cropcode>
+            <cropname_eng>Periwinkle</cropname_eng>
+            <cropname_kn>ಕಾಶಿ ಕಣಗಿಲೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>245</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>246</cropcode>
+            <cropname_eng>Ashwagandha</cropname_eng>
+            <cropname_kn>ಅಶ್ವಗಂಧ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>246</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>247</cropcode>
+            <cropname_eng>Saffron (Kesar)</cropname_eng>
+            <cropname_kn>ಕೇಸರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>247</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>248</cropcode>
+            <cropname_eng>Lemon Grass</cropname_eng>
+            <cropname_kn>ನಿಂಬೆ ಹುಲ್ಲು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>248</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>249</cropcode>
+            <cropname_eng>Mint</cropname_eng>
+            <cropname_kn>ಪುದಿನ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Vegetables</cropgroup>
+            <crop_link_code>249</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>250</cropcode>
+            <cropname_eng>Eucalyptus</cropname_eng>
+            <cropname_kn>ನೀಲಗಿರಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>250</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>251</cropcode>
+            <cropname_eng>Other Aromatic plant</cropname_eng>
+            <cropname_kn>ಇತರೆ ಸುಗಂಧ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>251</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>252</cropcode>
+            <cropname_eng>Dhavana</cropname_eng>
+            <cropname_kn>ಧವನ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>252</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>253</cropcode>
+            <cropname_eng>Vetiver</cropname_eng>
+            <cropname_kn>ಲಾವಂಛ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Oil</cropgroup>
+            <crop_link_code>253</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>254</cropcode>
+            <cropname_eng>Citronella Grass</cropname_eng>
+            <cropname_kn>ಸಿಟ್ರೊನೆಲ್ಲಾಹುಲ್ಲು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>254</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>255</cropcode>
+            <cropname_eng>Geranium</cropname_eng>
+            <cropname_kn>ಪನ್ನೀರು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>255</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>256</cropcode>
+            <cropname_eng>Lavender</cropname_eng>
+            <cropname_kn>ಲ್ಯಾವೆಂಡರ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Flowers</cropgroup>
+            <crop_link_code>256</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>257</cropcode>
+            <cropname_eng>Total Aromatic and medicinal plant</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಸುಗಂಧ ಮತ್ತು ಔಷದಿ ಸಸ್ಯಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>257</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>258</cropcode>
+            <cropname_eng>Canes</cropname_eng>
+            <cropname_kn>ಗಟ್ಟೆ ಬಿದಿರು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>1017</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>259</cropcode>
+            <cropname_eng>Bamboos</cropname_eng>
+            <cropname_kn>ಬಿದಿರು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>1017</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>260</cropcode>
+            <cropname_eng>Other Non Food Crops-1</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು -1</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>260</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>261</cropcode>
+            <cropname_eng>Mulberry</cropname_eng>
+            <cropname_kn>ಹಿಪ್ಪುನೇರಳೆ, ರೇಷ್ಮೆಗಿಡ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Sriculture Crop</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1016</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>262</cropcode>
+            <cropname_eng>Other Non Food Crops-2</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು -2</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>262</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>263</cropcode>
+            <cropname_eng>Other Non Food Crops-3</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು -3</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>263</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>264</cropcode>
+            <cropname_eng>Other Non Food Crops</cropname_eng>
+            <cropname_kn>ಇತರೆ ಆಹಾರೇತರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>264</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>265</cropcode>
+            <cropname_eng>Total Other Non food crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಆಹಾರೇತರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>265</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>266</cropcode>
+            <cropname_eng>Total Non Food Crops</cropname_eng>
+            <cropname_kn>ಒಟ್ಟು ಆಹಾರೇತರ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Unknown Crop</croptype>
+            <intercroptype>Unknown Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>266</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>267</cropcode>
+            <cropname_eng>Acacia</cropname_eng>
+            <cropname_kn>ಅಕೇಶಿಯ/ ಜಾಲಿ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>267</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>268</cropcode>
+            <cropname_eng>Shimp Nut</cropname_eng>
+            <cropname_kn>ಚಿಕಡಿ ಕಾಯಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Fruits</cropgroup>
+            <crop_link_code>268</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>269</cropcode>
+            <cropname_eng>Teak/Saguvani</cropname_eng>
+            <cropname_kn>ತೇಗದ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>269</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>270</cropcode>
+            <cropname_eng>Silver Oak</cropname_eng>
+            <cropname_kn>ಸಿಲ್ವರ್ ಓಕ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>270</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>271</cropcode>
+            <cropname_eng>Neem</cropname_eng>
+            <cropname_kn>ಬೇವಿನ ಮರರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>271</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>272</cropcode>
+            <cropname_eng>Sandalwood</cropname_eng>
+            <cropname_kn>ಶ್ರೀಗಂಧದ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>272</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>273</cropcode>
+            <cropname_eng>Malabar Neem (Melia Dubia)</cropname_eng>
+            <cropname_kn>ಹೆಬ್ಬೇವು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>273</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>274</cropcode>
+            <cropname_eng>Casuarina Tree</cropname_eng>
+            <cropname_kn>ಸರ್ವೆ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>Trees</cropgroup>
+            <crop_link_code>274</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>275</cropcode>
+            <cropname_eng>Holy Basil</cropname_eng>
+            <cropname_kn>ತುಲಾಸಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>275</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>276</cropcode>
+            <cropname_eng>Karonda Fruit</cropname_eng>
+            <cropname_kn>ಕಾವಳೆ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>276</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>277</cropcode>
+            <cropname_eng>Passion Fruit</cropname_eng>
+            <cropname_kn>ಪ್ಯಾಶನ್ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>277</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>278</cropcode>
+            <cropname_eng>Mangosteen Fruit</cropname_eng>
+            <cropname_kn>ಮ್ಯಾಂಗೊಸ್ಟೀನ್ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>278</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>279</cropcode>
+            <cropname_eng>Carambola Fruit</cropname_eng>
+            <cropname_kn>ಬಿಂಬುಳಿ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>279</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>280</cropcode>
+            <cropname_eng>Rambutan Fruit</cropname_eng>
+            <cropname_kn>ರಾಂಬೂತನ್ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>280</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>281</cropcode>
+            <cropname_eng>Dragon Fruit</cropname_eng>
+            <cropname_kn>ಡ್ರ್ಯಾಗನ್ ಹಣ್ಣು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>281</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>282</cropcode>
+            <cropname_eng>Baby Corn</cropname_eng>
+            <cropname_kn>ಎಳೆ ಮುಸುಕಿನ ಜೋಳ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>282</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>283</cropcode>
+            <cropname_eng>Lettuce</cropname_eng>
+            <cropname_kn>ಲೆಟ್ಯೂಸ್, ಹಕ್ಕರಿಕೆ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>283</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>284</cropcode>
+            <cropname_eng>Gongura</cropname_eng>
+            <cropname_kn>ಪುಂಡಿ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>284</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>285</cropcode>
+            <cropname_eng>Basella</cropname_eng>
+            <cropname_kn>ಬಸಳೆ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>285</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>286</cropcode>
+            <cropname_eng>Globe Artichoke</cropname_eng>
+            <cropname_kn>ಗ್ಲೋಬ್ ಅರ್ಟಿಚೋಕ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>286</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>287</cropcode>
+            <cropname_eng>Asparagus</cropname_eng>
+            <cropname_kn>ಶತಾವರಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>287</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>288</cropcode>
+            <cropname_eng>Leek</cropname_eng>
+            <cropname_kn>ಲೀಕ್</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>288</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>289</cropcode>
+            <cropname_eng>Chive</cropname_eng>
+            <cropname_kn>ಚೈವ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>289</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>290</cropcode>
+            <cropname_eng>Salvia</cropname_eng>
+            <cropname_kn>ಸಾಲ್ವಿಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>290</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>291</cropcode>
+            <cropname_eng>Stevia</cropname_eng>
+            <cropname_kn>ಸ್ಟೀವಿಯಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>291</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>292</cropcode>
+            <cropname_eng>Patchouli</cropname_eng>
+            <cropname_kn>ಪಚೌಲಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>292</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>293</cropcode>
+            <cropname_eng>Allspice</cropname_eng>
+            <cropname_kn>ಸರ್ವಾ ಸಾಂಬಾರು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>293</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>294</cropcode>
+            <cropname_eng>Dahlia</cropname_eng>
+            <cropname_kn>ಡೇಲಿಯಾ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>294</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>295</cropcode>
+            <cropname_eng>Trees and Grooves</cropname_eng>
+            <cropname_kn>ಮರ ಮತ್ತು ಪೊದೆಗಳು</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>295</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>296</cropcode>
+            <cropname_eng>Nursery-Vegetables</cropname_eng>
+            <cropname_kn>ಸಸ್ಯಗಾರ - ತರಕಾರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>296</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>297</cropcode>
+            <cropname_eng>Nursery-Ornamentals / Flowers</cropname_eng>
+            <cropname_kn>ಸಸ್ಯಗಾರ - ಅಲಂಕಾರಿಕ / ಹೂಗಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>297</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>298</cropcode>
+            <cropname_eng>Dolichous Bean</cropname_eng>
+            <cropname_kn>ಚಪ್ಪರದ ಅವರೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>298</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>299</cropcode>
+            <cropname_eng>Vegetable Cowpea</cropname_eng>
+            <cropname_kn>ತರಕಾರಿ-ಅಲಸಂದೆ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>299</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>300</cropcode>
+            <cropname_eng>Rose Wood</cropname_eng>
+            <cropname_kn>ಬೀಟೆ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>300</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>301</cropcode>
+            <cropname_eng>Pongemia Tree</cropname_eng>
+            <cropname_kn>ಹೊಂಗೆ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>301</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>302</cropcode>
+            <cropname_eng>Cotton - L</cropname_eng>
+            <cropname_kn>ಹತ್ತಿ - ಸ್ಥಳೀಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>1007</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>303</cropcode>
+            <cropname_eng>Cotton - H</cropname_eng>
+            <cropname_kn>ಹತ್ತಿ - ಅಧಿಕ ಇಳುವರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Fiber Crops</cropgroup>
+            <crop_link_code>1007</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>304</cropcode>
+            <cropname_eng>Barnyard Millet</cropname_eng>
+            <cropname_kn>ಊದಲು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>304</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>305</cropcode>
+            <cropname_eng>Coffee robusta</cropname_eng>
+            <cropname_kn>ಕಾಫಿ ರೊಬಸ್ಟಾ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1015</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>306</cropcode>
+            <cropname_eng>Coffee arabica</cropname_eng>
+            <cropname_kn>ಕಾಫಿ ಅರೇಬಿಕಾ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>Drugs &amp; norcotics</cropgroup>
+            <crop_link_code>1015</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>307</cropcode>
+            <cropname_eng>Agarwood</cropname_eng>
+            <cropname_kn>ಅಗಾರ್ ವುಡ್</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Inter Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>307</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>308</cropcode>
+            <cropname_eng>Sweet Corn</cropname_eng>
+            <cropname_kn>ಸಿಹಿ ಮೆಕ್ಕೆಜೋಳ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>308</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>309</cropcode>
+            <cropname_eng>Date Palm (Kharjura)</cropname_eng>
+            <cropname_kn>ಖರ್ಜೂರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>309</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>310</cropcode>
+            <cropname_eng>Red Sanders (Red Sandalwood)</cropname_eng>
+            <cropname_kn>ರಕ್ತ ಚಂದನ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>310</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>311</cropcode>
+            <cropname_eng>Mahagani Tree</cropname_eng>
+            <cropname_kn>ಮಹಾಗನಿ ಮರ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>311</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>312</cropcode>
+            <cropname_eng>Subabul</cropname_eng>
+            <cropname_kn>ಸುಬಾಬುಲ್‍</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Main Crop</intercroptype>
+            <cropcategory>O</cropcategory>
+            <cropgroup>New</cropgroup>
+            <crop_link_code>312</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>313</cropcode>
+            <cropname_eng>Ashoka</cropname_eng>
+            <cropname_kn>ಅಶೋಕ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Perennial Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>313</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>314</cropcode>
+            <cropname_eng>Eknayaka</cropname_eng>
+            <cropname_kn>ಏಕನಾಯಕ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Perennial Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>314</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>315</cropcode>
+            <cropname_eng>Shivani</cropname_eng>
+            <cropname_kn>ಶಿವನಿ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Perennial Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>315</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>316</cropcode>
+            <cropname_eng>Krishna pathala</cropname_eng>
+            <cropname_kn>ಕೃಷ್ಣ ಪಾತಾಳ</cropname_kn>
+            <croptype>Perennial Crop</croptype>
+            <intercroptype>Perennial Crop</intercroptype>
+            <cropcategory>Horticulture Crops</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>316</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>317</cropcode>
+            <cropname_eng>Gaillardia</cropname_eng>
+            <cropname_kn>ಗೈಲಾರ್ಡಿಯ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>317</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>318</cropcode>
+            <cropname_eng>Aloevera</cropname_eng>
+            <cropname_kn>ಲೋಳೆಸರ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>318</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>319</cropcode>
+            <cropname_eng>Alocasia</cropname_eng>
+            <cropname_kn>ಕೆಸುವಿನ ಗಡ್ಡೆ/ ಕೆಸುವಿನ ಸೊಪ್ಪು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>319</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>320</cropcode>
+            <cropname_eng>Nursery Fruits/ other Horticulture crops</cropname_eng>
+            <cropname_kn>ಸಸ್ಯಗಾರ-ಹಣ್ಣುಗಳುಹಾಗು ಇತರೆ ತೋಟಗಾರಿಕೆ ಬೆಳೆಗಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>cropgroup</cropgroup>
+            <crop_link_code>320</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>321</cropcode>
+            <cropname_eng>Noni</cropname_eng>
+            <cropname_kn>ನೋನಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Perennial Crop</intercroptype>
+            <cropcategory>Seasonal Crop</cropcategory>
+            <cropgroup>Tree</cropgroup>
+            <crop_link_code>321</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>322</cropcode>
+            <cropname_eng>Strawberry</cropname_eng>
+            <cropname_kn>ಸ್ಟ್ರಾಬೆರಿ</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Perennial Crop</intercroptype>
+            <cropcategory>Seasonal Crop</cropcategory>
+            <cropgroup>Tree</cropgroup>
+            <crop_link_code>322</crop_link_code>
+        </Sheet1>
+        <Sheet1>
+            <cropcode>323</cropcode>
+            <cropname_eng>CHIA CROP</cropname_eng>
+            <cropname_kn>ಚಿಯಾ ಬೆಳೆ/ಚಿಯಾ ಬೀಜಗಳು</cropname_kn>
+            <croptype>Seasonal Crop</croptype>
+            <intercroptype>Seasonal Crop</intercroptype>
+            <cropcategory>Annual Crop</cropcategory>
+            <cropgroup>Others</cropgroup>
+            <crop_link_code>323</crop_link_code>
+        </Sheet1>
+    </rootdata>
+</xml>

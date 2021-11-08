@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FRUITS</string>
+    <string name="personal_data">Personal Details</string>
+    <string name="payment_data">Payment Details</string>
+    <string name="land_data">Land Details</string>
+    <string name="cropsurvey_data">Crop-Survey Detaiils </string>
+    <string name="weather_forecast">Weather-Forecast Details </string>
+
+    <string name="npci">NPCI</string>
+    <string name="feedback">FeedBack</string>
+    <string name="cropdetails">Crop Details</string>
+    <string name="fertilizercalculation">Fertilizer Calculation</string>
+    <string name="cropregistration">Registration</string>
+    <string name="name">Name</string>
+    <string name="father_name">Father Name</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="caste">Caste</string>
+    <string name="pa">Physically Disabled</string>
+    <string name="minorities">Minorities</string>
+    <string name="farmer_type">Farmer Type</string>
+    <string name="address">Address</string>
+    <string name="dist">District</string>
+    <string name="taluk">Taluk</string>
+    <string name="hobli">Hobli</string>
+    <string name="village">Village</string>
+    <string name="logout">Logout</string>
+
+    <string name="bid">Beneficiary ID</string>
+    <string name="department">Department</string>
+    <string name="scheme">Scheme</string>
+    <string name="finanacial_year">Financial Year</string>
+    <string name="k2utr_no">K2UTR Number</string>
+    <string name="payment_date">Payment Date</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="amount">Amount</string>
+
+    <string name="survey_number">Survey Number</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="area">Area</string>
+
+
+    <string name="crop_area">Crop Area</string>
+    <string name="year">Year</string>
+    <string name="season">Season</string>
+    <string name="crop_name">Crop Name</string>
+
+    <string name="temperature">Temperature</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="humidity">Humidity</string>
+    <string name="last_update">Last Updated</string>
+    <string name="rain">Rain</string>
+    <string name="cloud">Cloud</string>
+    <string name="forecast_hour">Forecast Hour</string>
+    <string name="forecast_date">Forecast Date</string>
+
+    <string name="audio_feedback">Audio FeedBack</string>
+    <string name="audio_feedback_send">Send Audio FeedBack</string>
+    <string name="send">Send</string>
+
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="play">Play</string>
+
+    <string name="npci_result">NPCI Result</string>
+    <string name="bank">Bank</string>
+    <string name="request_number">Request Number</string>
+
+
+    <color name="black">#000000</color>
+    <string name="horti_dept_txt">Department Of E-Governance</string>
+    <string name="nic_dept_txt_brief"> National Informatics Centre</string>
+    <string name="nic_dept_karnataka_state_unit"> Karnataka State Unit.</string>
+
+    <string name="nic_dept_text">Designed and Developed by</string>
+    <string name="Open">open</string>
+    <string name="Close">close</string>
+    <string name="nav_header_subtitle">Farmer ID</string>
+    <string name="beneficiary_not_present">beneficiary details not present</string>
+    <string name="alert">Alert</string>
+
+    <string name="design_devlopment">National Informatics Center Karnataka State Unit.</string>
+    <string name="weatherforecast">weatherforecast details not available at this moment ,Try later</string>
+    <string name="crop_register">Registration</string>
+    <string name="crop_weekly_data">Weekly Data</string>
+    <string name="escalate_crop_issue">Escalate Crop Issue</string>
+    <string name="enter_farmer_id">Enter Farmer ID</string>
+    <string name="btn_register_crop">Register Crop</string>
+
+    <string name="fill_the_crop_weekly_data">Provide Crop Weekly Data</string>
+    <string name="upload_crop_details">Upload Captured Crop Data</string>
+    <string name="register_year">Year</string>
+    <string name="register_season">Season</string>
+    <string name="register_survey_number">Survey Number</string>
+    <string name="register_owner_name">Owner Name</string>
+    <string name="register_crop_name">Crop Name</string>
+    <string name="register_crop_variety">Crop Variety</string>
+    <string name="register_enter_crop_extent">Enter Crop Extent</string>
+    <string name="register_enter_sowing_date">Click here</string>
+    <string name="crop_details_upload">Upload Crop Details</string>
+    <string name="surveyalreadysaved">Crop already registered for the survey number, Please select new Survey Number</string>
+    <string name="weekalreadysaved">Crop Weekly Data has been saved already, please select different crop</string>
+    <string name="crops_not_available">Crops not available</string>
+    <string name="plan_type">Plan Type</string>
+    <string name="cropName">Crop Name</string>
+    <string name="age_of_plant">Age of Plant</string>
+    <string name="irrigation_type">Irrigation Type</string>
+    <string name="nutrient_recommendation_for_1_acre">Nutrient Recommendation for 1 acre</string>
+    <string name="acre">Acre</string>
+    <string name="enter_acre">Enter acre</string>
+    <string name="gunta">Gunta</string>
+    <string name="enter_gunta">Enter gunta</string>
+    <string name="recommendation_of_npk_for_extent_selected">Recommendation of NPK for extent selected </string>
+    <string name="fertilizer_details">Fertilizer Details</string>
+    <string name="fertilizer_type">Fertilizer Type</string>
+    <string name="straight_fertilizer">Straight Fertilizer</string>
+    <string name="complex_fertilizer">Complex Fertilizer</string>
+    <string name="fertilizer_name">Fertilizer Name</string>
+    <string name="KG">KGs.</string>
+    <string name="Bags">Bags</string>
+    <string name="Nitrogen">"Nitrogen: "</string>
+    <string name="Phosphorous">" Phosphorous: "</string>
+    <string name="Potash">", Potash: "</string>
+    <string name="slno">Sl.No</string>
+    <string name="check_fertilizer_recommendation">Display Calculated Fertilizers</string>
+    <string name="clear">Clear</string>
+    <string name="add_fertilizer">Add Fertilizer</string>
+    <string name="delete_fertilizer">Delete Fertilizer</string>
+    <string name="perennial">Perennial</string>
+    <string name="seasonal">Seasonal</string>
+    <string name="rainfed">Rainfed</string>
+    <string name="irrigation">Irrigation</string>
+    <string name="selectFertilizer">Select Fertilizer</string>
+    <string name="selectPlanType">Select Plan Type</string>
+    <string name="selectCrop">Select Crop</string>
+    <string name="selectAgePlant">Select Age of Plant</string>
+    <string name="planDetails">Plan details not available</string>
+    <string name="irrigationDetails">Irrigation details not available</string>
+    <string name="fertilizerDetails">Fertilizer details not available</string>
+    <string name="cropDetails">Crop details not available</string>
+    <string name="cropferDetails">Crop fertilizer details not available</string>
+    <string name="plantAgeDetails">No data found for this crop, nutrient cannot be calculated</string>
+    <string name="recommendedFertilizers">Recommended Fertilizers</string>
+    <string name="OK">OK</string>
+    <string name="Note">Note</string>
+    <string name="alertmessage">For selected fertilizers not able to provide required nutrients</string>
+    <string name="internet">Please Connect To Internet</string>
+    <string name="guntaalertmessage">Enter correct gunta measurement</string>
+
+    <string name="farmfertilizer">Farm Fertilizer</string>
+    <string name="farmfertilizerYear">Year</string>
+    <string name="farmfertilizerSeason">Season</string>
+    <string name="farmfertilizerSurvey">Survey Number</string>
+    <string name="farmfertilizerCrop">Crop Name</string>
+    <string name="farmfertilizerCropArea">Crop Area</string>
+    <string name="farmfertilizerFId">Farmer Id</string>
+</resources>

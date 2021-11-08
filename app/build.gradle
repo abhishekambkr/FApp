@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "org.nic.fruits"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        multiDexEnabled true
+        resConfigs "en", "kn"
+        vectorDrawables.useSupportLibrary = true
+        ndk {
+            abiFilters 'armeabi-v7a','arm64-v8a'
+        }
+    }
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources true
+        }
+        AndroidDebugKey {
+        }
+    }
+
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/values-v21'] } }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    packagingOptions{
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases/'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.code.ksoap2-android:ksoap2-android:3.6.2'
+    implementation(name:'hasiru', ext:'aar')
+    implementation 'androidx.room:room-runtime:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.0.0'
+    implementation 'com.android.support:multidex:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'com.esri.arcgisruntime:arcgis-android:100.9.0'
+    //implementation 'com.github.patelheggere:hasiru:1.2'
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'com.google.android.gms:play-services-location:12.0.1'
+    implementation 'androidx.core:core: 1.6.0'
+}

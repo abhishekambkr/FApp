@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardElevation="16dp"
+    app:cardBackgroundColor="#E1F5FE">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_CropPickYield"
+            android:hint="Crop pick yield in kgs."
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/dark_grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

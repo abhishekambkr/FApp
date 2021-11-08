@@ -1,0 +1,14 @@
+<xml>
+    <rootdata>
+        <Sheet1>
+            <croptypeid>1</croptypeid>
+            <croptypename_eng>Perennial</croptypename_eng>
+            <croptypename_kn>ದೀರ್ಘಕಾಲಿಕ</croptypename_kn>
+        </Sheet1>
+        <Sheet1>
+            <croptypeid>2</croptypeid>
+            <croptypename_eng>Seasonal</croptypename_eng>
+            <croptypename_kn>ಕಾಲೋಚಿತ</croptypename_kn>
+        </Sheet1>
+    </rootdata>
+</xml>

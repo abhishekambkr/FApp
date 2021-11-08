@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="pre_inspection_scheme_header_text_size">22sp</dimen>
+    <dimen name="login_page_edit_text_margin_size">16dp</dimen>
+    <dimen name="login_edit_text_size">22sp</dimen>
+    <dimen name="login_button_padding">24dp</dimen>
+    <dimen name="scheme_beneficiray_list_padding">4dp</dimen>
+    <dimen name="hbms_home_screen_button_bottom_padding">80dp</dimen>
+    <dimen name="scheme_sub_menu_item_size">28sp</dimen>
+
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">25sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">25sp</dimen>
+    <dimen name="nic_text">22sp</dimen>
+    <dimen name="nic_img_size">60dp</dimen>
+    <dimen name="dept_img_size">150dp</dimen>
+    <dimen name="nav_item_text_size">22sp</dimen>
+    <dimen name="app_name_text_size">52sp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+</resources>

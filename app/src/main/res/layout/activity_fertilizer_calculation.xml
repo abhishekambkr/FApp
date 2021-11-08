@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#12b4ba"
+    tools:context="org.nic.fruits.FertilizerCalculation">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:padding="1dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearlayoutTreeInputs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    android:background="@drawable/border_light_grey"
+                    android:weightSum="3" >
+
+                    <TextView
+                        android:id="@+id/app_name_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/login_button_padding"
+                        android:gravity="center"
+                        android:text="@string/fertilizercalculation"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutplanType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/plan_type"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="@dimen/register_font" />
+
+                        <Spinner
+                            android:id="@+id/spinnerPlanType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutcropName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/cropName"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="@dimen/register_font" />
+
+                        <Spinner
+                            android:id="@+id/spinnerCropName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutageplant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/age_of_plant"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="@dimen/register_font" />
+
+                        <Spinner
+                            android:id="@+id/spinnerageplant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayoutirrigationType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/irrigation_type"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="@dimen/register_font" />
+
+                        <Spinner
+                            android:id="@+id/spinnerIrrigationType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/register_font"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearLayoutnutrientreco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/tv_nutrient_recommendation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/nutrient_recommendation_for_1_acre"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="@dimen/register_font" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutnutrientvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/tv_nutrientvalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text=""
+                            android:textColor="@color/dark_orange"
+                            android:textSize="@dimen/register_font" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAcre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/acre"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="@dimen/register_font" />
+
+                        <EditText
+                            android:id="@+id/et_AcreFertilizer"
+                            android:hint="@string/enter_acre"
+                            android:textColorHint="@color/black"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textSize="@dimen/register_font" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutGunta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/gunta"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="@dimen/register_font" />
+
+                        <EditText
+                            android:id="@+id/et_GuntaFertilizer"
+                            android:hint="@string/enter_gunta"
+                            android:textColorHint="@color/black"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:textSize="@dimen/register_font" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutnutrientrecototal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/tv_nutrient_recommendationtotal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text="@string/recommendation_of_npk_for_extent_selected"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="@dimen/register_font" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutnpkvalue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="0dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <TextView
+                            android:id="@+id/tv_npkvalue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:text=""
+                            android:textColor="@color/dark_orange"
+                            android:textSize="@dimen/register_font" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayoutfertilizerdetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:padding="2dp"
+                        android:background="@drawable/border_light_grey"
+                        android:weightSum="3" >
+
+
+                        <TextView
+                            android:id="@+id/fertilizer_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/login_button_padding"
+                            android:gravity="center"
+                            android:text="@string/fertilizer_details"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutFertilizerType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/fertilizer_type"
+                                android:layout_weight="2"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="@dimen/register_font" />
+
+                            <RadioGroup
+                                android:id="@+id/radioGroupFertilizerType"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:checked="false">
+
+                                <RadioButton
+                                    android:id="@+id/radioStraightFertilizer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:checked="false"
+                                    android:layout_weight="1"
+                                    android:text="@string/straight_fertilizer" />
+
+                                <RadioButton
+                                    android:id="@+id/radioComplexFertilizer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:checked="false"
+                                    android:layout_weight="1"
+                                    android:text="@string/complex_fertilizer" />
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutfertilizerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="horizontal"
+                            android:weightSum="3" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:text="@string/fertilizer_name"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="@dimen/register_font" />
+
+                            <Spinner
+                                android:id="@+id/spinnerFertilizerName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/register_font"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="vertical" >
+                            <Button
+                                android:id="@+id/btn_add_fertilizer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_fertilizer"
+                                android:padding="12dp"
+                                android:layout_margin="5dp"
+                                android:text="@string/add_fertilizer"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/register_font" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="vertical" >
+                            <Button
+                                android:id="@+id/btn_delete_fertilizer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_fertilizer"
+                                android:padding="12dp"
+                                android:layout_margin="5dp"
+                                android:text="@string/delete_fertilizer"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/register_font" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/RelativeLayoutaddfertilizer"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_table"
+                    android:orientation="vertical" >
+
+                    <TableLayout
+                        android:id="@+id/table_main_add_fertilizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:stretchColumns="*">
+                    </TableLayout>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayoutcheckfertirec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:padding="2dp"
+                        android:background="@drawable/border_light_grey"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="vertical" >
+                            <Button
+                                android:id="@+id/btn_check_fertilizer_reco"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_fertilizer"
+                                android:padding="12dp"
+                                android:layout_margin="5dp"
+                                android:text="@string/check_fertilizer_recommendation"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/register_font" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="vertical" >
+                            <Button
+                                android:id="@+id/btn_check_clear"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_fertilizer"
+                                android:padding="12dp"
+                                android:layout_margin="5dp"
+                                android:text="@string/clear"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/register_font" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+</RelativeLayout>

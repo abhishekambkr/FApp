@@ -1,0 +1,981 @@
+﻿<FertilizersMaster>
+  <FertilizersData>
+    <FM_Id>1</FM_Id>
+    <FM_Name>Urea</FM_Name>
+    <FM_KName>ಯೂರಿಯಾ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:22.527</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>2</FM_Id>
+    <FM_Name>Amm Sulphate</FM_Name>
+    <FM_KName>ಆಮ್ ಸಲ್ಫೇಟ್</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:22.977</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>3</FM_Id>
+    <FM_Name>Amm Chloride</FM_Name>
+    <FM_KName>ಆಮ್ ಕ್ಲೋರೈಡ್</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>25</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:23.203</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>4</FM_Id>
+    <FM_Name>DAP</FM_Name>
+    <FM_KName>ಡಿಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>18</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:23.400</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>5</FM_Id>
+    <FM_Name>DAP Lite</FM_Name>
+    <FM_KName>ಡಿಎಪಿ ಲೈಟ್</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>44</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:23.623</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>6</FM_Id>
+    <FM_Name>Imported DAP Lite-Grade II</FM_Name>
+    <FM_KName>ಆಮದು ಡಿಎಪಿ ಲೈಟ್-ಗ್ರೇಡ್ II</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>14</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:23.840</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>7</FM_Id>
+    <FM_Name>MAP</FM_Name>
+    <FM_KName>ಎಂಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>11</FM_Nitrogen>
+    <FM_Phosphorous>52</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.057</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>8</FM_Id>
+    <FM_Name>Imported MAP Lite</FM_Name>
+    <FM_KName>ಆಮದು ಎಂಎಪಿ ಲೈಟ್</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>11</FM_Nitrogen>
+    <FM_Phosphorous>44</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.150</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>9</FM_Id>
+    <FM_Name>TSP</FM_Name>
+    <FM_KName>ಟಿಎಸ್ಪಿ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.350</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>10</FM_Id>
+    <FM_Name>MOP</FM_Name>
+    <FM_KName>ಎಂಒಪಿ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>60</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.443</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>11</FM_Id>
+    <FM_Name>SSP-Granular</FM_Name>
+    <FM_KName>ಎಸ್‌ಎಸ್‌ಪಿ-ಹರಳಿನ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.630</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>12</FM_Id>
+    <FM_Name>16-20-0-13</FM_Name>
+    <FM_KName>16-20-0-13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.697</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>13</FM_Id>
+    <FM_Name>20-20-0-13</FM_Name>
+    <FM_KName>20-20-0-13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:24.920</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>14</FM_Id>
+    <FM_Name>20-20-0</FM_Name>
+    <FM_KName>20-20-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:25.133</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>15</FM_Id>
+    <FM_Name>23-23-0</FM_Name>
+    <FM_KName>20-23-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>23</FM_Nitrogen>
+    <FM_Phosphorous>23</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:25.243</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>16</FM_Id>
+    <FM_Name>24-24-0</FM_Name>
+    <FM_KName>24-24-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>24</FM_Nitrogen>
+    <FM_Phosphorous>24</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:25.500</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>17</FM_Id>
+    <FM_Name>28-28-0</FM_Name>
+    <FM_KName>28-28-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>28</FM_Nitrogen>
+    <FM_Phosphorous>28</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:25.837</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>18</FM_Id>
+    <FM_Name>10-26-26</FM_Name>
+    <FM_KName>10-26-26</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>10</FM_Nitrogen>
+    <FM_Phosphorous>26</FM_Phosphorous>
+    <FM_Potash>26</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:26.080</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>19</FM_Id>
+    <FM_Name>12-32-16</FM_Name>
+    <FM_KName>12-32-16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>12</FM_Nitrogen>
+    <FM_Phosphorous>32</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:26.120</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>20</FM_Id>
+    <FM_Name>14-28-14</FM_Name>
+    <FM_KName>14-28-14</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>14</FM_Nitrogen>
+    <FM_Phosphorous>28</FM_Phosphorous>
+    <FM_Potash>14</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:26.140</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>21</FM_Id>
+    <FM_Name>14-35-14</FM_Name>
+    <FM_KName>14-35-14</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>14</FM_Nitrogen>
+    <FM_Phosphorous>35</FM_Phosphorous>
+    <FM_Potash>14</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:26.300</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>22</FM_Id>
+    <FM_Name>15-15-15</FM_Name>
+    <FM_KName>15-15-15</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>15</FM_Nitrogen>
+    <FM_Phosphorous>15</FM_Phosphorous>
+    <FM_Potash>15</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:26.420</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>23</FM_Id>
+    <FM_Name>15-15-15-9</FM_Name>
+    <FM_KName>15-15-15-9</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>15</FM_Nitrogen>
+    <FM_Phosphorous>15</FM_Phosphorous>
+    <FM_Potash>15</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:26.727</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>24</FM_Id>
+    <FM_Name>16-16-16</FM_Name>
+    <FM_KName>16-16-16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:27.090</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>25</FM_Id>
+    <FM_Name>17-17-17</FM_Name>
+    <FM_KName>17-17-17</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>17</FM_Nitrogen>
+    <FM_Phosphorous>17</FM_Phosphorous>
+    <FM_Potash>17</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:27.350</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>26</FM_Id>
+    <FM_Name>19-19-19</FM_Name>
+    <FM_KName>19-19-19</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>19</FM_Nitrogen>
+    <FM_Phosphorous>19</FM_Phosphorous>
+    <FM_Potash>19</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:27.390</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>27</FM_Id>
+    <FM_Name>13-33-0-6</FM_Name>
+    <FM_KName>13-33-0-6</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>13</FM_Nitrogen>
+    <FM_Phosphorous>33</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:27.707</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>28</FM_Id>
+    <FM_Name>NFL Nangal-II Urea(50 Kg)</FM_Name>
+    <FM_KName>ಎನ್ಎಫ್ಎಲ್ ನಂಗಲ್- II ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:27.973</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>29</FM_Id>
+    <FM_Name>NFL Bhatinda Urea(50 Kg)</FM_Name>
+    <FM_KName>ಎನ್ಎಫ್ಎಲ್ ಭಟಿಂಡ ಯೂರಿಯಾ(50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:28.130</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>30</FM_Id>
+    <FM_Name>NFL Panipat Urea(50 Kg)</FM_Name>
+    <FM_KName>ಎನ್ಎಫ್ಎಲ್ ಪಾಣಿಪತ್ ಯೂರಿಯಾ(50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:28.227</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>31</FM_Id>
+    <FM_Name>NFL Vijaipur-I Urea(50 Kg)</FM_Name>
+    <FM_KName>ಎನ್ಎಫ್ಎಲ್ ವಿಜೈಪುರ- I ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:28.363</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>32</FM_Id>
+    <FM_Name>NFL Vijaipur-II Urea(50 Kg)</FM_Name>
+    <FM_KName>ಎನ್ಎಫ್ಎಲ್ ವಿಜೈಪುರ- II ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:28.440</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>33</FM_Id>
+    <FM_Name>RCF Thal Urea(50 Kg)</FM_Name>
+    <FM_KName>ಆರ್ಸಿಎಫ್ ಥಾಲ್ ಯೂರಿಯಾ(50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:28.717</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>34</FM_Id>
+    <FM_Name>RCF Trombay Urea(50 Kg)</FM_Name>
+    <FM_KName>ಆರ್ಸಿಎಫ್ ಟ್ರಾಂಬೇ ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:28.990</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>35</FM_Id>
+    <FM_Name>BVFCL Namrup-II Urea(50 Kg)</FM_Name>
+    <FM_KName>ಬಿವಿಎಫ್‌ಸಿಎಲ್ ನಮ್ರಪ್- II ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:29.257</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>36</FM_Id>
+    <FM_Name>BVFCL Namrup-III Urea(50 Kg)</FM_Name>
+    <FM_KName>ಬಿವಿಎಫ್‌ಸಿಎಲ್ ನಮ್ರಪ್- III ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:29.403</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>37</FM_Id>
+    <FM_Name>IFFCO Kalol Urea(50 Kg)</FM_Name>
+    <FM_KName>IFFCO ಕಲೋಲ್ ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:29.697</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>38</FM_Id>
+    <FM_Name>IFFCO Phulpur-I Urea(50 Kg)</FM_Name>
+    <FM_KName>IFFCO ಫುಲ್ಪುರ್ -I ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:29.963</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>39</FM_Id>
+    <FM_Name>IFFCO Phulpur-II Urea(50 Kg)</FM_Name>
+    <FM_KName>IFFCO ಫುಲ್ಪುರ್ -II ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:30.170</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>40</FM_Id>
+    <FM_Name>IFFCO Aonla-I Urea(50 Kg)</FM_Name>
+    <FM_KName>IFFCO ಅಯೋನ್ಲಾ-I ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:30.600</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>41</FM_Id>
+    <FM_Name>IFFCO Aonla-II Urea(50 Kg)</FM_Name>
+    <FM_KName>IFFCO ಅಯೋನ್ಲಾ-II ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:30.790</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>42</FM_Id>
+    <FM_Name>NFCL Kakinada-I Urea(50 Kg)</FM_Name>
+    <FM_KName>NFCL ಕಾಕಿನಾಡ-I ಯೂರಿಯಾ (50 Kg)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:30.887</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>43</FM_Id>
+    <FM_Name>NFCL Kakinada-II Urea(50 Kg)</FM_Name>
+    <FM_KName>NFCL ಕಾಕಿನಾಡ-II ಯೂರಿಯಾ (50 Kg)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:31.057</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>44</FM_Id>
+    <FM_Name>CFCL Gadepan-I Urea(50 Kg)</FM_Name>
+    <FM_KName>CFCL ಗಾದೆಪನ್- I ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:31.287</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>45</FM_Id>
+    <FM_Name>CFCL Gadepan-II Urea(50 Kg)</FM_Name>
+    <FM_KName>CFCL ಗಾದೆಪನ್-II ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:31.593</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>46</FM_Id>
+    <FM_Name>Imported Urea(50 Kg)</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಿದ ಯೂರಿಯಾ (50 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:31.633</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>47</FM_Id>
+    <FM_Name>Zincated 20-20-0-13</FM_Name>
+    <FM_KName>ಜಿಂಕೇಟ್ ಮಾಡಲಾಗಿದೆ 20-20-0-13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:31.767</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>48</FM_Id>
+    <FM_Name>Imported DAP</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಿದ ಡಿಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>18</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:31.893</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>49</FM_Id>
+    <FM_Name>Imported DAP Lite</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಿದ ಡಿಎಪಿ ಲೈಟ್</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>44</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:32.063</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>50</FM_Id>
+    <FM_Name>Boronated DAP</FM_Name>
+    <FM_KName>ಬೋರೊನೇಟೆಡ್ ಡಿಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>18</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:32.457</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>51</FM_Id>
+    <FM_Name>Imported MAP</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ ಎಂಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>11</FM_Nitrogen>
+    <FM_Phosphorous>52</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:32.650</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>52</FM_Id>
+    <FM_Name>16-20-0</FM_Name>
+    <FM_KName>16-20-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:32.860</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>53</FM_Id>
+    <FM_Name>Imported 10-26-26</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 10-26-26</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>10</FM_Nitrogen>
+    <FM_Phosphorous>26</FM_Phosphorous>
+    <FM_Potash>26</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:33.083</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>54</FM_Id>
+    <FM_Name>Imported 12-32-16</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 12-32-16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>12</FM_Nitrogen>
+    <FM_Phosphorous>32</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:33.323</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>55</FM_Id>
+    <FM_Name>Imported 13-33-0-6</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 13-33-0-6</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>13</FM_Nitrogen>
+    <FM_Phosphorous>33</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:33.573</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>56</FM_Id>
+    <FM_Name>Imported 14-28-14</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 14-28-14</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>14</FM_Nitrogen>
+    <FM_Phosphorous>28</FM_Phosphorous>
+    <FM_Potash>14</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:33.860</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>57</FM_Id>
+    <FM_Name>Imported 14-35-14</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 14-35-14</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>14</FM_Nitrogen>
+    <FM_Phosphorous>35</FM_Phosphorous>
+    <FM_Potash>14</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.080</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>58</FM_Id>
+    <FM_Name>Imported 15-15-15</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 15-15-15</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>15</FM_Nitrogen>
+    <FM_Phosphorous>15</FM_Phosphorous>
+    <FM_Potash>15</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.120</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>59</FM_Id>
+    <FM_Name>Imported 15-15-15-9</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 15-15-15-9</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>15</FM_Nitrogen>
+    <FM_Phosphorous>15</FM_Phosphorous>
+    <FM_Potash>15</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.140</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>60</FM_Id>
+    <FM_Name>Imported 16-20-0</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 16-20-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.297</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>61</FM_Id>
+    <FM_Name>Imported 16-20-0-13</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 16-20-0-13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.420</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>62</FM_Id>
+    <FM_Name>Imported 17-17-17</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 17-17-17</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>17</FM_Nitrogen>
+    <FM_Phosphorous>17</FM_Phosphorous>
+    <FM_Potash>17</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.613</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>63</FM_Id>
+    <FM_Name>Imported 19-19-19</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 19-19-19</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>19</FM_Nitrogen>
+    <FM_Phosphorous>19</FM_Phosphorous>
+    <FM_Potash>19</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.717</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>64</FM_Id>
+    <FM_Name>Imported 20-20-0</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 20-20-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:34.900</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>65</FM_Id>
+    <FM_Name>Imported 20-20-0-13</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 20-20-0-13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:35.173</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>66</FM_Id>
+    <FM_Name>Imported 23-23-0</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 23-23-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>23</FM_Nitrogen>
+    <FM_Phosphorous>23</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:35.447</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>67</FM_Id>
+    <FM_Name>Imported 24-24-0</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 24-24-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>24</FM_Nitrogen>
+    <FM_Phosphorous>24</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:35.620</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>68</FM_Id>
+    <FM_Name>Imported 28-28-0</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 28-28-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>28</FM_Nitrogen>
+    <FM_Phosphorous>28</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:35.643</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>69</FM_Id>
+    <FM_Name>Imported 16-16-16</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಲಾಗಿದೆ 16-16-16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:35.810</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>70</FM_Id>
+    <FM_Name>Boronated 15-15-15</FM_Name>
+    <FM_KName>ಬೋರೊನೇಟೆಡ್ 15-15-15</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>15</FM_Nitrogen>
+    <FM_Phosphorous>15</FM_Phosphorous>
+    <FM_Potash>15</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:36.027</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>71</FM_Id>
+    <FM_Name>Boronated 10-26-26</FM_Name>
+    <FM_KName>ಬೋರೊನೇಟೆಡ್ 10-26-26</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>10</FM_Nitrogen>
+    <FM_Phosphorous>26</FM_Phosphorous>
+    <FM_Potash>26</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:36.453</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>72</FM_Id>
+    <FM_Name>Boronated 12-32-16</FM_Name>
+    <FM_KName>ಬೋರೊನೇಟೆಡ್ 12-32-16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>12</FM_Nitrogen>
+    <FM_Phosphorous>32</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:36.727</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>73</FM_Id>
+    <FM_Name>Zincated 10-26-26</FM_Name>
+    <FM_KName>ಜಿಂಕೇಟ್ ಮಾಡಲಾಗಿದೆ 10-26-26</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>10</FM_Nitrogen>
+    <FM_Phosphorous>26</FM_Phosphorous>
+    <FM_Potash>26</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:36.923</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>74</FM_Id>
+    <FM_Name>Zincated 12-32-16</FM_Name>
+    <FM_KName>ಜಿಂಕೇಟ್ ಮಾಡಲಾಗಿದೆ 12-32-16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>12</FM_Nitrogen>
+    <FM_Phosphorous>32</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:37.110</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>75</FM_Id>
+    <FM_Name>SSP-Powdered</FM_Name>
+    <FM_KName>ಎಸ್‌ಎಸ್‌ಪಿ-ಪುಡಿ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:37.240</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>76</FM_Id>
+    <FM_Name>SSP-Boronated</FM_Name>
+    <FM_KName>ಎಸ್‌ಎಸ್‌ಪಿ-ಬೋರೊನೇಟೆಡ್</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:37.600</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>77</FM_Id>
+    <FM_Name>Zincated DAP</FM_Name>
+    <FM_KName>ಜಿಂಕೇಟ್ ಮಾಡಲಾಗಿದೆ ಡಿಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>18</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:37.820</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>78</FM_Id>
+    <FM_Name>24-24-0-8</FM_Name>
+    <FM_KName>24-24-0-8</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>24</FM_Nitrogen>
+    <FM_Phosphorous>24</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:38.080</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>79</FM_Id>
+    <FM_Name>SSP-Zincated(Powder)</FM_Name>
+    <FM_KName>ಎಸ್‌ಎಸ್‌ಪಿ-ಜಿಂಕೇಟ್ ಮಾಡಲಾಗಿದೆ(ಪುಡಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:38.327</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>80</FM_Id>
+    <FM_Name>SSP-Zincated(Granular)</FM_Name>
+    <FM_KName>ಎಸ್‌ಎಸ್‌ಪಿ-ಜಿಂಕೇಟ್ ಮಾಡಲಾಗಿದೆ(ಹರಳಿನ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:38.393</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>81</FM_Id>
+    <FM_Name>20-20-0-13(UAP)</FM_Name>
+    <FM_KName>20-20-0-13(ಯುಎಪಿ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:38.720</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>82</FM_Id>
+    <FM_Name>Neem Coated Urea(45 Kg)</FM_Name>
+    <FM_KName>ಬೇವಿನ ಲೇಪಿತ ಯೂರಿಯಾ (45 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:38.940</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>83</FM_Id>
+    <FM_Name>Imported Neem Coated Urea(45 Kg)</FM_Name>
+    <FM_KName>ಆಮದು ಮಾಡಿದ ಬೇವು ಲೇಪಿತ ಯೂರಿಯಾ (45 ಕೆಜಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:39.230</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>84</FM_Id>
+    <FM_Name>SSP-Zincated-Boronated(Granular)</FM_Name>
+    <FM_KName>ಎಸ್‌ಎಸ್‌ಪಿ-ಜಿಂಕೇಟೆಡ್-ಬೊರೊನೇಟೆಡ್ (ಹರಳಿನ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:39.493</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>85</FM_Id>
+    <FM_Name>14-28-0-0</FM_Name>
+    <FM_KName>14-28-0-0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>14</FM_Nitrogen>
+    <FM_Phosphorous>28</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:39.633</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>86</FM_Id>
+    <FM_Name>8-21-21</FM_Name>
+    <FM_KName>8-21-21</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>8</FM_Nitrogen>
+    <FM_Phosphorous>21</FM_Phosphorous>
+    <FM_Potash>21</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:39.767</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>87</FM_Id>
+    <FM_Name>9-24-24</FM_Name>
+    <FM_KName>9-24-24</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>9</FM_Nitrogen>
+    <FM_Phosphorous>24</FM_Phosphorous>
+    <FM_Potash>24</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:40.097</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>88</FM_Id>
+    <FM_Name>Calcium Ammonium Nitrate(CAN)</FM_Name>
+    <FM_KName>ಕ್ಯಾಲ್ಸಿಯಂ ಅಮೋನಿಯಂ ನೈಟ್ರೇಟ್ (CAN)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>27</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:40.460</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>89</FM_Id>
+    <FM_Name>Sulphate of Potash</FM_Name>
+    <FM_KName>ಸಲ್ಫೇಟ್ ಆಫ್ ಪೊಟ್ಯಾಶ್</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>50</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:40.870</FM_Created_On>
+  </FertilizersData>
+</FertilizersMaster>

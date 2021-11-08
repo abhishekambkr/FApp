@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="8dp"
+        android:background="@color/milkywhite">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <ImageView
+                android:id="@+id/image_cropregister"
+                android:src="@drawable/crp_register"
+                android:layout_width="match_parent"
+                android:scaleType="centerInside"
+                android:padding="10dp"
+                android:layout_height="180dp"/>
+            <TextView
+                android:id="@+id/title_cropregister"
+                android:textColor="#262626"
+                android:layout_below="@id/image_cropregister"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Title"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/desc_cropregister"
+                android:textColor="#262626"
+                android:layout_below="@id/title_cropregister"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:maxLines="10"
+                android:drawablePadding="10dp"
+                android:ellipsize="start"
+                android:text="Description"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
