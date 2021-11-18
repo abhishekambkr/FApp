@@ -2,6 +2,7 @@ package org.nic.fruits;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -29,18 +30,26 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.nic.fruits.CropDetails.CropRegister;
 import org.nic.fruits.database.AppDatabase;
+import org.nic.fruits.database.AppExecutors;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
+import org.nic.fruits.pojo.ModelCropRegistration;
 import org.nic.fruits.pojo.ModelCropSurveyDetails;
+import org.nic.fruits.pojo.ModelFarmFertilizer;
+import org.nic.fruits.pojo.ModelFarmerLandDeatails;
 import org.nic.fruits.pojo.ModelFertilizerCropMaster;
 import org.nic.fruits.pojo.ModelFertilizerNameMaster;
 import org.nic.fruits.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 public class FarmFertilizer extends AppCompatActivity {
 
@@ -50,6 +59,7 @@ public class FarmFertilizer extends AppCompatActivity {
     AppDatabase appDatabase;
     Locale locale;
     String yearValue = "", seasonValue = "", cropNameValue = "", cropAreaValue="", cropCodeValue="";
+    String districtValue = "",talukValue = "",hobliValue = "",villageValue = "",surveyValue = "",cropname = "", cropextentValue="", cropcode ="";
     LinearLayout linearLayoutFertilizerDetails;
     TextView tvFarmerId;
     Spinner spYear,spSeason;
@@ -92,9 +102,9 @@ public class FarmFertilizer extends AppCompatActivity {
     int fmPhosphorous =0;
     int fmNitrogen = 0;
     int fmPotash = 0;
-    int requiredNitrogen = 0;
-    int requiredPhosphorous = 0;
-    int requiredPotash = 0;
+    int requiredNitrogen;
+    int requiredPhosphorous;
+    int requiredPotash;
     List<String> arrayFertilizerName;
     List<String> arrayPhosphorous;
     List<String> arrayNitrogen;
@@ -105,17 +115,36 @@ public class FarmFertilizer extends AppCompatActivity {
     double totalN = 0;
     double totalP = 0;
     double totalK = 0;
- //   TextView tvuserDetail;
+    //   TextView tvuserDetail;
     RelativeLayout rlTableUserDetails;
+    RelativeLayout rlTableNutrientDetails;
     RelativeLayout rlTableArea;
     RelativeLayout rlTableFertilizer;
     TableLayout tbUserDetails;
+    TableLayout tbNutrientDetail;
     TableLayout tbAreaDetails;
+    TableLayout tbNPKDetails;
 
     TextView tvNutrientdetail;
     TextView tvNPKDetails;
-    int count =0 ;
+    Set<String> npk;
+    int count =0;
     final Handler handler = new Handler();
+
+    String checkcropname;
+    String cropExtentTNitrogen;
+    String cropExtentTPhosphorous;
+    String cropExtentTPotash;
+
+    List<String> arrayCropExtentTotalNPK;
+    String cropextentTotalNPK ="";
+    int finalDataObtained = 0;
+    String recommendednpkvalue;
+    double value;
+    double bagValue;
+    List<String> arrayKGValue;
+    List<String> arraybagValue;
+    String displayRecommendedValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,13 +165,17 @@ public class FarmFertilizer extends AppCompatActivity {
         tvFarmerId = findViewById(R.id.textviewFarmerId);
         spYear = findViewById(R.id.spinnerFFYear);
         spSeason = findViewById(R.id.spinnerFFSeason);
-    //    tvuserDetail = findViewById(R.id.tvuserdetails);
+        //    tvuserDetail = findViewById(R.id.tvuserdetails);
         rlTableUserDetails= findViewById(R.id.rlUserDetails);
+        rlTableNutrientDetails = findViewById(R.id.rlNutrientdetails);
         rlTableArea = findViewById(R.id.rlAreaDetails);
+        rlTableFertilizer = findViewById(R.id.rlnpkdetails);
         tbUserDetails = findViewById(R.id.tbUserDetail);
+        tbNutrientDetail = findViewById(R.id.tbNutrientdetails);
         tbAreaDetails = findViewById(R.id.tbAreaDetail);
-        tvNutrientdetail = findViewById(R.id.tvNutrientdetails);
-        tvNPKDetails = findViewById(R.id.npkdetails);
+        tbNPKDetails = findViewById(R.id.tbnpkdetails);
+
+        //  tvNPKDetails = findViewById(R.id.npkdetails);
         arrayYear = new ArrayList<>();
         arraySeason = new ArrayList<>();
         arrayCropCodeValue = new ArrayList<>();
@@ -178,6 +211,9 @@ public class FarmFertilizer extends AppCompatActivity {
         arrayPotash = new ArrayList<>();
 
         arrayFertilizerName = new ArrayList<>();
+        arrayCropExtentTotalNPK = new ArrayList<>();
+        arrayKGValue = new ArrayList<>();
+        arraybagValue = new ArrayList<>();
 
         arrayNutrientCombination.clear();
         arrayNutrientCombination.add(0,"1");
@@ -322,12 +358,12 @@ public class FarmFertilizer extends AppCompatActivity {
                             totalN = 0;
                             totalP = 0;
                             totalK = 0;
-                         //   tvuserDetail.setText("");
+                            arrayCropExtentTotalNPK.clear();
                             linearLayoutFertilizerDetails.setVisibility(View.GONE);
                             clearViews();
 
-                            tvNutrientdetail.setText("");
-                            tvNPKDetails.setText("");
+
+                            //   tvNPKDetails.setText("");
                             getSeason();
                         }
                     }
@@ -444,13 +480,11 @@ public class FarmFertilizer extends AppCompatActivity {
                                 totalN = 0;
                                 totalP = 0;
                                 totalK = 0;
-                            //    tvuserDetail.setText("");
+                                arrayCropExtentTotalNPK.clear();
                                 linearLayoutFertilizerDetails.setVisibility(View.GONE);
                                 clearViews();
-                                tvNutrientdetail.setText("");
-                                tvNPKDetails.setText("");
-                                Toast toast = Toast.makeText(mContext, "Loading... please wait", Toast.LENGTH_SHORT);
 
+                                Toast toast = Toast.makeText(mContext, "Loading... please wait", Toast.LENGTH_SHORT);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                                 getCropDetails();
@@ -467,7 +501,7 @@ public class FarmFertilizer extends AppCompatActivity {
     }
 
     private void getCropDetails() {
-
+        arrayCropExtentTotalNPK.clear();
         arrayCropName.clear();
         arrayCropArea.clear();
         if(yearValue!=null && seasonValue !=null)
@@ -514,6 +548,8 @@ public class FarmFertilizer extends AppCompatActivity {
                                 arraySurvey.addAll(filterSurvey);
 
                                 arrayCropName.add(taskEntry.getCropName());
+             /*                   arrayCropName.add(0,"Coconut");
+                                arrayCropName.add(1,"Groundnut");*/
                                 Set<String> filterCropName;
                                 filterCropName = new LinkedHashSet<String>(arrayCropName);
                                 arrayCropName.clear();
@@ -525,54 +561,90 @@ public class FarmFertilizer extends AppCompatActivity {
                                 arrayCropArea.clear();
                                 arrayCropArea.addAll(filterCropArea);
 
+                                districtValue = taskEntry.getDistrictname();
+                                talukValue = taskEntry.getTalukName();
+                                hobliValue = taskEntry.getHobliName();
+                                villageValue = taskEntry.getVillageName();
+                                surveyValue = taskEntry.getSurveyNumber();
+                                cropname = taskEntry.getCropName();
+                                cropextentValue = taskEntry.getCropArea();
+
                             } else {
                                 arrayDistrict.add(taskEntry.getDistrictname());
-                            /*    Set<String> filterDistrictName;
+                                Set<String> filterDistrictName;
                                 filterDistrictName = new LinkedHashSet<String>(arrayDistrict);
                                 arrayDistrict.clear();
-                                arrayDistrict.addAll(filterDistrictName);*/
+                                arrayDistrict.addAll(filterDistrictName);
 
                                 arrayTaluk.add(taskEntry.getTalukName());
-                         /*       Set<String> filterTalukName;
+                                Set<String> filterTalukName;
                                 filterTalukName = new LinkedHashSet<String>(arrayTaluk);
                                 arrayTaluk.clear();
-                                arrayTaluk.addAll(filterTalukName);*/
+                                arrayTaluk.addAll(filterTalukName);
 
                                 arrayHobli.add(taskEntry.getHobliName());
-                           /*     Set<String> filterHobliName;
+                                Set<String> filterHobliName;
                                 filterHobliName = new LinkedHashSet<String>(arrayHobli);
                                 arrayHobli.clear();
-                                arrayHobli.addAll(filterHobliName);*/
+                                arrayHobli.addAll(filterHobliName);
 
                                 arrayVillage.add(taskEntry.getVillageName());
-                     /*           Set<String> filterVillageName;
+                                Set<String> filterVillageName;
                                 filterVillageName = new LinkedHashSet<String>(arrayVillage);
                                 arrayVillage.clear();
-                                arrayVillage.addAll(filterVillageName);*/
+                                arrayVillage.addAll(filterVillageName);
 
                                 arraySurvey.add(taskEntry.getSurveyNumber());
-                           /*     Set<String> filterSurvey;
+                                Set<String> filterSurvey;
                                 filterSurvey = new LinkedHashSet<String>(arraySurvey);
                                 arraySurvey.clear();
-                                arraySurvey.addAll(filterSurvey);*/
+                                arraySurvey.addAll(filterSurvey);
 
                                 arrayCropName.add(taskEntry.getCropName());
-                            /*    Set<String> filterCropName;
+                               /* arrayCropName.add(0,"Coconut");
+                                arrayCropName.add(1,"Groundnut");*/
+                                Set<String> filterCropName;
                                 filterCropName = new LinkedHashSet<String>(arrayCropName);
                                 arrayCropName.clear();
-                                arrayCropName.addAll(filterCropName);*/
+                                arrayCropName.addAll(filterCropName);
 
                                 arrayCropArea.add(taskEntry.getCropArea());
-                                /*Set<String> filterCropArea;
+                                Set<String> filterCropArea;
                                 filterCropArea = new LinkedHashSet<String>(arrayCropArea);
                                 arrayCropArea.clear();
-                                arrayCropArea.addAll(filterCropArea);*/
+                                arrayCropArea.addAll(filterCropArea);
+
+                                districtValue = taskEntry.getDistrictname();
+                                talukValue = taskEntry.getTalukName();
+                                hobliValue = taskEntry.getHobliName();
+                                villageValue = taskEntry.getVillageName();
+                                surveyValue = taskEntry.getSurveyNumber();
+                                cropname = taskEntry.getCropName();
+                                cropextentValue = taskEntry.getCropArea();
                             }
                         }
                         System.out.println("CropName array - " + arrayCropName);
                         System.out.println("CropArea array - " + arrayCropArea);
                         System.out.println("arrayDistrict array - " + arrayDistrict);
                         System.out.println("arraySurvey array - " + arraySurvey);
+
+                        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                appDatabase.farmFertilizerDAO().deleteAllFarmFertilizer();
+                            }
+                        });
+                        for (int k = 0; k < arrayCropName.size(); k++){
+                            for (int l = 0; l < arraySurvey.size(); l++) {
+                                final ModelFarmFertilizer modelFarmFertilizer = new ModelFarmFertilizer(farmerID, yearValue, seasonValue, arrayCropName.get(k), "", arrayCropArea.get(l), "", districtValue, talukValue, hobliValue, villageValue, arraySurvey.get(l), "", "","", "", "", "", "");
+                                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        appDatabase.farmFertilizerDAO().insertCropDetails(modelFarmFertilizer);
+                                    }
+                                });
+                            }
+                        }
                         getFertilizerDetails();
                     }
                     else {
@@ -611,6 +683,8 @@ public class FarmFertilizer extends AppCompatActivity {
 
                             if (locale.toString().equals("en")) {
                                 arrayFertilizerCropCode.add(taskEntry.getCropcode());
+                                /*arrayFertilizerCropCode.add(0,"35");
+                                arrayFertilizerCropCode.add(1,"11");*/
                                 Set<String> filterCropCode;
                                 filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
                                 arrayFertilizerCropCode.clear();
@@ -623,7 +697,9 @@ public class FarmFertilizer extends AppCompatActivity {
 
                             }
                             else {
-                                arrayCropName.add(taskEntry.getCropcode());
+                                arrayFertilizerCropCode.add(taskEntry.getCropcode());
+                               /* arrayFertilizerCropCode.add(0,"35");
+                                arrayFertilizerCropCode.add(1,"11");*/
                                 Set<String> filterCropCode;
                                 filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
                                 arrayFertilizerCropCode.clear();
@@ -638,6 +714,22 @@ public class FarmFertilizer extends AppCompatActivity {
                         }
                         System.out.println("CropCode array - " + arrayFertilizerCropCode);
                         System.out.println("CropType array - " + arrayFertilizerCropType);
+                        for (int k = 0; k < arrayCropName.size(); k++){
+                            String cropname = arrayCropName.get(k).toString();
+                            String cropcodeFertilizer = arrayFertilizerCropCode.get(k).toString();
+                            //    final ModelFarmFertilizer modelFarmFertilizer = new ModelFarmFertilizer(farmerID, yearValue, seasonValue, arrayCropName.get(k), "", arrayCropArea.get(l), "", districtValue, talukValue, hobliValue, villageValue, arraySurvey.get(l), "", "", "", "", "", "");
+                            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //        appDatabase.farmFertilizerDAO().insertCropDetails(modelFarmFertilizer);
+
+                                    appDatabase.farmFertilizerDAO().updateFarmFertilizerCropCode(farmerID,cropname,cropcodeFertilizer);
+
+                                }
+                            });
+
+                        }
+
                         getCropNPK();
                     }
                     else {
@@ -662,12 +754,10 @@ public class FarmFertilizer extends AppCompatActivity {
 
     private void getCropNPK() {
 
-        for(int k=0 ;k<arrayFertilizerCropCode.size();k++){
+        for(int k=0;k<arrayFertilizerCropCode.size();k++){
 
-       //     cropCodeValue = arrayFertilizerCropCode.get(k);
-            arrayCropCodeValue.add(arrayFertilizerCropCode.get(k));
             MainViewModel viewFertilizerCropMaster = ViewModelProviders.of(this).get(MainViewModel.class);
-            viewFertilizerCropMaster.getCropNPK(arrayCropCodeValue.get(k)).observe(this, new Observer<List<ModelCropFertilizerMasternpk>>() {
+            viewFertilizerCropMaster.getCropNPK(arrayFertilizerCropCode.get(k)).observe(this, new Observer<List<ModelCropFertilizerMasternpk>>() {
 
                 @Override
                 public void onChanged(@Nullable List<ModelCropFertilizerMasternpk> taskEntries) {
@@ -721,6 +811,23 @@ public class FarmFertilizer extends AppCompatActivity {
                         System.out.println("CropNitrogen array - " + arrayFertilizerCropNitrogen);
                         System.out.println("CropPhospohorous array - " + arrayFertilizerCropPhospohorous);
                         System.out.println("CropPotash array - " + arrayFertilizerCropPotash);
+
+                        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                for (int k = 0; k < arrayCropName.size(); k++){
+                                    String checkcropname = arrayCropName.get(k).toString();
+                                    for(int j=0;j<arrayFertilizerCropNitrogen.size();j++) { //arrayFertilizerCropNitrogen
+
+                                        String nitrogen = arrayFertilizerCropNitrogen.get(j).toString();
+                                        String phosphorous = arrayFertilizerCropPhospohorous.get(j).toString();
+                                        String potash = arrayFertilizerCropPotash.get(j).toString();
+                                        appDatabase.farmFertilizerDAO().updateFarmFertilizerrecommendedNPK(farmerID,yearValue, seasonValue, checkcropname,nitrogen+"-"+phosphorous+"-"+potash);
+
+                                    }
+                                }
+                            }
+                        });
                         calculaterequiredNPK();
                     }
                     else {
@@ -763,9 +870,11 @@ public class FarmFertilizer extends AppCompatActivity {
                 System.out.println("totalArea - " + totalArea);
 
                 for(int s=0;s<arrayFertilizerCropNitrogen.size();s++){
-                    arrayRequiredNitrogen.add(String.valueOf((int) Math.round(Integer.parseInt(arrayFertilizerCropNitrogen.get(s)) * totalArea)));
-                    arrayRequiredPhospohorous.add(String.valueOf((int) Math.round(Integer.parseInt(arrayFertilizerCropPhospohorous.get(s)) * totalArea)));
-                    arrayRequiredPotash.add(String.valueOf((int) Math.round(Integer.parseInt(arrayFertilizerCropPotash.get(s)) * totalArea)));
+                    arrayRequiredNitrogen.add(String.valueOf((int) Math.round(Integer.parseInt(arrayFertilizerCropNitrogen.get(s).toString()) * totalArea)));
+                    arrayRequiredPhospohorous.add(String.valueOf((int) Math.round(Integer.parseInt(arrayFertilizerCropPhospohorous.get(s).toString()) * totalArea)));
+                    arrayRequiredPotash.add(String.valueOf((int) Math.round(Integer.parseInt(arrayFertilizerCropPotash.get(s).toString()) * totalArea)));
+                    recommendednpkvalue = " - Nitrogen : " + arrayFertilizerCropNitrogen.get(s) +", Phospohorous : "+arrayFertilizerCropPhospohorous.get(s)+", Potash : "+arrayFertilizerCropPotash.get(s);
+
                 }
                 sumNitrogen = sumNitrogen + Integer.parseInt(arrayRequiredNitrogen.get(i));
                 sumPhospohorous = sumPhospohorous + Integer.parseInt(arrayRequiredPhospohorous.get(i));
@@ -775,20 +884,43 @@ public class FarmFertilizer extends AppCompatActivity {
             arrayAddRequiredPhospohorous.add(String.valueOf(sumPhospohorous));
             arrayAddRequiredPotash.add(String.valueOf(sumPotash));
 
-            System.out.println("arrayRequiredNitrogen array - " + arrayRequiredNitrogen + " " + arrayRequiredNitrogen.size());
-            System.out.println("arrayRequiredPhospohorous array - " + arrayRequiredPhospohorous);
-            System.out.println("arrayRequiredPotash array - " + arrayRequiredPotash);
 
-            System.out.println("sum arrayAddNitrogen - " + arrayAddRequiredNitrogen );
-            System.out.println("sum arrayAddPhospohorous - " + arrayAddRequiredPhospohorous);
-            System.out.println("sum arrayAddPotash - " + arrayAddRequiredPotash);
+            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                @Override
+                public void run() {
 
+                    for (int k = 0; k < arrayCropName.size(); k++){
+                        checkcropname = arrayCropName.get(k).toString();
+                        displayRecommendedValue = " crop : " +arrayCropName.get(k) + recommendednpkvalue;
+                        for(int j=0;j<arrayCropArea.size();j++) {
+                            cropExtentTNitrogen = arrayRequiredNitrogen.get(j).toString();
+                            cropExtentTPhosphorous = arrayRequiredPhospohorous.get(j).toString();
+                            cropExtentTPotash = arrayRequiredPotash.get(j).toString();
+
+                            appDatabase.farmFertilizerDAO().updateFarmFertilizerrecommendedCENPK(farmerID,yearValue, seasonValue, checkcropname,arrayCropArea.get(j),arrayRequiredNitrogen.get(j).toString()+"-"+ arrayRequiredPhospohorous.get(j).toString()+"-"+arrayRequiredPotash.get(j).toString());
+
+                        }
+                    }
+
+                    for (int k = 0; k < arrayCropName.size(); k++){
+                        checkcropname = arrayCropName.get(k).toString();
+                        for(int j=0;j<arrayAddRequiredNitrogen.size();j++) {
+
+                            appDatabase.farmFertilizerDAO().updateFarmFertilizerrecommendedSumNPK(farmerID,yearValue, seasonValue, checkcropname,arrayAddRequiredNitrogen.get(j).toString()+"-"+ arrayAddRequiredPhospohorous.get(j).toString()+"-"+arrayAddRequiredPotash.get(j).toString());
+
+                        }
+                    }
+                }
+            });
+            calculateNPKDB();
             calculateNPK();
+
 
         }
     }
 
     private void calculateNPK() {
+
         System.out.println("func calculateNPK ");
         System.out.println("arrayNutrientCombination.size() " + arrayNutrientCombination.size());
         for(int i=0;i<arrayNutrientCombination.size();i++){
@@ -820,7 +952,7 @@ public class FarmFertilizer extends AppCompatActivity {
                 }
             });
         }
-        arrayFertilizerName.add(0,"MOP");
+  /*      arrayFertilizerName.add(0,"MOP");
         arrayFertilizerName.add(1,"Urea");
         arrayFertilizerName.add(2,"DAP");
         arrayFinalNitrogenValue.add(0,"0");
@@ -831,217 +963,303 @@ public class FarmFertilizer extends AppCompatActivity {
         arrayFinalPhospohorousValue.add(2,"46");
         arrayFinalPotashValue.add(0,"60");
         arrayFinalPotashValue.add(1,"0");
-        arrayFinalPotashValue.add(2,"0");
+        arrayFinalPotashValue.add(2,"0");*/
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(arrayFinalNitrogenValue.size() !=0){
-                    System.out.println("arrayFinalNitrogenValue.size - " + arrayFinalNitrogenValue.size());
-                    System.out.println("arrayFinalPhosphorousValue.size - " + arrayFinalPhospohorousValue.size());
-                    System.out.println("arrayFinalPotashValue.size - " + arrayFinalPotashValue.size());
-                    caluculateFinalNPK();
-                }
+                //    caluculateFinalNPK();
+                calculateFinalNPKDB();
             }
         }, 1000);
 
+    }
+
+    private void calculateNPKDB() {
+        arrayCropExtentTotalNPK.clear();
+        final CountDownLatch countDownLatch = new CountDownLatch(2);
+
+        for (int i = 0; i < arrayCropName.size(); i++) {
+
+            appDatabase.farmFertilizerDAO().getCropExtentTotalDataForNPK(farmerID,yearValue,seasonValue,arrayCropName.get(i)).observe(this, new Observer<List<ModelFarmFertilizer>>() {
+
+                @Override
+                public void onChanged(@Nullable List<ModelFarmFertilizer> modelFarmFertilizers) { //List<ModelFarmFertilizer> modelFarmFertilizers
+                    if (modelFarmFertilizers != null && !modelFarmFertilizers.isEmpty()){
+                        for(ModelFarmFertilizer taskEntry:modelFarmFertilizers){
+                            countDownLatch.countDown();
+                            cropextentTotalNPK = taskEntry.getCropextentTotalNPK();
+                            System.out.println("taskEntry " + cropextentTotalNPK);
+                            if(taskEntry.getCropextentTotalNPK()!=null){
+                                arrayCropExtentTotalNPK.add(taskEntry.getCropextentTotalNPK());
+                                Set<String> filterCropExtentTotalNPK;
+                                filterCropExtentTotalNPK = new LinkedHashSet<String>(arrayCropExtentTotalNPK);
+                                arrayCropExtentTotalNPK.clear();
+                                arrayCropExtentTotalNPK.addAll(filterCropExtentTotalNPK);
+                            }
+
+                        }
+                    }
+                }
+            });
+            try {
+                countDownLatch.await(1, TimeUnit.SECONDS);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            // arrayCropExtentTotalNPK.add(value);
+        }
 
     }
 
-    private void caluculateFinalNPK() {
-        System.out.println("arrayFinalNitrogenValue.size " + arrayFinalNitrogenValue.size());
-    //    Toast.makeText(mContext,"Calculating..",Toast.LENGTH_SHORT).show();
-        handler.postDelayed(new Runnable() {
+    private void calculateFinalNPKDB(){
 
-            @Override
-            public void run() {
+        System.out.println("arrayCropExtentTotalNPKsize " + arrayCropExtentTotalNPK.size() + " " + arrayCropExtentTotalNPK);
 
-                for(int j=0;j<arrayFinalNitrogenValue.size();j++){ //arrayFinalNitrogenValue.size() arrayRequiredNitrogen
-                    try {
-                        fmNitrogen = Integer.parseInt(arrayFinalNitrogenValue.get(j));
+        for (int i = 0; i < arrayCropName.size(); i++) {
+
+            arrayFertilizerName.add(0, "MOP");
+            arrayFertilizerName.add(1, "Urea");
+            arrayFertilizerName.add(2, "DAP");
+            arrayFinalNitrogenValue.add(0, "0-46-18");
+            arrayFinalNitrogenValue.add(1, "46-0-0");
+            arrayFinalNitrogenValue.add(2, "18-46-0");
+                  /*  arrayFinalPhospohorousValue.add(0,"0");
+                    arrayFinalPhospohorousValue.add(1,"0");
+                    arrayFinalPhospohorousValue.add(2,"46");
+                    arrayFinalPotashValue.add(0,"60");
+                    arrayFinalPotashValue.add(1,"0");
+                    arrayFinalPotashValue.add(2,"0");*/
+            for (int d = 1; d < arrayCropExtentTotalNPK.size(); d++) {
+
+                String cropextnt = arrayCropExtentTotalNPK.get(d);
+                String[] splitextent = cropextnt.split("\\-");
+                String tempextent1 = splitextent[0];
+                String tempextent2 = splitextent[1];
+                String tempextent3 = splitextent[2];
+
+                System.out.println("tempextent1 " + tempextent1 + " tempextent2 " + tempextent2 + " tempextent3 " + tempextent3);
+                requiredNitrogen = Integer.parseInt(tempextent1);
+                requiredPhosphorous = Integer.parseInt(tempextent2);
+                requiredPotash = Integer.parseInt(tempextent3);
+                for (int j = 0; j < arrayFertilizerName.size(); j++) {
+
+                    String temp = arrayFinalNitrogenValue.get(j);
+
+                    tempfmdata = temp.split("-");
+                    fmNitrogen = Integer.parseInt(tempfmdata[0]);
+                    fmPhosphorous = Integer.parseInt(tempfmdata[1]);
+                    fmPotash = Integer.parseInt(tempfmdata[2]);
+
+                      /*  fmNitrogen = Integer.parseInt(arrayFinalNitrogenValue.get(j));
                         fmPhosphorous = Integer.parseInt(arrayFinalPhospohorousValue.get(j));
-                        fmPotash = Integer.parseInt(arrayFinalPotashValue.get(j));
+                        fmPotash = Integer.parseInt(arrayFinalPotashValue.get(j));*/
 
                        /* System.out.println("fmNitrogen values " + fmNitrogen );
                         System.out.println("fmPhosphorous values " + fmPhosphorous );
                         System.out.println("fmPotash values " + fmPotash );*/
 
-                        requiredNitrogen = Integer.parseInt(arrayRequiredNitrogen.get(j));
-                        requiredPhosphorous = Integer.parseInt(arrayRequiredPhospohorous.get(j));
-                        requiredPotash = Integer.parseInt(arrayRequiredPotash.get(j));
-
-                        /*System.out.println("requiredNitrogen values " + requiredNitrogen );
-                        System.out.println("requiredPhosphorous values " + requiredPhosphorous );
-                        System.out.println("requiredPotash values " + requiredPotash );*/
-
-                        if (fmPhosphorous != 0 && fmNitrogen != 0 && fmPotash != 0) {
-                            if (fmPhosphorous > fmNitrogen && fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
-                                phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
-                                requiredPhosphorous = 0;
-                                requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
-                                requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
-                                System.out.println("requiredPhosphorous 1 " + requiredPhosphorous + " requiredNitrogen " + requiredNitrogen + " requiredPotash " + requiredPotash);
-                            } else if (fmNitrogen > fmPhosphorous && fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
-
-                                nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
-                                requiredNitrogen = 0;
-                                requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * nitrogen));
-                                requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * nitrogen));
-                                System.out.println("requiredNitrogen 2 " + requiredNitrogen + " requiredPhosphorous " + requiredPhosphorous + " requiredPotash " + requiredPotash);
-
-                            } else if (fmPotash > fmPhosphorous && fmPotash > fmNitrogen && requiredPotash != 0) {
-
-                                potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
-                                requiredPotash = 0;
-                                requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * potash));
-                                requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * potash));
-                                System.out.println("requiredPotash 3 " + requiredPotash + " requiredNitrogen " + requiredNitrogen + " requiredPhosphorous " + requiredPhosphorous);
-                            } else if (requiredPhosphorous != 0) {
-                                phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
-                                requiredPhosphorous = 0;
-                                requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
-                                requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
-                                System.out.println("requiredPhosphorous 4 " + requiredPhosphorous + " requiredNitrogen " + requiredNitrogen + " requiredPotash " + requiredPotash);
-                            }
-                        }
-                        else if (fmPhosphorous != 0 && fmNitrogen != 0) {
-                            if (fmPhosphorous > fmNitrogen && requiredPhosphorous != 0) {
-                                phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
-                                requiredPhosphorous = 0;
-                                requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
-                                System.out.println("requiredPhosphorous 5 " + requiredPhosphorous + " requiredNitrogen " + requiredNitrogen + " requiredPotash -no");
-                            } else if (fmNitrogen > fmPhosphorous && requiredNitrogen != 0) {
-                                nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
-                                requiredNitrogen = 0;
-                                requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * nitrogen));
-                                System.out.println("requiredNitrogen 6 " + requiredNitrogen + " requiredPhosphorous " + requiredPhosphorous + " requiredPotash -no");
-                            }
-                        }
-                        else if (fmNitrogen != 0 && fmPotash != 0) {
-
-                            if (fmNitrogen > fmPotash && requiredNitrogen != 0) {
-                                nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
-                                requiredNitrogen = 0;
-                                requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * nitrogen));
-                                System.out.println("requiredNitrogen 7 " + requiredNitrogen + " requiredPotash " + requiredPotash + " requiredPhosphorous - no");
-                            } else if (fmPotash > fmNitrogen && requiredPotash != 0) {
-                                potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
-                                requiredPotash = 0;
-                                requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * potash));
-                                System.out.println("requiredPotash 8 " + requiredPotash + " requiredNitrogen " + requiredNitrogen + " requiredPhosphorous - no");
-                            }
-                        }
-                        else if (fmPhosphorous != 0 && fmPotash != 0) {
-
-                            if (fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
-                                phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
-                                requiredPhosphorous = 0;
-                                requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
-                                System.out.println("requiredPhosphorous 9 " + requiredPhosphorous + " requiredPotash " + requiredPotash + " requiredNitrogen - no");
-                            } else if (fmPotash > fmPhosphorous && requiredPotash != 0) {
-                                potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
-                                requiredPotash = 0;
-                                requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * potash));
-                                System.out.println("requiredPotash 10 " + requiredPotash + " requiredPhosphorous " + requiredPhosphorous + " requiredNitrogen -no " );
-                            }
-                        }
-                        else if (fmPhosphorous != 0 && requiredPhosphorous != 0) {
+                    if (fmPhosphorous != 0 && fmNitrogen != 0 && fmPotash != 0) {
+                        if (fmPhosphorous > fmNitrogen && fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
                             phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
                             requiredPhosphorous = 0;
-                            System.out.println("requiredPhosphorous 11 " + requiredPhosphorous);
-                        }
-                        else if (fmNitrogen != 0 && requiredNitrogen != 0) {
-                            nitrogen = (int) ((float) 100 / (float) fmNitrogen * requiredNitrogen);
+                            requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
+                            requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
+                        } else if (fmNitrogen > fmPhosphorous && fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
+
+                            nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
                             requiredNitrogen = 0;
-                            System.out.println("requiredNitrogen 12 " + requiredNitrogen);
-                        }
-                        else if (fmPotash != 0 && requiredPotash != 0) {
+                            requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * nitrogen));
+                            requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * nitrogen));
+
+                        } else if (fmPotash > fmPhosphorous && fmPotash > fmNitrogen && requiredPotash != 0) {
+
                             potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
                             requiredPotash = 0;
-                            System.out.println("requiredPotash 13 " + requiredPotash);
+                            requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * potash));
+                            requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * potash));
+                        } else if (requiredPhosphorous != 0) {
+                            phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
+                            requiredPhosphorous = 0;
+                            requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
+                            requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
                         }
+                    } else if (fmPhosphorous != 0 && fmNitrogen != 0) {
+                        if (fmPhosphorous > fmNitrogen && requiredPhosphorous != 0) {
+                            phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
+                            requiredPhosphorous = 0;
+                            requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
+                        } else if (fmNitrogen > fmPhosphorous && requiredNitrogen != 0) {
+                            nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
+                            requiredNitrogen = 0;
+                            requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * nitrogen));
+                        }
+                    } else if (fmNitrogen != 0 && fmPotash != 0) {
 
-                        if (phosphorous != 0) {
-                            // arrayData.add(String.valueOf(phosphorous));
-                            totalPhosphorous = totalPhosphorous + phosphorous;
-                            arrayPhosphorous.add(String.valueOf(totalPhosphorous));
-                            totalP = totalP + totalPhosphorous;
-                            System.out.println("totalPhosphorous " + totalPhosphorous);
-                            System.out.println("arrayFertilizerName in phosphorous " + arrayFertilizerName.get(j));
+                        if (fmNitrogen > fmPotash && requiredNitrogen != 0) {
+                            nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
+                            requiredNitrogen = 0;
+                            requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * nitrogen));
+                        } else if (fmPotash > fmNitrogen && requiredPotash != 0) {
+                            potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
+                            requiredPotash = 0;
+                            requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * potash));
                         }
-                        if (nitrogen != 0) {
-                            //  arrayData.add(String.valueOf(nitrogen));
-                            totalNitrogen = totalNitrogen + nitrogen;
-                            arrayNitrogen.add(String.valueOf(totalNitrogen));
-                            totalN = totalN + totalNitrogen;
-                            System.out.println("totalNitrogen " + totalNitrogen);
-                            System.out.println("arrayFertilizerName in nitrogen " + arrayFertilizerName.get(j));
-                        }
-                        if (potash != 0) {
-                            // arrayData.add(String.valueOf(potash));
-                            totalPotash = totalPotash + potash;
-                            arrayPotash.add(String.valueOf(totalPotash));
-                            totalK = totalK + totalPotash;
-                            System.out.println("totalPotash " + totalPotash);
-                            System.out.println("arrayFertilizerName in potash " + arrayFertilizerName.get(j));
-                        }
+                    } else if (fmPhosphorous != 0 && fmPotash != 0) {
 
-                        //  if(requiredNitrogen == 0 && requiredPhosphorous == 0 && requiredPotash == 0) {
+                        if (fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
+                            phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
+                            requiredPhosphorous = 0;
+                            requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
+                        } else if (fmPotash > fmPhosphorous && requiredPotash != 0) {
+                            potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
+                            requiredPotash = 0;
+                            requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * potash));
+                        }
+                    } else if (fmPhosphorous != 0 && requiredPhosphorous != 0) {
+                        phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
+                        requiredPhosphorous = 0;
 
-                        //  }
-                    }catch (IndexOutOfBoundsException e){
-                        e.printStackTrace();
+                    } else if (fmNitrogen != 0 && requiredNitrogen != 0) {
+                        nitrogen = (int) ((float) 100 / (float) fmNitrogen * requiredNitrogen);
+                        requiredNitrogen = 0;
+                    } else if (fmPotash != 0 && requiredPotash != 0) {
+                        potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
+                        requiredPotash = 0;
                     }
 
-                }
-                System.out.println("arrayPhosphorous - " + arrayPhosphorous);
-                System.out.println("arrayNitrogen - " + arrayNitrogen);
-                System.out.println("arrayPotash - " + arrayPotash);
-                double bag1;
-                double bag2;
-                double bag3;
+                    if (phosphorous != 0) {
+                        totalP = totalP + phosphorous;
+                        finalDataObtained = phosphorous;
+                        arrayPhosphorous.add(String.valueOf(totalP));
+                    }
+                    if (nitrogen != 0) {
+                        totalN = totalN + nitrogen;
+                        finalDataObtained = nitrogen;
+                        arrayPhosphorous.add(String.valueOf(totalN));
+                    }
+                    if (potash != 0) {
+                        totalK = totalK + potash;
+                        finalDataObtained = potash;
+                        arrayPhosphorous.add(String.valueOf(totalK));
+                    }
 
-                bag1 = Math.round(totalK/50);
-                System.out.println("bag1 - " + bag1);
-                if(totalK<50){
-                    bag1 = 1;
-                }
+                    System.out.println("requiredNitrogen - " + requiredNitrogen);
 
-                bag2 = Math.round(totalN/50);
-                System.out.println("bag2 - " + bag2);
-                if(totalN<50){
-                    bag2 = 1;
-                }
-                bag3 = Math.round(totalP/50);
-                System.out.println("bag3 - " + bag3);
-                if(totalP<50){
-                    bag3 = 1;
-                }
-//arrayFertilizerCropNitrogen
+                    value = Double.valueOf(String.valueOf(arrayPhosphorous.get(j)));
+                    bagValue = Math.round(value / 50);
+                    arrayKGValue.add(String.valueOf((int)value));
+                    if (value < 50) {
+                        bagValue = 1;
+                    }
+                    arraybagValue.add(String.valueOf((int)bagValue));
 
-                System.out.println("arrayCropArea.size - " + arrayCropArea.size());
-                linearLayoutFertilizerDetails.setVisibility(View.VISIBLE);
-                tvNutrientdetail.setText("Recommended Nutrient for 1 acre :"+"\nNitrogen : " +arrayFertilizerCropNitrogen.get(0) +", Phospohorous : "+arrayFertilizerCropPhospohorous.get(0)+", Potash : "+arrayFertilizerCropPotash.get(0));
-                  if(count == 0) {
-                      adduserTable();
-                      addFertilizerTable();
-                  }
-                adduserTableData();
+                    linearLayoutFertilizerDetails.setVisibility(View.VISIBLE);
+
+                    if(count == 0) {
+                        adduserTable();
+                        addFertilizerTable();
+                        addNPKTable();
+                    }
+
+                    addNPKTableData(arrayFertilizerName.get(j),(int)value,(int)bagValue);
+                    String cname = arrayCropName.get(i);
+
+                    System.out.println("Fertilizername - " + arrayFertilizerName.get(j) + " KGs. - " + value + " bags - " + bagValue);
+
+                    AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            appDatabase.farmFertilizerDAO().updatefertilizername(farmerID,yearValue,seasonValue,cname,arrayFertilizerName.toString());
+                            appDatabase.farmFertilizerDAO().updatekg(farmerID,yearValue,seasonValue,cname,arrayKGValue.toString());
+                            appDatabase.farmFertilizerDAO().updatebags(farmerID,yearValue,seasonValue,cname,arraybagValue.toString());
+                        }
+                    });
+                }
                 addFertilizerTableData();
-                tvNPKDetails.setText(arrayFertilizerName.get(0) + " KGs - " + (int)totalK + " Bags - " + (int)bag1 +"\n"+ arrayFertilizerName.get(1) + " KGs - " + (int)totalN + " Bags - " + (int)bag2 +"\n"+ arrayFertilizerName.get(2) + " KGs - " + (int)totalP + " Bags - " + (int)bag3);
-               /* System.out.println("arrayFinalNitrogenValue - " + arrayFinalNitrogenValue);
-                    System.out.println("arrayFinalPhosphorousValue - " + arrayFinalPhospohorousValue);
-                    System.out.println("arrayFinalPotashValue - " + arrayFinalPotashValue);*/
-
-                //      if(requiredNitrogen == 0 && requiredPhosphorous == 0 && requiredPotash == 0) {
-
-                //     }
-                //     System.out.println("arrayFinal values " + arrayPhospohorous + " " + arrayNitrogen + " " + arrayPotash);
             }
-        }, 1000);
+            //addrecommendedTableData(displayRecommendedValue);
+        }
+        adduserTableData();
+
 
     }
 
-    private void adduserTable() {
+
+
+    private void addNPKTableData(String fname,int value,int bagvalue) {
+        System.out.println("addNPKTableData - " );
+
+        TableRow tbrowData = new TableRow(mContext);
+        TextView tvFertilizer = new TextView(mContext);
+        TextView tvKG = new TextView(mContext);
+        TextView tvBag = new TextView(mContext);
+
+        tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvFertilizer.setGravity(Gravity.CENTER);
+        tvFertilizer.setBackgroundColor(Color.parseColor("#FFFDE7"));
+        tvFertilizer.setText(fname);
+        tvFertilizer.setTextColor(Color.BLACK);
+        tvFertilizer.setTextSize(18);
+
+        tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvKG.setGravity(Gravity.CENTER);
+        tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+        tvKG.setText(""+value);
+        tvKG.setTextColor(Color.BLACK);
+        tvKG.setTextSize(18);
+
+        tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvBag.setGravity(Gravity.CENTER);
+        tvBag.setBackgroundColor(Color.parseColor("#FFFDE7"));
+        tvBag.setText(""+bagvalue);
+        tvBag.setTextColor(Color.BLACK);
+        tvBag.setTextSize(18);
+
+        tbrowData.addView(tvFertilizer);
+        tbrowData.addView(tvKG);
+        tbrowData.addView(tvBag);
+        tbNPKDetails.addView(tbrowData);
+
+    }
+
+    private void addNPKTable() {
+        count = 1;
+
+        TableRow tbrow= new TableRow(mContext);
+        TextView tvFertilizer = new TextView(mContext);
+        TextView tvKG = new TextView(mContext);
+        TextView tvBag = new TextView(mContext);
+
+        tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvFertilizer.setGravity(Gravity.CENTER);
+        tvFertilizer.setBackgroundColor(Color.parseColor("#EF9A9A"));
+        tvFertilizer.setText("Fertilizer");
+        tvFertilizer.setTextColor(Color.BLACK);
+        tvFertilizer.setTextSize(18);
+
+        tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvKG.setGravity(Gravity.CENTER);
+        tvKG.setBackgroundColor(Color.parseColor("#448AFF"));
+        tvKG.setText("KGs");
+        tvKG.setTextColor(Color.BLACK);
+        tvKG.setTextSize(18);
+
+        tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvBag.setGravity(Gravity.CENTER);
+        tvBag.setBackgroundColor(Color.parseColor("#EF9A9A"));
+        tvBag.setText("Bags");
+        tvBag.setTextColor(Color.BLACK);
+        tvBag.setTextSize(18);
+
+        tbrow.addView(tvFertilizer);
+        tbrow.addView(tvKG);
+        tbrow.addView(tvBag);
+
+        tbNPKDetails.addView(tbrow);
+    }
+
+    private void addFertilizerTable() {
         count = 1;
 
         TableRow tbrow= new TableRow(mContext);
@@ -1069,7 +1287,8 @@ public class FarmFertilizer extends AppCompatActivity {
 
     }
 
-    private void addFertilizerTable() {
+    private void adduserTable() {
+        count = 1;
         TableRow tbrow= new TableRow(mContext);
         TextView tvDistrict = new TextView(mContext);
         TextView tvTaluk = new TextView(mContext);
@@ -1130,144 +1349,145 @@ public class FarmFertilizer extends AppCompatActivity {
     }
 
     private void adduserTableData() {
-    //    tvuserDetail.setText("District " + arrayDistrict.get(0) + "\n Taluk " + arrayTaluk.get(0) + "\n Hobli " + arrayHobli.get(0) + "\n Village "+ arrayVillage.get(0) + "\n Survey " + arraySurvey.get(0));
-        for(int i =0;i<arraySurvey.size();i++) {
-        TableRow tbrowData = new TableRow(mContext);
-        TextView tvDistrictData = new TextView(mContext);
-        TextView tvTalukData = new TextView(mContext);
-        TextView tvHobliData = new TextView(mContext);
-        TextView tvVillageData = new TextView(mContext);
-        TextView tvSurveyData = new TextView(mContext);
-        TextView tvCropData = new TextView(mContext);
 
-        if(arrayDistrict.size()>1) {
-            tvDistrictData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvDistrictData.setGravity(Gravity.CENTER);
-            tvDistrictData.setBackgroundColor(Color.parseColor("#FFFDE7"));
-            tvDistrictData.setText(arrayDistrict.get(i));
-            tvDistrictData.setTextColor(Color.BLACK);
-            tvDistrictData.setTextSize(18);
+        for(int i=0;i<arrayCropName.size();i++) {
+            for (int j = 0; j < arraySurvey.size(); j++) {
+                TableRow tbrowData = new TableRow(mContext);
+                TextView tvDistrictData = new TextView(mContext);
+                TextView tvTalukData = new TextView(mContext);
+                TextView tvHobliData = new TextView(mContext);
+                TextView tvVillageData = new TextView(mContext);
+                TextView tvSurveyData = new TextView(mContext);
+                TextView tvCropData = new TextView(mContext);
 
-            tvTalukData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvTalukData.setGravity(Gravity.CENTER);
-            tvTalukData.setBackgroundColor(Color.parseColor("#ECEFF1"));
-            tvTalukData.setText(arrayTaluk.get(i));
-            tvTalukData.setTextColor(Color.BLACK);
-            tvTalukData.setTextSize(18);
+                tvDistrictData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                tvDistrictData.setGravity(Gravity.CENTER);
+                tvDistrictData.setBackgroundColor(Color.parseColor("#FFFDE7"));
+                tvDistrictData.setText(arrayDistrict.get(i));
+                tvDistrictData.setTextColor(Color.BLACK);
+                tvDistrictData.setTextSize(18);
 
-            tvHobliData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvHobliData.setGravity(Gravity.CENTER);
-            tvHobliData.setBackgroundColor(Color.parseColor("#FFFDE7"));
-            tvHobliData.setText(arrayHobli.get(i));
-            tvHobliData.setTextColor(Color.BLACK);
-            tvHobliData.setTextSize(18);
+                tvTalukData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                tvTalukData.setGravity(Gravity.CENTER);
+                tvTalukData.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvTalukData.setText(arrayTaluk.get(i));
+                tvTalukData.setTextColor(Color.BLACK);
+                tvTalukData.setTextSize(18);
 
-            tvVillageData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvVillageData.setGravity(Gravity.CENTER);
-            tvVillageData.setBackgroundColor(Color.parseColor("#ECEFF1"));
-            tvVillageData.setText(arrayVillage.get(i));
-            tvVillageData.setTextColor(Color.BLACK);
-            tvVillageData.setTextSize(18);
+                tvHobliData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                tvHobliData.setGravity(Gravity.CENTER);
+                tvHobliData.setBackgroundColor(Color.parseColor("#FFFDE7"));
+                tvHobliData.setText(arrayHobli.get(i));
+                tvHobliData.setTextColor(Color.BLACK);
+                tvHobliData.setTextSize(18);
 
-            tvSurveyData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvSurveyData.setGravity(Gravity.CENTER);
-            tvSurveyData.setBackgroundColor(Color.parseColor("#FFFDE7"));
-            tvSurveyData.setText(arraySurvey.get(i));
-            tvSurveyData.setTextColor(Color.BLACK);
-            tvSurveyData.setTextSize(18);
+                tvVillageData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                tvVillageData.setGravity(Gravity.CENTER);
+                tvVillageData.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvVillageData.setText(arrayVillage.get(i));
+                tvVillageData.setTextColor(Color.BLACK);
+                tvVillageData.setTextSize(18);
 
-            tvCropData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvCropData.setGravity(Gravity.CENTER);
-            tvCropData.setBackgroundColor(Color.parseColor("#ECEFF1"));
-            tvCropData.setText(arrayCropName.get(i));
-            tvCropData.setTextColor(Color.BLACK);
-            tvCropData.setTextSize(18);
+                tvSurveyData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                tvSurveyData.setGravity(Gravity.CENTER);
+                tvSurveyData.setBackgroundColor(Color.parseColor("#FFFDE7"));
+                tvSurveyData.setText(arraySurvey.get(j));
+                tvSurveyData.setTextColor(Color.BLACK);
+                tvSurveyData.setTextSize(18);
 
-            tbrowData.addView(tvDistrictData);
-            tbrowData.addView(tvTalukData);
-            tbrowData.addView(tvHobliData);
-            tbrowData.addView(tvVillageData);
-            tbrowData.addView(tvSurveyData);
-            tbrowData.addView(tvCropData);
-        }else{
-            tvDistrictData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvDistrictData.setGravity(Gravity.CENTER);
-            tvDistrictData.setBackgroundColor(Color.parseColor("#FFFDE7"));
-            tvDistrictData.setText(arrayDistrict.get(0));
-            tvDistrictData.setTextColor(Color.BLACK);
-            tvDistrictData.setTextSize(18);
+                tvCropData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                tvCropData.setGravity(Gravity.CENTER);
+                tvCropData.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCropData.setText(arrayCropName.get(i));
+                tvCropData.setTextColor(Color.BLACK);
+                tvCropData.setTextSize(18);
 
-            tvTalukData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvTalukData.setGravity(Gravity.CENTER);
-            tvTalukData.setBackgroundColor(Color.parseColor("#ECEFF1"));
-            tvTalukData.setText(arrayTaluk.get(0));
-            tvTalukData.setTextColor(Color.BLACK);
-            tvTalukData.setTextSize(18);
+                tbrowData.addView(tvDistrictData);
+                tbrowData.addView(tvTalukData);
+                tbrowData.addView(tvHobliData);
+                tbrowData.addView(tvVillageData);
+                tbrowData.addView(tvSurveyData);
+                tbrowData.addView(tvCropData);
 
-            tvHobliData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvHobliData.setGravity(Gravity.CENTER);
-            tvHobliData.setBackgroundColor(Color.parseColor("#FFFDE7"));
-            tvHobliData.setText(arrayHobli.get(0));
-            tvHobliData.setTextColor(Color.BLACK);
-            tvHobliData.setTextSize(18);
+                tbUserDetails.addView(tbrowData);
+            }
 
-            tvVillageData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvVillageData.setGravity(Gravity.CENTER);
-            tvVillageData.setBackgroundColor(Color.parseColor("#ECEFF1"));
-            tvVillageData.setText(arrayVillage.get(0));
-            tvVillageData.setTextColor(Color.BLACK);
-            tvVillageData.setTextSize(18);
-
-            tvSurveyData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvSurveyData.setGravity(Gravity.CENTER);
-            tvSurveyData.setBackgroundColor(Color.parseColor("#FFFDE7"));
-            tvSurveyData.setText(arraySurvey.get(i));
-            tvSurveyData.setTextColor(Color.BLACK);
-            tvSurveyData.setTextSize(18);
-
-            tvCropData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvCropData.setGravity(Gravity.CENTER);
-            tvCropData.setBackgroundColor(Color.parseColor("#ECEFF1"));
-            tvCropData.setText(arrayCropName.get(0));
-            tvCropData.setTextColor(Color.BLACK);
-            tvCropData.setTextSize(18);
-
-            tbrowData.addView(tvDistrictData);
-            tbrowData.addView(tvTalukData);
-            tbrowData.addView(tvHobliData);
-            tbrowData.addView(tvVillageData);
-            tbrowData.addView(tvSurveyData);
-            tbrowData.addView(tvCropData);
         }
-        tbUserDetails.addView(tbrowData);
-        }
+      addrecommendedTableData();
+
+    }
+
+    private void addrecommendedTableData() {
+    for(int i=0;i<arrayCropName.size();i++) {
+
+          MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+         //   viewModel.getFarmFertilizerRecomendNPKdetail(farmerID,arrayCropName.get(j)).removeObservers(this);
+            viewModel.getFarmFertilizerRecomendNPKdetail(farmerID,arrayCropName.get(i)).observe(this, new Observer<List<ModelFarmFertilizer>>() {
+
+                @Override
+                public void onChanged(@Nullable List<ModelFarmFertilizer> taskEntries) {
+
+                    if(taskEntries==null){
+
+                    }else {
+                        if (taskEntries != null && !taskEntries.isEmpty()) {
+
+                            for (ModelFarmFertilizer taskEntry : taskEntries) {
+
+                                String[] value = taskEntry.getRecommendedNPK().split("-");
+                                String temp1 = value[0];
+                                String temp2 = value[1];
+                                String temp3 = value[2];
+                                System.out.println("temp1 " + temp1 + " temp2 " + temp2 + " temp3 "+ temp3);
+                                TableRow tbrowData = new TableRow(mContext);
+                                TextView tvRFertilizer = new TextView(mContext);
+
+                                tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                                tvRFertilizer.setGravity(Gravity.CENTER);
+                                tvRFertilizer.setBackgroundColor(Color.parseColor("#F3E5F5"));
+                                tvRFertilizer.setText("Recommended Nutrient for 1 acre :" + taskEntry.getCropname() + "\nNitrogen:" + temp1 + ",Phosphorous:" + temp2 + ",Potash:" + temp3);
+                                tvRFertilizer.setTextColor(Color.BLACK);
+                                tvRFertilizer.setTextSize(18);
+
+                                tbrowData.addView(tvRFertilizer);
+                                tbNutrientDetail.addView(tbrowData);
+
+                            }
+                        }
+                    }
+                }
+            });
+
+    }
+
     }
 
     private void addFertilizerTableData() {
+      for(int j=0;j<arrayCropName.size();j++) {
+          for (int i = 0; i < arrayCropArea.size(); i++) {
+              TableRow tbrowdataArea = new TableRow(mContext);
+              TextView tvAreaData = new TextView(mContext);
+              TextView tvNPKData = new TextView(mContext);
 
-        for(int i=0;i<arrayCropArea.size();i++){
-            TableRow tbrowdata= new TableRow(mContext);
-            TextView tvAreaData = new TextView(mContext);
-            TextView tvNPKData = new TextView(mContext);
+              tvAreaData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+              tvAreaData.setGravity(Gravity.CENTER);
+              tvAreaData.setBackgroundColor(Color.parseColor("#FFEBEE"));
+              tvAreaData.setText(arrayCropArea.get(i));
+              tvAreaData.setTextColor(Color.BLACK);
+              tvAreaData.setTextSize(18);
 
-            tvAreaData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvAreaData.setGravity(Gravity.CENTER);
-            tvAreaData.setBackgroundColor(Color.parseColor("#FFEBEE"));
-            tvAreaData.setText(arrayCropArea.get(i));
-            tvAreaData.setTextColor(Color.BLACK);
-            tvAreaData.setTextSize(18);
+              tvNPKData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+              tvNPKData.setGravity(Gravity.CENTER);
+              tvNPKData.setBackgroundColor(Color.parseColor("#E3F2FD"));
+              tvNPKData.setText("Nitrogen: " + arrayRequiredNitrogen.get(i) + ", Phosphorous: " + arrayRequiredPhospohorous.get(i) + ", Potash: " + arrayRequiredPotash.get(i));
+              tvNPKData.setTextColor(Color.BLACK);
+              tvNPKData.setTextSize(18);
 
-            tvNPKData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvNPKData.setGravity(Gravity.CENTER);
-            tvNPKData.setBackgroundColor(Color.parseColor("#E3F2FD"));
-            tvNPKData.setText("Nitrogen: "+arrayRequiredNitrogen.get(i)+", Phosphorous: "+arrayRequiredPhospohorous.get(i)+", Potash: "+arrayRequiredPotash.get(i));
-            tvNPKData.setTextColor(Color.BLACK);
-            tvNPKData.setTextSize(18);
-
-            tbrowdata.addView(tvAreaData);
-            tbrowdata.addView(tvNPKData);
-            tbAreaDetails.addView(tbrowdata);
-        }
+              tbrowdataArea.addView(tvAreaData);
+              tbrowdataArea.addView(tvNPKData);
+              tbAreaDetails.addView(tbrowdataArea);
+          }
+      }
 
     }
 
@@ -1278,12 +1498,23 @@ public class FarmFertilizer extends AppCompatActivity {
             if(child instanceof TableRow)((ViewGroup) child).removeAllViews();
         }
 
-        int tablecount2 = tbAreaDetails.getChildCount();
-        for(int i =1 ;i<tablecount2;i++){
+        int tablecount2 = tbNutrientDetail.getChildCount();
+        for(int i =0 ;i<tablecount2;i++){
+            View child = tbNutrientDetail.getChildAt(i);
+            if(child instanceof TableRow)((ViewGroup) child).removeAllViews();
+        }
+
+        int tablecount3 = tbAreaDetails.getChildCount();
+        for(int i =1 ;i<tablecount3;i++){
             View child = tbAreaDetails.getChildAt(i);
             if(child instanceof TableRow)((ViewGroup) child).removeAllViews();
         }
-        // tableLayout
+
+        int tablecount4 = tbNPKDetails.getChildCount();
+        for(int i =1 ;i<tablecount4;i++){
+            View child = tbNPKDetails.getChildAt(i);
+            if(child instanceof TableRow)((ViewGroup) child).removeAllViews();
+        }
     }
 
     @Override
