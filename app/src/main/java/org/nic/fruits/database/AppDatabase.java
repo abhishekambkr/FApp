@@ -52,7 +52,7 @@ import org.nic.fruits.pojo.ModelPaymentDetails;
 
 
 //Programming by Harsha  for version 1.0 release
-@Database(entities = {ModelFarmerLandDeatails.class, ModelCropSurveyDetails.class, ModelFarmerDetails.class, ModelPaymentDetails.class, ModelweatherDetails.class, ModelForeCastDetails.class, ModelOwnerDetails.class, ModelCropRegistration.class, ModelCropWeeklyData.class, ModelCropMultipickingData.class, ModelMixedCropRegistration.class, ModelCropMasterType.class, ModelCropMaster.class, ModelInterCropRegistration.class, ModelFertilizerCropMaster.class, ModelPlantAgeMaster.class, ModelFertilizerNameMaster.class, ModelCropFertilizerMasternpk.class, ModelIrrigationType.class}, version = 2, exportSchema = false) //, ModelFarmFertilizer.class
+@Database(entities = {ModelFarmerLandDeatails.class, ModelCropSurveyDetails.class, ModelFarmerDetails.class, ModelPaymentDetails.class, ModelweatherDetails.class, ModelForeCastDetails.class, ModelOwnerDetails.class, ModelCropRegistration.class, ModelCropWeeklyData.class, ModelCropMultipickingData.class, ModelMixedCropRegistration.class, ModelCropMasterType.class, ModelCropMaster.class, ModelInterCropRegistration.class, ModelFertilizerCropMaster.class, ModelPlantAgeMaster.class, ModelFertilizerNameMaster.class, ModelCropFertilizerMasternpk.class, ModelIrrigationType.class, ModelFarmFertilizer.class}, version = 2, exportSchema = false)
 
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -69,14 +69,14 @@ public abstract class AppDatabase extends RoomDatabase {
                         AppDatabase.class, AppDatabase.DATABASE_NAME)
                         // TODO (2) call allowMainThreadQueries before building the instance
 //                        .allowMainThreadQueries()
-                    //    .addMigrations(MIGRATION_1_2)
+                        //    .addMigrations(MIGRATION_1_2)
                         .build();
             }
         }
         Log.d(LOG_TAG, "Getting the database instance");
         return sInstance;
     }
-   static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+    static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
             // Your migration strategy here
@@ -89,7 +89,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     "ismultipicking TEXT)");*/
 
             database.execSQL("CREATE TABLE farmer_owner_details(" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "farmerid TEXT," +
                     "ownername TEXT, "+
                     "ownernumber TEXT, "+
@@ -311,7 +311,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     "irrigationtypeeng TEXT, "+
                     "irrigationtypekn TEXT)");
 
-          /*  database.execSQL("CREATE TABLE farmfertilizer(" +
+            database.execSQL("CREATE TABLE farmfertilizer(" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "farmerid TEXT," +
                     "farmerid TEXT, "+
@@ -329,9 +329,10 @@ public abstract class AppDatabase extends RoomDatabase {
                     "recommendedNPK TEXT, "+
                     "cropextentNPK TEXT, "+
                     "totalNPK TEXT, "+
+                    "cropextentTotalNPK, "+
                     "fertilizerNames TEXT, "+
                     "fertilizerKGs TEXT, "+
-                    "fertilizerBags TEXT)");*/
+                    "fertilizerBags TEXT)");
 
         }
     };
@@ -357,9 +358,9 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract PaymentDetailsDAO paymentDetailsDAO();
     public abstract WeatherDetailsDAO weatherDetailsDAO();
     public abstract ForecastDetailsDAO forecastDetailsDAO();
-   // public abstract CropMasterDao cropMasterDao();
+    // public abstract CropMasterDao cropMasterDao();
     public abstract FarmerOwnerDetails ownerDetailsDAO();
-  //  public abstract CropVarietyMasterDao cropVarietyMasterDao();
+    //  public abstract CropVarietyMasterDao cropVarietyMasterDao();
     public abstract CropRegistrationDao cropRegistrationDao();
     public abstract CropWeeklyDataDAO cropWeeklyDataDAO();
     public abstract MixedCropRegistrationDao mixedCropRegistrationDao();
@@ -372,6 +373,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract FertilizerNameMasterDAO fertilizerNameMasterDAO();
     public abstract CropFertilizerMasterDAO cropFertilizerMasterDAO();
     public abstract IrrigationTypeDao irrigationTypeDao();
- //   public abstract FarmFertilizerDAO farmFertilizerDAO();
+    public abstract FarmFertilizerDAO farmFertilizerDAO();
 }
-
