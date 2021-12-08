@@ -820,6 +820,13 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     arrayFertilizerDataPhosphorous.clear();
                                     arrayFertilizerMasterData.clear();
                                     clearViews();
+                                    fmNitrogen = 0;
+                                    fmPhosphorous = 0;
+                                    fmPotash = 0;
+                                    phosphorous = 0;
+                                    nitrogen = 0;
+                                    potash = 0;
+                                    finalDataObtained = 0;
                                 }
 
                             }else{
@@ -970,10 +977,10 @@ public class FertilizerCalculation extends AppCompatActivity {
                             }
 
                         } else {
-                         /*   if(!arrayFertilizerName.contains(taskEntry.getFertilizerknname())){
-                                arrayFertilizerName.add(taskEntry.getFertilizerknname());
+                           if(!arrayFertilizerName.contains(taskEntry.getFertilizekname())){
+                                arrayFertilizerName.add(taskEntry.getFertilizekname());
                                 arrayFertilizerId.add(taskEntry.getFeid());
-                            }*/
+                            }
                         }
 
 
@@ -1129,6 +1136,13 @@ public class FertilizerCalculation extends AppCompatActivity {
                             arrayFertilizerDataPhosphorous.clear();
                             arrayFertilizerMasterData.clear();
                             clearViews();
+                            fmNitrogen = 0;
+                            fmPhosphorous = 0;
+                            fmPotash = 0;
+                            phosphorous = 0;
+                            nitrogen = 0;
+                            potash = 0;
+                            finalDataObtained = 0;
                         }
                     }
                     @Override
