@@ -1093,7 +1093,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
         TextView tvNPKData = new TextView(mContext);
         tvNPKData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvNPKData.setGravity(Gravity.CENTER);
-        tvNPKData.setBackgroundColor(Color.parseColor("#E3F2FD"));
+        tvNPKData.setBackgroundColor(Color.parseColor("#CFD8DC"));
         tvNPKData.setText("Nitrogen: " + totalNitro + ", Phosphorous: " + totalPhos + ", Potash: " + totalPotas);
         tvNPKData.setTextColor(Color.BLACK);
         tvNPKData.setTextSize(18);
@@ -1219,6 +1219,9 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
             arrayFertilizerCalculate1.clear();
             arrayFertilizerCalculate1.addAll(npk1);
+
+
+
             for (int j = 0; j < arrayFertilizerName1.size(); j++) {
                 System.out.println("arrayFertilizerCalculate1 - " + arrayFertilizerCalculate1);
                 value1 = Double.valueOf(String.valueOf(arrayFertilizerCalculate1.get(j)));
@@ -1230,45 +1233,50 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 arraybagValue1.add(String.valueOf((int) bagValue1));
 
                 TableRow tbrowData = new TableRow(mContext);
-                TextView tvCombination = new TextView(mContext);
-                TextView tvFertilizer = new TextView(mContext);
-                TextView tvKG = new TextView(mContext);
-                TextView tvBag = new TextView(mContext);
 
+                TextView tvCombination = new TextView(mContext);
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 1");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
+                tbrowData.addView(tvCombination);
+
+
+                TextView tvFertilizer = new TextView(mContext);
+                TextView tvKG = new TextView(mContext);
+                TextView tvBag = new TextView(mContext);
+
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName1.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("" + (int) value1);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("" + (int) bagValue1);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
-                tbrowData.addView(tvCombination);
+
                 tbrowData.addView(tvFertilizer);
                 tbrowData.addView(tvKG);
                 tbrowData.addView(tvBag);
                 tbNPKDetails.addView(tbrowData);
-
+                tvCombination.setText("");
             }
+
         }else{
             for (int j = 0; j < arrayFertilizerName1.size(); j++) {
                 TableRow tbrowData = new TableRow(mContext);
@@ -1279,28 +1287,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 1");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName1.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("Nutrients not available");
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("0");
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1439,28 +1447,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 2");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName2.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("" + (int) value2);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("" + (int) bagValue2);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1482,28 +1490,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 2");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName2.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("Nutrients not available");
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("0");
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1651,28 +1659,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 3");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName3.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("" + (int) value3);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("" + (int) bagValue3);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1694,28 +1702,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 3");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName3.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("Nutrients not available");
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("0");
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1862,28 +1870,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 4");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName4.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("" + (int) value4);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("" + (int) bagValue4);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1906,28 +1914,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvCombination.setText("Combination 4");
                 tvCombination.setTextColor(Color.BLACK);
                 tvCombination.setTextSize(18);
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvFertilizer.setText(arrayFertilizerName4.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvKG.setText("Nutrients not available");
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#EDE7F6"));
+                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvBag.setText("0");
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1953,30 +1961,30 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
         tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvCombination.setGravity(Gravity.CENTER);
-        tvCombination.setBackgroundColor(Color.parseColor("#448AFF"));
+        tvCombination.setBackgroundColor(Color.parseColor("#263238"));
         tvCombination.setText("Combination");
-        tvCombination.setTextColor(Color.BLACK);
+        tvCombination.setTextColor(Color.WHITE);
         tvCombination.setTextSize(18);
 
         tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvFertilizer.setGravity(Gravity.CENTER);
-        tvFertilizer.setBackgroundColor(Color.parseColor("#B39DDB"));
+        tvFertilizer.setBackgroundColor(Color.parseColor("#424242"));
         tvFertilizer.setText("Fertilizer");
-        tvFertilizer.setTextColor(Color.BLACK);
+        tvFertilizer.setTextColor(Color.WHITE);
         tvFertilizer.setTextSize(18);
 
         tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvKG.setGravity(Gravity.CENTER);
-        tvKG.setBackgroundColor(Color.parseColor("#448AFF"));
+        tvKG.setBackgroundColor(Color.parseColor("#263238"));
         tvKG.setText("KGs");
-        tvKG.setTextColor(Color.BLACK);
+        tvKG.setTextColor(Color.WHITE);
         tvKG.setTextSize(18);
 
         tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvBag.setGravity(Gravity.CENTER);
-        tvBag.setBackgroundColor(Color.parseColor("#B39DDB"));
+        tvBag.setBackgroundColor(Color.parseColor("#424242"));
         tvBag.setText("Bags");
-        tvBag.setTextColor(Color.BLACK);
+        tvBag.setTextColor(Color.WHITE);
         tvBag.setTextSize(18);
 
         tbrow.addView(tvCombination);
@@ -1994,9 +2002,9 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
         TextView tvNPK = new TextView(mContext);
         tvNPK.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvNPK.setGravity(Gravity.CENTER);
-        tvNPK.setBackgroundColor(Color.parseColor("#448AFF"));
+        tvNPK.setBackgroundColor(Color.parseColor("#263238"));
         tvNPK.setText("Total recommendation of NPK");
-        tvNPK.setTextColor(Color.BLACK);
+        tvNPK.setTextColor(Color.WHITE);
         tvNPK.setTextSize(18);
         tbrow.addView(tvNPK);
         tbAreaDetails.addView(tbrow);
@@ -2015,44 +2023,44 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
         tvDistrict.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvDistrict.setGravity(Gravity.CENTER);
-        tvDistrict.setBackgroundColor(Color.parseColor("#CE93D8"));
+        tvDistrict.setBackgroundColor(Color.parseColor("#263238"));
         tvDistrict.setText("District");
-        tvDistrict.setTextColor(Color.BLACK);
+        tvDistrict.setTextColor(Color.WHITE);
         tvDistrict.setTextSize(18);
 
         tvTaluk.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvTaluk.setGravity(Gravity.CENTER);
-        tvTaluk.setBackgroundColor(Color.parseColor("#CFD8DC"));
+        tvTaluk.setBackgroundColor(Color.parseColor("#424242"));
         tvTaluk.setText("Taluk");
-        tvTaluk.setTextColor(Color.BLACK);
+        tvTaluk.setTextColor(Color.WHITE);
         tvTaluk.setTextSize(18);
 
         tvHobli.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvHobli.setGravity(Gravity.CENTER);
-        tvHobli.setBackgroundColor(Color.parseColor("#CE93D8"));
+        tvHobli.setBackgroundColor(Color.parseColor("#263238"));
         tvHobli.setText("Hobli");
-        tvHobli.setTextColor(Color.BLACK);
+        tvHobli.setTextColor(Color.WHITE);
         tvHobli.setTextSize(18);
 
         tvVillage.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvVillage.setGravity(Gravity.CENTER);
-        tvVillage.setBackgroundColor(Color.parseColor("#CFD8DC"));
+        tvVillage.setBackgroundColor(Color.parseColor("#424242"));
         tvVillage.setText("Village");
-        tvVillage.setTextColor(Color.BLACK);
+        tvVillage.setTextColor(Color.WHITE);
         tvVillage.setTextSize(18);
 
         tvSurvey.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvSurvey.setGravity(Gravity.CENTER);
-        tvSurvey.setBackgroundColor(Color.parseColor("#CE93D8"));
+        tvSurvey.setBackgroundColor(Color.parseColor("#263238"));
         tvSurvey.setText("Survey");
-        tvSurvey.setTextColor(Color.BLACK);
+        tvSurvey.setTextColor(Color.WHITE);
         tvSurvey.setTextSize(18);
 
         tvCrop.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvCrop.setGravity(Gravity.CENTER);
-        tvCrop.setBackgroundColor(Color.parseColor("#CFD8DC"));
+        tvCrop.setBackgroundColor(Color.parseColor("#424242"));
         tvCrop.setText("Crop");
-        tvCrop.setTextColor(Color.BLACK);
+        tvCrop.setTextColor(Color.WHITE);
         tvCrop.setTextSize(18);
 
         tbrow.addView(tvDistrict);
@@ -2083,42 +2091,42 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvDistrictData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvDistrictData.setGravity(Gravity.CENTER);
-                tvDistrictData.setBackgroundColor(Color.parseColor("#F3E5F5"));
+                tvDistrictData.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvDistrictData.setText(arrayDistrict.get(0));
                 tvDistrictData.setTextColor(Color.BLACK);
                 tvDistrictData.setTextSize(18);
 
                 tvTalukData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvTalukData.setGravity(Gravity.CENTER);
-                tvTalukData.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvTalukData.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvTalukData.setText(arrayTaluk.get(0));
                 tvTalukData.setTextColor(Color.BLACK);
                 tvTalukData.setTextSize(18);
 
                 tvHobliData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvHobliData.setGravity(Gravity.CENTER);
-                tvHobliData.setBackgroundColor(Color.parseColor("#F3E5F5"));
+                tvHobliData.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvHobliData.setText(arrayHobli.get(0));
                 tvHobliData.setTextColor(Color.BLACK);
                 tvHobliData.setTextSize(18);
 
                 tvVillageData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvVillageData.setGravity(Gravity.CENTER);
-                tvVillageData.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvVillageData.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvVillageData.setText(arrayVillage.get(0));
                 tvVillageData.setTextColor(Color.BLACK);
                 tvVillageData.setTextSize(18);
 
                 tvSurveyData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvSurveyData.setGravity(Gravity.CENTER);
-                tvSurveyData.setBackgroundColor(Color.parseColor("#F3E5F5"));
+                tvSurveyData.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvSurveyData.setText(arraySurvey.get(j));
                 tvSurveyData.setTextColor(Color.BLACK);
                 tvSurveyData.setTextSize(18);
 
                 tvCropData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCropData.setGravity(Gravity.CENTER);
-                tvCropData.setBackgroundColor(Color.parseColor("#ECEFF1"));
+                tvCropData.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvCropData.setText(arrayCropName.get(i));
                 tvCropData.setTextColor(Color.BLACK);
                 tvCropData.setTextSize(18);
@@ -2141,9 +2149,9 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
             TextView tvRFertilizer = new TextView(mContext);
             tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             tvRFertilizer.setGravity(Gravity.CENTER);
-            tvRFertilizer.setBackgroundColor(Color.parseColor("#B39DDB"));
+            tvRFertilizer.setBackgroundColor(Color.parseColor("#263238"));
             tvRFertilizer.setText("Recommended Nutrient for 1 acre");
-            tvRFertilizer.setTextColor(Color.BLACK);
+            tvRFertilizer.setTextColor(Color.WHITE);
             tvRFertilizer.setTextSize(18);
             tbrowRecomended.addView(tvRFertilizer);
             tbNutrientDetail.addView(tbrowRecomended);
@@ -2162,7 +2170,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
             tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             tvRFertilizer.setGravity(Gravity.CENTER);
-            tvRFertilizer.setBackgroundColor(Color.parseColor("#EDE7F6"));
+            tvRFertilizer.setBackgroundColor(Color.parseColor("#CFD8DC"));
             tvRFertilizer.setText(arrayCropName.get(i) + "  -  " + "Nitrogen:" + nitrogen + ", Phosphorous:" + phosphorous + ", Potash:" + potash);
             tvRFertilizer.setTextColor(Color.BLACK);
             tvRFertilizer.setTextSize(18);
