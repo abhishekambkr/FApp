@@ -6,232 +6,257 @@
     android:background="#12b4ba"
     tools:context="org.nic.fruits.FarmFertilizer">
 
-    <FrameLayout
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="3dp"
+      android:padding="1dp">
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
-        android:padding="1dp">
+        android:padding="2dp">
 
-        <ScrollView
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutTreeInputs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:background="@drawable/border_light_grey"
+            android:weightSum="3" >
+
+          <TextView
+              android:id="@+id/app_name_text_view"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/login_button_padding"
+              android:gravity="center"
+              android:text="@string/farmfertilizer"
+              android:textColor="@color/black"
+              android:textSize="20sp"
+              android:textStyle="bold" />
+
+          <LinearLayout
+              android:id="@+id/linearLayoutFFfarmerId"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="5dp"
+              android:orientation="horizontal"
+              android:weightSum="3" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:text="@string/farmfertilizerFId"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/register_font" />
+
+            <TextView
+                android:id="@+id/textviewFarmerId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/register_font"
+                android:textStyle="normal"/>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/linearLayoutFFYear"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="5dp"
+              android:orientation="horizontal"
+              android:weightSum="3" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:text="@string/farmfertilizerYear"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/register_font" />
+
+            <Spinner
+                android:id="@+id/spinnerFFYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/register_font"/>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/linearLayoutFFSeason"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="5dp"
+              android:orientation="horizontal"
+              android:weightSum="3" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:text="@string/farmfertilizerSeason"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/register_font" />
+
+            <Spinner
+                android:id="@+id/spinnerFFSeason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/register_font"/>
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="2dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+          <LinearLayout
+              android:id="@+id/linearlayoutfertilizerdetails"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="5dp"
+              android:orientation="vertical"
+              android:padding="2dp"
+              android:background="@drawable/border_light_grey"
+              android:weightSum="3" >
+
+
+            <TextView
+                android:id="@+id/fertilizer_details"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/login_button_padding"
+                android:gravity="center"
+                android:text="Details"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:id="@+id/linearlayoutTreeInputs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="vertical"
-                    android:padding="2dp"
-                    android:background="@drawable/border_light_grey"
-                    android:weightSum="3" >
-
-                    <TextView
-                        android:id="@+id/app_name_text_view"
+            <!--        <TextView
+                        android:id="@+id/tvuserdetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/login_button_padding"
-                        android:gravity="center"
-                        android:text="@string/farmfertilizer"
+                        android:gravity="left"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:id="@+id/linearLayoutFFfarmerId"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3" >
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:text="@string/farmfertilizerFId"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="@dimen/register_font" />
-
-                        <TextView
-                            android:id="@+id/textviewFarmerId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/register_font"
-                            android:textStyle="normal"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayoutFFYear"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3" >
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:text="@string/farmfertilizerYear"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="@dimen/register_font" />
-
-                        <Spinner
-                            android:id="@+id/spinnerFFYear"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/register_font"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayoutFFSeason"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3" >
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:text="@string/farmfertilizerSeason"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="@dimen/register_font" />
-
-                        <Spinner
-                            android:id="@+id/spinnerFFSeason"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/register_font"/>
-
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/linearlayoutfertilizerdetails"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:orientation="vertical"
-                        android:padding="2dp"
-                        android:background="@drawable/border_light_grey"
-                        android:weightSum="3" >
-
-
-                        <TextView
-                            android:id="@+id/fertilizer_details"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/login_button_padding"
-                            android:gravity="center"
-                            android:text="Details"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                <!--        <TextView
-                            android:id="@+id/tvuserdetails"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/login_button_padding"
-                            android:gravity="left"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
 -->
-                        <RelativeLayout
-                            android:id="@+id/rlUserDetails"
-                            android:layout_width="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/border_table"
-                            android:orientation="vertical" >
+            <RelativeLayout
+                android:id="@+id/rlUserDetails"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_table"
+                android:orientation="vertical" >
 
-                            <TableLayout
-                                android:id="@+id/tbUserDetail"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:padding="5dp"
-                                android:stretchColumns="*">
-                            </TableLayout>
+              <TableLayout
+                  android:id="@+id/tbUserDetail"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerHorizontal="true"
+                  android:padding="5dp"
+                  android:stretchColumns="*">
+              </TableLayout>
 
-                        </RelativeLayout>
-                        <TextView
-                            android:id="@+id/tvNutrientdetails"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/login_button_padding"
-                            android:gravity="left"
-                            android:text=""
-                            android:textColor="#E91E63"
-                            android:textSize="20sp"
-                            android:textStyle="normal" />
+            </RelativeLayout>
 
-                        <RelativeLayout
-                            android:id="@+id/rlAreaDetails"
-                            android:layout_width="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/border_table"
-                            android:orientation="vertical" >
+            <RelativeLayout
+                android:id="@+id/rlNutrientdetails"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_table"
+                android:orientation="vertical" >
 
-                            <TableLayout
-                                android:id="@+id/tbAreaDetail"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:padding="5dp"
-                                android:stretchColumns="*">
-                            </TableLayout>
+              <TableLayout
+                  android:id="@+id/tbNutrientdetails"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerHorizontal="true"
+                  android:padding="5dp"
+                  android:stretchColumns="*">
+              </TableLayout>
 
-                        </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rlAreaDetails"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_table"
+                android:orientation="vertical" >
 
-                        <TextView
-                            android:id="@+id/npkdetails"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/login_button_padding"
-                            android:gravity="left"
-                            android:text=""
-                            android:textColor="#673AB7"
-                            android:textSize="20sp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
+              <TableLayout
+                  android:id="@+id/tbAreaDetail"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerHorizontal="true"
+                  android:padding="5dp"
+                  android:stretchColumns="*">
+              </TableLayout>
 
-                </LinearLayout>
+            </RelativeLayout>
 
-            </LinearLayout>
-        </ScrollView>
+            <!--                   <TextView
+                                   android:id="@+id/npkdetails"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="@dimen/login_button_padding"
+                                   android:gravity="left"
+                                   android:text=""
+                                   android:textColor="#673AB7"
+                                   android:textSize="20sp"
+                                   android:textStyle="normal" />-->
 
-    </FrameLayout>
+            <RelativeLayout
+                android:id="@+id/rlnpkdetails"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_table"
+                android:orientation="vertical" >
+
+              <TableLayout
+                  android:id="@+id/tbnpkdetails"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerHorizontal="true"
+                  android:padding="5dp"
+                  android:stretchColumns="*">
+              </TableLayout>
+
+            </RelativeLayout>
+          </LinearLayout>
+
+        </LinearLayout>
+
+      </LinearLayout>
+    </ScrollView>
+
+  </FrameLayout>
 
 </RelativeLayout>
