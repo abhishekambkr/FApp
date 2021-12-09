@@ -46,6 +46,7 @@ import org.nic.fruits.pojo.ModelPlantAgeMaster;
 import org.nic.fruits.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
@@ -115,6 +116,8 @@ public class FertilizerCalculation extends AppCompatActivity {
     String remainingGunta;
     Float guntaTemp;
     Double totalArea;
+    HashMap<String, String> ageMap = new HashMap<>();
+    String plantAgeSelectedValue = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -637,7 +640,9 @@ public class FertilizerCalculation extends AppCompatActivity {
                                 nitrogen = 0;
                                 potash = 0;
                                 finalDataObtained = 0;
+                                ageMap.clear();
                                 Perennialcropmaster("P");
+
                             }else if(spPlanType.getSelectedItem().toString().equals("Seasonal") || spPlanType.getSelectedItem().toString().equals("ಕಾಲೋಚಿತ")){
                                 spPlanTypeValue = spPlanType.getSelectedItem().toString();
                                 planTypeValue = "S";
@@ -667,6 +672,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                                 nitrogen = 0;
                                 potash = 0;
                                 finalDataObtained = 0;
+                                ageMap.clear();
                                 Seasonalcropmaster("S");
                             }
 
@@ -717,6 +723,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                             nitrogen = 0;
                             potash = 0;
                             finalDataObtained = 0;
+                            ageMap.clear();
                         }
                     }
 
@@ -893,12 +900,13 @@ public class FertilizerCalculation extends AppCompatActivity {
                             }else{
 
                                 if(plantAgeSelected.matches("[0-9+]+")){
-                                    String result = plantAgeSelected.replaceAll("[+]","");
+                                  /*  String result = plantAgeSelected.replaceAll("[+]","");
                                     System.out.println("result " + result);
-                                    plantAgeSelected=result;
+                                    plantAgeSelected=result;*/
+                                    System.out.println("plantAgeSelectedValue if " + plantAgeSelectedValue);
                                 }
-                                checkNutrient(cropcodeCropMaster, irrigationTypeValue, plantAgeSelected);
-                                cropcalculation2(cropcodeCropMaster,irrigationTypeValue,plantAgeSelected);
+                                checkNutrient(cropcodeCropMaster, irrigationTypeValue, plantAgeSelectedValue);
+                                cropcalculation2(cropcodeCropMaster,irrigationTypeValue,plantAgeSelectedValue);
                             }
 
 
@@ -1114,6 +1122,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                             nitrogen = 0;
                             potash = 0;
                             finalDataObtained = 0;
+                            ageMap.clear();
                         }else{
                             spCropName.setSelection(0);
                             spAgePlant.setSelection(0);
@@ -1143,6 +1152,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                             nitrogen = 0;
                             potash = 0;
                             finalDataObtained = 0;
+                            ageMap.clear();
                         }
                     }
                     @Override
@@ -1343,6 +1353,9 @@ public class FertilizerCalculation extends AppCompatActivity {
             System.out.print("\narray_cropcode_npk.size " + arrayCropCodeNPK.size());
             System.out.print("\narray_cropcode_npk.get(k) " + arrayCropCodeNPK.get(k));
 
+
+            ageMap.clear();
+
             MainViewModel viewModelPlantAge = ViewModelProviders.of(this).get(MainViewModel.class);
             viewModelPlantAge.getAllPlants(arrayCropCodeNPK.get(k)).observe(this, new Observer<List<ModelPlantAgeMaster>>() {
 
@@ -1352,6 +1365,8 @@ public class FertilizerCalculation extends AppCompatActivity {
                         for (ModelPlantAgeMaster taskEntry : taskEntries) {
                             if (!arrayAgeofPlant.contains(taskEntry.getPlantname())) {
                                 arrayAgeofPlant.add(taskEntry.getPlantname());
+
+                                ageMap.put(taskEntry.getPlantname(),taskEntry.getPlantid());
                             }
 
                         }
@@ -1363,6 +1378,10 @@ public class FertilizerCalculation extends AppCompatActivity {
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                             if(i!=0){
                                 plantAgeSelected = spAgePlant.getSelectedItem().toString().trim();
+                                if(ageMap.containsKey(plantAgeSelected)){
+                                    plantAgeSelectedValue =  ageMap.get(plantAgeSelected);
+                                    System.out.println("ageMap.get(plantAgeSelected) " + ageMap.get(plantAgeSelected));
+                                }
                                 try {
                                     etAcre.getText().clear();
                                     etGunta.getText().clear();
@@ -1754,11 +1773,11 @@ public class FertilizerCalculation extends AppCompatActivity {
 
     private void checkNutrient(String cropcode, String irrigation, String plantage) {
         System.out.print("cropcode : " + cropcode + " irrigation : " + irrigation + " plantage : " + plantage);
-        if(plantage.matches("[0-9+]+")){
+     /*   if(plantage.matches("[0-9+]+")){
             String result = plantage.replaceAll("[+]","");
             System.out.println("result " + result);
             plantage=result;
-        }
+        }*/
         MainViewModel viewModelPlantAge = ViewModelProviders.of(this).get(MainViewModel.class);
         viewModelPlantAge.getNutrients(cropcode,irrigation,plantage).observe(this, new Observer<List<ModelCropFertilizerMasternpk>>() {
 
