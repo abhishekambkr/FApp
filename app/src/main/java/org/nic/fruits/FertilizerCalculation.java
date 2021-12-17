@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
@@ -35,6 +36,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.fruites.R;
 
 import org.nic.fruits.database.AppDatabase;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
@@ -52,7 +54,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-//Code by Abhishek
+//Programming by Abhishek  for version 1.2 release
 public class FertilizerCalculation extends AppCompatActivity {
 
     Context mContext;
@@ -66,7 +68,7 @@ public class FertilizerCalculation extends AppCompatActivity {
     EditText etAcre,etGunta;
     RadioGroup rgFertilizerType;
     RadioButton rbStraightFertilizer,rbComplexFertilizer;
-    Button btnAddFertlizer,btnCheckFertilizer,btnClear,btnDeleteFertilzer;
+    Button btnAddFertlizer,btnCheckFertilizer,btnClear,btnDeleteFertilzer,btnBack;
     List<String> arrayPlanType;
     List<String> arrayCropName;
     List<String> arrayAgeofPlant;
@@ -100,10 +102,9 @@ public class FertilizerCalculation extends AppCompatActivity {
     List<String> arrayPotashNPK;
     List<String> arrayCropCodeNPK;
     String cropcodeCropMaster = "";
-    List<String> arrayNutrients;
     int requiredNitrogen,requiredPhosphorous,requiredPotash;
     String cropfertilizerNitrogen="",cropfertilizerPhosphorous="",cropfertilizerPotash="";
-    String fertilizermasterNitrogen="",fertilizermasterPhosphorous="",fertilizermasterPotash="";
+    String fertilizermasterNitrogen="",fertilizermasterPhosphorous="",fertilizermasterPotash="",nutrientValue="";
     List<String> arrayFertilizerDetailsList;
     String[] tempfmdata = new String[0];
     int finalDataObtained = 0;
@@ -116,9 +117,13 @@ public class FertilizerCalculation extends AppCompatActivity {
     String remainingGunta;
     Float guntaTemp;
     Double totalArea;
+
     HashMap<String, String> ageMap = new HashMap<>();
     String plantAgeSelectedValue = "";
-
+    LinearLayout linearlayoutFertilizerType;
+    final Handler handler = new Handler();
+    List<Integer> arrayNutrientValue;
+    List<String> arraynewFertilizer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,6 +162,8 @@ public class FertilizerCalculation extends AppCompatActivity {
         btnCheckFertilizer = (Button) findViewById(R.id.btn_check_fertilizer_reco);
         btnClear = (Button) findViewById(R.id.btn_check_clear);
         btnDeleteFertilzer= (Button) findViewById(R.id.btn_delete_fertilizer);
+        btnBack = (Button) findViewById(R.id.btnbackFertilizer);
+        linearlayoutFertilizerType = (LinearLayout) findViewById(R.id.linearLayoutFertilizerType);
         rlTableAddfertlizer.setVisibility(View.GONE);
 
         spPlanType.setSelection(0);
@@ -183,10 +190,10 @@ public class FertilizerCalculation extends AppCompatActivity {
         arrayCropCodeNPK = new ArrayList<>();
         arrayCropCodeCropMaster = new ArrayList<>();
         arrayAllCrops = new ArrayList<>();
-        arrayNutrients = new ArrayList<>();
         arrayCropFertilizerData = new ArrayList<>();
         arrayFertilizerMasterData = new ArrayList<>();
-
+        arrayNutrientValue = new ArrayList<>();
+        arraynewFertilizer = new ArrayList<>();
         arrayCount = new ArrayList<>();
         arrayDisplay = new ArrayList<>();
         arrayFertilizerDataPhosphorous = new ArrayList<>();
@@ -199,14 +206,30 @@ public class FertilizerCalculation extends AppCompatActivity {
         arrayPotashNPK= new ArrayList<>();
         arrayFertilizerDetailsList = new ArrayList<>();
         lyRecommendation.setVisibility(View.GONE);
-        arrayFertilizerName.clear();
 
+        arrayAgeofPlant.clear();
+        if (locale.toString().equals("en")) {
+            arrayAgeofPlant.add(0, "Select Age of Plant");
+        }else{
+            arrayAgeofPlant.add(0, "ಸಸ್ಯದ ವಯಸ್ಸನ್ನು ಆಯ್ಕೆಮಾಡಿ");
+        }
+
+        ArrayAdapter<String> plantage_adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, arrayAgeofPlant);
+        plantage_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spAgePlant.setAdapter(plantage_adapter);
+        spAgePlant.setSelection(0);
+       arrayFertilizerName.clear();
+        if (locale.toString().equals("en")) {
+            arrayFertilizerName.add(0,"Select Fertilizer");
+        }else{
+            arrayFertilizerName.add(0, "ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆಮಾಡಿ");
+        }
         ArrayAdapter<String> fertilizername_adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,arrayFertilizerName);
         fertilizername_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        fertilizername_adapter.notifyDataSetChanged();
         spFertilizerName.setAdapter(fertilizername_adapter);
         spFertilizerName.setSelection(0);
+
+
         if(count==1){
             loadtable();
         }
@@ -220,34 +243,21 @@ public class FertilizerCalculation extends AppCompatActivity {
                     case R.id.radioStraightFertilizer:
                         fertilizerTypeSelected = rbStraightFertilizer.getText().toString();
                         fertilizerType = "S";
-                        if(!planTypeValue.equals("") && !fertilizerCropNameSelected.equals("") && !plantAgeSelected.equals("") && !spIrrigationTypeValue.equals("") && !etAcre.getText().toString().equals("") && !etGunta.getText().toString().equals("")) {
-                            arrayFertilizerName.clear();
-                            if (locale.toString().equals("en")) {
-                                arrayFertilizerName.add(0,"Select Fertilizer");
-                            }else{
-                                arrayFertilizerName.add(0, "ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆಮಾಡಿ");
-                            }
-
-                            Fertilizernamemaster(fertilizerType);
-                        }else{
-                            spFertilizerName.setSelection(0);
-                        }
+                        //   if(!planTypeValue.equals("") && !fertilizerCropNameSelected.equals("") && !plantAgeSelected.equals("") && !spIrrigationTypeValue.equals("") && !etAcre.getText().toString().equals("") && !etGunta.getText().toString().equals("")) {
+                          Fertilizernamemaster(fertilizerType);
+                   /* }else{
+                        spFertilizerName.setSelection(0);
+                    }*/
                         break;
 
                     case R.id.radioComplexFertilizer:
                         fertilizerTypeSelected = rbComplexFertilizer.getText().toString();
                         fertilizerType = "C";
-                        if(!planTypeValue.equals("") && !fertilizerCropNameSelected.equals("") && !plantAgeSelected.equals("") && !spIrrigationTypeValue.equals("") && !etAcre.getText().toString().equals("") && !etGunta.getText().toString().equals("")) {
-                            arrayFertilizerName.clear();
-                            if (locale.toString().equals("en")) {
-                                arrayFertilizerName.add(0,"Select Fertilizer");
-                            }else{
-                                arrayFertilizerName.add(0, "ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆಮಾಡಿ");
-                            }
+                        //  if(!planTypeValue.equals("") && !fertilizerCropNameSelected.equals("") && !plantAgeSelected.equals("") && !spIrrigationTypeValue.equals("") && !etAcre.getText().toString().equals("") && !etGunta.getText().toString().equals("")) {
                             Fertilizernamemaster(fertilizerType);
-                        }else{
-                            spFertilizerName.setSelection(0);
-                        }
+                  /*  }else{
+                        spFertilizerName.setSelection(0);
+                    }*/
                         break;
 
                 }
@@ -269,6 +279,9 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     arrayCount.add(String.valueOf(count));
                                     addfertilizer();
                                     fmcalculation(fertilizerIdSelected);
+                                    Toast toast = Toast.makeText(mContext, "Fertilizer " +spFertilizerName.getSelectedItem().toString()+" added", Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
                                 } else {
                                     Toast.makeText(mContext, "Fertilizer already selected", Toast.LENGTH_SHORT).show();
                                 }
@@ -276,7 +289,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                                 Toast.makeText(mContext, "Cannot add fertilizers reached limit", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(mContext, "Please select fertilizer name", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Choose fertilizer type and select fertilizer name", Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -289,6 +302,9 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     arrayCount.add(String.valueOf(count));
                                     addfertilizer();
                                     fmcalculation(fertilizerIdSelected);
+                                    Toast toast = Toast.makeText(mContext, "ರಸಗೊಬ್ಬರ "+spFertilizerName.getSelectedItem().toString()+" ಸೇರಿಸಲಾಗಿದೆ", Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
                                 } else {
                                     Toast.makeText(mContext, "ರಸಗೊಬ್ಬರವನ್ನು ಈಗಾಗಲೇ ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ", Toast.LENGTH_SHORT).show();
                                 }
@@ -296,7 +312,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                                 Toast.makeText(mContext, "ಮಿತಿಯನ್ನು ತಲುಪಿದ ರಸಗೊಬ್ಬರಗಳನ್ನು ಸೇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(mContext, "ದಯವಿಟ್ಟು ರಸಗಗೊಬ್ಬರದ ಹೆಸರನ್ನು ಆಯ್ಕೆ ಮಾಡಿ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "ರಸಗೊಬ್ಬರದ ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ ಮತ್ತು ರಸಗೊಬ್ಬರದ ಹೆಸರನ್ನು ಆಯ್ಕೆಮಾಡಿ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }catch (NullPointerException e){
@@ -336,8 +352,57 @@ public class FertilizerCalculation extends AppCompatActivity {
         btnCheckFertilizer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+             /*   requiredNitrogen = (int) Math.round(Integer.parseInt(cropfertilizerNitrogen) * totalArea);
+                System.out.println("requiredNitrogen ----- " +requiredNitrogen );
+                requiredPhosphorous = (int) Math.round(Integer.parseInt(cropfertilizerPhosphorous) * totalArea);
+                requiredPotash = (int) Math.round(Integer.parseInt(cropfertilizerPotash) * totalArea);*/
+            int tmp0 = 0;
+            String tmp1 = "";
+            String tmp2 = "";
+            for(int i=0; i<arrayNutrientValue.size();i++){
+             for(int j=i+1;j<arrayNutrientValue.size();j++){
+                 if(arrayNutrientValue.get(j) > arrayNutrientValue.get(i)){
+                     tmp0 = arrayNutrientValue.get(i);
+                     arrayNutrientValue.set(i, arrayNutrientValue.get(j));
+                     arrayNutrientValue.set(j,tmp0);
+                     System.out.println("arrayNutrientValue " + arrayNutrientValue);
+                     tmp1 = arrayFertilizerDetailsList.get(i);
+                     arrayFertilizerDetailsList.set(i,arrayFertilizerDetailsList.get(j));
+                     arrayFertilizerDetailsList.set(j,tmp1);
+                     System.out.println("arrayFertilizerDetailsList " + arrayFertilizerDetailsList);
+                     tmp2 = arrayFertilizerMasterData.get(i);
+                     arrayFertilizerMasterData.set(i,arrayFertilizerMasterData.get(j));
+                     arrayFertilizerMasterData.set(j,tmp2);
+                     System.out.println("arrayFertilizerMasterData " + arrayFertilizerMasterData);
+                 }
+             }
+            }
                 try {
-                    calculation();
+                    if (locale.toString().equals("en")) {
+                        /*if(arrayFertilizerDetailsList.get(0).equals("Urea")&& arrayFertilizerDetailsList.get(1).equals("MOP")) {
+                            Collections.swap(arrayFertilizerDetailsList, 2, 0);
+                            Collections.swap(arrayFertilizerMasterData, 2, 0);
+                            System.out.println("swap1 -- " +arrayFertilizerDetailsList );
+                            System.out.println("swap2 -- " +arrayFertilizerMasterData );
+
+                        }*/
+                        if (validateEN() == true) {
+                            calculation();
+                        }
+                    }else{
+                        /*if(arrayFertilizerDetailsList.get(0).equals("ಯೂರಿಯಾ")&& arrayFertilizerDetailsList.get(1).equals("ಎಂಒಪಿ")) {
+                            Collections.swap(arrayFertilizerDetailsList, 2, 0);
+                            Collections.swap(arrayFertilizerMasterData, 2, 0);
+                            System.out.println("swap1 -- " +arrayFertilizerDetailsList );
+                            System.out.println("swap2 -- " +arrayFertilizerMasterData );
+
+                        }*/
+                        if(validateKN() == true){
+                            calculation();
+                        }
+                    }
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -350,16 +415,17 @@ public class FertilizerCalculation extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                rlTableAddfertlizer.setVisibility(View.GONE);
+              //  rlTableAddfertlizer.setVisibility(View.GONE);
 
-                arrayCount.clear();
-                count = 1;
-                arrayFertilizerDetailsList.clear();
+
+             //   count = 1;
+         //       arrayFertilizerDetailsList.clear();
                 arrayFertilizerDataPhosphorous.clear();
-                arrayFertilizerMasterData.clear();
-                rgFertilizerType.clearCheck();
-                spFertilizerName.setSelection(0);
-                clearViews();
+           //     arrayFertilizerMasterData.clear();
+              /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                 fmNitrogen = 0;
                 fmPhosphorous = 0;
                 fmPotash = 0;
@@ -386,15 +452,16 @@ public class FertilizerCalculation extends AppCompatActivity {
                 try {
                     if (etGunta.getText().toString().length() >= 1) {
                         if (Integer.parseInt(etGunta.getText().toString()) < 40) {
-                            rlTableAddfertlizer.setVisibility(View.GONE);
-                            arrayCount.clear();
-                            count = 1;
-                            arrayFertilizerDetailsList.clear();
+                       //     rlTableAddfertlizer.setVisibility(View.GONE);
+
+                         //   count = 1;
+                         //   arrayFertilizerDetailsList.clear();
                             arrayFertilizerDataPhosphorous.clear();
-                            arrayFertilizerMasterData.clear();
-                            rgFertilizerType.clearCheck();
-                            spFertilizerName.setSelection(0);
-                            clearViews();
+                   //         arrayFertilizerMasterData.clear();
+                            /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                             fmNitrogen = 0;
                             fmPhosphorous = 0;
                             fmPotash = 0;
@@ -437,6 +504,7 @@ public class FertilizerCalculation extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
             }
         });
 
@@ -454,15 +522,38 @@ public class FertilizerCalculation extends AppCompatActivity {
         btnDeleteFertilzer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 try {
-                    clearViews();
                     rgFertilizerType.clearCheck();
-                    spFertilizerName.setSelection(0);
+                    rlTableAddfertlizer.setVisibility(View.GONE);
+                    clearViews();
+                    fertilizerTypeSelected="";
+                    fertilizerType = "";
+                    arrayFertilizerId.clear();
+                    arrayFertilizerDetailsList.clear();
+                    arrayNutrientValue.clear();
                     arrayCount.clear();
                     count = 1;
-                    arrayFertilizerDetailsList.clear();
                     arrayFertilizerDataPhosphorous.clear();
                     arrayFertilizerMasterData.clear();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            arrayFertilizerName.clear();
+                            if (locale.toString().equals("en")) {
+                                arrayFertilizerName.add(0, "Select Fertilizer");
+                            } else {
+                                arrayFertilizerName.add(0, "ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆಮಾಡಿ");
+                            }
+                            ArrayAdapter<String> fertilizername_adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, arrayFertilizerName);
+                            fertilizername_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            fertilizername_adapter.notifyDataSetChanged();
+                            spFertilizerName.setAdapter(fertilizername_adapter);
+                            spFertilizerName.setSelection(0);
+                            System.out.println("SOP");
+                        }
+                    }, 1000);
                     requiredNitrogen = (int) Math.round(Integer.parseInt(cropfertilizerNitrogen) * totalArea);
                     requiredPhosphorous = (int) Math.round(Integer.parseInt(cropfertilizerPhosphorous) * totalArea);
                     requiredPotash = (int) Math.round(Integer.parseInt(cropfertilizerPotash) * totalArea);
@@ -473,12 +564,26 @@ public class FertilizerCalculation extends AppCompatActivity {
                     nitrogen = 0;
                     potash = 0;
                     finalDataObtained = 0;
+                    spFertilizerName.setSelection(0);
+
                 }catch (NumberFormatException e){
                     e.printStackTrace();
                 }catch(Exception e){
                     e.printStackTrace();
                 }
+                if (locale.toString().equals("en")) {
+                    Toast.makeText(mContext, "Fertilizers deleted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(mContext, "ರಸಗೊಬ್ಬರಗಳನ್ನು ಅಳಿಸಲಾಗಿದೆ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+                finish();
             }
         });
     }
@@ -487,30 +592,22 @@ public class FertilizerCalculation extends AppCompatActivity {
 
         TableRow tbrow= new TableRow(mContext);
         TextView tv_slno = new TextView(mContext);
-
         tv_slno.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tv_slno.setGravity(Gravity.CENTER);
-        tv_slno.setBackgroundColor(Color.parseColor("#42be7b"));
-
+        tv_slno.setBackgroundColor(Color.parseColor("#12b4ba"));
         tv_slno.setText(R.string.slno);
-        tv_slno.setTextSize(18);
+        tv_slno.setTextSize(20);
         tv_slno.setTextColor(Color.BLACK);
-
         TextView tv_fertilizer_name = new TextView(mContext);
-
         tv_fertilizer_name.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tv_fertilizer_name.setGravity(Gravity.CENTER);
-        tv_fertilizer_name.setBackgroundColor(Color.parseColor("#81D4FA"));
-
-        tv_fertilizer_name.setText(R.string.fertilizer_name);
+        tv_fertilizer_name.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tv_fertilizer_name.setText(R.string.fertilizerName);
         tv_fertilizer_name.setTextColor(Color.BLACK);
-        tv_fertilizer_name.setTextSize(18);
-
+        tv_fertilizer_name.setTextSize(20);
         tbrow.addView(tv_slno);
         tbrow.addView(tv_fertilizer_name);
-
         tableAddFertilizer.addView(tbrow);
-
     }
 
     private void addfertilizer() {
@@ -521,15 +618,15 @@ public class FertilizerCalculation extends AppCompatActivity {
         TextView tv_sl = new TextView(mContext);
         tv_sl.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tv_sl.setGravity(Gravity.CENTER);
-        tv_sl.setBackgroundColor(Color.parseColor("#a8dba8"));
+        tv_sl.setBackgroundColor(Color.parseColor("#B2EBF2"));
         tv_sl.setTextColor(Color.BLACK);
-        tv_sl.setTextSize(18);
+        tv_sl.setTextSize(20);
         tv_sl.setText("" + count);
 
         TextView tv_fname = new TextView(mContext);
         tv_fname.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-        tv_fname.setBackgroundColor(Color.parseColor("#E1F5FE"));
-        tv_fname.setTextSize(18);
+        tv_fname.setBackgroundColor(Color.parseColor("#B2EBF2"));
+        tv_fname.setTextSize(20);
         tv_fname.setTextColor(Color.BLACK);
         tv_fname.setGravity(Gravity.CENTER);
         tv_fname.setText("" + spFertilizerName.getSelectedItem().toString()); //arrayFertilizerDetailsList.get(count-1) spFertilizerName.getSelectedItem().toString()
@@ -553,6 +650,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                         fertilizermasterNitrogen = taskEntry.getFertilizernitrogen();
                         fertilizermasterPhosphorous = taskEntry.getFertilizerphosphorous();
                         fertilizermasterPotash = taskEntry.getFertilizerpotash();
+                        arrayNutrientValue.add(Integer.valueOf(taskEntry.getFertilizernutrient()));
                         arrayFertilizerMasterData.add(taskEntry.getFertilizernitrogen()+"-"+taskEntry.getFertilizerphosphorous()+"-"+taskEntry.getFertilizerpotash());
                     }
                 }
@@ -566,6 +664,7 @@ public class FertilizerCalculation extends AppCompatActivity {
         }else{
             arrayPlanType.add(0, "ಯೋಜನೆ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ");
         }
+
         ArrayAdapter<String> plantype_adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,arrayPlanType);
         plantype_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -625,14 +724,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                 }
 
 
-                                arrayCount.clear();
-                                count = 1;
-                                arrayFertilizerDetailsList.clear();
+
+                           //     count = 1;
+                          //      arrayFertilizerDetailsList.clear();
                                 arrayFertilizerDataPhosphorous.clear();
-                                arrayFertilizerMasterData.clear();
-                                rgFertilizerType.clearCheck();
-                                spFertilizerName.setSelection(0);
-                                clearViews();
+                         //       arrayFertilizerMasterData.clear();
+                             /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                                 fmNitrogen = 0;
                                 fmPhosphorous = 0;
                                 fmPotash = 0;
@@ -657,14 +757,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
 
-                                arrayCount.clear();
-                                count = 1;
-                                arrayFertilizerDetailsList.clear();
+
+                               // count = 1;
+                         //       arrayFertilizerDetailsList.clear();
                                 arrayFertilizerDataPhosphorous.clear();
-                                arrayFertilizerMasterData.clear();
-                                rgFertilizerType.clearCheck();
-                                spFertilizerName.setSelection(0);
-                                clearViews();
+                            //    arrayFertilizerMasterData.clear();
+                                /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                                 fmNitrogen = 0;
                                 fmPhosphorous = 0;
                                 fmPotash = 0;
@@ -697,8 +798,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                             spIrrigationType.setSelection(0);
                             tvNutrient.setText(R.string.nutrient_recommendation_for_1_acre);
 
-                            spFertilizerName.setSelection(0);
-                            rgFertilizerType.clearCheck();
+
                             try {
                                 etAcre.getText().clear();
                                 etGunta.getText().clear();
@@ -708,14 +808,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                             //   rlTableAddfertlizer.setVisibility(View.GONE);
                             tvTotalNutrient.setText(R.string.recommendation_of_npk_for_extent_selected);
 
-                            arrayCount.clear();
-                            count = 1;
-                            arrayFertilizerDetailsList.clear();
+
+                         //   count = 1;
+                         //   arrayFertilizerDetailsList.clear();
                             arrayFertilizerDataPhosphorous.clear();
-                            arrayFertilizerMasterData.clear();
-                            rgFertilizerType.clearCheck();
-                            spFertilizerName.setSelection(0);
-                            clearViews();
+                       //     arrayFertilizerMasterData.clear();
+                           /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                             fmNitrogen = 0;
                             fmPhosphorous = 0;
                             fmPotash = 0;
@@ -733,8 +834,6 @@ public class FertilizerCalculation extends AppCompatActivity {
             }
 
         });
-
-
 
         if (locale.toString().equals("en")) {
             arrayIrrigationType.add(0,"Select Irrigation Type");
@@ -796,14 +895,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     }catch (NumberFormatException e){
                                         e.printStackTrace();
                                     }
-                                    arrayCount.clear();
-                                    count = 1;
-                                    arrayFertilizerDetailsList.clear();
+
+                             //       count = 1;
+                             //       arrayFertilizerDetailsList.clear();
                                     arrayFertilizerDataPhosphorous.clear();
-                                    arrayFertilizerMasterData.clear();
-                                    rgFertilizerType.clearCheck();
+                             //       arrayFertilizerMasterData.clear();
+                                  /* rgFertilizerType.clearCheck();
                                     spFertilizerName.setSelection(0);
                                     clearViews();
+                                     arrayCount.clear();*/
                                     fmNitrogen = 0;
                                     fmPhosphorous = 0;
                                     fmPotash = 0;
@@ -821,12 +921,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     }catch (NumberFormatException e){
                                         e.printStackTrace();
                                     }
-                                    arrayCount.clear();
-                                    count = 1;
-                                    arrayFertilizerDetailsList.clear();
+
+                              //      count = 1;
+                               //     arrayFertilizerDetailsList.clear();
                                     arrayFertilizerDataPhosphorous.clear();
-                                    arrayFertilizerMasterData.clear();
+                             //       arrayFertilizerMasterData.clear();
+                                  /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
                                     clearViews();
+                                     arrayCount.clear();*/
                                     fmNitrogen = 0;
                                     fmPhosphorous = 0;
                                     fmPotash = 0;
@@ -846,14 +949,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     }catch (NumberFormatException e){
                                         e.printStackTrace();
                                     }
-                                    arrayCount.clear();
-                                    count = 1;
-                                    arrayFertilizerDetailsList.clear();
+
+                                //    count = 1;
+                               //     arrayFertilizerDetailsList.clear();
                                     arrayFertilizerDataPhosphorous.clear();
-                                    arrayFertilizerMasterData.clear();
-                                    rgFertilizerType.clearCheck();
+                              //      arrayFertilizerMasterData.clear();
+                                   /* rgFertilizerType.clearCheck();
                                     spFertilizerName.setSelection(0);
                                     clearViews();
+                                     arrayCount.clear();*/
                                     fmNitrogen = 0;
                                     fmPhosphorous = 0;
                                     fmPotash = 0;
@@ -871,14 +975,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                     }catch (NumberFormatException e){
                                         e.printStackTrace();
                                     }
-                                    arrayCount.clear();
-                                    count = 1;
-                                    arrayFertilizerDetailsList.clear();
+
+                                //    count = 1;
+                                  //  arrayFertilizerDetailsList.clear();
                                     arrayFertilizerDataPhosphorous.clear();
-                                    arrayFertilizerMasterData.clear();
-                                    rgFertilizerType.clearCheck();
+                              //      arrayFertilizerMasterData.clear();
+                              /* rgFertilizerType.clearCheck();
                                     spFertilizerName.setSelection(0);
                                     clearViews();
+                                     arrayCount.clear();*/
                                     fmNitrogen = 0;
                                     fmPhosphorous = 0;
                                     fmPotash = 0;
@@ -914,26 +1019,27 @@ public class FertilizerCalculation extends AppCompatActivity {
                             spIrrigationType.setSelection(0);
                             tvNutrient.setText(R.string.nutrient_recommendation_for_1_acre);
 
-                            spFertilizerName.setSelection(0);
-                            rgFertilizerType.clearCheck();
+                            /*spFertilizerName.setSelection(0);
+                            rgFertilizerType.clearCheck();*/
                             try {
                                 etAcre.getText().clear();
                                 etGunta.getText().clear();
                             }catch (NumberFormatException e){
                                 e.printStackTrace();
                             }
-                            rlTableAddfertlizer.setVisibility(View.GONE);
+                         //   rlTableAddfertlizer.setVisibility(View.GONE);
                             tvTotalNutrient.setText(R.string.recommendation_of_npk_for_extent_selected);
-                            rlTableAddfertlizer.setVisibility(View.GONE);
 
-                            arrayCount.clear();
-                            count = 1;
-                            arrayFertilizerDetailsList.clear();
+
+
+                         //   count = 1;
+                         //   arrayFertilizerDetailsList.clear();
                             arrayFertilizerDataPhosphorous.clear();
-                            arrayFertilizerMasterData.clear();
-                            rgFertilizerType.clearCheck();
-                            spFertilizerName.setSelection(0);
-                            clearViews();
+                         //   arrayFertilizerMasterData.clear();
+                    /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                             fmNitrogen = 0;
                             fmPhosphorous = 0;
                             fmPotash = 0;
@@ -959,12 +1065,17 @@ public class FertilizerCalculation extends AppCompatActivity {
             if(child instanceof TableRow)((ViewGroup) child).removeAllViews();
         }
 
-        // tableLayout
+
     }
 
     private void Fertilizernamemaster(String type){
 
-        //    arrayFertilizerName.clear();
+        arrayFertilizerName.clear();
+        if (locale.toString().equals("en")) {
+            arrayFertilizerName.add(0,"Select Fertilizer");
+        }else{
+            arrayFertilizerName.add(0, "ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆಮಾಡಿ");
+        }
         arrayFertilizerId.clear();
         arrayFertilizerId.add("");
         // arrayFertilizerName.add(0,"Select Fertilizer");
@@ -985,8 +1096,8 @@ public class FertilizerCalculation extends AppCompatActivity {
                             }
 
                         } else {
-                           if(!arrayFertilizerName.contains(taskEntry.getFertilizekname())){
-                                arrayFertilizerName.add(taskEntry.getFertilizekname());
+                            if(!arrayFertilizerName.contains(taskEntry.getFertilizerknname())){
+                                arrayFertilizerName.add(taskEntry.getFertilizerknname());
                                 arrayFertilizerId.add(taskEntry.getFeid());
                             }
                         }
@@ -1065,10 +1176,9 @@ public class FertilizerCalculation extends AppCompatActivity {
 
                             }
                         }
-
-
                     }
-                }else{
+                }
+                else{
                     new AlertDialog.Builder(mContext)
                             .setTitle(getResources().getString(R.string.alert))
                             .setMessage(getResources().getString(R.string.cropDetails))
@@ -1107,14 +1217,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                             System.out.print("cropcode_cropmaster " + cropcodeCropMaster);
                             cropfertilizermaster_npk(cropcodeCropMaster);
                             spAgePlant.setSelection(0);
-                            arrayCount.clear();
-                            count = 1;
-                            arrayFertilizerDetailsList.clear();
+
+                           // count = 1;
+                         //   arrayFertilizerDetailsList.clear();
                             arrayFertilizerDataPhosphorous.clear();
-                            arrayFertilizerMasterData.clear();
-                            rgFertilizerType.clearCheck();
-                            spFertilizerName.setSelection(0);
-                            clearViews();
+                       //     arrayFertilizerMasterData.clear();
+                          /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                             fmNitrogen = 0;
                             fmPhosphorous = 0;
                             fmPotash = 0;
@@ -1134,17 +1245,18 @@ public class FertilizerCalculation extends AppCompatActivity {
                             }catch (NumberFormatException e){
                                 e.printStackTrace();
                             }
-                            spFertilizerName.setSelection(0);
-                            rgFertilizerType.clearCheck();
-
-                            rlTableAddfertlizer.setVisibility(View.GONE);
+                      /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
+                      //      rlTableAddfertlizer.setVisibility(View.GONE);
                             tvTotalNutrient.setText(R.string.recommendation_of_npk_for_extent_selected);
-                            arrayCount.clear();
-                            count = 1;
-                            arrayFertilizerDetailsList.clear();
+
+                          //  count = 1;
+                      //      arrayFertilizerDetailsList.clear();
                             arrayFertilizerDataPhosphorous.clear();
-                            arrayFertilizerMasterData.clear();
-                            clearViews();
+                         //   arrayFertilizerMasterData.clear();
+
                             fmNitrogen = 0;
                             fmPhosphorous = 0;
                             fmPotash = 0;
@@ -1242,7 +1354,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                             System.out.print("cropcode_cropmaster " + cropcodeCropMaster);
                             cropfertilizermaster_npk(cropcodeCropMaster);
                             spAgePlant.setSelection(0);
-                            arrayCount.clear();
+                       //     arrayCount.clear();
                         }else{
                             spCropName.setSelection(0);
                             spAgePlant.setSelection(0);
@@ -1254,14 +1366,17 @@ public class FertilizerCalculation extends AppCompatActivity {
                             }catch (NumberFormatException e){
                                 e.printStackTrace();
                             }
-                            spFertilizerName.setSelection(0);
-                            rgFertilizerType.clearCheck();
 
-                            rlTableAddfertlizer.setVisibility(View.GONE);
+
+                           // rlTableAddfertlizer.setVisibility(View.GONE);
                             tvTotalNutrient.setText(R.string.recommendation_of_npk_for_extent_selected);
-                            //  count = 1;
-                            arrayCount.clear();
-                            arrayFertilizerDetailsList.clear();
+                            /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
+                          //     count = 1;
+
+                       //     arrayFertilizerDetailsList.clear();
                             arrayFertilizerDataPhosphorous.clear();
                         }
                     }
@@ -1388,14 +1503,15 @@ public class FertilizerCalculation extends AppCompatActivity {
                                 }catch (NumberFormatException e){
                                     e.printStackTrace();
                                 }
-                                arrayCount.clear();
-                                count = 1;
-                                arrayFertilizerDetailsList.clear();
+
+                              //  count = 1;
+                           //     arrayFertilizerDetailsList.clear();
                                 arrayFertilizerDataPhosphorous.clear();
-                                arrayFertilizerMasterData.clear();
-                                rgFertilizerType.clearCheck();
-                                spFertilizerName.setSelection(0);
-                                clearViews();
+                          //      arrayFertilizerMasterData.clear();
+                                /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                                 fmNitrogen = 0;
                                 fmPhosphorous = 0;
                                 fmPotash = 0;
@@ -1406,24 +1522,23 @@ public class FertilizerCalculation extends AppCompatActivity {
                             }else{
                                 spAgePlant.setSelection(0);
                                 spIrrigationType.setSelection(0);
-                                spFertilizerName.setSelection(0);
-                                rgFertilizerType.clearCheck();
                                 try {
                                     etAcre.getText().clear();
                                     etGunta.getText().clear();
                                 }catch (NumberFormatException e){
                                     e.printStackTrace();
                                 }
-                                rlTableAddfertlizer.setVisibility(View.GONE);
+                            //    rlTableAddfertlizer.setVisibility(View.GONE);
                                 tvTotalNutrient.setText(R.string.recommendation_of_npk_for_extent_selected);
-                                arrayCount.clear();
-                                count = 1;
-                                arrayFertilizerDetailsList.clear();
+
+                             //   count = 1;
+                          //      arrayFertilizerDetailsList.clear();
                                 arrayFertilizerDataPhosphorous.clear();
-                                arrayFertilizerMasterData.clear();
-                                rgFertilizerType.clearCheck();
-                                spFertilizerName.setSelection(0);
-                                clearViews();
+                            //    arrayFertilizerMasterData.clear();
+                                /* rgFertilizerType.clearCheck();
+                                    spFertilizerName.setSelection(0);
+                                    clearViews();
+                                     arrayCount.clear();*/
                                 fmNitrogen = 0;
                                 fmPhosphorous = 0;
                                 fmPotash = 0;
@@ -1543,9 +1658,11 @@ public class FertilizerCalculation extends AppCompatActivity {
         requiredPotash = (int) Math.round(Integer.parseInt(cropfertilizerPotash) * totalArea);
         tvNPKValue.setText("Nitrogen: "+requiredNitrogen+ ", Phosphorous: " + requiredPhosphorous + ", Potash: " + requiredPotash);
         lyRecommendation.setVisibility(View.VISIBLE);
+        System.out.println("reqN " + requiredNitrogen);
     }
 
     public void calculation(){
+
         if(finalDataObtained==0) {
             arrayFertilizerDataPhosphorous.clear();
 
@@ -1553,7 +1670,6 @@ public class FertilizerCalculation extends AppCompatActivity {
                 if (!fertilizermasterNitrogen.equals("") && !fertilizermasterPhosphorous.equals("") && !fertilizermasterPotash.equals("")) {
 
                     String temp = arrayFertilizerMasterData.get(q);
-
                     tempfmdata = temp.split("-");
                     fmNitrogen = Integer.parseInt(tempfmdata[0]);
                     fmPhosphorous = Integer.parseInt(tempfmdata[1]);
@@ -1568,12 +1684,13 @@ public class FertilizerCalculation extends AppCompatActivity {
                             requiredPhosphorous = 0;
                             requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
                             requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * phosphorous));
-                        } else if (fmNitrogen > fmPhosphorous && fmPhosphorous > fmPotash && requiredPhosphorous != 0) {
+                        } else if (fmNitrogen > fmPhosphorous && fmNitrogen > fmPotash && requiredNitrogen != 0) {
 
                             nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
                             requiredNitrogen = 0;
                             requiredPhosphorous = (int) (requiredPhosphorous - ((float) fmPhosphorous / (float) 100 * nitrogen));
                             requiredPotash = (int) (requiredPotash - ((float) fmPotash / (float) 100 * nitrogen));
+
                         } else if (fmPotash > fmPhosphorous && fmPotash > fmNitrogen && requiredPotash != 0) {
 
                             potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
@@ -1588,9 +1705,18 @@ public class FertilizerCalculation extends AppCompatActivity {
                         }
                     } else if (fmPhosphorous != 0 && fmNitrogen != 0) {
                         if (fmPhosphorous > fmNitrogen && requiredPhosphorous != 0) {
+                           System.out.println("requiredNitrogen bfr " +requiredNitrogen );
+
                             phosphorous = (int) ((float) 100 / (float) fmPhosphorous * (requiredPhosphorous));
                             requiredPhosphorous = 0;
                             requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * phosphorous));
+
+                           /* System.out.println("rN fmPhosphorous " +fmPhosphorous );
+                            System.out.println("rN fmNitrogen " +fmNitrogen );
+                            System.out.println("rN requiredPhosphorous " +requiredPhosphorous );
+                            System.out.println("rN phosphorous " +phosphorous );*/
+                            System.out.println("requiredNitrogen aftr " +requiredNitrogen );
+
                         } else if (fmNitrogen > fmPhosphorous && requiredNitrogen != 0) {
                             nitrogen = (int) ((float) 100 / (float) fmNitrogen * (requiredNitrogen));
                             requiredNitrogen = 0;
@@ -1606,6 +1732,7 @@ public class FertilizerCalculation extends AppCompatActivity {
                             potash = (int) ((float) 100 / (float) fmPotash * (requiredPotash));
                             requiredPotash = 0;
                             requiredNitrogen = (int) (requiredNitrogen - ((float) fmNitrogen / (float) 100 * potash));
+
                         }
                     } else if (fmPhosphorous != 0 && fmPotash != 0) {
 
@@ -1629,27 +1756,26 @@ public class FertilizerCalculation extends AppCompatActivity {
                         requiredPotash = 0;
                     }
 
-                    if (phosphorous != 0) {
+                    if(phosphorous != 0) {
                         finalDataObtained = phosphorous;
                         arrayFertilizerDataPhosphorous.add(String.valueOf(finalDataObtained));
                     }
-                    if (nitrogen != 0) {
+                    if(nitrogen != 0) {
                         finalDataObtained = nitrogen;
                         arrayFertilizerDataPhosphorous.add(String.valueOf(finalDataObtained));
                     }
-                    if (potash != 0) {
+                    if(potash != 0) {
                         finalDataObtained = potash;
                         arrayFertilizerDataPhosphorous.add(String.valueOf(finalDataObtained));
                     }
                 }
             }
         }
+        System.out.println("requiredNitrogen " + requiredNitrogen + " requiredPhosphorous " + requiredPhosphorous + " requiredPotash " + requiredPotash);
         if(requiredNitrogen == 0 && requiredPhosphorous == 0 && requiredPotash == 0) {
-
             displayFertilizers();
-
-
-        }else{
+        }
+        else{
             AlertDialog alertDialog = new AlertDialog.Builder(FertilizerCalculation.this).create();
             alertDialog.setTitle(R.string.Note);
             alertDialog.setMessage(getString(R.string.alertmessage));
@@ -1681,15 +1807,15 @@ public class FertilizerCalculation extends AppCompatActivity {
         TextView textView1 = new TextView(dialogContext);
         textView1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         textView1.setGravity(Gravity.CENTER);
-        textView1.setBackgroundColor(Color.parseColor("#42be7b"));
-        textView1.setText(R.string.fertilizer_name);
+        textView1.setBackgroundColor(Color.parseColor("#12b4ba"));
+        textView1.setText(R.string.fertilizerName);
         textView1.setTextColor(Color.BLACK);
         textView1.setTextSize(20);
 
         TextView textView2 = new TextView(dialogContext);
         textView2.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         textView2.setGravity(Gravity.CENTER);
-        textView2.setBackgroundColor(Color.parseColor("#81D4FA"));
+        textView2.setBackgroundColor(Color.parseColor("#12b4ba"));
         textView2.setText(R.string.KG);
         textView2.setTextColor(Color.BLACK);
         textView2.setTextSize(20);
@@ -1697,7 +1823,7 @@ public class FertilizerCalculation extends AppCompatActivity {
         TextView textView3 = new TextView(dialogContext);
         textView3.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         textView3.setGravity(Gravity.CENTER);
-        textView3.setBackgroundColor(Color.parseColor("#9FA8DA"));
+        textView3.setBackgroundColor(Color.parseColor("#12b4ba"));
         textView3.setText(R.string.Bags);
         textView3.setTextColor(Color.BLACK);
         textView3.setTextSize(20);
@@ -1726,7 +1852,7 @@ public class FertilizerCalculation extends AppCompatActivity {
 
                 TextView tv_fname_fer = new TextView(dialogContext);
                 tv_fname_fer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tv_fname_fer.setBackgroundColor(Color.parseColor("#a8dba8"));
+                tv_fname_fer.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tv_fname_fer.setTextSize(20);
                 tv_fname_fer.setTextColor(Color.BLACK);
                 tv_fname_fer.setGravity(Gravity.CENTER);
@@ -1734,7 +1860,7 @@ public class FertilizerCalculation extends AppCompatActivity {
 
                 TextView tv_kg_fer = new TextView(dialogContext);
                 tv_kg_fer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tv_kg_fer.setBackgroundColor(Color.parseColor("#E1F5FE"));
+                tv_kg_fer.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tv_kg_fer.setTextSize(20);
                 tv_kg_fer.setTextColor(Color.BLACK);
                 tv_kg_fer.setGravity(Gravity.CENTER);
@@ -1742,7 +1868,7 @@ public class FertilizerCalculation extends AppCompatActivity {
 
                 TextView tv_bags_fer = new TextView(dialogContext);
                 tv_bags_fer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tv_bags_fer.setBackgroundColor(Color.parseColor("#E8EAF6"));
+                tv_bags_fer.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tv_bags_fer.setTextSize(20);
                 tv_bags_fer.setTextColor(Color.BLACK);
                 tv_bags_fer.setGravity(Gravity.CENTER);
@@ -1756,8 +1882,6 @@ public class FertilizerCalculation extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
-
 
         builder.setPositiveButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
             @Override
@@ -1837,5 +1961,145 @@ public class FertilizerCalculation extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    public boolean validateEN(){
+
+            if (!spPlanType.getSelectedItem().toString().equals("Select Plan Type")) {
+            } else {
+                Toast.makeText(mContext, R.string.selectPlanType, Toast.LENGTH_SHORT).show();
+                TextView errorTextview = (TextView) spPlanType.getSelectedView();
+                errorTextview.setError("");
+                errorTextview.setFocusable(true);
+                return false;
+            }
+            if (!spCropName.getSelectedItem().toString().equals("Select Crop")) {
+
+
+            } else {
+                Toast.makeText(mContext, R.string.selectCrop, Toast.LENGTH_SHORT).show();
+                TextView errorTextview = (TextView) spCropName.getSelectedView();
+                errorTextview.setError("");
+                errorTextview.setFocusable(true);
+                return false;
+            }
+            if(planTypeValue.equals("P")) {
+                if (!spAgePlant.getSelectedItem().toString().equals("Select Age of Plant")) {
+
+                } else {
+                    Toast.makeText(mContext, R.string.selectAgePlant, Toast.LENGTH_SHORT).show();
+                    TextView errorTextview = (TextView) spAgePlant.getSelectedView();
+                    errorTextview.setError("");
+                    errorTextview.setFocusable(true);
+                    return false;
+                }
+            }
+            if (!spIrrigationType.getSelectedItem().toString().equals("Select Irrigation Type")){
+            } else {
+                Toast.makeText(mContext, R.string.selectIrrigation, Toast.LENGTH_SHORT).show();
+                TextView errorTextview = (TextView) spIrrigationType.getSelectedView();
+                errorTextview.setError("");
+                errorTextview.setFocusable(true);
+                return false;
+            }
+
+            if (!etAcre.getText().toString().equals("")) {
+
+            } else {
+                etAcre.setError("Invalid acre value");
+                etAcre.setFocusable(true);
+                return false;
+            }
+            if (!etGunta.getText().toString().equals("")) {
+
+            } else {
+                etGunta.setError("Invalid gunta value");
+                etGunta.setFocusable(true);
+                return false;
+            }
+
+           System.out.println("Countvalue is : " +count);
+            if (!spFertilizerName.getSelectedItem().toString().equals("Select Fertilizer")) {
+
+            } else {
+                Toast.makeText(mContext, "Choose fertilizer type and select fertilizer name", Toast.LENGTH_SHORT).show();
+                TextView errorTextview = (TextView) spFertilizerName.getSelectedView();
+                errorTextview.setError("");
+                errorTextview.setFocusable(true);
+                return false;
+            }
+
+            return true;
+
+    }
+    public boolean validateKN(){
+
+        if (!spPlanType.getSelectedItem().toString().equals("ಯೋಜನೆ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ")) {
+        } else {
+            Toast.makeText(mContext, R.string.selectPlanType, Toast.LENGTH_SHORT).show();
+            TextView errorTextview = (TextView) spPlanType.getSelectedView();
+            errorTextview.setError("");
+            errorTextview.setFocusable(true);
+            return false;
+        }
+        if (!spCropName.getSelectedItem().toString().equals("ಬೆಳೆ ಆಯ್ಕೆಮಾಡಿ")) {
+
+
+        } else {
+            Toast.makeText(mContext, R.string.selectCrop, Toast.LENGTH_SHORT).show();
+            TextView errorTextview = (TextView) spCropName.getSelectedView();
+            errorTextview.setError("");
+            errorTextview.setFocusable(true);
+            return false;
+        }
+        if(planTypeValue.equals("P")) {
+            if (!spAgePlant.getSelectedItem().toString().equals("ಸಸ್ಯದ ವಯಸ್ಸನ್ನು ಆಯ್ಕೆಮಾಡಿ")) {
+
+            } else {
+                Toast.makeText(mContext, R.string.selectAgePlant, Toast.LENGTH_SHORT).show();
+                TextView errorTextview = (TextView) spAgePlant.getSelectedView();
+                errorTextview.setError("");
+                errorTextview.setFocusable(true);
+                return false;
+            }
+        }
+        if (!spIrrigationType.getSelectedItem().toString().equals("ನೀರಾವರಿ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ")){
+        } else {
+            Toast.makeText(mContext, R.string.selectIrrigation, Toast.LENGTH_SHORT).show();
+            TextView errorTextview = (TextView) spIrrigationType.getSelectedView();
+            errorTextview.setError("");
+            errorTextview.setFocusable(true);
+            return false;
+        }
+
+        if (!etAcre.getText().toString().equals("")) {
+
+        } else {
+            etAcre.setError("ತಪ್ಪಾದ ಎಕರೆ ಮೌಲ್ಯ");
+            etAcre.setFocusable(true);
+            return false;
+        }
+        if (!etGunta.getText().toString().equals("")) {
+
+        } else {
+            etGunta.setError("ತಪ್ಪಾದ ಗುಂಟಾ ಮೌಲ್ಯ");
+            etGunta.setFocusable(true);
+            return false;
+        }
+
+        if (!spFertilizerName.getSelectedItem().toString().equals("ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆಮಾಡಿ")) {
+
+        } else {
+            Toast.makeText(mContext,"ರಸಗೊಬ್ಬರ ಪ್ರಕಾರವನ್ನು ಆರಿಸಿ ಮತ್ತು ರಸಗೊಬ್ಬರವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ", Toast.LENGTH_SHORT).show();
+            TextView errorTextview = (TextView) spFertilizerName.getSelectedView();
+            errorTextview.setError("");
+            errorTextview.setFocusable(true);
+            return false;
+        }
+
+
+
+        return true;
+
     }
 }
