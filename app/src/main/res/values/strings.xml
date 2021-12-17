@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FRUITS</string>
+
+
     <string name="personal_data">Personal Details</string>
     <string name="payment_data">Payment Details</string>
     <string name="land_data">Land Details</string>
@@ -9,9 +11,7 @@
 
     <string name="npci">NPCI</string>
     <string name="feedback">FeedBack</string>
-    <string name="cropdetails">Crop Details</string>
-    <string name="fertilizercalculation">Fertilizer Calculation</string>
-    <string name="cropregistration">Registration</string>
+
     <string name="name">Name</string>
     <string name="father_name">Father Name</string>
     <string name="age">Age</string>
@@ -81,43 +81,27 @@
     <string name="alert">Alert</string>
 
     <string name="design_devlopment">National Informatics Center Karnataka State Unit.</string>
-    <string name="weatherforecast">weatherforecast details not available at this moment ,Try later</string>
-    <string name="crop_register">Registration</string>
-    <string name="crop_weekly_data">Weekly Data</string>
-    <string name="escalate_crop_issue">Escalate Crop Issue</string>
-    <string name="enter_farmer_id">Enter Farmer ID</string>
-    <string name="btn_register_crop">Register Crop</string>
+    <string name="weatherforecast">weatherforecast details not avilable at this moment ,Try later</string>
+    <string name="register">Register</string>
+    <string name="fertilizercalculation">Fertilizer Calculation</string>
 
-    <string name="fill_the_crop_weekly_data">Provide Crop Weekly Data</string>
-    <string name="upload_crop_details">Upload Captured Crop Data</string>
-    <string name="register_year">Year</string>
-    <string name="register_season">Season</string>
-    <string name="register_survey_number">Survey Number</string>
-    <string name="register_owner_name">Owner Name</string>
-    <string name="register_crop_name">Crop Name</string>
-    <string name="register_crop_variety">Crop Variety</string>
-    <string name="register_enter_crop_extent">Enter Crop Extent</string>
-    <string name="register_enter_sowing_date">Click here</string>
-    <string name="crop_details_upload">Upload Crop Details</string>
-    <string name="surveyalreadysaved">Crop already registered for the survey number, Please select new Survey Number</string>
-    <string name="weekalreadysaved">Crop Weekly Data has been saved already, please select different crop</string>
-    <string name="crops_not_available">Crops not available</string>
-    <string name="plan_type">Plan Type</string>
-    <string name="cropName">Crop Name</string>
-    <string name="age_of_plant">Age of Plant</string>
-    <string name="irrigation_type">Irrigation Type</string>
+    <string name="plan_type">Plan Type :</string>
+    <string name="cropName">Crop Name :</string>
+    <string name="age_of_plant">Age of Plant :</string>
+    <string name="irrigation_type">Irrigation Type :</string>
     <string name="nutrient_recommendation_for_1_acre">Nutrient Recommendation for 1 acre</string>
-    <string name="acre">Acre</string>
+    <string name="acre">Acre :</string>
     <string name="enter_acre">Enter acre</string>
-    <string name="gunta">Gunta</string>
+    <string name="gunta">Gunta :</string>
     <string name="enter_gunta">Enter gunta</string>
     <string name="recommendation_of_npk_for_extent_selected">Recommendation of NPK for extent selected </string>
     <string name="fertilizer_details">Fertilizer Details</string>
-    <string name="fertilizer_type">Fertilizer Type</string>
+    <string name="fertilizer_type">Fertilizer Type :</string>
     <string name="straight_fertilizer">Straight Fertilizer</string>
     <string name="complex_fertilizer">Complex Fertilizer</string>
-    <string name="fertilizer_name">Fertilizer Name</string>
-    <string name="KG">KGs.</string>
+    <string name="fertilizer_name">Fertilizer Name :</string>
+    <string name="fertilizerName">Fertilizer Name </string>
+    <string name="KG">KGs</string>
     <string name="Bags">Bags</string>
     <string name="Nitrogen">"Nitrogen: "</string>
     <string name="Phosphorous">" Phosphorous: "</string>
@@ -125,6 +109,7 @@
     <string name="slno">Sl.No</string>
     <string name="check_fertilizer_recommendation">Display Calculated Fertilizers</string>
     <string name="clear">Clear</string>
+    <string name="backFertilizer">Back</string>
     <string name="add_fertilizer">Add Fertilizer</string>
     <string name="delete_fertilizer">Delete Fertilizer</string>
     <string name="perennial">Perennial</string>
@@ -135,24 +120,50 @@
     <string name="selectPlanType">Select Plan Type</string>
     <string name="selectCrop">Select Crop</string>
     <string name="selectAgePlant">Select Age of Plant</string>
+    <string name="selectIrrigation">Select Irrigation Type</string>
     <string name="planDetails">Plan details not available</string>
     <string name="irrigationDetails">Irrigation details not available</string>
     <string name="fertilizerDetails">Fertilizer details not available</string>
     <string name="cropDetails">Crop details not available</string>
     <string name="cropferDetails">Crop fertilizer details not available</string>
     <string name="plantAgeDetails">No data found for this crop, nutrient cannot be calculated</string>
-    <string name="recommendedFertilizers">Recommended Fertilizers</string>
+    <string name="recommendedFertilizers">Recommended dose of fertilizers for crop</string>
     <string name="OK">OK</string>
     <string name="Note">Note</string>
     <string name="alertmessage">For selected fertilizers not able to provide required nutrients</string>
     <string name="internet">Please Connect To Internet</string>
     <string name="guntaalertmessage">Enter correct gunta measurement</string>
 
-    <string name="farmfertilizer">Farm Fertilizer</string>
-    <string name="farmfertilizerYear">Year</string>
-    <string name="farmfertilizerSeason">Season</string>
-    <string name="farmfertilizerSurvey">Survey Number</string>
-    <string name="farmfertilizerCrop">Crop Name</string>
-    <string name="farmfertilizerCropArea">Crop Area</string>
-    <string name="farmfertilizerFId">Farmer Id</string>
+    <string-array name="item_fruits">
+
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Mango</item>
+        <item>Orange</item>
+        <item>Cherry</item>
+        <item>Grape</item>
+        <item>Coconut</item>
+        <item>Blueberry</item>
+        <item>Strawberry</item>
+        <item>Pear</item>
+        <item>Watermelon</item>
+
+    </string-array>
+
+    <string-array name="item_price">
+
+        <item>100</item>
+        <item>40</item>
+        <item>55</item>
+        <item>25</item>
+        <item>80</item>
+        <item>120</item>
+        <item>15</item>
+        <item>30</item>
+        <item>70</item>
+        <item>85</item>
+        <item>75</item>
+
+    </string-array>
+
 </resources>
