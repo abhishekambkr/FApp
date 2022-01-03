@@ -31,16 +31,21 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.media.MediaMetadataRetriever;
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -51,7 +56,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -76,9 +83,11 @@ import org.nic.fruits.viewmodel.MainViewModel;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
@@ -167,7 +176,19 @@ public class CropWeeklyData extends AppCompatActivity {
     LinearLayout linearLayout_escalatecamera;
     TextView tv_farming_type;
     String farming_type_display;
-
+    private ImageButton play, stop, record;
+    private Button btnUploadAudio;
+    private MediaRecorder myAudioRecorder;
+    private String outputFile;
+    private File audioFile;
+    byte[] bytes;
+    String base64String;
+    private TextView textRecord;
+    private TextView textStop;
+    private TextView textPlay;
+    private TextView fileName;
+    private MediaPlayer mediaPlayer = new MediaPlayer();
+    private LinearLayout linearAudioImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,7 +198,7 @@ public class CropWeeklyData extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-        getSupportActionBar().setTitle(getResources().getString(R.string.crop_weekly_data));
+        getSupportActionBar().setTitle(getResources().getString(R.string.cropWeeklyData));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -228,7 +249,15 @@ public class CropWeeklyData extends AppCompatActivity {
         rl_table = (RelativeLayout) findViewById(R.id.RelativeLayout1);
         tbl_crop_pick = (TableLayout) findViewById(R.id.table_main);
         linearLayout_escalatecamera = (LinearLayout) findViewById(R.id.escalate_camera);
-        ListEditText_croppick = new ArrayList<>();
+        play = findViewById(R.id.escalateplay);
+        stop = findViewById(R.id.escalatestop);
+        record = findViewById(R.id.escalaterecord);
+        fileName = findViewById(R.id.escalatefile_name);
+        linearAudioImage  = findViewById(R.id.layoutescalate_audio_img);
+        textRecord = findViewById(R.id.txt_recordescalate);
+        textStop = findViewById(R.id.txt_stopescalate);
+        textPlay = findViewById(R.id.txt_playescalate);
+        final Chronometer escalateChronometer = findViewById(R.id.escalatechronometer);
 
         linear_organic.setVisibility(View.GONE);
         linear_inorganic.setVisibility(View.GONE);
@@ -240,6 +269,21 @@ public class CropWeeklyData extends AppCompatActivity {
         //  et_croppickyield.setVisibility(View.INVISIBLE);
         bt_crop_escalate_photo.setVisibility(View.GONE);
         rl_table.setVisibility(View.INVISIBLE);
+        play.setVisibility(View.INVISIBLE);
+        textPlay.setVisibility(View.INVISIBLE);
+        stop.setEnabled(false);
+        play.setEnabled(false);
+
+        outputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/escalaterecording.ogg";
+        myAudioRecorder = new MediaRecorder();
+        myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        myAudioRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+        myAudioRecorder.setOutputFile(outputFile);
+
+
+
+
 
         SharedPreferences prefs = getSharedPreferences("com.example.fruites", MODE_PRIVATE);
         farmerID = prefs.getString("FarmerID", "default_value_here_if_string_is_missing");
@@ -248,7 +292,7 @@ public class CropWeeklyData extends AppCompatActivity {
         array_crid = new ArrayList<>();
         array_crid.add(0,"Select Crop Registered ID");
         array_regdetailsbasedonfidcrid = new ArrayList<>();
-
+        ListEditText_croppick = new ArrayList<>();
         array_weeknumber = new ArrayList<>();
         array_manuretype = new ArrayList<>();
         array_fertlizertype = new ArrayList<>();
@@ -349,6 +393,93 @@ public class CropWeeklyData extends AppCompatActivity {
                     Toast.makeText(mContext,"Incomplete Crop Weekly Data",Toast.LENGTH_LONG).show();
                 }
                 //  }
+            }
+        });
+
+        record.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    myAudioRecorder.prepare();
+                    myAudioRecorder.start();
+                } catch (IllegalStateException ise) {
+                    // make something ...
+                } catch (IOException ioe) {
+                    // make something
+                }
+                record.setEnabled(false);
+                stop.setEnabled(true);
+                Toast.makeText(getApplicationContext(), "Recording started", Toast.LENGTH_LONG).show();
+                record.setVisibility(View.INVISIBLE);
+                textRecord.setVisibility(View.INVISIBLE);
+                escalateChronometer.start();
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    myAudioRecorder.stop();
+                }catch(RuntimeException stopException) {
+                    // handle cleanup here
+                }
+                myAudioRecorder.release();
+                myAudioRecorder = null;
+                audioFile = new File(outputFile);
+                try{
+                    bytes = loadFile(audioFile);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                record.setEnabled(true);
+                stop.setEnabled(false);
+                play.setEnabled(true);
+                record.setVisibility(View.INVISIBLE);
+                stop.setVisibility(View.INVISIBLE);
+                play.setVisibility(View.VISIBLE);
+                textRecord.setVisibility(View.INVISIBLE);
+                textStop.setVisibility(View.INVISIBLE);
+                textPlay.setVisibility(View.VISIBLE);
+                escalateChronometer.stop();
+                Toast.makeText(getApplicationContext(), "Audio Recorder successfully", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    mediaPlayer.setDataSource(outputFile);
+                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                    Toast.makeText(getApplicationContext(), "Playing Audio", Toast.LENGTH_LONG).show();
+                    base64String = Base64.encodeToString(bytes, Base64.DEFAULT);
+                    escalateChronometer.setVisibility(View.INVISIBLE);
+                    Uri uri = Uri.parse(outputFile);
+                    MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+                    mmr.setDataSource(getApplicationContext(), uri);
+                    String durationStr = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
+                    int millSecond = Integer.parseInt(durationStr);
+
+                    new CountDownTimer(millSecond, 1) {
+                        public void onTick(long millisUntilFinished) {
+                            textPlay.setText("" + millisUntilFinished / 1000
+                                    + "." + millisUntilFinished % 1000);
+                        }
+
+                        public void onFinish() {
+                            textPlay.setText(getResources().getString(R.string.play));
+                        }
+                    }.start();
+
+                } catch (Exception e) {
+                }
+                linearAudioImage.setVisibility(View.GONE);
+//                play.setVisibility(View.GONE);
+                textPlay.setVisibility(View.GONE);
+                fileName.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -923,10 +1054,7 @@ public class CropWeeklyData extends AppCompatActivity {
             }
         });
 
-
-
-
-        array_croppick.add("Select Crop Pick");
+        array_croppick.add(0,"Select Crop Picking");
         array_croppick.add(1,"1");
         array_croppick.add(2,"2");
         array_croppick.add(3,"3");
@@ -934,10 +1062,7 @@ public class CropWeeklyData extends AppCompatActivity {
         array_croppick.add(5,"5");
         array_croppick.add(6,"6");
         array_croppick.add(7,"7");
-        array_croppick.add(8,"8");
-        array_croppick.add(9,"9");
-        array_croppick.add(10,"10");
-        array_croppick.add(11,"No Crop Pick");
+        array_croppick.add(8,"No Crop Pick");
 
         ArrayAdapter<String> croppick_adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,array_croppick);
         croppick_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -970,22 +1095,18 @@ public class CropWeeklyData extends AppCompatActivity {
 
                         TableRow tbrow= new TableRow(mContext);
                         TextView tv1 = new TextView(mContext);
-
                         tv1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                         tv1.setGravity(Gravity.CENTER);
-                        tv1.setBackgroundColor(Color.parseColor("#9FA8DA"));
-
-                        tv1.setText("Crop Picks");
+                        tv1.setBackgroundColor(Color.parseColor("#12b4ba"));
+                        tv1.setText("Pickings");
                         tv1.setTextSize(18);
                         tv1.setTextColor(Color.BLACK);
 
                         TextView tv3 = new TextView(mContext);
-
                         tv3.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                         tv3.setGravity(Gravity.CENTER);
-                        tv3.setBackgroundColor(Color.parseColor("#81D4FA"));
-
-                        tv3.setText("Yields(kgs)");
+                        tv3.setBackgroundColor(Color.parseColor("#12b4ba"));
+                        tv3.setText("Yields(in Kgs)");
                         tv3.setTextColor(Color.BLACK);
                         tv3.setTextSize(18);
                         tbrow.addView(tv1);
@@ -1107,26 +1228,23 @@ public class CropWeeklyData extends AppCompatActivity {
                 tv_pick.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tv_pick.setGravity(Gravity.CENTER);
 
-                tv_pick.setBackgroundColor(Color.parseColor("#E8EAF6"));
+                tv_pick.setBackgroundColor(Color.parseColor("#B2EBF2"));
 
                 tv_pick.setTextColor(Color.BLACK);
                 tv_pick.setTextSize(18);
-                tv_pick.setText(""+count);
+                tv_pick.setText("No. "+count);
 
                 TextView tv_yield = new TextView(mContext);
 
                 tv_yield.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tv_yield.setBackgroundColor(Color.parseColor("#E1F5FE"));
-
+                tv_yield.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tv_yield.setTextSize(18);
                 tv_yield.setTextColor(Color.BLACK);
                 tv_yield.setGravity(Gravity.CENTER);
                 tv_yield.setText(""+yieldvalue);
-
                 tbrow2.addView(tv_pick);
                 tbrow2.addView(tv_yield);
                 tbl_crop_pick.addView(tbrow2);
-
                 picks.add(String.valueOf(count));
                 yields.add(yieldvalue);
 
@@ -2659,8 +2777,7 @@ public class CropWeeklyData extends AppCompatActivity {
     private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
         BitmapFactory.Options o = new BitmapFactory.Options();
         o.inJustDecodeBounds = true;
-        BitmapFactory.decodeStream(
-                getContentResolver().openInputStream(selectedImage), null, o);
+        BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage), null, o);
 
         final int REQUIRED_SIZE = 500;
 
@@ -2875,6 +2992,34 @@ public class CropWeeklyData extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.stop();
+    }
+
+    private static byte[] loadFile(File file) throws IOException {
+        // TODO Auto-generated method stub
+        InputStream is = new FileInputStream(file);
+        long length = file.length();
+        if (length > Integer.MAX_VALUE) {
+        }
+        byte[] bytes = new byte[(int) length];
+        int offset = 0;
+        int numRead = 0;
+        while (offset < bytes.length
+                && (numRead = is.read(bytes, offset, bytes.length - offset)) >= 0) {
+            offset += numRead;
+            System.out.println(offset);
+        }
+
+        if (offset < bytes.length) {
+            throw new IOException("Could not completely read file " + file.getName());
+        }
+        is.close();
+        return bytes;
     }
 
 }
