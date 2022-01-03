@@ -1,11 +1,5 @@
 package org.nic.fruits;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,32 +24,32 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
-import org.nic.fruits.CropDetails.CropRegister;
+import com.example.fruites.R;
+
 import org.nic.fruits.database.AppDatabase;
 import org.nic.fruits.database.AppExecutors;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
-import org.nic.fruits.pojo.ModelCropRegistration;
 import org.nic.fruits.pojo.ModelCropSurveyDetails;
 import org.nic.fruits.pojo.ModelFarmFertilizer;
-import org.nic.fruits.pojo.ModelFarmerLandDeatails;
 import org.nic.fruits.pojo.ModelFertilizerCropMaster;
-import org.nic.fruits.pojo.ModelFertilizerNameMaster;
 import org.nic.fruits.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 public class FarmFertilizer extends AppCompatActivity {
 
     Context mContext;
     String farmerID;
+    String farmerName;
     String keyValue;
     AppDatabase appDatabase;
     Locale locale;
@@ -63,6 +57,7 @@ public class FarmFertilizer extends AppCompatActivity {
     String districtValue = "",talukValue = "",hobliValue = "",villageValue = "",surveyValue = "",cropname = "", cropextentValue="";
     LinearLayout linearLayoutFertilizerDetails;
     TextView tvFarmerId;
+    TextView tvFarmerName;
     Spinner spYear,spSeason;
     List<String> arrayYear;
     List<String> arraySeason;
@@ -206,6 +201,13 @@ public class FarmFertilizer extends AppCompatActivity {
     Set<String> npk2;
     Set<String> npk3;
     Set<String> npk4;
+    int combiCount = 0;
+    int combiCount2 = 0;
+    int combiCount3 = 0;
+    int combiCount4 = 0;
+    int combinationcountValue = 0;
+    List<Integer> arrayNutrientValue1;
+    List<Integer> arrayNutrientValue2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -224,6 +226,7 @@ public class FarmFertilizer extends AppCompatActivity {
         locale = Utils.getCurrentLocale(mContext);
         linearLayoutFertilizerDetails = findViewById(R.id.linearlayoutfertilizerdetails);
         tvFarmerId = findViewById(R.id.textviewFarmerId);
+        tvFarmerName = findViewById(R.id.textviewFarmerName);
         spYear = findViewById(R.id.spinnerFFYear);
         spSeason = findViewById(R.id.spinnerFFSeason);
 
@@ -270,7 +273,8 @@ public class FarmFertilizer extends AppCompatActivity {
         arrayFertilizerCalculate2= new ArrayList<>();
         arrayFertilizerCalculate3= new ArrayList<>();
         arrayFertilizerCalculate4= new ArrayList<>();
-
+        arrayNutrientValue1 = new ArrayList<>();
+        arrayNutrientValue2 = new ArrayList<>();
         arrayKGValue1 = new ArrayList<>();
         arraybagValue1 = new ArrayList<>();
 
@@ -300,12 +304,16 @@ public class FarmFertilizer extends AppCompatActivity {
         arrayFertilizerName2.add(0, "Urea");
         arrayFertilizerName2.add(1, "DAP");
         arrayFertilizerName2.add(2, "MOP");
+        arrayNutrientValue1.add(0,1);
+        arrayNutrientValue1.add(1,2);
+        arrayNutrientValue1.add(2,1);
         arrayFertilizerName3.add(0, "SSP-Granular");
         arrayFertilizerName3.add(1, "Urea");
         arrayFertilizerName3.add(2, "MOP");
         arrayFertilizerName4.add(0, "SSP-Granular");
         arrayFertilizerName4.add(1, "10-26-26");
-
+        arrayNutrientValue2.add(0,1);
+        arrayNutrientValue2.add(1,3);
         arrayFertilizerCode1.add(0, "46-0-0");
         arrayFertilizerCode1.add(1, "0-0-60");
         arrayFertilizerCode1.add(2, "0-16-0");
@@ -449,8 +457,14 @@ public class FarmFertilizer extends AppCompatActivity {
                             totalNitro = 0;
                             totalPhos = 0;
                             totalPotas = 0;
-
+                            combiCount = 1;
+                            combiCount2 = 1;
+                            combiCount3 = 1;
+                            combiCount4 = 1;
+                            combinationcountValue = 0;
                             arrayFertilizerCalculate1.clear();
+                            arrayNutrientValue1.clear();
+                            arrayNutrientValue2.clear();
                             linearLayoutFertilizerDetails.setVisibility(View.GONE);
                             clearViews();
                             getSeason();
@@ -581,12 +595,19 @@ public class FarmFertilizer extends AppCompatActivity {
                                 fmNitrogen4 = 0;
                                 fmPhosphorous4 = 0;
                                 fmPotash4 = 0;
+                                combiCount = 1;
+                                combiCount2 = 1;
+                                combiCount3 = 1;
+                                combiCount4 = 1;
 
+                                combinationcountValue = 0;
                                /* totalNitro = 0;
                                 totalPhos = 0;
                                 totalPotas = 0;*/
                                 arrayFertilizerCalculate1.clear();
                                 linearLayoutFertilizerDetails.setVisibility(View.GONE);
+                                arrayNutrientValue1.clear();
+                                arrayNutrientValue2.clear();
                                 clearViews();
 
                                 Toast toast = Toast.makeText(mContext, "Fertilizers being calculated... please wait", Toast.LENGTH_LONG);
@@ -603,7 +624,6 @@ public class FarmFertilizer extends AppCompatActivity {
                 }
             });
         }
-System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNitrogen.size());
     }
 
     private void getCropDetails() {
@@ -619,7 +639,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                         for (ModelCropSurveyDetails taskEntry : taskEntries) {
 
                             if (locale.toString().equals("en")) {
-
+                                tvFarmerName.setText(taskEntry.getFarmerName());
                                 arrayDistrict.add(taskEntry.getDistrictname());
                                 Set<String> filterDistrictName;
                                 filterDistrictName = new LinkedHashSet<String>(arrayDistrict);
@@ -650,8 +670,12 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                                 arraySurvey.clear();
                                 arraySurvey.addAll(filterSurvey);
 
-                                arrayCropName.add(0,"Coconut");
-                                arrayCropName.add(1,"Groundnut");
+                                /*arrayCropName.add(0,"Coconut");
+                                arrayCropName.add(1,"Groundnut");*/
+                             //   arrayCropName.add(taskEntry.getCropName());
+                                arrayCropName.add(0,"Banana ");
+                                arrayCropName.add(1,"Horsegram");
+                                arrayCropName.add(2,"Urad");
                                 Set<String> filterCropName;
                                 filterCropName = new LinkedHashSet<String>(arrayCropName);
                                 arrayCropName.clear();
@@ -675,6 +699,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                                 cropextentValue = taskEntry.getCropArea();
 
                             } else {
+                                tvFarmerName.setText(taskEntry.getFarmerName());
                                 arrayDistrict.add(taskEntry.getDistrictname());
                                 Set<String> filterDistrictName;
                                 filterDistrictName = new LinkedHashSet<String>(arrayDistrict);
@@ -705,8 +730,12 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                                 arraySurvey.clear();
                                 arraySurvey.addAll(filterSurvey);
 
-                                arrayCropName.add(0,"Coconut");
-                                arrayCropName.add(1,"Groundnut");
+                               /* arrayCropName.add(0,"Coconut");
+                                arrayCropName.add(1,"Groundnut");*/
+                            //    arrayCropName.add(taskEntry.getCropName());
+                                arrayCropName.add(0,"Banana ");
+                                arrayCropName.add(1,"Horsegram");
+                                arrayCropName.add(2,"Urad");
                                 Set<String> filterCropName;
                                 filterCropName = new LinkedHashSet<String>(arrayCropName);
                                 arrayCropName.clear();
@@ -775,6 +804,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
         for(int k=0 ;k<arrayCropName.size();k++) {
 
             cropNameValue = arrayCropName.get(k);
+            System.out.println("cropNameValue - " + cropNameValue);
         }
         MainViewModel viewFertilizerCropMaster = ViewModelProviders.of(this).get(MainViewModel.class);
         viewFertilizerCropMaster.getFertilizerCrops(cropNameValue).observe(this, new Observer<List<ModelFertilizerCropMaster>>() {
@@ -786,9 +816,12 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                     for (ModelFertilizerCropMaster taskEntry : taskEntries) {
 
                         if (locale.toString().equals("en")) {
-
-                            arrayFertilizerCropCode.add(0,"35");
-                            arrayFertilizerCropCode.add(1,"11");
+                           /* arrayFertilizerCropCode.add(0,"35");
+                            arrayFertilizerCropCode.add(1,"11");*/
+                       //     arrayFertilizerCropCode.add(taskEntry.getCropcode());
+                            arrayFertilizerCropCode.add(0,"36");
+                            arrayFertilizerCropCode.add(1,"23");
+                            arrayFertilizerCropCode.add(2,"25");
                             Set<String> filterCropCode;
                             filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
                             arrayFertilizerCropCode.clear();
@@ -798,12 +831,14 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                             filterCropType = new LinkedHashSet<String>(arrayFertilizerCropType);
                             arrayFertilizerCropType.clear();
                             arrayFertilizerCropType.addAll(filterCropType);
-
                         }
                         else {
-
-                            arrayFertilizerCropCode.add(0,"35");
-                            arrayFertilizerCropCode.add(1,"11");
+                           /* arrayFertilizerCropCode.add(0,"35");
+                            arrayFertilizerCropCode.add(1,"11");*/
+                      //      arrayFertilizerCropCode.add(taskEntry.getCropcode());
+                            arrayFertilizerCropCode.add(0,"36");
+                            arrayFertilizerCropCode.add(1,"23");
+                            arrayFertilizerCropCode.add(2,"25");
                             Set<String> filterCropCode;
                             filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
                             arrayFertilizerCropCode.clear();
@@ -813,7 +848,6 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                             filterCropType = new LinkedHashSet<String>(arrayFertilizerCropType);
                             arrayFertilizerCropType.clear();
                             arrayFertilizerCropType.addAll(filterCropType);
-
                         }
                     }
                     System.out.println("CropCode array - " + arrayFertilizerCropCode);
@@ -1038,8 +1072,8 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
 
 
-   //     calculateNPKDB();
-     //   calculateNPK();
+        //     calculateNPKDB();
+        //   calculateNPK();
     }
 
     private void calculateFinalNPKDB(){
@@ -1049,8 +1083,6 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
             //  addrecommendedTable();
             addFertilizerTable();
             addNPKTable();
-
-
         }
         totalNitro = 0;
         totalPhos = 0;
@@ -1093,7 +1125,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
         TextView tvNPKData = new TextView(mContext);
         tvNPKData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvNPKData.setGravity(Gravity.CENTER);
-        tvNPKData.setBackgroundColor(Color.parseColor("#CFD8DC"));
+        tvNPKData.setBackgroundColor(Color.parseColor("#B2EBF2"));
         tvNPKData.setText("Nitrogen: " + totalNitro + ", Phosphorous: " + totalPhos + ", Potash: " + totalPotas);
         tvNPKData.setTextColor(Color.BLACK);
         tvNPKData.setTextSize(18);
@@ -1129,7 +1161,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                         requiredPhosphorous1 = 0;
                         requiredNitrogen1 = (int) (requiredNitrogen1 - ((float) fmNitrogen1 / (float) 100 * phosphorous1));
                         requiredPotash1 = (int) (requiredPotash1 - ((float) fmPotash1 / (float) 100 * phosphorous1));
-                    } else if (fmNitrogen1 > fmPhosphorous1 && fmPhosphorous1 > fmPotash1 && requiredPhosphorous1 != 0) {
+                    } else if (fmNitrogen1 > fmPhosphorous1 && fmNitrogen1 > fmPotash1 && requiredNitrogen1 != 0) {
 
                         nitrogen1 = (int) ((float) 100 / (float) fmNitrogen1 * (requiredNitrogen1));
                         requiredNitrogen1 = 0;
@@ -1193,19 +1225,19 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 }
 
                 if (phosphorous1 != 0) {
-               //     totalP1 = totalP1 + phosphorous1;
+                    //     totalP1 = totalP1 + phosphorous1;
                     System.out.println("phosphorous1 - " + phosphorous1);
                     finalDataObtained1 = phosphorous1;
                     arrayFertilizerCalculate1.add(String.valueOf(finalDataObtained1));
                 }
                 if (nitrogen1 != 0) {
-                 //   totalN1 = totalN1 + nitrogen1;
+                    //   totalN1 = totalN1 + nitrogen1;
                     System.out.println("nitrogen1 - " + nitrogen1);
                     finalDataObtained1 = nitrogen1;
                     arrayFertilizerCalculate1.add(String.valueOf(finalDataObtained1));
                 }
                 if (potash1 != 0) {
-                  //  totalK1 = totalK1 + potash1;
+                    //  totalK1 = totalK1 + potash1;
                     System.out.println("potash1 - " + potash1);
                     finalDataObtained1 = potash1;
                     arrayFertilizerCalculate1.add(String.valueOf(finalDataObtained1));
@@ -1220,8 +1252,6 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
             arrayFertilizerCalculate1.clear();
             arrayFertilizerCalculate1.addAll(npk1);
 
-
-
             for (int j = 0; j < arrayFertilizerName1.size(); j++) {
                 System.out.println("arrayFertilizerCalculate1 - " + arrayFertilizerCalculate1);
                 value1 = Double.valueOf(String.valueOf(arrayFertilizerCalculate1.get(j)));
@@ -1233,16 +1263,25 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 arraybagValue1.add(String.valueOf((int) bagValue1));
 
                 TableRow tbrowData = new TableRow(mContext);
-
                 TextView tvCombination = new TextView(mContext);
-                tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
-                tvCombination.setText("Combination 1");
-                tvCombination.setTextColor(Color.BLACK);
-                tvCombination.setTextSize(18);
 
-                tbrowData.addView(tvCombination);
+                if(combiCount == 1) {
+                    combinationcountValue++;
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#BA68C8"));
+                    tvCombination.setText("Combination " + combinationcountValue);
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                    combiCount++;
+                }else{
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#BA68C8"));
+                    tvCombination.setText("");
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                }
 
 
                 TextView tvFertilizer = new TextView(mContext);
@@ -1251,34 +1290,35 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#BA68C8"));
                 tvFertilizer.setText(arrayFertilizerName1.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvKG.setBackgroundColor(Color.parseColor("#BA68C8"));
                 tvKG.setText("" + (int) value1);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvBag.setBackgroundColor(Color.parseColor("#BA68C8"));
                 tvBag.setText("" + (int) bagValue1);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
 
+                tbrowData.addView(tvCombination);
                 tbrowData.addView(tvFertilizer);
                 tbrowData.addView(tvKG);
                 tbrowData.addView(tvBag);
                 tbNPKDetails.addView(tbrowData);
-                tvCombination.setText("");
+
             }
 
         }else{
-            for (int j = 0; j < arrayFertilizerName1.size(); j++) {
+          /*  for (int j = 0; j < arrayFertilizerName1.size(); j++) {
                 TableRow tbrowData = new TableRow(mContext);
                 TextView tvCombination = new TextView(mContext);
                 TextView tvFertilizer = new TextView(mContext);
@@ -1317,11 +1357,32 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 tbrowData.addView(tvKG);
                 tbrowData.addView(tvBag);
                 tbNPKDetails.addView(tbrowData);
-            }
+            }*/
         }
     }
 
     private void calculatefertilizer2() {
+        int tmp0 = 0;
+        String tmp1 = "";
+        String tmp2 = "";
+        for(int i=0; i<arrayNutrientValue1.size();i++){
+            for(int j=i+1;j<arrayNutrientValue1.size();j++){
+                if(arrayNutrientValue1.get(j) > arrayNutrientValue1.get(i)){
+                    tmp0 = arrayNutrientValue1.get(i);
+                    arrayNutrientValue1.set(i, arrayNutrientValue1.get(j));
+                    arrayNutrientValue1.set(j,tmp0);
+                    System.out.println("arrayNutrientValue1 " + arrayNutrientValue1);
+                    tmp1 = arrayFertilizerName2.get(i);
+                    arrayFertilizerName2.set(i,arrayFertilizerName2.get(j));
+                    arrayFertilizerName2.set(j,tmp1);
+                    System.out.println("arrayFertilizerName2 " + arrayFertilizerName2);
+                    tmp2 = arrayFertilizerCode2.get(i);
+                    arrayFertilizerCode2.set(i,arrayFertilizerCode2.get(j));
+                    arrayFertilizerCode2.set(j,tmp2);
+                    System.out.println("arrayFertilizerCode2 " + arrayFertilizerCode2);
+                }
+            }
+        }
 
         if(finalDataObtained2==0) {
             arrayFertilizerCalculate2.clear();
@@ -1339,7 +1400,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                         requiredPhosphorous2 = 0;
                         requiredNitrogen2 = (int) (requiredNitrogen2 - ((float) fmNitrogen2 / (float) 100 * phosphorous2));
                         requiredPotash2 = (int) (requiredPotash2 - ((float) fmPotash2 / (float) 100 * phosphorous2));
-                    } else if (fmNitrogen2 > fmPhosphorous2 && fmPhosphorous2 > fmPotash2 && requiredPhosphorous2 != 0) {
+                    } else if (fmNitrogen2 > fmPhosphorous2 && fmNitrogen2 > fmPotash2 && requiredNitrogen2 != 0) {
 
                         nitrogen2 = (int) ((float) 100 / (float) fmNitrogen2 * (requiredNitrogen2));
                         requiredNitrogen2 = 0;
@@ -1403,19 +1464,19 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 }
 
                 if (phosphorous2 != 0) {
-                  //  totalP2 = totalP2 + phosphorous2;
+                    //  totalP2 = totalP2 + phosphorous2;
                     System.out.println("phosphorous2 - " + phosphorous2);
                     finalDataObtained2 = phosphorous2;
                     arrayFertilizerCalculate2.add(String.valueOf(finalDataObtained2));
                 }
                 if (nitrogen2 != 0) {
-                 //   totalN2 = totalN2 + nitrogen2;
+                    //   totalN2 = totalN2 + nitrogen2;
                     System.out.println("nitrogen2 - " + nitrogen2);
                     finalDataObtained2 = nitrogen2;
                     arrayFertilizerCalculate2.add(String.valueOf(finalDataObtained2));
                 }
                 if (potash2 != 0) {
-               //     totalK2 = totalK2 + potash2;
+                    //     totalK2 = totalK2 + potash2;
                     System.out.println("potash2 - " + potash2);
                     finalDataObtained2 = potash2;
                     arrayFertilizerCalculate2.add(String.valueOf(finalDataObtained2));
@@ -1445,33 +1506,45 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 TextView tvKG = new TextView(mContext);
                 TextView tvBag = new TextView(mContext);
 
-                tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
-                tvCombination.setText("Combination 2");
-                tvCombination.setTextColor(Color.BLACK);
-                tvCombination.setTextSize(18);
+                if(combiCount2 == 1) {
+                    combinationcountValue++;
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#9FA8DA"));
+                    tvCombination.setText("Combination " + combinationcountValue);
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                    combiCount2++;
+                }else{
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#9FA8DA"));
+                    tvCombination.setText("");
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                }
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#9FA8DA"));
                 tvFertilizer.setText(arrayFertilizerName2.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvKG.setBackgroundColor(Color.parseColor("#9FA8DA"));
                 tvKG.setText("" + (int) value2);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvBag.setBackgroundColor(Color.parseColor("#9FA8DA"));
                 tvBag.setText("" + (int) bagValue2);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
+
                 tbrowData.addView(tvCombination);
                 tbrowData.addView(tvFertilizer);
                 tbrowData.addView(tvKG);
@@ -1481,7 +1554,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
             }
         }else{
 
-            for (int j = 0; j < arrayFertilizerName2.size(); j++) {
+       /*     for (int j = 0; j < arrayFertilizerName2.size(); j++) {
                 TableRow tbrowData = new TableRow(mContext);
                 TextView tvCombination = new TextView(mContext);
                 TextView tvFertilizer = new TextView(mContext);
@@ -1520,7 +1593,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 tbrowData.addView(tvKG);
                 tbrowData.addView(tvBag);
                 tbNPKDetails.addView(tbrowData);
-            }
+            }*/
         }
 
     }
@@ -1550,7 +1623,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                         requiredPhosphorous3 = 0;
                         requiredNitrogen3 = (int) (requiredNitrogen3 - ((float) fmNitrogen3 / (float) 100 * phosphorous3));
                         requiredPotash3 = (int) (requiredPotash3 - ((float) fmPotash3 / (float) 100 * phosphorous3));
-                    } else if (fmNitrogen3 > fmPhosphorous3 && fmPhosphorous3 > fmPotash3 && requiredPhosphorous3 != 0) {
+                    } else if (fmNitrogen3 > fmPhosphorous3 && fmNitrogen3 > fmPotash3 && requiredNitrogen3 != 0) {
 
                         nitrogen3 = (int) ((float) 100 / (float) fmNitrogen3 * (requiredNitrogen3));
                         requiredNitrogen3 = 0;
@@ -1614,19 +1687,19 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 }
 
                 if (phosphorous3 != 0) {
-                //    totalP3 = totalP3 + phosphorous3;
+                    //    totalP3 = totalP3 + phosphorous3;
                     System.out.println("phosphorous3 - " + phosphorous3);
                     finalDataObtained3 = phosphorous3;
                     arrayFertilizerCalculate3.add(String.valueOf(finalDataObtained3));
                 }
                 if (nitrogen3 != 0) {
-                 //   totalN3 = totalN3 + nitrogen3;
+                    //   totalN3 = totalN3 + nitrogen3;
                     System.out.println("nitrogen3 - " + nitrogen3);
                     finalDataObtained3 = nitrogen3;
                     arrayFertilizerCalculate3.add(String.valueOf(finalDataObtained3));
                 }
                 if (potash3 != 0) {
-                  //  totalK3 = totalK3 + potash3;
+                    //  totalK3 = totalK3 + potash3;
                     System.out.println("potash3 - " + potash3);
                     finalDataObtained3 = potash3;
                     arrayFertilizerCalculate3.add(String.valueOf(finalDataObtained3));
@@ -1650,37 +1723,47 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 }
                 arraybagValue3.add(String.valueOf((int) bagValue3));
 
-
                 TableRow tbrowData = new TableRow(mContext);
                 TextView tvCombination = new TextView(mContext);
                 TextView tvFertilizer = new TextView(mContext);
                 TextView tvKG = new TextView(mContext);
                 TextView tvBag = new TextView(mContext);
 
-                tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
-                tvCombination.setText("Combination 3");
-                tvCombination.setTextColor(Color.BLACK);
-                tvCombination.setTextSize(18);
+                if(combiCount3 == 1) {
+                    combinationcountValue++;
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#90CAF9"));
+                    tvCombination.setText("Combination " + combinationcountValue);
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                    combiCount3++;
+                }else{
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#90CAF9"));
+                    tvCombination.setText("");
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                }
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#90CAF9"));
                 tvFertilizer.setText(arrayFertilizerName3.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvKG.setBackgroundColor(Color.parseColor("#90CAF9"));
                 tvKG.setText("" + (int) value3);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvBag.setBackgroundColor(Color.parseColor("#90CAF9"));
                 tvBag.setText("" + (int) bagValue3);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1693,7 +1776,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
             }
         }else{
 
-            for (int j = 0; j < arrayFertilizerName3.size(); j++) {
+         /*   for (int j = 0; j < arrayFertilizerName3.size(); j++) {
                 TableRow tbrowData = new TableRow(mContext);
                 TextView tvCombination = new TextView(mContext);
                 TextView tvFertilizer = new TextView(mContext);
@@ -1732,12 +1815,34 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 tbrowData.addView(tvKG);
                 tbrowData.addView(tvBag);
                 tbNPKDetails.addView(tbrowData);
-            }
+            }*/
         }
 
     }
 
     private void calculatefertilizer4() {
+        int tmp0 = 0;
+        String tmp1 = "";
+        String tmp2 = "";
+        for(int i=0; i<arrayNutrientValue2.size();i++){
+            for(int j=i+1;j<arrayNutrientValue2.size();j++){
+                if(arrayNutrientValue2.get(j) > arrayNutrientValue2.get(i)){
+                    tmp0 = arrayNutrientValue2.get(i);
+                    arrayNutrientValue2.set(i, arrayNutrientValue2.get(j));
+                    arrayNutrientValue2.set(j,tmp0);
+                    System.out.println("arrayNutrientValue2 " + arrayNutrientValue2);
+                    tmp1 = arrayFertilizerName4.get(i);
+                    arrayFertilizerName4.set(i,arrayFertilizerName4.get(j));
+                    arrayFertilizerName4.set(j,tmp1);
+                    System.out.println("arrayFertilizerName4 " + arrayFertilizerName4);
+                    tmp2 = arrayFertilizerCode4.get(i);
+                    arrayFertilizerCode4.set(i,arrayFertilizerCode4.get(j));
+                    arrayFertilizerCode4.set(j,tmp2);
+                    System.out.println("arrayFertilizerCode4 " + arrayFertilizerCode4);
+                }
+            }
+        }
+
         if(finalDataObtained4==0) {
             arrayFertilizerCalculate4.clear();
             for (int j = 0; j < arrayFertilizerName4.size(); j++) {
@@ -1761,7 +1866,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                         requiredPhosphorous4 = 0;
                         requiredNitrogen4 = (int) (requiredNitrogen4 - ((float) fmNitrogen4 / (float) 100 * phosphorous4));
                         requiredPotash4 = (int) (requiredPotash4 - ((float) fmPotash4 / (float) 100 * phosphorous4));
-                    } else if (fmNitrogen4 > fmPhosphorous4 && fmPhosphorous4 > fmPotash4 && requiredPhosphorous4 != 0) {
+                    } else if (fmNitrogen4 > fmPhosphorous4 && fmNitrogen4 > fmPotash4 && requiredNitrogen4 != 0) {
 
                         nitrogen4 = (int) ((float) 100 / (float) fmNitrogen4 * (requiredNitrogen4));
                         requiredNitrogen4 = 0;
@@ -1825,19 +1930,19 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 }
 
                 if (phosphorous4 != 0) {
-                 //   totalP4 = totalP4 + phosphorous4;
+                    //   totalP4 = totalP4 + phosphorous4;
                     System.out.println("phosphorous4 - " + phosphorous4);
                     finalDataObtained4 = phosphorous4;
                     arrayFertilizerCalculate4.add(String.valueOf(finalDataObtained4));
                 }
                 if (nitrogen4 != 0) {
-                  //  totalN4 = totalN4 + nitrogen4;
+                    //  totalN4 = totalN4 + nitrogen4;
                     System.out.println("nitrogen4 - " + nitrogen4);
                     finalDataObtained4 = nitrogen4;
                     arrayFertilizerCalculate4.add(String.valueOf(finalDataObtained4));
                 }
                 if (potash4 != 0) {
-                  //  totalK4 = totalK4 + potash4;
+                    //  totalK4 = totalK4 + potash4;
                     finalDataObtained4 = potash4;
                     arrayFertilizerCalculate4.add(String.valueOf(finalDataObtained4));
                 }
@@ -1868,30 +1973,41 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 TextView tvKG = new TextView(mContext);
                 TextView tvBag = new TextView(mContext);
 
-                tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                tvCombination.setGravity(Gravity.CENTER);
-                tvCombination.setBackgroundColor(Color.parseColor("#CFD8DC"));
-                tvCombination.setText("Combination 4");
-                tvCombination.setTextColor(Color.BLACK);
-                tvCombination.setTextSize(18);
+                if(combiCount4 == 1) {
+                    combinationcountValue++;
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                    tvCombination.setText("Combination " + combinationcountValue);
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                    combiCount4++;
+                }else{
+                    tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    tvCombination.setGravity(Gravity.CENTER);
+                    tvCombination.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                    tvCombination.setText("");
+                    tvCombination.setTextColor(Color.BLACK);
+                    tvCombination.setTextSize(18);
+                }
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvFertilizer.setText(arrayFertilizerName4.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvKG.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvKG.setText("" + (int) value4);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvBag.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvBag.setText("" + (int) bagValue4);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -1905,7 +2021,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
             }
         }else{
 
-            for (int j = 0; j < arrayFertilizerName4.size(); j++) {
+        /*    for (int j = 0; j < arrayFertilizerName4.size(); j++) {
                 TableRow tbrowData = new TableRow(mContext);
                 TextView tvCombination = new TextView(mContext);
                 TextView tvFertilizer = new TextView(mContext);
@@ -1945,7 +2061,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
                 tbrowData.addView(tvKG);
                 tbrowData.addView(tvBag);
                 tbNPKDetails.addView(tbrowData);
-            }
+            }*/
         }
 
     }
@@ -1961,28 +2077,28 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
         tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvCombination.setGravity(Gravity.CENTER);
-        tvCombination.setBackgroundColor(Color.parseColor("#263238"));
+        tvCombination.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvCombination.setText("Combination");
         tvCombination.setTextColor(Color.WHITE);
         tvCombination.setTextSize(18);
 
         tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvFertilizer.setGravity(Gravity.CENTER);
-        tvFertilizer.setBackgroundColor(Color.parseColor("#424242"));
+        tvFertilizer.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvFertilizer.setText("Fertilizer");
         tvFertilizer.setTextColor(Color.WHITE);
         tvFertilizer.setTextSize(18);
 
         tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvKG.setGravity(Gravity.CENTER);
-        tvKG.setBackgroundColor(Color.parseColor("#263238"));
+        tvKG.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvKG.setText("KGs");
         tvKG.setTextColor(Color.WHITE);
         tvKG.setTextSize(18);
 
         tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvBag.setGravity(Gravity.CENTER);
-        tvBag.setBackgroundColor(Color.parseColor("#424242"));
+        tvBag.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvBag.setText("Bags");
         tvBag.setTextColor(Color.WHITE);
         tvBag.setTextSize(18);
@@ -2002,7 +2118,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
         TextView tvNPK = new TextView(mContext);
         tvNPK.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvNPK.setGravity(Gravity.CENTER);
-        tvNPK.setBackgroundColor(Color.parseColor("#263238"));
+        tvNPK.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvNPK.setText("Total recommendation of NPK");
         tvNPK.setTextColor(Color.WHITE);
         tvNPK.setTextSize(18);
@@ -2023,42 +2139,42 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
         tvDistrict.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvDistrict.setGravity(Gravity.CENTER);
-        tvDistrict.setBackgroundColor(Color.parseColor("#263238"));
+        tvDistrict.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvDistrict.setText("District");
         tvDistrict.setTextColor(Color.WHITE);
         tvDistrict.setTextSize(18);
 
         tvTaluk.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvTaluk.setGravity(Gravity.CENTER);
-        tvTaluk.setBackgroundColor(Color.parseColor("#424242"));
+        tvTaluk.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvTaluk.setText("Taluk");
         tvTaluk.setTextColor(Color.WHITE);
         tvTaluk.setTextSize(18);
 
         tvHobli.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvHobli.setGravity(Gravity.CENTER);
-        tvHobli.setBackgroundColor(Color.parseColor("#263238"));
+        tvHobli.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvHobli.setText("Hobli");
         tvHobli.setTextColor(Color.WHITE);
         tvHobli.setTextSize(18);
 
         tvVillage.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvVillage.setGravity(Gravity.CENTER);
-        tvVillage.setBackgroundColor(Color.parseColor("#424242"));
+        tvVillage.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvVillage.setText("Village");
         tvVillage.setTextColor(Color.WHITE);
         tvVillage.setTextSize(18);
 
         tvSurvey.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvSurvey.setGravity(Gravity.CENTER);
-        tvSurvey.setBackgroundColor(Color.parseColor("#263238"));
+        tvSurvey.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvSurvey.setText("Survey");
         tvSurvey.setTextColor(Color.WHITE);
         tvSurvey.setTextSize(18);
 
         tvCrop.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvCrop.setGravity(Gravity.CENTER);
-        tvCrop.setBackgroundColor(Color.parseColor("#424242"));
+        tvCrop.setBackgroundColor(Color.parseColor("#12b4ba"));
         tvCrop.setText("Crop");
         tvCrop.setTextColor(Color.WHITE);
         tvCrop.setTextSize(18);
@@ -2091,42 +2207,42 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
                 tvDistrictData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvDistrictData.setGravity(Gravity.CENTER);
-                tvDistrictData.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvDistrictData.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvDistrictData.setText(arrayDistrict.get(0));
                 tvDistrictData.setTextColor(Color.BLACK);
                 tvDistrictData.setTextSize(18);
 
                 tvTalukData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvTalukData.setGravity(Gravity.CENTER);
-                tvTalukData.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvTalukData.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvTalukData.setText(arrayTaluk.get(0));
                 tvTalukData.setTextColor(Color.BLACK);
                 tvTalukData.setTextSize(18);
 
                 tvHobliData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvHobliData.setGravity(Gravity.CENTER);
-                tvHobliData.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvHobliData.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvHobliData.setText(arrayHobli.get(0));
                 tvHobliData.setTextColor(Color.BLACK);
                 tvHobliData.setTextSize(18);
 
                 tvVillageData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvVillageData.setGravity(Gravity.CENTER);
-                tvVillageData.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvVillageData.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvVillageData.setText(arrayVillage.get(0));
                 tvVillageData.setTextColor(Color.BLACK);
                 tvVillageData.setTextSize(18);
 
                 tvSurveyData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvSurveyData.setGravity(Gravity.CENTER);
-                tvSurveyData.setBackgroundColor(Color.parseColor("#CFD8DC"));
+                tvSurveyData.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvSurveyData.setText(arraySurvey.get(j));
                 tvSurveyData.setTextColor(Color.BLACK);
                 tvSurveyData.setTextSize(18);
 
                 tvCropData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCropData.setGravity(Gravity.CENTER);
-                tvCropData.setBackgroundColor(Color.parseColor("#F5F5F5"));
+                tvCropData.setBackgroundColor(Color.parseColor("#B2EBF2"));
                 tvCropData.setText(arrayCropName.get(i));
                 tvCropData.setTextColor(Color.BLACK);
                 tvCropData.setTextSize(18);
@@ -2144,22 +2260,20 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
     }
 
     private void addrecommendedTable() {
-
-            TableRow tbrowRecomended = new TableRow(mContext);
-            TextView tvRFertilizer = new TextView(mContext);
-            tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-            tvRFertilizer.setGravity(Gravity.CENTER);
-            tvRFertilizer.setBackgroundColor(Color.parseColor("#263238"));
-            tvRFertilizer.setText("Recommended Nutrient for 1 acre");
-            tvRFertilizer.setTextColor(Color.WHITE);
-            tvRFertilizer.setTextSize(18);
-            tbrowRecomended.addView(tvRFertilizer);
-            tbNutrientDetail.addView(tbrowRecomended);
-
+        TableRow tbrowRecomended = new TableRow(mContext);
+        TextView tvRFertilizer = new TextView(mContext);
+        tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+        tvRFertilizer.setGravity(Gravity.CENTER);
+        tvRFertilizer.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvRFertilizer.setText("Recommended Nutrient for 1 acre");
+        tvRFertilizer.setTextColor(Color.WHITE);
+        tvRFertilizer.setTextSize(18);
+        tbrowRecomended.addView(tvRFertilizer);
+        tbNutrientDetail.addView(tbrowRecomended);
     }
 
     private void addrecommendedTableData() {
-           for(int i=0;i<arrayCropName.size();i++) {
+        for(int i=0;i<arrayCropName.size();i++) {
 
             String nitrogen = arrayFertilizerCropNitrogen.get(i);
             String phosphorous = arrayFertilizerCropPhospohorous.get(i);
@@ -2170,7 +2284,7 @@ System.out.println("in season " + arrayRequiredNitrogen + " " + arrayRequiredNit
 
             tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             tvRFertilizer.setGravity(Gravity.CENTER);
-            tvRFertilizer.setBackgroundColor(Color.parseColor("#CFD8DC"));
+            tvRFertilizer.setBackgroundColor(Color.parseColor("#B2EBF2"));
             tvRFertilizer.setText(arrayCropName.get(i) + "  -  " + "Nitrogen:" + nitrogen + ", Phosphorous:" + phosphorous + ", Potash:" + potash);
             tvRFertilizer.setTextColor(Color.BLACK);
             tvRFertilizer.setTextSize(18);
