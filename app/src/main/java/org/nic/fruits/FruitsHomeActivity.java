@@ -289,7 +289,7 @@ public class FruitsHomeActivity extends AppCompatActivity  {
         itemAdapter.setText(getResources().getString(R.string.fertilizercalculation));
         mainOptionItemList.add(itemAdapter);
 
-        itemAdapter = new ModelIconWIthDescriptiveName();
+         itemAdapter = new ModelIconWIthDescriptiveName();
         itemAdapter.setImage(R.drawable.farmfertilizer);
         itemAdapter.setText(getResources().getString(R.string.farmfertilizer));
         mainOptionItemList.add(itemAdapter);
@@ -320,7 +320,7 @@ public class FruitsHomeActivity extends AppCompatActivity  {
         spinner.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected( AdapterView<?> parent, View view, int position,  long id) {
-                       System.out.println("calling aa position " +position);
+                        System.out.println("calling aa position " +position);
 
                         if (position == 0) {
                             setLocale("kn");
