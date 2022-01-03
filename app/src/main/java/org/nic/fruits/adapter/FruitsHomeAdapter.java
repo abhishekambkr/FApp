@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import org.nic.fruits.FarmFertilizer;
 import org.nic.fruits.FertilizerCalculation;
 import org.nic.fruits.R;
@@ -36,6 +37,7 @@ import org.nic.fruits.Utils;
 import org.nic.fruits.WeatherForecastActivity;
 import org.nic.fruits.database.AppDatabase;
 import org.nic.fruits.database.AppExecutors;
+import org.nic.fruits.pojo.ModelCropDetailFertilizer;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
 import org.nic.fruits.pojo.ModelCropMasterType;
 import org.nic.fruits.pojo.ModelFertilizerCropMaster;
@@ -87,6 +89,7 @@ public class FruitsHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private ModelCropFertilizerMasternpk modelCropFertilizerMasternpk;
     private ModelCropMasterType modelCropMasterType;
     private ModelIrrigationType modelIrrigationType;
+    private List<ModelCropDetailFertilizer> modelCropDetailFertilizer = new ArrayList<>();
     boolean dataAvailable = false;
 
     Integer[] imageId = {R.drawable.viewpager_one, R.drawable.viewpager_two, R.drawable.viewpager_three, R.drawable.viewpager_four, R.drawable.viewpager_five, R.drawable.viewpager_six, R.drawable.viewpager_seven, R.drawable.viewpager_eight};
@@ -267,8 +270,28 @@ public class FruitsHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         v.getContext().startActivity(intent);
                     }
                     else if (getLayoutPosition() == 8) {
-                        Intent intent = new Intent(context, CropDetails.class);
-                        v.getContext().startActivity(intent);
+                        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                modelCropDetailFertilizer = appDatabase.cropDetailFertilizerDAO().getfertilizerforverify(String.valueOf(1));
+                                if (fertilizerMasternpk.size() > 0) {
+                                    System.out.println("if validate modelCropDetailFertilizer" + modelCropDetailFertilizer.size());
+
+                                    Intent intent = new Intent(context, CropDetails.class);
+                                    v.getContext().startActivity(intent);
+                                }else{
+                                    String saved =  parseFertilizerData();
+                                    System.out.println("else validate modelCropDetailFertilizer");
+                                    if(saved.equals("Success")){
+                                        Intent intent = new Intent(context, CropDetails.class);
+                                        v.getContext().startActivity(intent);
+                                    }
+                                }
+
+                            }
+                        });
+
                     }
                     else if (getLayoutPosition() == 9) {
                         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -294,7 +317,7 @@ public class FruitsHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         });
 
                     }
-                    else if (getLayoutPosition() == 10) {
+                     else if (getLayoutPosition() == 10) {
                         Intent intent = new Intent(context, FarmFertilizer.class);
                         v.getContext().startActivity(intent);
                     }
@@ -467,7 +490,7 @@ public class FruitsHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             if (weatherDataString.equals("Success")) {
                 Toast.makeText(context, "Weather Details Updated ", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, WeatherForecastActivity.class);
-               context.startActivity(intent);
+                context.startActivity(intent);
             } else {
                 Toast.makeText(context, "Problem while downloading weather details ", Toast.LENGTH_SHORT).show();
             }
@@ -655,7 +678,6 @@ public class FruitsHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
         return Parsemessage;
     }
-
 
     private String parseFertilizerData() {
 
@@ -1071,4 +1093,3 @@ public class FruitsHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
 }
-
