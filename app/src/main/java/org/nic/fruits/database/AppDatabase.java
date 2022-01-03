@@ -8,6 +8,7 @@ import androidx.room.migration.Migration;
 import android.content.Context;
 import android.util.Log;
 
+import org.nic.fruits.database.dao.CropDetailFertilizerDAO;
 import org.nic.fruits.database.dao.CropFertilizerMasterDAO;
 import org.nic.fruits.database.dao.CropMasterDao;
 import org.nic.fruits.database.dao.CropMasterType;
@@ -23,6 +24,7 @@ import org.nic.fruits.database.dao.InterCropRegistrationDao;
 import org.nic.fruits.database.dao.IrrigationTypeDao;
 import org.nic.fruits.database.dao.MixedCropRegistrationDao;
 import org.nic.fruits.database.dao.PlantAgeMasterDAO;
+import org.nic.fruits.pojo.ModelCropDetailFertilizer;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
 import org.nic.fruits.pojo.ModelCropMaster;
 import org.nic.fruits.pojo.ModelCropMasterType;
@@ -52,7 +54,7 @@ import org.nic.fruits.pojo.ModelPaymentDetails;
 
 
 //Programming by Harsha  for version 1.0 release
-@Database(entities = {ModelFarmerLandDeatails.class, ModelCropSurveyDetails.class, ModelFarmerDetails.class, ModelPaymentDetails.class, ModelweatherDetails.class, ModelForeCastDetails.class, ModelOwnerDetails.class, ModelCropRegistration.class, ModelCropWeeklyData.class, ModelCropMultipickingData.class, ModelMixedCropRegistration.class, ModelCropMasterType.class, ModelCropMaster.class, ModelInterCropRegistration.class, ModelFertilizerCropMaster.class, ModelPlantAgeMaster.class, ModelFertilizerNameMaster.class, ModelCropFertilizerMasternpk.class, ModelIrrigationType.class, ModelFarmFertilizer.class}, version = 2, exportSchema = false)
+@Database(entities = {ModelFarmerLandDeatails.class, ModelCropSurveyDetails.class, ModelFarmerDetails.class, ModelPaymentDetails.class, ModelweatherDetails.class, ModelForeCastDetails.class, ModelOwnerDetails.class, ModelCropRegistration.class, ModelCropWeeklyData.class, ModelCropMultipickingData.class, ModelMixedCropRegistration.class, ModelCropMasterType.class, ModelCropMaster.class, ModelInterCropRegistration.class, ModelFertilizerCropMaster.class, ModelPlantAgeMaster.class, ModelFertilizerNameMaster.class, ModelCropFertilizerMasternpk.class, ModelIrrigationType.class, ModelFarmFertilizer.class, ModelCropDetailFertilizer.class}, version = 2, exportSchema = false)
 
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -334,6 +336,17 @@ public abstract class AppDatabase extends RoomDatabase {
                     "fertilizerKGs TEXT, "+
                     "fertilizerBags TEXT)");
 
+            database.execSQL("CREATE TABLE cropdetailfertilizer(" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "feid TEXT," +
+                    "fertilizername TEXT, "+
+                    "fertilizerknname TEXT, "+
+                    "fertilizertype TEXT, "+
+                    "fertilizernitrogen TEXT," +
+                    "fertilizerphosphorous TEXT, "+
+                    "fertilizerpotash TEXT, "+
+                    "fertilizernutrient TEXT)");
+
         }
     };
 
@@ -374,4 +387,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract CropFertilizerMasterDAO cropFertilizerMasterDAO();
     public abstract IrrigationTypeDao irrigationTypeDao();
     public abstract FarmFertilizerDAO farmFertilizerDAO();
+    public abstract CropDetailFertilizerDAO cropDetailFertilizerDAO();
 }
