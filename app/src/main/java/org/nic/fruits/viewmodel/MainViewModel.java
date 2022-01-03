@@ -4,13 +4,13 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import org.nic.fruits.pojo.ModelCropDetailFertilizer;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
 import org.nic.fruits.pojo.ModelCropMaster;
 import org.nic.fruits.pojo.ModelCropMasterType;
 import org.nic.fruits.pojo.ModelCropWeeklyData;
 import org.nic.fruits.pojo.ModelCropRegistration;
 import org.nic.fruits.pojo.ModelCropVarietyMaster;
-import org.nic.fruits.pojo.ModelFarmFertilizer;
 import org.nic.fruits.pojo.ModelFertilizerCropMaster;
 import org.nic.fruits.pojo.ModelFertilizerNameMaster;
 import org.nic.fruits.pojo.ModelInterCropRegistration;
@@ -56,7 +56,8 @@ public class MainViewModel extends AndroidViewModel {
     private LiveData<List<ModelFertilizerNameMaster>> fertilizernamemaster;
     private LiveData<List<ModelCropFertilizerMasternpk>> cropfertilizermaster;
     private LiveData<List<ModelIrrigationType>> irrigationtypemaster;
-//    private LiveData<List<ModelFarmFertilizer>> farmfertilizermaster;
+    //    private LiveData<List<ModelFarmFertilizer>> farmfertilizermaster;
+    private LiveData<List<ModelCropDetailFertilizer>> cropdetailfertilizer;
     private AppDatabase database;
 
     public MainViewModel(Application application) {
@@ -219,11 +220,11 @@ public class MainViewModel extends AndroidViewModel {
         cropmaster = database.cropMasterDao().getAllcrops();
         return cropmaster;
     }
-    public LiveData<List<ModelCropMaster>> getMixedCrops(String Seasonalcrop)
+  /*  public LiveData<List<ModelCropMaster>> getMixedCrops(String Seasonalcrop)
     {
         cropmaster = database.cropMasterDao().getMixedcrops(Seasonalcrop);
         return cropmaster;
-    }
+    }*/
 
     public LiveData<List<ModelFertilizerCropMaster>> getFertilizercropmaster()
     {
@@ -316,7 +317,30 @@ public class MainViewModel extends AndroidViewModel {
         return fertilizernamemaster;
     }
 
+    public LiveData<List<ModelFertilizerCropMaster>> getMixedCrops(String croptype)
+    {
+        fertilizercropmaster = database.fertilizerCropMasterDAO().getCropType(croptype);
+        return fertilizercropmaster;
+    }
 
+    public LiveData<List<ModelFertilizerCropMaster>> getInterCrops()
+    {
+        fertilizercropmaster = database.fertilizerCropMasterDAO().getAllcrops();
+        return fertilizercropmaster;
+    }
+
+    public LiveData<List<ModelCropDetailFertilizer>> getCropDetailFertilizers(String fertilizertype)
+    {
+        cropdetailfertilizer = database.cropDetailFertilizerDAO().getCropDetailFertilizers(fertilizertype);
+        return cropdetailfertilizer;
+    }
+
+
+    public  LiveData<List<ModelCropDetailFertilizer>> getCropDetailsfertilizers()
+    {
+        cropdetailfertilizer = database.cropDetailFertilizerDAO().getCropDetailsfertilizers();
+        return cropdetailfertilizer;
+    }
 /*    public LiveData<List<ModelFarmFertilizer>> getFarmFertlizerData(String fID,String district,String taluk,String hobli,String village,String survey,String crop)
     {
         farmfertilizermaster = database.farmFertilizerDAO().getData(fID,district,taluk,hobli,village,survey,crop);
