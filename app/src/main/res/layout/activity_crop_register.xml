@@ -43,8 +43,6 @@
             android:background="@drawable/border_table"
             android:padding="5dp"
             android:weightSum="2" >
-
-
           <TextView
               android:id="@+id/tv_latitude"
               android:layout_width="match_parent"
@@ -204,7 +202,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-
                 android:textColor="@color/black"
                 android:textColorHighlight="#f93"
                 android:textSize="@dimen/register_font"/>
@@ -311,7 +308,7 @@
                   android:checked="false"
                   android:textStyle="bold"
                   android:textSize="18sp"
-                  android:text="Single Crop" />
+                  android:text="SingleCrop" />
 
               <RadioButton
                   android:id="@+id/radioMixedCrop"
@@ -320,7 +317,7 @@
                   android:checked="false"
                   android:textStyle="bold"
                   android:textSize="18sp"
-                  android:text="Mixed Crop" />
+                  android:text="MixedCrop" />
 
               <RadioButton
                   android:id="@+id/radiointercrop"
@@ -329,7 +326,7 @@
                   android:checked="false"
                   android:textStyle="bold"
                   android:textSize="18sp"
-                  android:text="Inter Crop" />
+                  android:text="InterCrop" />
             </RadioGroup>
           </LinearLayout>
         </LinearLayout>
@@ -2107,83 +2104,114 @@
                 android:text="Transplanted" />
 
           </RadioGroup>
-          <LinearLayout
+
+        <LinearLayout
               android:id="@+id/linearLayoutsowingdate"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:padding="3dp"
+              android:padding="2dp"
               android:orientation="horizontal"
-              android:weightSum="3" >
+              android:weightSum="5" >
 
             <TextView
                 android:id="@+id/tv_SowingDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.2"
+                android:layout_weight="2"
                 android:text="Date of Sowing"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="@dimen/register_font" />
 
-            <TextView
-                android:id="@+id/txtv_sowingdate"
+            <ImageButton
+                android:id="@+id/ibSowingDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/registerEnterSowingDate"
-                android:textColor="@color/dark_orange"
-                android:textColorHighlight="#f93"
-                android:textColorHint="@color/dark_orange"
-                android:textStyle="bold"
-                android:textCursorDrawable="@color/hbms_button_color"
-                android:textSize="@dimen/register_font"/>
-          </LinearLayout>
+                android:layout_weight="3"
+                android:src="@drawable/baseline_calendar_month_black_48"
+                android:background="@color/white" />
 
+          </LinearLayout>
+          <TextView
+              android:id="@+id/txtv_sowingdate"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text=""
+              android:gravity="end"
+              android:textColor="@color/orange"
+              android:textStyle="bold"
+              android:textSize="@dimen/register_font"/>
           <LinearLayout
-              android:id="@+id/linearLayoutnurserydate"
+              android:id="@+id/linearLayoutTransplanting"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:padding="3dp"
+              android:padding="2dp"
               android:orientation="horizontal"
-              android:weightSum="3" >
+              android:weightSum="4" >
 
             <TextView
                 android:id="@+id/tvNurseryDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.2"
+                android:layout_weight="2"
                 android:text="Date of Nursery Preparation"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="@dimen/register_font" />
 
             <TextView
-                android:id="@+id/txtvNurseryDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/registerNurseryDate"
-                android:textColor="@color/dark_orange"
-                android:textColorHighlight="#f93"
-                android:textColorHint="@color/dark_orange"
-                android:textStyle="bold"
-                android:textCursorDrawable="@color/hbms_button_color"
-                android:textSize="@dimen/register_font"/>
-          </LinearLayout>
-
-          <LinearLayout
-              android:id="@+id/linearLayouttransplantingdate"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:padding="3dp"
-              android:orientation="horizontal"
-              android:weightSum="3" >
-
-            <TextView
                 android:id="@+id/tvTransplantingDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.2"
+                android:layout_weight="2"
                 android:text="Date of Transplanting"
                 android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/register_font" />
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/linearLayoutTransplantingIB"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="2dp"
+              android:orientation="horizontal"
+              android:weightSum="4">
+
+            <ImageButton
+                android:id="@+id/ibNurseryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/baseline_today_black_48"
+                android:background="@color/white" />
+
+            <ImageButton
+                android:id="@+id/ibTransplantingDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:src="@drawable/baseline_event_black_48"
+                android:background="@color/white" />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:id="@+id/linearLayoutTransplantingtv"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="2dp"
+              android:orientation="horizontal"
+              android:weightSum="4" >
+
+            <TextView
+                android:id="@+id/txtvNurseryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text=""
+                android:gravity="center"
+                android:textColor="@color/orange"
                 android:textStyle="bold"
                 android:textSize="@dimen/register_font" />
 
@@ -2191,14 +2219,14 @@
                 android:id="@+id/txtvTransplantingdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/registerEnterTransplantingDate"
+                android:layout_weight="2"
+                android:text=""
+                android:gravity="center"
                 android:textColor="@color/dark_purple"
-                android:textColorHighlight="#f93"
-                android:textColorHint="@color/dark_purple"
                 android:textStyle="bold"
-                android:textCursorDrawable="@color/hbms_button_color"
-                android:textSize="@dimen/register_font"/>
+                android:textSize="@dimen/register_font" />
           </LinearLayout>
+
 
           <TextView
               android:id="@+id/tvOrganicFarmingQuestion"
@@ -2399,8 +2427,6 @@
                 android:textSize="18sp" />
 
           </LinearLayout>
-
-
 
           <LinearLayout
               android:layout_width="wrap_content"
