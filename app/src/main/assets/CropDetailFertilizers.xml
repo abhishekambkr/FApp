@@ -1,0 +1,283 @@
+<FertilizersMaster>
+  <FertilizersData>
+    <FM_Id>1</FM_Id>
+    <FM_Name>Granular Urea</FM_Name>
+    <FM_KName>ಹರಳಿನ ಯೂರಿಯಾ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>2</FM_Id>
+    <FM_Name>Nano Urea</FM_Name>
+    <FM_KName>ನ್ಯಾನೋ ಯೂರಿಯಾ</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>46</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>3</FM_Id>
+    <FM_Name>Single Super Phosphate(SSP)</FM_Name>
+    <FM_KName>ಏಕ ಸೂಪರ್ ಫಾಸ್ಫೇಟ್(ಎಸ್‌ಎಸ್‌ಪಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>16</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>4</FM_Id>
+    <FM_Name>Muriate of Potash(MOP)</FM_Name>
+    <FM_KName>ಮ್ಯೂರಿಯೇಟ್ ಆಫ್ ಪೊಟಾಷ್(ಎಂಒಪಿ)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>60</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>5</FM_Id>
+    <FM_Name>DAP</FM_Name>
+    <FM_KName>ಡಿಎಪಿ</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>18</FM_Nitrogen>
+    <FM_Phosphorous>46</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>6</FM_Id>
+    <FM_Name>Ammonium Sulphate</FM_Name>
+    <FM_KName>ಅಮೋನಿಯಂ ಸಲ್ಫೇಟ್</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>21</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>7</FM_Id>
+    <FM_Name>Ammonium Chloride</FM_Name>
+    <FM_KName>ಅಮೋನಿಯಂ ಕ್ಲೋರೈಡ್</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>25</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+    <FM_Created_On>2021-08-13T16:10:23.203</FM_Created_On>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>8</FM_Id>
+    <FM_Name>Calcium Ammonium Nitrate(CAN)</FM_Name>
+    <FM_KName>ಕ್ಯಾಲ್ಸಿಯಂ ಅಮೋನಿಯಂ ನೈಟ್ರೇಟ್ (CAN)</FM_KName>
+    <FM_Type>S</FM_Type>
+    <FM_Nitrogen>25</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>1</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>9</FM_Id>
+    <FM_Name>15:15:15</FM_Name>
+    <FM_KName>15:15:15</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>15</FM_Nitrogen>
+    <FM_Phosphorous>15</FM_Phosphorous>
+    <FM_Potash>15</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>10</FM_Id>
+    <FM_Name>17:17:17</FM_Name>
+    <FM_KName>17:17:17</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>17</FM_Nitrogen>
+    <FM_Phosphorous>17</FM_Phosphorous>
+    <FM_Potash>17</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>11</FM_Id>
+    <FM_Name>19:19:19</FM_Name>
+    <FM_KName>19:19:19</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>19</FM_Nitrogen>
+    <FM_Phosphorous>19</FM_Phosphorous>
+    <FM_Potash>19</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>12</FM_Id>
+    <FM_Name>10:26:26</FM_Name>
+    <FM_KName>10:26:26</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>10</FM_Nitrogen>
+    <FM_Phosphorous>26</FM_Phosphorous>
+    <FM_Potash>26</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>13</FM_Id>
+    <FM_Name>16:20:0:13</FM_Name>
+    <FM_KName>16:20:0:13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>16</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>14</FM_Id>
+    <FM_Name>20:20:0:13</FM_Name>
+    <FM_KName>20:20:0:13</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>15</FM_Id>
+    <FM_Name>12:32:16</FM_Name>
+    <FM_KName>12:32:16</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>12</FM_Nitrogen>
+    <FM_Phosphorous>32</FM_Phosphorous>
+    <FM_Potash>16</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>16</FM_Id>
+    <FM_Name>20:20:0</FM_Name>
+    <FM_KName>20:20:0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>20</FM_Nitrogen>
+    <FM_Phosphorous>20</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>17</FM_Id>
+    <FM_Name>23:23:0</FM_Name>
+    <FM_KName>23:23:0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>23</FM_Nitrogen>
+    <FM_Phosphorous>23</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>18</FM_Id>
+    <FM_Name>24:24:0</FM_Name>
+    <FM_KName>24:24:0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>24</FM_Nitrogen>
+    <FM_Phosphorous>24</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>19</FM_Id>
+    <FM_Name>28:28:0</FM_Name>
+    <FM_KName>28:28:0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>28</FM_Nitrogen>
+    <FM_Phosphorous>28</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>20</FM_Id>
+    <FM_Name>11:52:0</FM_Name>
+    <FM_KName>11:52:0</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>11</FM_Nitrogen>
+    <FM_Phosphorous>52</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>2</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>21</FM_Id>
+    <FM_Name>19:19:19(Liquid Fertilizer)</FM_Name>
+    <FM_KName>19:19:19(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>19</FM_Nitrogen>
+    <FM_Phosphorous>19</FM_Phosphorous>
+    <FM_Potash>19</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>22</FM_Id>
+    <FM_Name>13:0:45(Liquid Fertilizer)</FM_Name>
+    <FM_KName>13:0:45(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>13</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>45</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>23</FM_Id>
+    <FM_Name>0:52:34(Liquid Fertilizer)</FM_Name>
+    <FM_KName>0:52:34(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>52</FM_Phosphorous>
+    <FM_Potash>34</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>24</FM_Id>
+    <FM_Name>12:61:0(Liquid Fertilizer)</FM_Name>
+    <FM_KName>12:61:0(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>12</FM_Nitrogen>
+    <FM_Phosphorous>61</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>25</FM_Id>
+    <FM_Name>0:0:50(Liquid Fertilizer)</FM_Name>
+    <FM_KName>0:0:50(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>50</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>25</FM_Id>
+    <FM_Name>0:0:50(Liquid Fertilizer)</FM_Name>
+    <FM_KName>0:0:50(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>0</FM_Nitrogen>
+    <FM_Phosphorous>0</FM_Phosphorous>
+    <FM_Potash>50</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>26</FM_Id>
+    <FM_Name>17:44:0(Liquid Fertilizer)</FM_Name>
+    <FM_KName>17:44:0(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>17</FM_Nitrogen>
+    <FM_Phosphorous>44</FM_Phosphorous>
+    <FM_Potash>0</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+  <FertilizersData>
+    <FM_Id>27</FM_Id>
+    <FM_Name>13:40:13(Liquid Fertilizer)</FM_Name>
+    <FM_KName>13:40:13(ದ್ರವ ರಸಗೊಬ್ಬರ)</FM_KName>
+    <FM_Type>C</FM_Type>
+    <FM_Nitrogen>13</FM_Nitrogen>
+    <FM_Phosphorous>40</FM_Phosphorous>
+    <FM_Potash>13</FM_Potash>
+    <FM_No_Nutrient>3</FM_No_Nutrient>
+  </FertilizersData>
+</FertilizersMaster>
