@@ -1,4 +1,4 @@
-/**/package org.nic.fruits.CropDetails;
+package org.nic.fruits.CropDetails;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -62,6 +62,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -139,7 +140,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
     private Context mContext;
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String DEFAULT_NOTIFICATION_CHANNEL_ID = "default" ;
-    private static final int CAMERA_REQUEST = 1; //1888
+    private static final int CAMERA_REQUEST = 1888; //1888
     private static final int CAMERA_PERMISSION = 100;
     private CropSurveyCardAdapter adapter;
     private String farmerID;
@@ -149,7 +150,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
     private String survey_number;
     private String surveynumberfrommap;
     DatePickerDialog pickerSowing,pickerNursery,pickerTransplanting;
-    LinearLayout linearlayoutSowingDate,linearLayoutNurseryDate,linearLayoutTransplantingDate;
+    LinearLayout linearlayoutSowingDate,linearLayoutTransplanting,linearLayoutTransplantingib,linearLayoutTransplantingtv;
     TextView tvFarmerID,tvYear,tvSowingDetails,tvOwnerAreaValue,tvSowingDate,tvNurseryDate,tvTransplantingDate,tvPreSowingDetail,tvCropImg;
     TextView tvLatitude,tvLongitude;
 
@@ -171,7 +172,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
     List<String> arraySowingDetails;
     List<String> arrayFertilizer;
     List<String> arrayManure;
-    Button btnCaptureCropPhoto,btnMap,btnRegister;
+    Button btnCaptureSingleCropPhoto,btnMap,btnRegister;
     ImageView ivCaptureCropPhoto;
     String[] filterSurveyNumber = new String[0];
     String district = "";
@@ -314,8 +315,13 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
     private String irrigationSourceId="";
     private String irrigationSource="";
 
+    ImageButton ibNursery,ibTransplanting;
     int nursingWeek,transplantingWeek;
     int noOfWeek = 0;
+    Button btnMCrop1,btnMCrop2,btnMCrop3,btnMCrop4,btnICrop1,btnICrop2,btnICrop3,btnICrop4;
+    String cropTypePhoto = "";
+    private static final int MY_PERMISSIONS = 29;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -327,6 +333,15 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         getSupportActionBar().setTitle(getResources().getString(R.string.crop_register));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (mContext.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.READ_PHONE_STATE},
+                        MY_PERMISSIONS);
+            } else {
+                Log.d("Home", "Already granted access");
+            }
+        }
 
         mContext = this;
         appDatabase = AppDatabase.getInstance(getApplicationContext());
@@ -360,18 +375,23 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         tvSowingDetails=(TextView) findViewById(R.id.tv_Required_crop_grown);
         /*rv_surveynum = (RecyclerView)findViewById(R.id.rv_surveynumber);*/
         linearlayoutSowingDate = (LinearLayout)findViewById(R.id.linearLayoutsowingdate);
-        linearLayoutNurseryDate = (LinearLayout)findViewById(R.id.linearLayoutnurserydate);
-        linearLayoutTransplantingDate = (LinearLayout)findViewById(R.id.linearLayouttransplantingdate);
+        linearLayoutTransplanting = (LinearLayout)findViewById(R.id.linearLayoutTransplanting);
+        linearLayoutTransplantingib = (LinearLayout)findViewById(R.id.linearLayoutTransplantingIB);
+        linearLayoutTransplantingtv = (LinearLayout)findViewById(R.id.linearLayoutTransplantingtv);
         tvSowingDate=(TextView) findViewById(R.id.txtv_sowingdate);
         tvNurseryDate=(TextView) findViewById(R.id.txtvNurseryDate);
         tvTransplantingDate =(TextView) findViewById(R.id.txtvTransplantingdate);
+        ibNursery = (ImageButton) findViewById(R.id.ibNurseryDate);
+        ibTransplanting = (ImageButton) findViewById(R.id.ibTransplantingDate);
+        ibTransplanting.setVisibility(View.GONE);
+        tvTransplantingDate.setVisibility(View.INVISIBLE);
         tvPreSowingDetail=(TextView)findViewById(R.id.tv_Required_crop_grown);
         etAcre=(EditText)findViewById(R.id.et_acre);
         etGunta=(EditText) findViewById(R.id.et_gunta);
         etFGunta=(EditText) findViewById(R.id.et_fgunta);
 /*        etCents=(EditText) findViewById(R.id.et_cents);
         et_ares=(EditText) findViewById(R.id.et_ares);*/
-        btnCaptureCropPhoto=(Button) findViewById(R.id.btn_crop_Photo_Capture);
+        btnCaptureSingleCropPhoto=(Button) findViewById(R.id.btn_crop_Photo_Capture);
         btnRegister = (Button) findViewById(R.id.btn_Register_Crop);
         ivCaptureCropPhoto=(ImageView) findViewById(R.id.iv_capture_image);
         btnMap = (Button) findViewById(R.id.btn_survey_map);
@@ -407,6 +427,10 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         etGuntaMixedCrop4 = (EditText)findViewById(R.id.et_gunta_mixedcrop4);
         etFGuntaMixedCrop4 = (EditText)findViewById(R.id.et_fgunta_mixedcrop4);
 
+        btnMCrop1 = (Button) findViewById(R.id.btnCaptureMixedCrop1);
+        btnMCrop2 = (Button) findViewById(R.id.btnCaptureMixedCrop2);
+        btnMCrop3 = (Button) findViewById(R.id.btnCaptureMixedCrop3);
+        btnMCrop4 = (Button) findViewById(R.id.btnCaptureMixedCrop4);
         //Intercrop
         linearlayoutInterCrop= (LinearLayout) findViewById(R.id.layoutintercrop);
         spinnerInterCrop1 = (Spinner) findViewById(R.id.spinnerInterCrop1);
@@ -433,6 +457,11 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         etAcreInterCrop4 = (EditText)findViewById(R.id.et_acre_intercrop4);
         etGuntaInterCrop4 = (EditText)findViewById(R.id.et_gunta_intercrop4);
         etFGuntaInterCrop4 = (EditText)findViewById(R.id.et_fgunta_intercrop4);
+
+        btnICrop1 = (Button) findViewById(R.id.btnCaptureInterCrop1);
+        btnICrop2 = (Button) findViewById(R.id.btnCaptureInterCrop2);
+        btnICrop3 = (Button) findViewById(R.id.btnCaptureInterCrop3);
+        btnICrop4 = (Button) findViewById(R.id.btnCaptureInterCrop4);
 
     //    mTotalCropExtent = (TextView) findViewById(R.id.tv_total_mcrop_extent);
     //    lytTotalMCropExtent = (LinearLayout) findViewById(R.id.layouttotalmcropextent);
@@ -545,8 +574,6 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             int resultfgunta_C = tempresult_C;
             System.out.print("resultfgunta_C : " + resultfgunta_C);*/
 
-
-
         layoutSingleCrop.setVisibility(View.GONE);
         linearlayoutMixedCrop.setVisibility(View.GONE);
         linearlayoutInterCrop.setVisibility(View.GONE);
@@ -601,9 +628,12 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             }
         });
         linearlayoutSowingDate.setVisibility(View.GONE);
-        linearLayoutNurseryDate.setVisibility(View.GONE);
-        linearLayoutTransplantingDate.setVisibility(View.GONE);
+        linearLayoutTransplanting.setVisibility(View.GONE);
+        linearLayoutTransplantingib.setVisibility(View.GONE);
+        linearLayoutTransplantingtv.setVisibility(View.GONE);
+
         rgCultivation.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int cultivationId) {
 
@@ -612,14 +642,16 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
                 switch (cultivationId) {
                     case R.id.radioDirectSeeding:
                         linearlayoutSowingDate.setVisibility(View.VISIBLE);
-                        linearLayoutNurseryDate.setVisibility(View.GONE);
-                        linearLayoutTransplantingDate.setVisibility(View.GONE);
+                        linearLayoutTransplanting.setVisibility(View.GONE);
+                        linearLayoutTransplantingib.setVisibility(View.GONE);
+                        linearLayoutTransplantingtv.setVisibility(View.GONE);
                         break;
 
                     case R.id.radioTransplanting:
                         linearlayoutSowingDate.setVisibility(View.GONE);
-                        linearLayoutNurseryDate.setVisibility(View.VISIBLE);
-                        linearLayoutTransplantingDate.setVisibility(View.VISIBLE);
+                        linearLayoutTransplanting.setVisibility(View.VISIBLE);
+                        linearLayoutTransplantingib.setVisibility(View.VISIBLE);
+                        linearLayoutTransplantingtv.setVisibility(View.VISIBLE);
                         break;
 
                 }
@@ -684,7 +716,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
         tvNurseryDate.setInputType(InputType.TYPE_NULL);
 
-        tvNurseryDate.setOnClickListener(new View.OnClickListener() {
+        ibNursery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Calendar cldr = Calendar.getInstance();
@@ -699,7 +731,11 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                                 tvNurseryDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
-                                tvTransplantingDate.setText("Transplanting Date");
+                                tvTransplantingDate.setInputType(InputType.TYPE_NULL);
+                                noOfWeek = 0;
+                                ibTransplanting.setVisibility(View.VISIBLE);
+                                tvTransplantingDate.setVisibility(View.VISIBLE);
+                                tvTransplantingDate.setText("");
                             }
                         }, year, month, day);
                 pickerNursery.getDatePicker().setMaxDate(System.currentTimeMillis());
@@ -709,82 +745,147 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
         tvTransplantingDate.setInputType(InputType.TYPE_NULL);
 
-        tvTransplantingDate.setOnClickListener(new View.OnClickListener() {
+        ibTransplanting.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 final Calendar cldr = Calendar.getInstance();
                 int day = cldr.get(Calendar.DAY_OF_MONTH);
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
+                noOfWeek = 0;
                 transplantingWeek = cldr.get(Calendar.WEEK_OF_YEAR);
                 // date picker
-                pickerTransplanting = new DatePickerDialog(mContext,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                pickerTransplanting = new DatePickerDialog(mContext, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                                SimpleDateFormat dates = new SimpleDateFormat("dd/MM/yyyy");
-                                Date date1 = new Date();
-                                Date date2 = new Date();
+                        SimpleDateFormat dates = new SimpleDateFormat("dd/MM/yyyy");
+                        Date date1 = new Date();
+                        Date date2 = new Date();
 
-                                try {
-                                    date1 = dates.parse(tvNurseryDate.getText().toString());
-                                    date2 = dates.parse(tvTransplantingDate.getText().toString());
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
+                        try {
+                            date1 = dates.parse(tvNurseryDate.getText().toString());
+                            date2 = dates.parse(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
 
-                                noOfWeek = calculateWeekNo(date1, date2);
-                                System.out.println("noOfWeek " + noOfWeek + " transplantingWeek " + transplantingWeek + " nursingWeek " +nursingWeek);
+                        noOfWeek = calculateWeekNo(date1, date2);
+                        System.out.println("noOfWeek " + noOfWeek + " transplantingWeek " + transplantingWeek + " nursingWeek " +nursingWeek);
 
-                                if(noOfWeek>=4) {
+                        if(noOfWeek>=4) {
 
-                                    tvTransplantingDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            tvTransplantingDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
-                                }else{
-                                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-                                    alertDialog.setTitle("Warning :");
-                                    alertDialog.setMessage("Nursery preparation and Transplanting should be a gap of 4 weeks");
-                                    alertDialog .setCancelable(false);
-                                    alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                             tvTransplantingDate.setText("Transplanting Date");
-                                        } });
-                                    alertDialog.show();
-                                }
+                        }else{
+                            AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+                            alertDialog.setTitle("Warning :");
+                            alertDialog.setMessage("Nursery preparation and Transplanting should be a gap of 4 weeks");
+                            alertDialog.setCancelable(false);
+                            alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    tvNurseryDate.setInputType(InputType.TYPE_NULL);
+                                    tvTransplantingDate.setInputType(InputType.TYPE_NULL);
+                                    tvNurseryDate.setText("");
+                                    tvTransplantingDate.setText("");
+                                    noOfWeek = 0;
+                                    ibTransplanting.setVisibility(View.GONE);
+                                    tvTransplantingDate.setVisibility(View.INVISIBLE);
+                                } });
+                            alertDialog.show();
+                        }
 
-                              /*  int calculateWeek = 0;
-                                calculateWeek = option1(date1,date2);
-                                System.out.println("calculateWeek " + calculateWeek + " transplantingWeek " + transplantingWeek + " nursingWeek " +nursingWeek);
-                                if(calculateWeek>=4) {
+                      /*  int calculateWeek = 0;
+                        calculateWeek = option1(date1,date2);
+                        System.out.println("calculateWeek " + calculateWeek + " transplantingWeek " + transplantingWeek + " nursingWeek " +nursingWeek);
+                        if(calculateWeek>=4) {
 
-                                    tvTransplantingDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            tvTransplantingDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
 
-                                }else{
-                                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-                                    alertDialog.setTitle("Warning :");
-                                    alertDialog.setMessage("Nursery preparation and Transplanting should be gap of 4 weeks");
-                                    alertDialog .setCancelable(false);
-                                    alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                           // tvTransplantingDate.setText("Transplanting Date");
-                                        } });
-                                    alertDialog.show();
-                                } */
-                            }
-                        }, year, month, day);
+                        }else{
+                            AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+                            alertDialog.setTitle("Warning :");
+                            alertDialog.setMessage("Nursery preparation and Transplanting should be gap of 4 weeks");
+                            alertDialog .setCancelable(false);
+                            alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                   // tvTransplantingDate.setText("Transplanting Date");
+                                } });
+                            alertDialog.show();
+                        } */
+                    }
+                }, year, month, day);
                 pickerTransplanting.getDatePicker().setMaxDate(System.currentTimeMillis());
                 pickerTransplanting.show();
             }
         });
 
-        btnCaptureCropPhoto.setOnClickListener(new View.OnClickListener() {
+        btnCaptureSingleCropPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                camera();
+                cropTypePhoto = "SingleCrop";
+                camera(cropTypePhoto);
             }
         });
 
+        btnMCrop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "MixedCrop1";
+                camera(cropTypePhoto);
+            }
+        });
+        btnMCrop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "MixedCrop2";
+                camera(cropTypePhoto);
+            }
+        });
+        btnMCrop3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "MixedCrop3";
+                camera(cropTypePhoto);
+            }
+        });
+        btnMCrop4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "MixedCrop4";
+                camera(cropTypePhoto);
+            }
+        });
+
+        btnICrop1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "InterCrop1";
+                camera(cropTypePhoto);
+            }
+        });
+        btnICrop2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "InterCrop2";
+                camera(cropTypePhoto);
+            }
+        });
+        btnICrop3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "InterCrop3";
+                camera(cropTypePhoto);
+            }
+        });
+        btnICrop4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cropTypePhoto = "InterCrop4";
+                camera(cropTypePhoto);
+            }
+        });
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -794,7 +895,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
         String root = Environment.getExternalStorageDirectory().toString();
 
-        appMediaFolderImagesEnc = new File(root + "/Fruits/" + "118" + "/" + 1 + "/" + farmerID +"/Image");
+        appMediaFolderImagesEnc = new File(root + "/Fruits/" + yearCode + "/" + seasonCodeValue + "/" + farmerID +"/Image");
 
         if (!appMediaFolderImagesEnc.exists()) {
             appMediaFolderImagesEnc.mkdirs();
@@ -848,15 +949,15 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         setUpGClient();
     }
 
-    public static int calculateWeekNo(Date start, Date end) {
+  /*  public static int calculateWeekNo(Date start, Date end) {
         Calendar a = new GregorianCalendar();
         Calendar b = new GregorianCalendar();
         a.setTime(start);
         b.setTime(end);
         return b.get(Calendar.WEEK_OF_YEAR) - a.get(Calendar.WEEK_OF_YEAR) + 1;
-    }
+    }*/
 
-  /*  public static int option1(Date start, Date end) {
+    public static int calculateWeekNo(Date start, Date end) {
 
         Calendar cal = new GregorianCalendar();
         cal.setTime(start);
@@ -867,7 +968,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             weeks++;
         }
         return weeks;
-    }*/
+    }
 
     private synchronized void setUpGClient() {
         googleApiClient = new GoogleApiClient.Builder(this)
@@ -923,11 +1024,11 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
         }
 
-        if(cropType.equals("Single Crop")) {
+        if(cropType.equals("SingleCrop")) {
             if (cropnameValue.equals("")) {
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
                 alertDialog.setTitle("Warning :");
-                alertDialog.setMessage("Select a valid Single Crop");
+                alertDialog.setMessage("Select a valid SingleCrop");
                 alertDialog.setCancelable(false);
                 alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -993,7 +1094,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
                 return false;
             }*/
         }
-        else if(cropType.equals("Mixed Crop")){
+        else if(cropType.equals("MixedCrop")){
             if(mixedTotalCrops.equals("")){
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
                 alertDialog.setTitle("Warning :");
@@ -1008,7 +1109,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
                 return false;
             }
         }
-        else if(cropType.equals("Inter Crop")){
+        else if(cropType.equals("InterCrop")){
             if(interTotalCrops.equals("")){
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
                 alertDialog.setTitle("Warning :");
@@ -1120,12 +1221,10 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
     @Override
     public void onConnectionSuspended(int i) {
-
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
 
     @Override
@@ -1212,7 +1311,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         String live_gps = latitude+","+longitude;
 
 
-        if(cropType.equals("Single Crop")) {
+        if(cropType.equals("SingleCrop")) {
 
             if (AppDatabase.getInstance(this).cropRegistrationDao().isDataExist(farmerID,surveySpinnerValue,currentFinancialYear,seasonSpinnerValue,ownerID) == 0) {
                 // data not exist.
@@ -1237,7 +1336,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             }
 
         }
-        else if(cropType.equals("Mixed Crop")){
+        else if(cropType.equals("MixedCrop")){
             if (AppDatabase.getInstance(this).cropRegistrationDao().isDataExist(farmerID,surveySpinnerValue,currentFinancialYear,seasonSpinnerValue,ownerID) == 0) {
                 final ModelCropRegistration mixedcrop = new ModelCropRegistration(farmerID,crop_reg_Id,currentFinancialYear,yearCode,seasonSpinnerValue,seasonCodeValue,ownerID,ownernameSpinnerValue,area,surveySpinnerValue,district,taluk,village,mSelectedCropName.toString(),cropType,mixedTotalCrops,mSelectedCropCode.toString(),mSelectedCropVariety.toString(),mSelectedCropExtent.toString(),irrigationTypeId,irrigationType,irrigationSourceId,irrigationSource,farmingvalue,presowingValue,tvSowingDate.getText().toString(),live_gps,imagePath,imageName,"N");
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -1267,7 +1366,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             }
 
         }
-        else if(cropType.equals("Inter Crop")) {
+        else if(cropType.equals("InterCrop")) {
             if (AppDatabase.getInstance(this).cropRegistrationDao().isDataExist(farmerID,surveySpinnerValue,currentFinancialYear,seasonSpinnerValue,ownerID) == 0) {
                 final ModelCropRegistration intercrop = new ModelCropRegistration(farmerID, crop_reg_Id, currentFinancialYear, yearCode, seasonSpinnerValue, seasonCodeValue, ownerID, ownernameSpinnerValue, area, surveySpinnerValue,district,taluk,village,interSelectedCropName.toString(), cropType, interTotalCrops, interSelectedCropCode.toString(), interSelectedCropVariety.toString(), interSelectedCropExtent.toString(),irrigationTypeId,irrigationType,irrigationSourceId,irrigationSource, farmingvalue, presowingValue, tvSowingDate.getText().toString(), live_gps, imagePath, imageName, "N"); //totalcropextent missing
 
@@ -1325,24 +1424,33 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         }*/
     }
 
-    private void camera() {
-
+    private void camera(String croptype) {
         try{
 
             String root = Environment.getExternalStorageDirectory().toString();
-
             appMediaFolderImagesEnc = new File(root + "/Fruits/" + yearCode + "/" + seasonCodeValue + "/" + farmerID +"/Image");
-
             if (!appMediaFolderImagesEnc.exists()) {
                 appMediaFolderImagesEnc.mkdirs();
             }
-
-            if(cropType.equals("Single Crop")) {
-                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_"+cropType+"_"+cropnameValue;
-            }else if(cropType.equals("Mixed Crop")){
-                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_"+cropType+"_"+mSelectedCropName.toString().replaceAll("\\[|\\]", "");
-            }else if(cropType.equals("Inter Crop")){
-                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_"+cropType+"_"+interSelectedCropName.toString().replaceAll("\\[|\\]", "");
+//cropType
+            if(croptype.equals("SingleCrop")) {
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_SingleCrop_"+cropnameValue;
+            }else if(croptype.equals("MixedCrop1")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_MixedCrop1_"+mixedCrop1Value;
+            }else if(croptype.equals("MixedCrop2")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_MixedCrop2_"+mixedCrop2Value;
+            }else if(croptype.equals("MixedCrop3")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_MixedCrop3_"+mixedCrop3Value;
+            }else if(croptype.equals("MixedCrop4")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_MixedCrop4_"+mixedCrop4Value;
+            }else if(croptype.equals("InterCrop1")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_InterCrop1_"+interCrop1Value;
+            }else if(croptype.equals("InterCrop2")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_InterCrop2_"+interCrop2Value;
+            }else if(croptype.equals("InterCrop3")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_InterCrop3_"+interCrop3Value;
+            }else if(croptype.equals("InterCrop4")){
+                imageName = farmerID+"_"+yearCode+"_"+seasonCodeValue+"_InterCrop4_"+interCrop4Value;
             }
 
             imageFile = new File(appMediaFolderImagesEnc, imageName + ".jpg");
@@ -2169,9 +2277,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
     }
 
     private void setMixedCropViews() {
-
         //mixed crop names
-
         arrayMixedCropNames.add(0,"Select Mixed Crops");
         ArrayAdapter<String> mixedcrop1adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, arrayMixedCropNames);
         mixedcrop1adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -3533,7 +3639,6 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
     public Double round(Double value, Integer places) {
         if (places < 0) throw new IllegalArgumentException();
-
         long factor = (long) Math.pow(10, places);
         value = value * factor;
         long tmp = Math.round(value);
@@ -5060,24 +5165,21 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
     }
 
+
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
-            case CAMERA_PERMISSION: {
+            case MY_PERMISSIONS: {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Log.d("Home", "Camera Permission Granted");
+                    Log.d("Home", "Permission Granted");
                 } else {
-                    Log.d("Home", "Camera Permission Failed");
-                    Toast.makeText(mContext, "You must allow camera permission to capture image", Toast.LENGTH_SHORT).show();
+                    Log.d("Home", "Permission Failed");
+                    Toast.makeText(mContext, "You must allow permission record audio to your mobile device.", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
-
-
         }
         getMyLocation();
-
-
     }
 
     public void getMapdata(String survey_no){
@@ -5182,422 +5284,54 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
     }*/
 
-    @SuppressWarnings("deprecation")
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         FileOutputStream fileOutputStream = null;
 
-        if (requestCode == PICTURE_RESULT && resultCode == Activity.RESULT_OK) {
-            if (data != null && data.getData() != null) {
-                imageUri = data.getData();
-                tvCropImg.setText("ಛಾಯಾಚಿತ್ರ ಸೆರೆಹಿಡಿದಿಲ್ಲ");
+        switch (requestCode) {
+            case REQUEST_CHECK_SETTINGS_GPS:
+                if (resultCode == RESULT_OK)
+                    getMyLocation();
+                Toast.makeText(getApplicationContext(), "Gps Is Enabled", Toast.LENGTH_LONG).show();
+                break;
+            case PICTURE_RESULT:
+                if (resultCode == RESULT_OK)
 
-            }
-            try {
-                Bitmap bitmap = decodeUri(imageUri);
-                if (bitmap != null) {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 40, baos);
-                    byte[] b = baos.toByteArray();
-                    bitmap = StoreByteImage(b, imageUri);
-                    String compressedImage = compressImage(String.valueOf(imageUri),imagePath,"multipick");
+                    if (data != null && data.getData() != null) {
+                        imageUri = data.getData();
+                        Toast.makeText(getApplicationContext(), "Image not Captured ", Toast.LENGTH_SHORT).show();
+                    } else {
+                        isImageTaken = true;
+                        new AlertDialog.Builder(CropRegister.this)
+                                .setTitle("Alert")
+                                .setMessage("Image Captured")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                })
+                                .show();
 
-
-                    ivCaptureCropPhoto.setImageBitmap(bitmap);
-                    ivCaptureCropPhoto.setVisibility(View.VISIBLE);
-
-
-                    File file = new File(imageFile.getPath() + ".img");
-                    if (!file.exists()) {
-                        try {
-                            file.createNewFile();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        ivCaptureCropPhoto.setVisibility(View.VISIBLE);
                     }
-                    String encriptedDate = Encript(b, "1212121212");
-                    FileOutputStream fos = new FileOutputStream(file.getPath());
-                    fos.write(results);
-                    fos.close();
-
-                    String filePath = getRealPathFromURI(imageUri.toString());
-                    Bitmap scaledBitmap = null;
-
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-
-                    // by setting this field as true, the actual bitmap pixels
-                    // are not
-                    // loaded in the memory. Just the bounds are loaded. If
-                    // you try the use the bitmap here, you will get null.
-                    options.inJustDecodeBounds = true;
-                    Bitmap bmp = BitmapFactory.decodeFile(filePath, options);
-                    SimpleDateFormat sdate = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
-
-                    int actualHeight = options.outHeight;
-                    int actualWidth = options.outWidth;
-
-                    // max Height and width values of the compressed image is
-                    // taken as
-                    // 816x612
-
-                    float maxHeight = 816.0f;
-                    float maxWidth = 612.0f;
-                    float imgRatio = actualWidth / actualHeight;
-                    float maxRatio = maxWidth / maxHeight;
-
-                    // width and height values are set maintaining the aspect
-                    // ratio of the
-                    // image
-
-                    if (actualHeight > maxHeight || actualWidth > maxWidth) {
-                        if (imgRatio < maxRatio) {
-                            imgRatio = maxHeight / actualHeight;
-                            actualWidth = (int) (imgRatio * actualWidth);
-                            actualHeight = (int) maxHeight;
-                        } else if (imgRatio > maxRatio) {
-                            imgRatio = maxWidth / actualWidth;
-                            actualHeight = (int) (imgRatio * actualHeight);
-                            actualWidth = (int) maxWidth;
-                        } else {
-                            actualHeight = (int) maxHeight;
-                            actualWidth = (int) maxWidth;
-                        }
+                try {
+                    Bitmap bitmap = decodeUri(imageUri);
+                    if (bitmap != null) {
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        byte[] b = baos.toByteArray();
+                        bitmap = StoreByteImage(b,cropTypePhoto);
+                        ivCaptureCropPhoto.setImageBitmap(bitmap);
+//                        bitmap.recycle();
                     }
-                    // setting inSampleSize value allows to load a scaled down
-                    // version of
-                    // the original image
-
-                    options.inSampleSize = calculateInSampleSize(options,
-                            actualWidth, actualHeight);
-
-                    // inJustDecodeBounds set to false to load the actual bitmap
-                    options.inJustDecodeBounds = false;
-
-                    // this options allow android to claim the bitmap memory if
-                    // it runs low
-                    // on memory
-                    options.inPurgeable = true;
-                    options.inInputShareable = true;
-                    options.inTempStorage = new byte[16 * 1024];
-                    bmp = BitmapFactory.decodeFile(filePath, options);
-
-                    bmp = timestampItAndSave(bmp, "time stamp", sdate.toString(),"multipick");
-
-                    try {
-                        scaledBitmap = Bitmap.createBitmap(actualWidth, actualHeight, Bitmap.Config.ARGB_8888);
-                    } catch (OutOfMemoryError exception) {
-                        exception.printStackTrace();
-                    }
-
-                    float ratioX = actualWidth / (float) options.outWidth;
-                    float ratioY = actualHeight / (float) options.outHeight;
-                    float middleX = actualWidth / 2.0f;
-                    float middleY = actualHeight / 2.0f;
-
-                    Matrix scaleMatrix = new Matrix();
-                    scaleMatrix.setScale(ratioX, ratioY, middleX, middleY);
-
-                    Canvas canvas = new Canvas(scaledBitmap);
-                    canvas.setMatrix(scaleMatrix);
-                    canvas.drawBitmap(bmp, middleX - bmp.getWidth() / 2,middleY - bmp.getHeight() / 2,
-                            new Paint(Paint.FILTER_BITMAP_FLAG));
-
-                    // check the rotation of the image and display it properly
-                    ExifInterface exif;
-                    try {
-                        exif = new ExifInterface(filePath);
-
-                        int orientation = exif.getAttributeInt(
-                                ExifInterface.TAG_ORIENTATION, 0);
-                        Log.d("EXIF", "Exif: " + orientation);
-                        Matrix matrix = new Matrix();
-                        if (orientation == 6) {
-                            matrix.postRotate(90);
-                            Log.d("EXIF", "Exif: " + orientation);
-                        } else if (orientation == 3) {
-                            matrix.postRotate(180);
-                            Log.d("EXIF", "Exif: " + orientation);
-                        } else if (orientation == 8) {
-                            matrix.postRotate(270);
-                            Log.d("EXIF", "Exif: " + orientation);
-                        }
-                        scaledBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0,
-                                scaledBitmap.getWidth(),
-                                scaledBitmap.getHeight(), matrix, true);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    FileOutputStream out = null;
-                    String filename = filePath;
-                    try {
-                        out = new FileOutputStream(filename);
-
-                        // write the compressed bitmap at the destination
-                        // specified by
-                        // filename.
-                        scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80,
-                                out);
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    }
-
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
-                // CurrentImage=IncreamentImageCount(CurrentImage);
-                // insertIntoComponentUpdationsPhoto(imageUri.getPath());
-            }
-            catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (InvalidKeyException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (InvalidAlgorithmParameterException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (NoSuchAlgorithmException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (NoSuchPaddingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (IllegalBlockSizeException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            catch (BadPaddingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+                break;
         }
 
-
-        //changed in version 3.1 test version of 3.0.8
-        if (requestCode == PICTURE_RESULT && resultCode == Activity.RESULT_OK) {
-            if (data != null && data.getData() != null) {
-                imageUri = data.getData();
-                // Toast.makeText(FormTwoCaptureMediasActivity.this,
-                // "Image not taken", Toast.LENGTH_SHORT).show();
-                AlertDialog alertDialog = new AlertDialog.Builder(CropRegister.this).create();
-                alertDialog.setTitle("ಸೂಚನೆ :");
-                alertDialog.setMessage("ಛಾಯಾಚಿತ್ರ ಸೆರೆಹಿಡಿದಿಲ್ಲ");
-                alertDialog.setCanceledOnTouchOutside(false);
-                alertDialog.setButton("ಸರಿ",new DialogInterface.OnClickListener() {public void onClick(DialogInterface dialog,int which) { } });
-                alertDialog.show();
-                tvCropImg.setText("ಛಾಯಾಚಿತ್ರ ಸೆರೆಹಿಡಿದಿಲ್ಲ");
-
-            } else {
-                // Toast.makeText(FormTwoCaptureMediasActivity.this,
-                // "Image saved", Toast.LENGTH_SHORT).show();
-                AlertDialog alertDialog = new AlertDialog.Builder(CropRegister.this).create();
-                alertDialog.setTitle("ಸೂಚನೆ :");
-                alertDialog.setMessage("ಛಾಯಾಚಿತ್ರ ಉಳಿಸಲಾಗಿದೆ");
-                alertDialog.setCanceledOnTouchOutside(false);
-                alertDialog.setButton("ಸರಿ",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int which) {}
-                });
-                alertDialog.show();
-                //   isImageMahajarTaken = true;
-                tvCropImg.setText("ಛಾಯಾಚಿತ್ರ ಉಳಿಸಲಾಗಿದೆ");
-                //    mixedCrop.setImageMahajarReport(ImageMahajarpath);
-                //mixedCrop.setCoordinates(latitude + "," + longitude);
-            }
-            try {
-                Bitmap bitmap = decodeUri(imageUri);
-                if (bitmap != null) {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 40, baos);
-                    byte[] b = baos.toByteArray();
-                    bitmap = StoreByteImage(b,imageUri);
-
-                    //    btnCaptureMahajarReportImg.setVisibility(View.VISIBLE);
-                    tvCropImg.setVisibility(View.VISIBLE);
-
-                    ivCaptureCropPhoto.setImageBitmap(bitmap);
-                    ivCaptureCropPhoto.setVisibility(View.VISIBLE);
-                    String compressedImage = compressImage(String
-                            .valueOf(imageUri), imagePath,"crop");
-
-                    File file = new File(imageFile.getPath() + ".img");
-                    if (!file.exists()) {
-                        try {
-                            file.createNewFile();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    String encriptedDate = Encript(b, "1212121212");
-                    FileOutputStream fos = new FileOutputStream(file.getPath());
-                    fos.write(results);
-                    fos.close();
-
-                    String filePath = getRealPathFromURI(imageUri.toString());
-                    Bitmap scaledBitmap = null;
-
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-
-                    // by setting this field as true, the actual bitmap pixels
-                    // are not
-                    // loaded in the memory. Just the bounds are loaded. If
-                    // you try the use the bitmap here, you will get null.
-                    options.inJustDecodeBounds = true;
-                    Bitmap bmp = BitmapFactory.decodeFile(filePath, options);
-                    SimpleDateFormat sdate = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
-
-                    int actualHeight = options.outHeight;
-                    int actualWidth = options.outWidth;
-
-                    // max Height and width values of the compressed image is
-                    // taken as
-                    // 816x612
-
-                    float maxHeight = 816.0f;
-                    float maxWidth = 612.0f;
-                    float imgRatio = actualWidth / actualHeight;
-                    float maxRatio = maxWidth / maxHeight;
-
-                    // width and height values are set maintaining the aspect
-                    // ratio of the
-                    // image
-
-                    if (actualHeight > maxHeight || actualWidth > maxWidth) {
-                        if (imgRatio < maxRatio) {
-                            imgRatio = maxHeight / actualHeight;
-                            actualWidth = (int) (imgRatio * actualWidth);
-                            actualHeight = (int) maxHeight;
-                        } else if (imgRatio > maxRatio) {
-                            imgRatio = maxWidth / actualWidth;
-                            actualHeight = (int) (imgRatio * actualHeight);
-                            actualWidth = (int) maxWidth;
-                        } else {
-                            actualHeight = (int) maxHeight;
-                            actualWidth = (int) maxWidth;
-                        }
-                    }
-                    // setting inSampleSize value allows to load a scaled down
-                    // version of
-                    // the original image
-
-                    options.inSampleSize = calculateInSampleSize(options,
-                            actualWidth, actualHeight);
-
-                    // inJustDecodeBounds set to false to load the actual bitmap
-                    options.inJustDecodeBounds = false;
-
-                    // this options allow android to claim the bitmap memory if
-                    // it runs low
-                    // on memory
-                    options.inPurgeable = true;
-                    options.inInputShareable = true;
-                    options.inTempStorage = new byte[16 * 1024];
-                    bmp = BitmapFactory.decodeFile(filePath, options);
-
-                    bmp = timestampItAndSave(bmp, "time stamp",
-                            sdate.toString(),"Mahajar");
-
-                    try {
-                        scaledBitmap = Bitmap.createBitmap(actualWidth,
-                                actualHeight, Bitmap.Config.ARGB_8888);
-                    } catch (OutOfMemoryError exception) {
-                        exception.printStackTrace();
-                    }
-
-                    float ratioX = actualWidth / (float) options.outWidth;
-                    float ratioY = actualHeight / (float) options.outHeight;
-                    float middleX = actualWidth / 2.0f;
-                    float middleY = actualHeight / 2.0f;
-
-                    Matrix scaleMatrix = new Matrix();
-                    scaleMatrix.setScale(ratioX, ratioY, middleX, middleY);
-
-                    Canvas canvas = new Canvas(scaledBitmap);
-                    canvas.setMatrix(scaleMatrix);
-                    canvas.drawBitmap(bmp, middleX - bmp.getWidth() / 2,
-                            middleY - bmp.getHeight() / 2, new Paint(
-                                    Paint.FILTER_BITMAP_FLAG));
-
-                    // check the rotation of the image and display it properly
-                    ExifInterface exif;
-                    try {
-                        exif = new ExifInterface(filePath);
-
-                        int orientation = exif.getAttributeInt(
-                                ExifInterface.TAG_ORIENTATION, 0);
-                        Log.d("EXIF", "Exif: " + orientation);
-                        Matrix matrix = new Matrix();
-                        if (orientation == 6) {
-                            matrix.postRotate(90);
-                            Log.d("EXIF", "Exif: " + orientation);
-                        } else if (orientation == 3) {
-                            matrix.postRotate(180);
-                            Log.d("EXIF", "Exif: " + orientation);
-                        } else if (orientation == 8) {
-                            matrix.postRotate(270);
-                            Log.d("EXIF", "Exif: " + orientation);
-                        }
-                        scaledBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0,
-                                scaledBitmap.getWidth(),
-                                scaledBitmap.getHeight(), matrix, true);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    FileOutputStream out = null;
-                    String filename = filePath;
-                    try {
-                        out = new FileOutputStream(filename);
-
-                        // write the compressed bitmap at the destination
-                        // specified by
-                        // filename.
-                        scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80,
-                                out);
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-                // CurrentImage=IncreamentImageCount(CurrentImage);
-                // insertIntoComponentUpdationsPhoto(imageUri.getPath());
-            }
-            catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (InvalidKeyException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (InvalidAlgorithmParameterException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (NoSuchAlgorithmException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (NoSuchPaddingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IllegalBlockSizeException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (BadPaddingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
     }
 
     @Override
@@ -5683,280 +5417,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
 
     }
 
-    @SuppressLint("NewApi")
-    public String compressImage(String imageUri, String imagepath, String imgtype) throws InvalidKeyException,
-            InvalidAlgorithmParameterException, NoSuchAlgorithmException,
-            NoSuchPaddingException, IllegalBlockSizeException,
-            BadPaddingException, IOException {
-
-        String filePath = getRealPathFromURI(imageUri);
-        Bitmap scaledBitmap = null;
-
-        BitmapFactory.Options options = new BitmapFactory.Options();
-
-        // by setting this field as true, the actual bitmap pixels are not
-        // loaded in the memory. Just the bounds are loaded. If
-        // you try the use the bitmap here, you will get null.
-        options.inJustDecodeBounds = true;
-        Bitmap bmp = BitmapFactory.decodeFile(filePath, options);
-        SimpleDateFormat sdate = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
-
-        int actualHeight = options.outHeight;
-        int actualWidth = options.outWidth;
-
-        // max Height and width values of the compressed image is taken as
-        // 816x612
-
-        float maxHeight = 816.0f;
-        float maxWidth = 612.0f;
-        float imgRatio = actualWidth / actualHeight;
-        float maxRatio = maxWidth / maxHeight;
-
-        // width and height values are set maintaining the aspect ratio of the
-        // image
-
-        if (actualHeight > maxHeight || actualWidth > maxWidth) {
-            if (imgRatio < maxRatio) {
-                imgRatio = maxHeight / actualHeight;
-                actualWidth = (int) (imgRatio * actualWidth);
-                actualHeight = (int) maxHeight;
-            } else if (imgRatio > maxRatio) {
-                imgRatio = maxWidth / actualWidth;
-                actualHeight = (int) (imgRatio * actualHeight);
-                actualWidth = (int) maxWidth;
-            } else {
-                actualHeight = (int) maxHeight;
-                actualWidth = (int) maxWidth;
-            }
-        }
-        // setting inSampleSize value allows to load a scaled down version of
-        // the original image
-
-        options.inSampleSize = calculateInSampleSize(options, actualWidth,
-                actualHeight);
-
-        // inJustDecodeBounds set to false to load the actual bitmap
-        options.inJustDecodeBounds = false;
-
-        // this options allow android to claim the bitmap memory if it runs low
-        // on memory
-        options.inPurgeable = true;
-        options.inInputShareable = true;
-        options.inTempStorage = new byte[16 * 1024];
-
-        try {
-            // load the bitmap from its path
-
-            bmp = BitmapFactory.decodeFile(filePath, options);
-
-            bmp = timestampItAndSave(bmp, "time stamp", sdate.toString(),imgtype);
-
-            int bytes = bmp.getByteCount();
-            // or we can calculate bytes this way. Use a different value than 4
-            // if you don't use 32bit images.
-            // int bytes = b.getWidth()*b.getHeight()*4;
-
-            ByteBuffer buffer = ByteBuffer.allocate(bytes); // Create a new
-            // buffer
-            bmp.copyPixelsToBuffer(buffer); // Move the byte data to the buffer
-            // imageView.setImageBitmap(bmp);
-            byte[] array = buffer.array();
-
-            String encriptedDate = Encript(array, "1212121212");
-
-        } catch (OutOfMemoryError exception) {
-            exception.printStackTrace();
-
-        }
-        try {
-            scaledBitmap = Bitmap.createBitmap(actualWidth, actualHeight,
-                    Bitmap.Config.ARGB_8888);
-        } catch (OutOfMemoryError exception) {
-            exception.printStackTrace();
-        }
-
-        float ratioX = actualWidth / (float) options.outWidth;
-        float ratioY = actualHeight / (float) options.outHeight;
-        float middleX = actualWidth / 2.0f;
-        float middleY = actualHeight / 2.0f;
-
-        Matrix scaleMatrix = new Matrix();
-        scaleMatrix.setScale(ratioX, ratioY, middleX, middleY);
-
-        Canvas canvas = new Canvas(scaledBitmap);
-        canvas.setMatrix(scaleMatrix);
-        canvas.drawBitmap(bmp, middleX - bmp.getWidth() / 2,
-                middleY - bmp.getHeight() / 2, new Paint(
-                        Paint.FILTER_BITMAP_FLAG));
-
-        // check the rotation of the image and display it properly
-        ExifInterface exif;
-        try {
-            exif = new ExifInterface(filePath);
-
-            int orientation = exif.getAttributeInt(
-                    ExifInterface.TAG_ORIENTATION, 0);
-            Log.d("EXIF", "Exif: " + orientation);
-            Matrix matrix = new Matrix();
-            if (orientation == 6) {
-                matrix.postRotate(90);
-                Log.d("EXIF", "Exif: " + orientation);
-            } else if (orientation == 3) {
-                matrix.postRotate(180);
-                Log.d("EXIF", "Exif: " + orientation);
-            } else if (orientation == 8) {
-                matrix.postRotate(270);
-                Log.d("EXIF", "Exif: " + orientation);
-            }
-            scaledBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0,
-                    scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix,
-                    true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        FileOutputStream out = null;
-        String filename = imagepath;
-        try {
-            out = new FileOutputStream(filename);
-
-            // write the compressed bitmap at the destination specified by
-            // filename.
-            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return filename;
-
-    }
-
-    private Bitmap timestampItAndSave(Bitmap bmp, String caption, String time,String imgType) {
-        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-
-        Bitmap canvasBitmap = bmp.copy(Bitmap.Config.ARGB_8888, true);
-        Canvas imageCanvas = new Canvas(canvasBitmap);
-        Paint imagePaint = new Paint();
-        imagePaint.setTextAlign(Paint.Align.CENTER);
-        imagePaint.setTextSize(25f);
-        imagePaint.setColor(Color.RED);
-        imageCanvas.drawText(currentDateTimeString.toString(),
-                canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 15),imagePaint);
-
-        imagePaint.setTextAlign(Paint.Align.CENTER);
-        imagePaint.setTextSize(30f);
-//		imagePaint.setStyle(Style.FILL);
-        imagePaint.setColor(getResources().getColor(R.color.orange));
-        if (latitude != 0.00 && longitude != 0.00 && !imgType.equalsIgnoreCase("Mahajar"))
-            imageCanvas.drawText("Lat:"+latitude+ "  Long:"+longitude, canvasBitmap.getWidth() / 2,-25, imagePaint);
-
-        //changed in 3.0.6
-        imagePaint.setTextAlign(Paint.Align.CENTER);
-        imagePaint.setTextSize(25f);
-        imagePaint.setColor(getResources().getColor(R.color.orange));
-        // if (selectedExperimentNumber!=0)
-        imageCanvas.drawText("Farmer ID : "+farmerID , canvasBitmap.getWidth() / 2,25, imagePaint);
-
-        if(cropType.equals("Single Crop")) {
-            imageCanvas.drawText("Survey No.: " + surveySpinnerValue + "  Crop: " + cropnameValue, canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 50), imagePaint);
-        }else if(cropType.equals("Mixed Crop")){
-            imageCanvas.drawText("Survey No.: " + surveySpinnerValue + "  Crop: " + mSelectedCropName.toString(), canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 50), imagePaint);
-
-        }else if(cropType.equals("Inter Crop")){
-            imageCanvas.drawText("Survey No.: " + surveySpinnerValue + "  Crop: " + interSelectedCropName.toString(), canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 50), imagePaint);
-
-        }
-        return canvasBitmap;
-    }
-
-    private String getRealPathFromURI(String contentURI) {
-        Uri contentUri = Uri.parse(contentURI);
-        Cursor cursor = getContentResolver().query(contentUri, null, null,
-                null, null);
-        if (cursor == null) {
-            return contentUri.getPath();
-        } else {
-            cursor.moveToFirst();
-            int index = cursor
-                    .getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-            return cursor.getString(index);
-        }
-    }
-
-    public int calculateInSampleSize(BitmapFactory.Options options,int reqWidth, int reqHeight) {
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth) {
-            final int heightRatio = Math.round((float) height
-                    / (float) reqHeight);
-            final int widthRatio = Math.round((float) width / (float) reqWidth);
-            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-        }
-        final float totalPixels = width * height;
-        final float totalReqPixelsCap = reqWidth * reqHeight * 2;
-        while (totalPixels / (inSampleSize * inSampleSize) > totalReqPixelsCap) {
-            inSampleSize++;
-        }
-
-        return inSampleSize;
-    }
-
-    private String Encript(byte[] b, String key) throws InvalidKeyException,
-            InvalidAlgorithmParameterException, NoSuchAlgorithmException,
-            NoSuchPaddingException, UnsupportedEncodingException,
-            IllegalBlockSizeException, BadPaddingException {
-
-        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-        byte[] keyBytes = new byte[16];
-        byte[] b1 = key.getBytes("UTF-8");
-        int len = b1.length;
-        if (len > keyBytes.length)
-            len = keyBytes.length;
-        System.arraycopy(b1, 0, keyBytes, 0, len);
-        SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
-        IvParameterSpec ivSpec = new IvParameterSpec(keyBytes);
-        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
-
-        results = cipher.doFinal(b);
-        String fileName = "abcd.mpe";
-        // BASE64Encoder encoder = new BASE64Encoder();
-        // return encoder.encode(results); // it returns the result as a String
-        // Save results as binaryfile in local folder
-
-        // return fileName
-        return fileName;
-
-    }
-
-    private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
-        BitmapFactory.Options o = new BitmapFactory.Options();
-        o.inJustDecodeBounds = true;
-        BitmapFactory.decodeStream(
-                getContentResolver().openInputStream(selectedImage), null, o);
-
-        final int REQUIRED_SIZE = 500;
-
-        int width_tmp = o.outWidth, height_tmp = o.outHeight;
-        int scale = 1;
-        while (true) {
-            if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE) {
-                break;
-            }
-            width_tmp /= 2;
-            height_tmp /= 2;
-            scale *= 2;
-        }
-
-        BitmapFactory.Options o2 = new BitmapFactory.Options();
-        o2.inSampleSize = scale;
-        return BitmapFactory.decodeStream(
-                getContentResolver().openInputStream(selectedImage), null, o2);
-    }
-
-    private Bitmap StoreByteImage(byte[] imageData,Uri imgUri) {
+    public Bitmap StoreByteImage(byte[] imageData,String crpType) {
 
         Bitmap rotatedBitmap = null;
         Bitmap capturedImage = null;
@@ -5965,20 +5426,18 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             String root = Environment.getExternalStorageDirectory().toString();
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = (int) 0.5;
-            Bitmap myImage = BitmapFactory.decodeByteArray(imageData, 0,
-                    imageData.length, options);
+            Bitmap myImage = BitmapFactory.decodeByteArray(imageData, 0, imageData.length, options);
             Matrix matrix = new Matrix();
             ExifInterface exifReader = null;
 
             try {
-                exifReader = new ExifInterface(imgUri.getPath());
+                exifReader = new ExifInterface(imageUri.getPath());
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }// Location of your image
+            } // Location of your image
 
-            int orientation = exifReader.getAttributeInt(
-                    ExifInterface.TAG_ORIENTATION,
+            int orientation = exifReader.getAttributeInt(ExifInterface.TAG_ORIENTATION,
                     ExifInterface.ORIENTATION_NORMAL);
 
             if (orientation == ExifInterface.ORIENTATION_NORMAL) {
@@ -5993,24 +5452,20 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
                 matrix.postRotate(180);
 
             } else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
-
                 matrix.postRotate(270);
-
             }
-            rotatedBitmap = Bitmap.createBitmap(myImage, 0, 0,
-                    myImage.getWidth(), myImage.getHeight(), matrix, true);
-            capturedImage = rotatedBitmap;
 
+            rotatedBitmap = Bitmap.createBitmap(myImage, 0, 0, myImage.getWidth(), myImage.getHeight(), matrix, true);
+            capturedImage = timestampItAndSave(rotatedBitmap,crpType);
 
-            String ipath = imgUri.getPath().replace(root + "/CIMS/FarmerFolder/", "");// for nexus 4
-            String url = "/sdcard/CIMS/FarmerFolder/" + "C-" + ipath;// for
-            // nexus
-            // 4
+            String ipath = imageUri.getPath().replace("/mnt/sdcard/CII_IMAGES-", "");
+            String url = ipath;
+
             fileOutputStream = new FileOutputStream(url);
             BufferedOutputStream bos = new BufferedOutputStream(fileOutputStream, 8129);
-            rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 80, bos);
+            capturedImage.compress(Bitmap.CompressFormat.JPEG, 100, bos);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 80, baos);
+            capturedImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             // byte[] b = baos.toByteArray();
 
             bos.flush();
@@ -6021,7 +5476,51 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return rotatedBitmap;
+        return capturedImage;
+    }
+
+    private Bitmap timestampItAndSave(Bitmap toEdit,String crpType){
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        Bitmap canvasBitmap = toEdit.copy(Bitmap.Config.RGB_565, true);
+        Canvas imageCanvas = new Canvas(canvasBitmap);
+        Paint imagePaint = new Paint();
+        imagePaint.setTextAlign(Paint.Align.CENTER);
+        imagePaint.setTextSize(20f);
+        imagePaint.setStyle(Paint.Style.FILL);
+        imagePaint.setColor(Color.CYAN);
+
+        if(crpType.equals("SingleCrop")){
+            imageCanvas.drawText(currentDateTimeString.toString(),canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 15),imagePaint);
+          //  if (latitude != 0.00 && longitude != 0.00) {
+            imageCanvas.drawText("GPS : " + latitude + "," + longitude, canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 25), imagePaint);
+            imageCanvas.drawText("Farmer ID : "+farmerID , canvasBitmap.getWidth() / 2,25, imagePaint);
+            imageCanvas.drawText("Survey No. : " + surveySpinnerValue + " Crop : " + cropnameValue + " Type : SingleCrop", canvasBitmap.getWidth() / 2, (canvasBitmap.getHeight() - 30), imagePaint);
+     //   }
+        }else if(crpType.equals("MixedCrop")){
+        }else if(crpType.equals("InterCrop")){
+        }
+        return canvasBitmap;
+    }
+
+    private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
+        // TODO Auto-generated method stub
+        BitmapFactory.Options o = new BitmapFactory.Options();
+        o.inJustDecodeBounds = true;
+        BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage), null, o);
+        final int REQUIRED_SIZE = 150;
+        int width_tmp = o.outWidth, height_tmp = o.outHeight;
+        int scale = 1;
+        while (true) {
+            if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE) {
+                break;
+            }
+            width_tmp /= 2;
+            height_tmp /= 2;
+            scale *= 2;
+        }
+        BitmapFactory.Options o2 = new BitmapFactory.Options();
+        o2.inSampleSize = scale;
+        return BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage), null, o2);
     }
 
     @Override
@@ -6046,7 +5545,6 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
         }else{
             getMyLocation();
         }
-
     }
 
   /*  private void getMyLocation(){
@@ -6154,7 +5652,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setAutoCancel(true)
                 .setLargeIcon(BitmapFactory.decodeResource( getResources(), R.mipmap.ic_launcher))
-                .setContentTitle("Crop Registration - Single Crop")
+                .setContentTitle("Crop Registration - SingleCrop")
                 .setStyle(new NotificationCompat.BigTextStyle().bigText("Crop has been registered successfully for \nFarmer ID - "+farmerID+" \nCrop name - " + cropnameValue + "\nand unique Crop Registration ID is "+crID));
 
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE ) ;
@@ -6176,7 +5674,7 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             Notification.Builder nBuilder = new Notification.Builder(CropRegister.this)
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setLargeIcon(BitmapFactory.decodeResource( getResources(), R.mipmap.ic_launcher))
-                    .setContentTitle("Crop Registration - Single Crop")
+                    .setContentTitle("Crop Registration - SingleCrop")
                     //  .setContentText("Farmer Id- "+farmerID+" has registered to crop - " + cropnameValue)
                     .setAutoCancel(true)
                     .setDefaults(Notification.DEFAULT_ALL)
@@ -6185,7 +5683,6 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             assert mNotificationManager != null;
             notificationManager.notify((int)System.currentTimeMillis(), nBuilder.build());
         }
-
     }
 
     private void mixedcropNotification(String cropname,String crID) {
@@ -6228,8 +5725,6 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             notificationManager.notify((int)System.currentTimeMillis(), nbuilder.build());
 
         }
-
-
     }
 
     private void intercropNotification(String cropname,String crID) {
@@ -6268,8 +5763,6 @@ public class CropRegister extends AppCompatActivity implements  GoogleApiClient.
             assert mNotificationManager != null;
             notificationManager.notify((int)System.currentTimeMillis(), nbuilder.build());
         }
-
-
     }
 
     @Override
