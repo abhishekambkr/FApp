@@ -1,5 +1,11 @@
 package org.nic.fruits;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,32 +30,32 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
-import com.example.fruites.R;
-
+import org.nic.fruits.CropDetails.CropRegister;
 import org.nic.fruits.database.AppDatabase;
 import org.nic.fruits.database.AppExecutors;
 import org.nic.fruits.pojo.ModelCropFertilizerMasternpk;
+import org.nic.fruits.pojo.ModelCropRegistration;
 import org.nic.fruits.pojo.ModelCropSurveyDetails;
 import org.nic.fruits.pojo.ModelFarmFertilizer;
+import org.nic.fruits.pojo.ModelFarmerLandDeatails;
 import org.nic.fruits.pojo.ModelFertilizerCropMaster;
+import org.nic.fruits.pojo.ModelFertilizerNameMaster;
 import org.nic.fruits.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 public class FarmFertilizer extends AppCompatActivity {
 
     Context mContext;
     String farmerID;
-    String farmerName;
     String keyValue;
     AppDatabase appDatabase;
     Locale locale;
@@ -57,7 +63,6 @@ public class FarmFertilizer extends AppCompatActivity {
     String districtValue = "",talukValue = "",hobliValue = "",villageValue = "",surveyValue = "",cropname = "", cropextentValue="";
     LinearLayout linearLayoutFertilizerDetails;
     TextView tvFarmerId;
-    TextView tvFarmerName;
     Spinner spYear,spSeason;
     List<String> arrayYear;
     List<String> arraySeason;
@@ -226,7 +231,6 @@ public class FarmFertilizer extends AppCompatActivity {
         locale = Utils.getCurrentLocale(mContext);
         linearLayoutFertilizerDetails = findViewById(R.id.linearlayoutfertilizerdetails);
         tvFarmerId = findViewById(R.id.textviewFarmerId);
-        tvFarmerName = findViewById(R.id.textviewFarmerName);
         spYear = findViewById(R.id.spinnerFFYear);
         spSeason = findViewById(R.id.spinnerFFSeason);
 
@@ -610,7 +614,7 @@ public class FarmFertilizer extends AppCompatActivity {
                                 arrayNutrientValue2.clear();
                                 clearViews();
 
-                                Toast toast = Toast.makeText(mContext, "Fertilizers being calculated... please wait", Toast.LENGTH_LONG);
+                                Toast toast = Toast.makeText(mContext, "Fertilizers are being calculated... please wait", Toast.LENGTH_LONG);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                                 getCropDetails();
@@ -639,7 +643,7 @@ public class FarmFertilizer extends AppCompatActivity {
                         for (ModelCropSurveyDetails taskEntry : taskEntries) {
 
                             if (locale.toString().equals("en")) {
-                                tvFarmerName.setText(taskEntry.getFarmerName());
+
                                 arrayDistrict.add(taskEntry.getDistrictname());
                                 Set<String> filterDistrictName;
                                 filterDistrictName = new LinkedHashSet<String>(arrayDistrict);
@@ -672,24 +676,17 @@ public class FarmFertilizer extends AppCompatActivity {
 
                                 /*arrayCropName.add(0,"Coconut");
                                 arrayCropName.add(1,"Groundnut");*/
-                             //   arrayCropName.add(taskEntry.getCropName());
-                                arrayCropName.add(0,"Banana ");
-                                arrayCropName.add(1,"Horsegram");
-                                arrayCropName.add(2,"Urad");
+                                arrayCropName.add(taskEntry.getCropName());
                                 Set<String> filterCropName;
                                 filterCropName = new LinkedHashSet<String>(arrayCropName);
                                 arrayCropName.clear();
                                 arrayCropName.addAll(filterCropName);
 
                                 arrayCropArea.add(taskEntry.getCropArea());
-
-                                System.out.println("calling bb arrayCropArea size " +arrayCropArea.size() +" " +taskEntry.getCropArea());
                                 Set<String> filterCropArea;
                                 filterCropArea = new LinkedHashSet<String>(arrayCropArea);
                                 arrayCropArea.clear();
                                 arrayCropArea.addAll(filterCropArea);
-                                System.out.println("calling bb arrayCropArea filterCropArea " +arrayCropArea.size() +" " +taskEntry.getCropArea());
-
                                 districtValue = taskEntry.getDistrictname();
                                 talukValue = taskEntry.getTalukName();
                                 hobliValue = taskEntry.getHobliName();
@@ -698,8 +695,8 @@ public class FarmFertilizer extends AppCompatActivity {
                                 cropname = taskEntry.getCropName();
                                 cropextentValue = taskEntry.getCropArea();
 
-                            } else {
-                                tvFarmerName.setText(taskEntry.getFarmerName());
+                            }
+                            else {
                                 arrayDistrict.add(taskEntry.getDistrictname());
                                 Set<String> filterDistrictName;
                                 filterDistrictName = new LinkedHashSet<String>(arrayDistrict);
@@ -730,12 +727,9 @@ public class FarmFertilizer extends AppCompatActivity {
                                 arraySurvey.clear();
                                 arraySurvey.addAll(filterSurvey);
 
-                               /* arrayCropName.add(0,"Coconut");
+                                 /*arrayCropName.add(0,"Coconut");
                                 arrayCropName.add(1,"Groundnut");*/
-                            //    arrayCropName.add(taskEntry.getCropName());
-                                arrayCropName.add(0,"Banana ");
-                                arrayCropName.add(1,"Horsegram");
-                                arrayCropName.add(2,"Urad");
+                                arrayCropName.add(taskEntry.getCropName());
                                 Set<String> filterCropName;
                                 filterCropName = new LinkedHashSet<String>(arrayCropName);
                                 arrayCropName.clear();
@@ -756,10 +750,7 @@ public class FarmFertilizer extends AppCompatActivity {
                                 cropextentValue = taskEntry.getCropArea();
                             }
                         }
-                        System.out.println("CropName array - " + arrayCropName);
-                        System.out.println("CropArea array - " + arrayCropArea);
-                        System.out.println("arrayDistrict array - " + arrayDistrict);
-                        System.out.println("arraySurvey array - " + arraySurvey);
+
 
                         AppExecutors.getInstance().diskIO().execute(new Runnable() {
                             @Override
@@ -801,97 +792,114 @@ public class FarmFertilizer extends AppCompatActivity {
     }
 
     private void getFertilizerDetails() {
+        System.out.println("arraycrpname size- " + arrayCropName.size());
         for(int k=0 ;k<arrayCropName.size();k++) {
 
             cropNameValue = arrayCropName.get(k);
-            System.out.println("cropNameValue - " + cropNameValue);
-        }
-        MainViewModel viewFertilizerCropMaster = ViewModelProviders.of(this).get(MainViewModel.class);
-        viewFertilizerCropMaster.getFertilizerCrops(cropNameValue).observe(this, new Observer<List<ModelFertilizerCropMaster>>() {
-            @Override
-            public void onChanged(@Nullable List<ModelFertilizerCropMaster> taskEntries) {
+            System.out.println("arraycrpname - " + arrayCropName.get(k));
+            MainViewModel viewFertilizerCropMaster = ViewModelProviders.of(this).get(MainViewModel.class);
+            viewFertilizerCropMaster.getFertilizerCrops(arrayCropName.get(k)).observe(this, new Observer<List<ModelFertilizerCropMaster>>() {
+                @Override
+                public void onChanged(@Nullable List<ModelFertilizerCropMaster> taskEntries) {
 
-                if (taskEntries != null && !taskEntries.isEmpty()) {
+                    if (taskEntries != null && !taskEntries.isEmpty()) {
 
-                    for (ModelFertilizerCropMaster taskEntry : taskEntries) {
+                        for (ModelFertilizerCropMaster taskEntry : taskEntries) {
 
-                        if (locale.toString().equals("en")) {
-                           /* arrayFertilizerCropCode.add(0,"35");
+                            if (locale.toString().equals("en")) {
+
+                            /*arrayFertilizerCropCode.add(0,"35");
                             arrayFertilizerCropCode.add(1,"11");*/
-                       //     arrayFertilizerCropCode.add(taskEntry.getCropcode());
-                            arrayFertilizerCropCode.add(0,"36");
-                            arrayFertilizerCropCode.add(1,"23");
-                            arrayFertilizerCropCode.add(2,"25");
-                            Set<String> filterCropCode;
-                            filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
-                            arrayFertilizerCropCode.clear();
-                            arrayFertilizerCropCode.addAll(filterCropCode);
-                            arrayFertilizerCropType.add(taskEntry.getCroptype());
-                            Set<String> filterCropType;
-                            filterCropType = new LinkedHashSet<String>(arrayFertilizerCropType);
-                            arrayFertilizerCropType.clear();
-                            arrayFertilizerCropType.addAll(filterCropType);
-                        }
-                        else {
-                           /* arrayFertilizerCropCode.add(0,"35");
-                            arrayFertilizerCropCode.add(1,"11");*/
-                      //      arrayFertilizerCropCode.add(taskEntry.getCropcode());
-                            arrayFertilizerCropCode.add(0,"36");
-                            arrayFertilizerCropCode.add(1,"23");
-                            arrayFertilizerCropCode.add(2,"25");
-                            Set<String> filterCropCode;
-                            filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
-                            arrayFertilizerCropCode.clear();
-                            arrayFertilizerCropCode.addAll(filterCropCode);
-                            arrayFertilizerCropType.add(taskEntry.getCroptype());
-                            Set<String> filterCropType;
-                            filterCropType = new LinkedHashSet<String>(arrayFertilizerCropType);
-                            arrayFertilizerCropType.clear();
-                            arrayFertilizerCropType.addAll(filterCropType);
-                        }
-                    }
-                    System.out.println("CropCode array - " + arrayFertilizerCropCode);
-                    System.out.println("CropType array - " + arrayFertilizerCropType);
+                                arrayFertilizerCropCode.add(taskEntry.getCropcode());
+                                Set<String> filterCropCode;
+                                filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
+                                arrayFertilizerCropCode.clear();
+                                arrayFertilizerCropCode.addAll(filterCropCode);
+                                arrayFertilizerCropType.add(taskEntry.getCroptype());
+                                Set<String> filterCropType;
+                                filterCropType = new LinkedHashSet<String>(arrayFertilizerCropType);
+                                arrayFertilizerCropType.clear();
+                                arrayFertilizerCropType.addAll(filterCropType);
+                                System.out.println("calling  cropNameValue " + cropNameValue);
+                                System.out.println("calling  arrayFertilizerCropCode " + arrayFertilizerCropCode);
+                            } else {
 
-                    for (int l = 0; l < arrayCropName.size(); l++) {
-                        crpName = arrayCropName.get(l).toString();
-                        crpcodeFertilizer = arrayFertilizerCropCode.get(l).toString();
-                        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                            @Override
-                            public void run() {
-                                appDatabase.farmFertilizerDAO().updateFarmFertilizerCropCode(farmerID, crpName, crpcodeFertilizer);
+                             /*arrayFertilizerCropCode.add(0,"35");
+                            arrayFertilizerCropCode.add(1,"11");*/
+                                arrayFertilizerCropCode.add(taskEntry.getCropcode());
+                                Set<String> filterCropCode;
+                                filterCropCode = new LinkedHashSet<String>(arrayFertilizerCropCode);
+                                arrayFertilizerCropCode.clear();
+                                arrayFertilizerCropCode.addAll(filterCropCode);
+                                arrayFertilizerCropType.add(taskEntry.getCroptype());
+                                Set<String> filterCropType;
+                                filterCropType = new LinkedHashSet<String>(arrayFertilizerCropType);
+                                arrayFertilizerCropType.clear();
+                                arrayFertilizerCropType.addAll(filterCropType);
+
                             }
-                        });
-                        getCropNPK(crpName,crpcodeFertilizer);
-                    }
-
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println("calling aa arrayRequiredNitrogen " + arrayRequiredNitrogen);
-                            calculateFinalNPKDB();
                         }
-                    }, 5000);
+                    } else {
+                        new AlertDialog.Builder(mContext)
+                                .setTitle(getResources().getString(R.string.alert))
+                                .setMessage(getResources().getString(R.string.beneficiary_not_present))
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                        Intent mainActivity = new Intent(mContext, FruitsHomeActivity.class);
+                                        mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(mainActivity);
+                                        finish();
+                                    }
+                                })
+                                .show();
+                    }
+                }
+            });
 
+        }
+       /* for (int l = 0; l < arrayCropName.size(); l++) {
+            crpName = arrayCropName.get(l).toString();
+            crpcodeFertilizer = arrayFertilizerCropCode.get(l).toString();
+            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                @Override
+                public void run() {
+                    appDatabase.farmFertilizerDAO().updateFarmFertilizerCropCode(farmerID, crpName, crpcodeFertilizer);
                 }
-                else {
-                    new AlertDialog.Builder(mContext)
-                            .setTitle(getResources().getString(R.string.alert))
-                            .setMessage(getResources().getString(R.string.beneficiary_not_present))
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.cancel();
-                                    Intent mainActivity = new Intent(mContext, FruitsHomeActivity.class);
-                                    mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(mainActivity);
-                                    finish();
-                                }
-                            })
-                            .show();
-                }
+            });
+            getCropNPK(crpName,crpcodeFertilizer);
+        }*/
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                updateFarmfertlizer();
             }
-        });
+        }, 5000);
 
+
+
+
+    }
+
+    private void updateFarmfertlizer() {
+        for(int k=0 ;k<arrayCropName.size();k++) {
+            crpName = arrayCropName.get(k).toString();
+            crpcodeFertilizer = arrayFertilizerCropCode.get(k).toString();
+            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                @Override
+                public void run() {
+                    appDatabase.farmFertilizerDAO().updateFarmFertilizerCropCode(farmerID, crpName, crpcodeFertilizer);
+                }
+            });
+            getCropNPK(crpName,crpcodeFertilizer);
+        }
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                calculateFinalNPKDB();
+            }
+        }, 5000);
     }
 
     private void getCropNPK(String cropName,String fertilizercropcode) {
@@ -996,7 +1004,6 @@ public class FarmFertilizer extends AppCompatActivity {
     }
 
     private void calculaterequiredNPK(String cropnames) {
-
         if(cropNameValue!=null){
             System.out.println("in calculaterequiredNPK - " + arrayCropArea);
             System.out.println("in size - " + arrayCropArea.size());
@@ -1072,8 +1079,8 @@ public class FarmFertilizer extends AppCompatActivity {
 
 
 
-        //     calculateNPKDB();
-        //   calculateNPK();
+   //     calculateNPKDB();
+     //   calculateNPK();
     }
 
     private void calculateFinalNPKDB(){
@@ -1083,6 +1090,7 @@ public class FarmFertilizer extends AppCompatActivity {
             //  addrecommendedTable();
             addFertilizerTable();
             addNPKTable();
+
         }
         totalNitro = 0;
         totalPhos = 0;
@@ -1125,7 +1133,7 @@ public class FarmFertilizer extends AppCompatActivity {
         TextView tvNPKData = new TextView(mContext);
         tvNPKData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvNPKData.setGravity(Gravity.CENTER);
-        tvNPKData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+        tvNPKData.setBackgroundColor(Color.parseColor("#CFD8DC"));
         tvNPKData.setText("Nitrogen: " + totalNitro + ", Phosphorous: " + totalPhos + ", Potash: " + totalPotas);
         tvNPKData.setTextColor(Color.BLACK);
         tvNPKData.setTextSize(18);
@@ -1225,19 +1233,19 @@ public class FarmFertilizer extends AppCompatActivity {
                 }
 
                 if (phosphorous1 != 0) {
-                    //     totalP1 = totalP1 + phosphorous1;
+               //     totalP1 = totalP1 + phosphorous1;
                     System.out.println("phosphorous1 - " + phosphorous1);
                     finalDataObtained1 = phosphorous1;
                     arrayFertilizerCalculate1.add(String.valueOf(finalDataObtained1));
                 }
                 if (nitrogen1 != 0) {
-                    //   totalN1 = totalN1 + nitrogen1;
+                 //   totalN1 = totalN1 + nitrogen1;
                     System.out.println("nitrogen1 - " + nitrogen1);
                     finalDataObtained1 = nitrogen1;
                     arrayFertilizerCalculate1.add(String.valueOf(finalDataObtained1));
                 }
                 if (potash1 != 0) {
-                    //  totalK1 = totalK1 + potash1;
+                  //  totalK1 = totalK1 + potash1;
                     System.out.println("potash1 - " + potash1);
                     finalDataObtained1 = potash1;
                     arrayFertilizerCalculate1.add(String.valueOf(finalDataObtained1));
@@ -1251,6 +1259,8 @@ public class FarmFertilizer extends AppCompatActivity {
 
             arrayFertilizerCalculate1.clear();
             arrayFertilizerCalculate1.addAll(npk1);
+
+
 
             for (int j = 0; j < arrayFertilizerName1.size(); j++) {
                 System.out.println("arrayFertilizerCalculate1 - " + arrayFertilizerCalculate1);
@@ -1464,19 +1474,19 @@ public class FarmFertilizer extends AppCompatActivity {
                 }
 
                 if (phosphorous2 != 0) {
-                    //  totalP2 = totalP2 + phosphorous2;
+                  //  totalP2 = totalP2 + phosphorous2;
                     System.out.println("phosphorous2 - " + phosphorous2);
                     finalDataObtained2 = phosphorous2;
                     arrayFertilizerCalculate2.add(String.valueOf(finalDataObtained2));
                 }
                 if (nitrogen2 != 0) {
-                    //   totalN2 = totalN2 + nitrogen2;
+                 //   totalN2 = totalN2 + nitrogen2;
                     System.out.println("nitrogen2 - " + nitrogen2);
                     finalDataObtained2 = nitrogen2;
                     arrayFertilizerCalculate2.add(String.valueOf(finalDataObtained2));
                 }
                 if (potash2 != 0) {
-                    //     totalK2 = totalK2 + potash2;
+               //     totalK2 = totalK2 + potash2;
                     System.out.println("potash2 - " + potash2);
                     finalDataObtained2 = potash2;
                     arrayFertilizerCalculate2.add(String.valueOf(finalDataObtained2));
@@ -1687,19 +1697,19 @@ public class FarmFertilizer extends AppCompatActivity {
                 }
 
                 if (phosphorous3 != 0) {
-                    //    totalP3 = totalP3 + phosphorous3;
+                //    totalP3 = totalP3 + phosphorous3;
                     System.out.println("phosphorous3 - " + phosphorous3);
                     finalDataObtained3 = phosphorous3;
                     arrayFertilizerCalculate3.add(String.valueOf(finalDataObtained3));
                 }
                 if (nitrogen3 != 0) {
-                    //   totalN3 = totalN3 + nitrogen3;
+                 //   totalN3 = totalN3 + nitrogen3;
                     System.out.println("nitrogen3 - " + nitrogen3);
                     finalDataObtained3 = nitrogen3;
                     arrayFertilizerCalculate3.add(String.valueOf(finalDataObtained3));
                 }
                 if (potash3 != 0) {
-                    //  totalK3 = totalK3 + potash3;
+                  //  totalK3 = totalK3 + potash3;
                     System.out.println("potash3 - " + potash3);
                     finalDataObtained3 = potash3;
                     arrayFertilizerCalculate3.add(String.valueOf(finalDataObtained3));
@@ -1722,6 +1732,7 @@ public class FarmFertilizer extends AppCompatActivity {
                     bagValue3 = 1;
                 }
                 arraybagValue3.add(String.valueOf((int) bagValue3));
+
 
                 TableRow tbrowData = new TableRow(mContext);
                 TextView tvCombination = new TextView(mContext);
@@ -1930,19 +1941,19 @@ public class FarmFertilizer extends AppCompatActivity {
                 }
 
                 if (phosphorous4 != 0) {
-                    //   totalP4 = totalP4 + phosphorous4;
+                 //   totalP4 = totalP4 + phosphorous4;
                     System.out.println("phosphorous4 - " + phosphorous4);
                     finalDataObtained4 = phosphorous4;
                     arrayFertilizerCalculate4.add(String.valueOf(finalDataObtained4));
                 }
                 if (nitrogen4 != 0) {
-                    //  totalN4 = totalN4 + nitrogen4;
+                  //  totalN4 = totalN4 + nitrogen4;
                     System.out.println("nitrogen4 - " + nitrogen4);
                     finalDataObtained4 = nitrogen4;
                     arrayFertilizerCalculate4.add(String.valueOf(finalDataObtained4));
                 }
                 if (potash4 != 0) {
-                    //  totalK4 = totalK4 + potash4;
+                  //  totalK4 = totalK4 + potash4;
                     finalDataObtained4 = potash4;
                     arrayFertilizerCalculate4.add(String.valueOf(finalDataObtained4));
                 }
@@ -1977,7 +1988,7 @@ public class FarmFertilizer extends AppCompatActivity {
                     combinationcountValue++;
                     tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                     tvCombination.setGravity(Gravity.CENTER);
-                    tvCombination.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                    tvCombination.setBackgroundColor(Color.parseColor("#80DEEA"));
                     tvCombination.setText("Combination " + combinationcountValue);
                     tvCombination.setTextColor(Color.BLACK);
                     tvCombination.setTextSize(18);
@@ -1985,7 +1996,7 @@ public class FarmFertilizer extends AppCompatActivity {
                 }else{
                     tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                     tvCombination.setGravity(Gravity.CENTER);
-                    tvCombination.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                    tvCombination.setBackgroundColor(Color.parseColor("#80DEEA"));
                     tvCombination.setText("");
                     tvCombination.setTextColor(Color.BLACK);
                     tvCombination.setTextSize(18);
@@ -1993,21 +2004,21 @@ public class FarmFertilizer extends AppCompatActivity {
 
                 tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvFertilizer.setGravity(Gravity.CENTER);
-                tvFertilizer.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvFertilizer.setBackgroundColor(Color.parseColor("#80DEEA"));
                 tvFertilizer.setText(arrayFertilizerName4.get(j));
                 tvFertilizer.setTextColor(Color.BLACK);
                 tvFertilizer.setTextSize(18);
 
                 tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvKG.setGravity(Gravity.CENTER);
-                tvKG.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvKG.setBackgroundColor(Color.parseColor("#80DEEA"));
                 tvKG.setText("" + (int) value4);
                 tvKG.setTextColor(Color.BLACK);
                 tvKG.setTextSize(18);
 
                 tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvBag.setGravity(Gravity.CENTER);
-                tvBag.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvBag.setBackgroundColor(Color.parseColor("#80DEEA"));
                 tvBag.setText("" + (int) bagValue4);
                 tvBag.setTextColor(Color.BLACK);
                 tvBag.setTextSize(18);
@@ -2077,28 +2088,28 @@ public class FarmFertilizer extends AppCompatActivity {
 
         tvCombination.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvCombination.setGravity(Gravity.CENTER);
-        tvCombination.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvCombination.setBackgroundColor(Color.parseColor("#263238"));
         tvCombination.setText("Combination");
         tvCombination.setTextColor(Color.WHITE);
         tvCombination.setTextSize(18);
 
         tvFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvFertilizer.setGravity(Gravity.CENTER);
-        tvFertilizer.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvFertilizer.setBackgroundColor(Color.parseColor("#424242"));
         tvFertilizer.setText("Fertilizer");
         tvFertilizer.setTextColor(Color.WHITE);
         tvFertilizer.setTextSize(18);
 
         tvKG.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvKG.setGravity(Gravity.CENTER);
-        tvKG.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvKG.setBackgroundColor(Color.parseColor("#263238"));
         tvKG.setText("KGs");
         tvKG.setTextColor(Color.WHITE);
         tvKG.setTextSize(18);
 
         tvBag.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvBag.setGravity(Gravity.CENTER);
-        tvBag.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvBag.setBackgroundColor(Color.parseColor("#424242"));
         tvBag.setText("Bags");
         tvBag.setTextColor(Color.WHITE);
         tvBag.setTextSize(18);
@@ -2118,7 +2129,7 @@ public class FarmFertilizer extends AppCompatActivity {
         TextView tvNPK = new TextView(mContext);
         tvNPK.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvNPK.setGravity(Gravity.CENTER);
-        tvNPK.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvNPK.setBackgroundColor(Color.parseColor("#263238"));
         tvNPK.setText("Total recommendation of NPK");
         tvNPK.setTextColor(Color.WHITE);
         tvNPK.setTextSize(18);
@@ -2139,42 +2150,42 @@ public class FarmFertilizer extends AppCompatActivity {
 
         tvDistrict.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvDistrict.setGravity(Gravity.CENTER);
-        tvDistrict.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvDistrict.setBackgroundColor(Color.parseColor("#263238"));
         tvDistrict.setText("District");
         tvDistrict.setTextColor(Color.WHITE);
         tvDistrict.setTextSize(18);
 
         tvTaluk.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvTaluk.setGravity(Gravity.CENTER);
-        tvTaluk.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvTaluk.setBackgroundColor(Color.parseColor("#424242"));
         tvTaluk.setText("Taluk");
         tvTaluk.setTextColor(Color.WHITE);
         tvTaluk.setTextSize(18);
 
         tvHobli.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvHobli.setGravity(Gravity.CENTER);
-        tvHobli.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvHobli.setBackgroundColor(Color.parseColor("#263238"));
         tvHobli.setText("Hobli");
         tvHobli.setTextColor(Color.WHITE);
         tvHobli.setTextSize(18);
 
         tvVillage.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvVillage.setGravity(Gravity.CENTER);
-        tvVillage.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvVillage.setBackgroundColor(Color.parseColor("#424242"));
         tvVillage.setText("Village");
         tvVillage.setTextColor(Color.WHITE);
         tvVillage.setTextSize(18);
 
         tvSurvey.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvSurvey.setGravity(Gravity.CENTER);
-        tvSurvey.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvSurvey.setBackgroundColor(Color.parseColor("#263238"));
         tvSurvey.setText("Survey");
         tvSurvey.setTextColor(Color.WHITE);
         tvSurvey.setTextSize(18);
 
         tvCrop.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         tvCrop.setGravity(Gravity.CENTER);
-        tvCrop.setBackgroundColor(Color.parseColor("#12b4ba"));
+        tvCrop.setBackgroundColor(Color.parseColor("#424242"));
         tvCrop.setText("Crop");
         tvCrop.setTextColor(Color.WHITE);
         tvCrop.setTextSize(18);
@@ -2207,42 +2218,42 @@ public class FarmFertilizer extends AppCompatActivity {
 
                 tvDistrictData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvDistrictData.setGravity(Gravity.CENTER);
-                tvDistrictData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvDistrictData.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvDistrictData.setText(arrayDistrict.get(0));
                 tvDistrictData.setTextColor(Color.BLACK);
                 tvDistrictData.setTextSize(18);
 
                 tvTalukData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvTalukData.setGravity(Gravity.CENTER);
-                tvTalukData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvTalukData.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvTalukData.setText(arrayTaluk.get(0));
                 tvTalukData.setTextColor(Color.BLACK);
                 tvTalukData.setTextSize(18);
 
                 tvHobliData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvHobliData.setGravity(Gravity.CENTER);
-                tvHobliData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvHobliData.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvHobliData.setText(arrayHobli.get(0));
                 tvHobliData.setTextColor(Color.BLACK);
                 tvHobliData.setTextSize(18);
 
                 tvVillageData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvVillageData.setGravity(Gravity.CENTER);
-                tvVillageData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvVillageData.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvVillageData.setText(arrayVillage.get(0));
                 tvVillageData.setTextColor(Color.BLACK);
                 tvVillageData.setTextSize(18);
 
                 tvSurveyData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvSurveyData.setGravity(Gravity.CENTER);
-                tvSurveyData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvSurveyData.setBackgroundColor(Color.parseColor("#CFD8DC"));
                 tvSurveyData.setText(arraySurvey.get(j));
                 tvSurveyData.setTextColor(Color.BLACK);
                 tvSurveyData.setTextSize(18);
 
                 tvCropData.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 tvCropData.setGravity(Gravity.CENTER);
-                tvCropData.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                tvCropData.setBackgroundColor(Color.parseColor("#F5F5F5"));
                 tvCropData.setText(arrayCropName.get(i));
                 tvCropData.setTextColor(Color.BLACK);
                 tvCropData.setTextSize(18);
@@ -2260,20 +2271,22 @@ public class FarmFertilizer extends AppCompatActivity {
     }
 
     private void addrecommendedTable() {
-        TableRow tbrowRecomended = new TableRow(mContext);
-        TextView tvRFertilizer = new TextView(mContext);
-        tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-        tvRFertilizer.setGravity(Gravity.CENTER);
-        tvRFertilizer.setBackgroundColor(Color.parseColor("#12b4ba"));
-        tvRFertilizer.setText("Recommended Nutrient for 1 acre");
-        tvRFertilizer.setTextColor(Color.WHITE);
-        tvRFertilizer.setTextSize(18);
-        tbrowRecomended.addView(tvRFertilizer);
-        tbNutrientDetail.addView(tbrowRecomended);
+
+            TableRow tbrowRecomended = new TableRow(mContext);
+            TextView tvRFertilizer = new TextView(mContext);
+            tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+            tvRFertilizer.setGravity(Gravity.CENTER);
+            tvRFertilizer.setBackgroundColor(Color.parseColor("#263238"));
+            tvRFertilizer.setText("Recommended Nutrient for 1 acre");
+            tvRFertilizer.setTextColor(Color.WHITE);
+            tvRFertilizer.setTextSize(18);
+            tbrowRecomended.addView(tvRFertilizer);
+            tbNutrientDetail.addView(tbrowRecomended);
+
     }
 
     private void addrecommendedTableData() {
-        for(int i=0;i<arrayCropName.size();i++) {
+           for(int i=0;i<arrayCropName.size();i++) {
 
             String nitrogen = arrayFertilizerCropNitrogen.get(i);
             String phosphorous = arrayFertilizerCropPhospohorous.get(i);
@@ -2284,7 +2297,7 @@ public class FarmFertilizer extends AppCompatActivity {
 
             tvRFertilizer.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
             tvRFertilizer.setGravity(Gravity.CENTER);
-            tvRFertilizer.setBackgroundColor(Color.parseColor("#B2EBF2"));
+            tvRFertilizer.setBackgroundColor(Color.parseColor("#CFD8DC"));
             tvRFertilizer.setText(arrayCropName.get(i) + "  -  " + "Nitrogen:" + nitrogen + ", Phosphorous:" + phosphorous + ", Potash:" + potash);
             tvRFertilizer.setTextColor(Color.BLACK);
             tvRFertilizer.setTextSize(18);
